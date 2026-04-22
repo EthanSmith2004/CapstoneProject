@@ -1,0 +1,64 @@
+\section{Intekening}
+\subsection{Gebruikersgeval}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/usecase/login.png}
+    \caption{Gebruikersgeval vir Intekening}
+    \label{fig:intekening_use_case}
+\end{figure}
+
+Volgens funksionele vereiste FREQ-USR-101 moet gebruikers inteken met 'n geldige e-pos en wagwoord kombinasie. Die intekenproses begin op die inteken skerm (\autoref{fig:login_screen}) of die administrasie portaal intekening skerm (\autoref{fig:admin_login_screen}).
+
+Die stelsel kontroleer of die kombinasie geldig is, en skep 'n sessie vir die gebruiker.
+
+\subsection{Scenario}
+
+\textbf{Akteurs:} Gebruiker\\
+\textbf{Voorvereistes:} Gebruiker het 'n geldige wagwoord e-pos kombinasie\\
+\textbf{Prekondisie:} Gebruiker is nie ingeteken nie\\
+\textbf{Postkondisie:} Gebruiker is ingeteken\\
+\textbf{Inset:} Gebruiker wagwoord en e-pos kombinasie\\
+\textbf{Uitset:} Sukses- of foutboodskap, sessie word geskep, navigasie na
+paneelbord of hoofskerm\\
+\textbf{Skerms van Toepassing:} 
+\begin{itemize}
+    \item \autoref{fig:login_screen} (Mobiele intekening skerm)
+    \item \autoref{fig:admin_login_screen} (Administrasie portaal intekening)
+\end{itemize}
+
+\textbf{Hoofvloei:}
+\begin{enumerate}
+    \item Gebruiker navigeer na die inteken bladsy (\autoref{fig:login_screen})
+    \item Stelsel toon intekenvorm (\autoref{fig:login_screen})
+    \item Gebruiker voer e-pos adres in
+    \item Gebruiker voer wagwoord in
+    \item Gebruiker klik "Teken In"
+    \item Stelsel valideer intekenbesonderhede
+    \item Stelsel skep gebruikersessie
+    \item Stelsel navigeer gebruiker na hoofbladsy of paneelbord (\autoref{fig:admin_dashboard_screen})
+    \item Gebruikersgeval eindig
+\end{enumerate}
+
+\textbf{Uitsonderingsvloei E1: Uitgelate intekenbesonderhede}
+\begin{enumerate}
+    \item[6a.] Stelsel identifiseer uitgelate e-pos of wagwoord
+    \item Stelsel toon fout boodskap
+    \item Gaan terug na stap 3
+\end{enumerate}
+
+\textbf{Uitsonderingsvloei E2: Ongeldige intekenbesonderhede}
+\begin{enumerate}
+    \item[6b.] Stelsel identifiseer ongeldige e-pos en wagwoord kombinasie
+    \item Stelsel toon "Ongeldige e-pos of wagwoord" fout
+    \item Gaan terug na stap 3
+\end{enumerate}
+
+\textbf{Uitsonderingsvloei E3: Rekening is geblokkeer}
+\begin{enumerate}
+    \item[6c.] Stelsel identifiseer geblokkeerde rekening
+    \item Stelsel toon "Rekening geblokkeer" boodskap
+    \item Stelsel bied kontak besonderhede vir ondersteuning
+    \item Gebruikersgeval eindig
+\end{enumerate}
+

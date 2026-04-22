@@ -1,0 +1,83 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  # Docker container logs via Docker service discovery
+  - job_name: docker
+    docker_sd_configs:
+      - host: unix:///var/run/docker.sock
+        refresh_interval: 5s
+        filters:
+          - name: label
+            values: ["logging=promtail"]
+    relabel_configs:
+      # Extract container name
+      - source_labels: ['__meta_docker_container_name']
+        regex: '/(.*)'
+        target_label: 'container'
+      
+      # Extract compose service name
+      - source_labels: ['__meta_docker_container_label_com_docker_compose_service']
+        target_label: 'compose_service'
+      
+      # Set job based on container
+      - source_labels: ['__meta_docker_container_name']
+        regex: '.*/frontend'
+        target_label: 'job'
+        replacement: 'nginx'
+      
+      - source_labels: ['__meta_docker_container_name']
+        regex: '.*/api'
+        target_label: 'job'
+        replacement: 'spring-boot'
+      
+      # Set application label
+      - source_labels: ['__meta_docker_container_name']
+        regex: '.*/frontend'
+        target_label: 'application'
+        replacement: 'nginx-frontend'
+      
+      - source_labels: ['__meta_docker_container_name']
+        regex: '.*/api'
+        target_label: 'application'
+        replacement: 'spring-api'
+      
+      # Set environment
+      - target_label: 'environment'
+        replacement: 'production'
+
+    pipeline_stages:
+      # For NGINX logs - parse combined log format
+      - match:
+          selector: '{job="nginx"}'
+          stages:
+            - regex:
+                expression: '^(?P<remote_addr>[\d\.]+) - (?P<remote_user>[\w-]+) \[(?P<time_local>[^\]]+)\] "(?P<method>\w+) (?P<path>[^\s]+) (?P<protocol>[^"]+)" (?P<status>\d+) (?P<body_bytes_sent>\d+) "(?P<http_referer>[^"]*)" "(?P<http_user_agent>[^"]*)".*'
+            - labels:
+                method:
+                status:
+                path:
+            - timestamp:
+                source: time_local
+                format: '02/Jan/2006:15:04:05 -0700'
+
+      # For Spring Boot logs - parse standard format
+      - match:
+          selector: '{job="spring-boot"}'
+          stages:
+            - regex:
+                expression: '^(?P<timestamp>\d{4}-\d{2}-\d{2}[\sT]\d{2}:\d{2}:\d{2}[.,]\d{3})\s+(?P<level>\w+)\s+(\[(?P<thread>[^\]]+)\]\s+)?(?P<logger>\S+)\s*:\s+(?P<message>.*)'
+            - labels:
+                level:
+            - timestamp:
+                source: timestamp
+                format: '2006-01-02 15:04:05.000'
+            - output:
+                source: message

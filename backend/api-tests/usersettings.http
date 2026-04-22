@@ -1,0 +1,7 @@
+###
+GET http://localhost:8080/api/user/settings
+Authorization: Bearer {{user_auth_token}}
+
+###
+PUT http://localhost:8080/api/user/settings
+

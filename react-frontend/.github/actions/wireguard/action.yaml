@@ -1,0 +1,31 @@
+name: WireGuard Setup
+
+description: Set up and tear down WireGuard using the provided configuration.
+
+inputs:
+  WG_CONF:
+    description: WireGuard configuration content.
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    # Ensure WireGuard is installed
+    - name: Install WireGuard
+      shell: bash
+      run: |
+        if ! command -v wg-quick &> /dev/null; then
+          sudo apt-get update
+          sudo apt-get install -y wireguard
+        fi
+
+    - name: Set up WireGuard config
+      shell: bash
+      run: |
+        echo "${{ inputs.WG_CONF }}" | sudo tee /etc/wireguard/wg0.conf
+
+    - name: Run WireGuard
+      uses: ./.github/actions/with-post-step
+      with: 
+        main: sudo wg-quick up wg0
+        post: sudo wg-quick down wg0

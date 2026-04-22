@@ -1,0 +1,35 @@
+server {
+    listen 443 ssl;
+    server_name spys.superuserdone.com;
+
+    ssl_certificate /etc/letsencrypt/live/superuserdone.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/superuserdone.com/privkey.pem;
+
+    location /api {
+        proxy_pass http://10.70.70.12:8080; # API prod
+    }
+
+    location / {
+        root /var/www/prod;
+        index index.html;
+        try_files $uri /index.html;
+    }
+}
+
+server {
+    listen 443 ssl;
+    server_name dev-spys.superuserdone.com;
+
+    ssl_certificate /etc/letsencrypt/live/superuserdone.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/superuserdone.com/privkey.pem;
+
+    location /api {
+        proxy_pass http://10.70.70.11:8080; # API dev
+    }
+
+    location / {
+        root /var/www/dev;
+        index index.html;
+        try_files $uri /index.html;
+    }
+}

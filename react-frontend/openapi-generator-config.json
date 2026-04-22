@@ -1,0 +1,19 @@
+{
+  "generatorName": "typescript-axios",
+  "inputSpec": "./temp/openapi.json",
+  "outputDir": "./src/api",
+  "additionalProperties": {
+    "npmName": "api-client",
+    "npmVersion": "1.0.0",
+    "supportsES6": true,
+    "withInterfaces": true,
+    "withSeparateModelsAndApi": true,
+    "apiPackage": "api",
+    "modelPackage": "models",
+    "withoutPrefixEnums": true,
+    "enumPropertyNaming": "original",
+    "modelPropertyNaming": "camelCase",
+    "paramNaming": "camelCase"
+  },
+  "skipValidateSpec": true
+}

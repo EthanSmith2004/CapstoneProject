@@ -1,0 +1,71 @@
+\usepackage[afrikaans]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{ragged2e}
+\justifying
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{eso-pic}
+\usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm, headheight=15pt, headsep=0pt]{geometry}
+
+\usepackage[printonlyused]{acronym}
+
+\usepackage[backref=page]{hyperref}
+\usepackage{cleveref}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{helvet}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{placeins}
+\usepackage{needspace}
+
+\setlist[description]{
+    style=nextline,       
+    leftmargin=1.5em,
+    labelsep=0pt,
+    itemsep=4pt,
+    font=\bfseries 
+}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newif\ifappendix
+\appendixfalse
+
+\let\oldappendix\appendix
+\renewcommand{\appendix}{%
+  \appendixtrue
+  \oldappendix
+}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries
+   \ifappendix
+      Bylaag \thechapter:~#1%
+   \else
+      Hoofstuk \thechapter:~#1%
+   \fi
+   \par\nobreak
+   \vskip 10pt}}
+\def\@makeschapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries #1\par\nobreak
+   \vskip 10pt}}
+\makeatother
+
+\renewcommand{\chaptername}{Hoofstuk}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}

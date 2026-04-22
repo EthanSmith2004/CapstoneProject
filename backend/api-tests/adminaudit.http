@@ -1,0 +1,13 @@
+###
+GET http://localhost:8080/api/admin/audit/logins/recent
+
+###
+GET http://localhost:8080/api/admin/audit/transactions?
+    page={{$random.integer(100)}}&
+    size={{$random.integer(100)}}
+
+###
+GET http://localhost:8080/api/admin/audit/user-events?
+    page={{$random.integer(100)}}&
+    size={{$random.integer(100)}}
+

@@ -1,0 +1,126 @@
+### Admin Order Management with Notifications
+### This file demonstrates the enhanced notification functionality for admin order management
+
+@baseUrl = http://localhost:8080
+
+### 1. Login as admin to get authentication token
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@demo.com",
+  "password": "admin123"
+}
+
+> {%
+    client.global.set("admin_token", response.body.accessToken);
+%}
+
+### 2. Get all orders to find an order to update
+GET {{baseUrl}}/api/admin/orders
+Authorization: Bearer {{admin_token}}
+
+### 3. Update order status (sends notification to user)
+### Replace {orderId} with actual order ID from previous request
+PUT {{baseUrl}}/api/admin/orders/402/status
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+"HISTORIC"
+
+### 4. Get all order items to find an item to update
+GET {{baseUrl}}/api/admin/orders/items
+Authorization: Bearer {{admin_token}}
+
+### 5. Update individual order item status to IN_PROGRESS (sends notification)
+### Replace {orderItemId} with actual order item ID from previous request
+PUT {{baseUrl}}/api/admin/order-items/353/status
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+"IN_PROGRESS"
+
+### 6. Update order item status to IN_DELIVERY (sends notification)
+PUT {{baseUrl}}/api/admin/order-items/353/status
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+"IN_DELIVERY"
+
+### 7. Update order item status to DELIVERED (sends notification)
+PUT {{baseUrl}}/api/admin/order-items/353/status
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+"DELIVERED"
+
+### 8. Demonstrate cancellation during IN_PROGRESS (special notification)
+### First set item back to IN_PROGRESS
+PUT {{baseUrl}}/api/admin/order-items/2/status
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+"IN_PROGRESS"
+
+### 9. Cancel the order item (sends cancellation notification)
+PUT {{baseUrl}}/api/admin/order-items/2/status
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+"CANCELLED"
+
+### 10. Bulk update order statuses (sends notifications to all affected users)
+### This updates all PAID items for a specific delivery date to IN_PROGRESS
+PUT {{baseUrl}}/api/admin/orders/bulk-status
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{
+  "deliveryDate": "2024-12-15T00:00:00Z",
+  "status": "IN_PROGRESS",
+  "previousStatus": "PAID"
+}
+
+### 11. Bulk update to IN_DELIVERY (sends notifications)
+PUT {{baseUrl}}/api/admin/orders/bulk-status
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{
+  "deliveryDate": "2024-12-15T00:00:00Z",
+  "status": "IN_DELIVERY",
+  "previousStatus": "IN_PROGRESS"
+}
+
+### 12. Bulk cancel specific item (sends cancellation notifications)
+PUT {{baseUrl}}/api/admin/orders/bulk-status
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{
+  "deliveryDate": "2024-12-15T00:00:00Z",
+  "itemName": "Chicken Curry",
+  "status": "CANCELLED",
+  "previousStatus": "IN_DELIVERY"
+}
+
+### 13. Login as regular user to check notifications
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@demo.com",
+  "password": "user123"
+}
+
+> {%
+    client.global.set("user_token", response.body.token);
+%}
+
+### 14. Check user notifications to see all the notifications sent
+GET {{baseUrl}}/api/user/notifications
+Authorization: Bearer {{user_token}}
+
+### 15. Check unread notification count
+GET {{baseUrl}}/api/user/notifications/unread/count
+Authorization: Bearer {{user_token}}

@@ -1,0 +1,70 @@
+% Spyskaartbestuur
+\section{Spyskaartbestuur}
+\subsection{Gebruikersgeval}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/usecase/menu.png}
+    \caption{Gebruikersgeval vir Spyskaartbestuur}
+    \label{fig:spyskaartbestuur_use_case}
+\end{figure}
+
+Volgens FREQ-WEB-001, FREQ-WEB-002 en FREQ-WEB-003 moet die administrasie portaal die skep en wysiging van die weeklikse ete van die dag spyskaart insluit (\autoref{fig:menu_management_screen}). Die mobiele spyskaart kan besigtig word op die spyskaart skerm (\autoref{fig:menu_screen}).
+
+\subsection{Scenario}
+
+\textbf{Akteurs:} Admin\\
+\textbf{Voorvereistes:} Admin is ingeteken, Admin het die korrekte regte\\
+\textbf{Prekondisie:} Spyskaart bestaan nie of gekose spyskaart bestaan\\
+\textbf{Postkondisie:} Spyskaart geskep of gewysig\\
+\textbf{Inset:} Spyskaart informasie\\
+\textbf{Uitset:} Sukses- of foutboodskap\\
+\textbf{Skerms van Toepassing:} 
+\begin{itemize}
+    \item \autoref{fig:menu_management_screen} (Spyskaartbestuur skerm - admin)
+    \item \autoref{fig:menu_screen} (Spyskaart skerm - mobiel)
+\end{itemize}
+
+
+\textbf{Hoofvloei:}
+\begin{enumerate}
+    \item Administrasie gebruiker teken in na web portaal
+    \item Stelsel toon admin dashboard
+    \item Admin navigeer na spyskaart bestuur (\autoref{fig:menu_management_screen})
+    \item Stelsel toon huidige weeklikse spyskaart (\autoref{fig:menu_management_screen})
+    \item Admin kies om nuwe spyskaart te skep
+    \item Stelsel toon spyskaartwysigingsvorm (\autoref{fig:menu_management_screen})
+    \item Admin voer/wysig maaltydbesonderhede (naam, beskrywing, prys)
+    \item Admin voeg allergie-inligting by
+    \item Admin voeg voedingswaarde-inligting by
+    \item Admin laai maaltyd beelde op (indien beskikbaar)
+    \item Admin stoor veranderinge
+    \item Stelsel valideer alle inligting
+    \item Stelsel werk spyskaart by
+    \item Stelsel toon sukses bevestiging
+    \item Gebruikersgeval eindig
+\end{enumerate}
+
+\textbf{Alternatiewe vloei A1: Wysig bestaande maaltyd}
+\begin{enumerate}
+    \item[5a.] Admin kies om bestaande maaltyd te wysig
+    \item Stelsel gaan haal bestaande maaltyd besonderhede
+    \item Gaan na stap 6
+\end{enumerate}
+
+\textbf{Alternatiewe vloei A2: Verwyder maaltyd}
+\begin{enumerate}
+    \item[5b.] Admin kies om maaltyd te verwyder
+    \item Stelsel vra bevestiging
+    \item Admin bevestig verwydering
+    \item Stelsel verwyder maaltyd van spyskaart
+    \item Gebruikersgeval eindig
+\end{enumerate}
+
+\textbf{Uitsonderingsvloei E1: Ongeldige maaltyd inligting}
+\begin{enumerate}
+    \item[12a.] Stelsel identifiseer ongeldige inligting
+    \item Stelsel toon foutboodskappe
+    \item Gaan terug na stap 7
+\end{enumerate}
+

@@ -1,0 +1,27 @@
+name: Build LaTeX PDF
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Build latex
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: main.tex
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: main-pdf
+          path: main.pdf
+      - name: Send PDF to Discord webhook
+        run: |
+          curl -F "file=@main.pdf" \
+               -F "payload_json={\"content\": \"LaTeX build completed! Here is the PDF.\"}" \
+               https://discord.com/api/webhooks/1399056027068006542/7Z5bY1kvjsae3AleX_ursJIzY5v1P5OTY7AWbinexCJUpJCPaAzvQ8TpDWkY1HskXNMb

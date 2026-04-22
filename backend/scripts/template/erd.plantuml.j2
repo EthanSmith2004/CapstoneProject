@@ -1,0 +1,71 @@
+@startuml ERD
+!define TABLE(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define CLASS(name,desc) class name as "desc" << (C,#AAAAFF) >>
+!define PRIMARY_KEY(x) <u>x</u>: PK
+!define FOREIGN_KEY(x) <i>x</i>: FK
+!define NOT_NULL(x) <b>x</b>
+
+title Entity Relationship Diagram
+
+' Layout directives to reduce line crossings
+skinparam ranksep 40
+skinparam nodesep 40
+skinparam linetype ortho
+left to right direction
+
+' Core entities - central positioning
+{%- for entity in entities %}
+{%- if entity.is_mapped_superclass %}
+CLASS({{ entity.class }}, {{ entity.class.replace("Entity", "") }}) {
+{%- for column in entity.columns %}
+  {{ column }}
+{%- endfor %}
+}
+{%- else %}
+TABLE({{ entity.class }}, {{ entity.class.replace("Entity", "") }}) {
+{%- if entity.primary_key %}
+{%- for pk in entity.primary_key %}
+  PRIMARY_KEY({{ pk }})
+{%- endfor %}
+{%- endif %}
+  --
+{%- for column in entity.columns %}
+{%- if column not in entity.primary_key %}
+{%- set is_fk = false %}
+{%- for fk in entity.foreign_keys %}
+{%- if fk == column %}
+{%- set is_fk = true %}
+{%- endif %}
+{%- endfor %}
+{%- if not is_fk %}
+  NOT_NULL({{ column }}) 
+{%- endif %}
+{%- endif %}
+{%- endfor %}
+  --
+{%- for fk in entity.foreign_keys %}
+  FOREIGN_KEY({{ fk }})
+{%- endfor %}
+}
+{%- endif %}
+{%- endfor %}
+
+' Inheritance relationships
+{%- for entity in entities %}
+{%- if entity.inherits %}
+{{ entity.class }} --|> {{ entity.inherits }} : inherits
+{%- endif %}
+{%- endfor %}
+
+' Relationships
+{%- for rel in relationships %}
+{%- set from_entity = entities | selectattr("name", "equalto", rel.from) | list | first %}
+{%- set to_entity = entities | selectattr("name", "equalto", rel.to) | list | first %}
+{%- if from_entity and to_entity %}
+{%- set directions = ['up', 'down'] %}
+{%- set dir = directions[loop.index0 % directions|length] %}
+{{ from_entity.class }} "{{ rel.cardinality[0] }}" --{{ '-' + dir + '-' }} "{{ rel.cardinality[1] }}" {{ to_entity.class }}
+{%- endif %}
+{%- endfor %}
+
+@enduml

@@ -1,0 +1,88 @@
+###
+# Get all distinct preset names
+GET http://localhost:8080/api/admin/menu-templates/presets
+Authorization: Bearer {{admin_auth_token}}
+
+###
+# Get templates by preset name
+GET http://localhost:8080/api/admin/menu-templates/preset/weekly-standard
+Authorization: Bearer {{admin_auth_token}}
+
+###
+# Create a new template
+POST http://localhost:8080/api/admin/menu-templates
+Content-Type: application/json
+Authorization: Bearer {{admin_auth_token}}
+
+{
+  "description": "Monday Lunch Delivery",
+  "deliveryOffsetMinutes": 720,
+  "releaseOffsetMinutes": 120,
+  "orderByOffsetMinutes": 60,
+  "presetName": "weekly-standard"
+}
+
+###
+# Create another template for the same preset
+POST http://localhost:8080/api/admin/menu-templates
+Content-Type: application/json
+Authorization: Bearer {{admin_auth_token}}
+
+{
+  "description": "Wednesday Dinner Delivery",
+  "deliveryOffsetMinutes": 3360,
+  "releaseOffsetMinutes": 180,
+  "orderByOffsetMinutes": 90,
+  "presetName": "weekly-standard"
+}
+
+###
+# Create a template for a different preset
+POST http://localhost:8080/api/admin/menu-templates
+Content-Type: application/json
+Authorization: Bearer {{admin_auth_token}}
+
+{
+  "description": "Friday Evening Special",
+  "deliveryOffsetMinutes": 6000,
+  "releaseOffsetMinutes": 240,
+  "orderByOffsetMinutes": 120,
+  "presetName": "weekend-special"
+}
+
+###
+# Update an existing template (replace {id} with actual ID)
+PUT http://localhost:8080/api/admin/menu-templates/1
+Content-Type: application/json
+Authorization: Bearer {{admin_auth_token}}
+
+{
+  "description": "Updated Monday Lunch Delivery",
+  "deliveryOffsetMinutes": 780,
+  "releaseOffsetMinutes": 150,
+  "orderByOffsetMinutes": 75
+}
+
+###
+# Delete a specific template (replace {id} with actual ID)
+DELETE http://localhost:8080/api/admin/menu-templates/1
+Authorization: Bearer {{admin_auth_token}}
+
+###
+# Batch delete all templates for a preset
+DELETE http://localhost:8080/api/admin/menu-templates/preset/weekend-special
+Authorization: Bearer {{admin_auth_token}}
+
+###
+# Test validation - invalid offsets (should fail)
+POST http://localhost:8080/api/admin/menu-templates
+Content-Type: application/json
+Authorization: Bearer {{admin_auth_token}}
+
+{
+  "description": "Invalid Template",
+  "deliveryOffsetMinutes": 100,
+  "releaseOffsetMinutes": 200,
+  "orderByOffsetMinutes": 150,
+  "presetName": "test-validation"
+}

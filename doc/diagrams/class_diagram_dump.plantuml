@@ -1,0 +1,1471 @@
+@startuml Class_Diagram
+!define CONTROLLER_COLOR #E1F5FE
+!define SERVICE_COLOR #F3E5F5
+!define FACADE_COLOR #E8F5E8
+!define SECURITY_COLOR #FFF3E0
+!define REPOSITORY_COLOR #FFEBEE
+
+title Class Diagram - Backend Application
+
+' Define class stereotypes and colors
+skinparam class {
+  BackgroundColor<<Controller>> CONTROLLER_COLOR
+  BackgroundColor<<Service>> SERVICE_COLOR
+  BackgroundColor<<Facade>> FACADE_COLOR
+  BackgroundColor<<Security>> SECURITY_COLOR
+  BackgroundColor<<Repository>> REPOSITORY_COLOR
+}
+
+
+class UserEventEntityBuilder <<Other>> {
+  -id: Long
+  -time: Instant
+  -user: UserEntity
+  -eventType: UserEventType
+  --
+  +toString()
+  +id(id)
+  +time(time)
+  +build()
+  +user(user)
+  +eventType(eventType)
+}
+
+
+class UserDeviceEntityBuilder <<Other>> {
+  -id: Long
+  -user: UserEntity
+  -endpoint: String
+  -p256dh: String
+  -auth: String
+  -userAgent: String
+  -isActive$set: boolean
+  -isActive$value: Boolean
+  -lastUsed: Instant
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +toString()
+  +id(id)
+  +isActive(isActive)
+  +build()
+  +auth(auth)
+  +user(user)
+  +endpoint(endpoint)
+  +userAgent(userAgent)
+  +p256dh(p256dh)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+  +lastUsed(lastUsed)
+}
+
+
+class AllergyManagementController <<Controller>> {
+  --
+}
+
+
+class NotificationController <<Controller>> {
+  -notificationService: NotificationService
+  -userService: UserService
+  --
+  +unsubscribe(subscription)
+  +subscribe(subscription)
+}
+
+
+class OrderService <<Service>> {
+  --
+  +getUserOrders()
+  +placeOrder(request)
+}
+
+
+class OrderItemFeedbackRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByCreatedAtBetween(startDate, endDate)
+  +findByRatingLessThanEqual(rating)
+  +getLowestRatedItems(minFeedbackCount)
+  +findWithNonEmptyFeedback()
+  +countFeedbackForItem(itemName)
+  +findByItemNameContaining(itemName)
+  +getAverageRatingForItem(itemName)
+  +getAverageRatingInDateRange(startDate, endDate)
+  +getRatingDistributionForItem(itemName)
+  +findByRatingGreaterThanEqual(rating)
+  +findByUserId(userId)
+  +findByOrderItem(orderItem)
+  +findByRating(rating)
+  +getTopRatedItems(minFeedbackCount)
+  +findByItemName(itemName)
+}
+
+
+class Role <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class UserDetailsServiceImpl <<Service>> {
+  -userRepository: UserRepository
+  --
+  +loadUserByUsername(username)
+}
+
+
+class UserProfileFacade <<Service>> {
+  --
+  +createUserProfile(request)
+  +getUserProfile()
+  +updateUserProfile(request)
+}
+
+
+class FinanceService <<Service>> {
+  --
+  +bulkLoadCredit(request)
+  +getUserDetail(userId)
+  +searchUsersPaginated(search, page, size)
+  +getTransactionsPaginated(page, size)
+  +getCurrentUserAccount()
+}
+
+
+class OrderItemFeedbackEntityBuilder <<Other>> {
+  -id: Long
+  -orderItem: OrderItemEntity
+  -rating: Integer
+  -feedback: String
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +toString()
+  +id(id)
+  +build()
+  +feedback(feedback)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+  +rating(rating)
+  +orderItem(orderItem)
+}
+
+
+class TransactionAuditType <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class JwtUtils <<Security>> {
+  -jwtSecret: String
+  -jwtExpirationMs: int
+  --
+  -key()
+  +getUserNameFromJwtToken(token)
+  +generateTokenFromUsername(username, expiration)
+  +generateJwtToken(authentication)
+  +getJwtExpirationMs()
+  +validateJwtToken(authToken)
+}
+
+
+class AllergyManagementService <<Service>> {
+  --
+}
+
+
+class RefreshTokenService <<Service>> {
+  -refreshTokenRepository: RefreshTokenRepository
+  -userEventService: UserEventService
+  -refreshTokenDurationMs: int
+  -maxRefreshTokensPerUser: int
+  -secureRandom: SecureRandom
+  --
+  +revokeAllUserTokens(user)
+  +cleanupExpiredTokens()
+  -generateSecureToken()
+  +createRefreshToken(user)
+  +revokeToken(tokenValue)
+  +verifyExpiration(token)
+  +updateToken(token)
+  +findByToken(token)
+}
+
+
+class OrderRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByCreatedAtBetween(startDate, endDate)
+  +countOrdersInDateRange(startDate, endDate)
+  +findByUserAndStatusIn(user, statuses)
+  +findByUserAndStatus(user, status)
+  +findCompletedOrdersByUser(user)
+  +countByUserAndStatus(user, status)
+  +findActiveOrdersByUser(user)
+  +findByTotalGreaterThanEqual(minTotal)
+  +findPendingOrdersBeforeDeadline(deadline)
+  +findByStatusAndCreatedAtBetween(status, startDate, endDate)
+  +findByUserAndCreatedAtBetween(user, startDate, endDate)
+  +findByUserOrderByCreatedAtDesc(user)
+  +sumTotalByCompletedAndCreatedAtBetween(startDate, endDate)
+  +findOrdersForDate(date)
+  +countByStatus(status)
+  +findByStatus(status)
+  +findByUser(user)
+}
+
+
+class UserAccountController <<Controller>> {
+  -financeFacade: UserFinanceFacade
+  --
+  +getTransactionsPaginated(page, size)
+  +getAccount()
+}
+
+
+class AccountRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByCredentialNumber(credentialNumber)
+  +findByCreatedAtBetween(startDate, endDate)
+  +countAccountsByCampus(campusId)
+  +countAccountsByResidence(residenceId)
+  +findAllOrderByCreatedAtDesc()
+  +findByUserProfile(userProfile)
+  +findByResidenceId(residenceId)
+  +findByCampusId(campusId)
+  +findByUserId(userId)
+  +countAllAccounts()
+}
+
+
+class RefreshTokenCleanupService <<Component>> {
+  -refreshTokenService: RefreshTokenService
+  --
+  +cleanupExpiredTokens()
+}
+
+
+class AdminUserController <<Controller>> {
+  -userService: UserService
+  --
+  +getAllUsers()
+  +getUserById(id)
+  +deleteUser(id)
+  +updateUser(id, updateRequest)
+}
+
+
+class CampusManagementService <<Service>> {
+  --
+}
+
+
+class UserProfileController <<Controller>> {
+  -userProfileFacade: UserProfileFacade
+  --
+  +createUserProfile(request)
+  +getUserProfile()
+  +updateUserProfile(request)
+}
+
+
+class AuthController <<Controller>> {
+  -authService: AuthService
+  --
+  +registerUser(signUpRequest)
+  +refreshToken(request)
+  +authenticateUser(loginRequest)
+  +logout(request)
+}
+
+
+class UserEventRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+}
+
+
+class AdminReportController <<Controller>> {
+  -reportService: ReportService
+  --
+  +createReport(request)
+  +getReportStatus(reportId)
+}
+
+
+class ResidenceManagementController <<Controller>> {
+  --
+}
+
+
+class RefreshTokenEntityBuilder <<Other>> {
+  -id: Long
+  -token: String
+  -expiresAt: Instant
+  -createdAt$set: boolean
+  -createdAt$value: Instant
+  -revoked$set: boolean
+  -revoked$value: Boolean
+  -revokedAt: Instant
+  -user: UserEntity
+  -lastUsed$set: boolean
+  -lastUsed$value: Instant
+  --
+  +expiresAt(expiresAt)
+  +toString()
+  +id(id)
+  +build()
+  +user(user)
+  +token(token)
+  +createdAt(createdAt)
+  +revokedAt(revokedAt)
+  +revoked(revoked)
+  +lastUsed(lastUsed)
+}
+
+
+class ResidenceRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByCreatedAtBetween(startDate, endDate)
+  +findAllOrderByResidenceAsc()
+  +getResidenceUserCounts()
+  +countUsersByResidence(residenceId)
+  +findByResidenceContainingIgnoreCase(name)
+  +existsByResidence(residence)
+  +findByResidence(residence)
+}
+
+
+class UserProfileEntityBuilder <<Other>> {
+  -id: Long
+  -credentialNumber: String
+  -user: UserEntity
+  -campus: CampusEntity
+  -residence: ResidenceEntity
+  -allergy$set: boolean
+  -allergy$value: List
+  -account: AccountEntity
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +allergy(allergy)
+  +campus(campus)
+  +toString()
+  +id(id)
+  +build()
+  +user(user)
+  +account(account)
+  +credentialNumber(credentialNumber)
+  +residence(residence)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+}
+
+
+class UserFeedbackFacade <<Service>> {
+  --
+  +placeFeedback(feedback)
+}
+
+
+class CampusManagementController <<Controller>> {
+  --
+}
+
+
+class AuthTokenFilter <<Security>> {
+  -jwtUtils: JwtUtils
+  -userDetailsService: UserDetailsService
+  --
+  #doFilterInternal(request, response, filterChain)
+  -parseJwt(request)
+}
+
+
+class NotificationType <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class GenericManagementService <<Other>> {
+  -repository: JpaRepository
+  -resourceName: String
+  --
+  +update(id, entityDetails)
+  +delete(id)
+  +create(entity)
+  +findAll()
+  +findById(id)
+}
+
+
+class RefreshTokenRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByUserAndRevokedFalse(user)
+  +revokeAllUserTokens(user, revokedAt)
+  +countByUserAndRevokedFalse(user)
+  +deleteExpiredAndRevokedTokens(now)
+  +findByToken(token)
+}
+
+
+class ReportRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByCreatedAtBetween(startDate, endDate)
+  +findByStatusAndType(status, type)
+  +findByDateRangeContaining(date)
+  +findStuckProcessingReports(cutoffTime)
+  +findByDateRangeWithin(fromDate, toDate)
+  +findCompletedUndownloadedReports()
+  +findByStatusOrderByCreatedAtAsc(status)
+  +getReportTypeDistributionInDateRange(startDate, endDate)
+  +getReportStatusDistributionInDateRange(startDate, endDate)
+  +findByRequestedByOrderByCreatedAtDesc(requestedBy)
+  +findByRequestedByAndCreatedAtBetween(user, startDate, endDate)
+  +countByStatus(status)
+  +findFailedReports()
+  +findByStatus(status)
+  +countByType(type)
+  +countByRequestedBy(user)
+  +findPendingReports()
+  +findByRequestedBy(requestedBy)
+  +findByType(type)
+}
+
+
+class ReportType <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class UserSettingsController <<Controller>> {
+  -userSettingsFacade: UserSettingsFacade
+  --
+  +updateUserSettings(request)
+  +getUserSettings()
+}
+
+
+class AuthEntryPointJwt <<Security>> {
+  --
+  +commence(request, response, authException)
+}
+
+
+class NotificationRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByCreatedAtBetween(startDate, endDate)
+  +markAllAsReadForUser(user, readAt)
+  +findByUserAndStatusIn(user, statuses)
+  +findByUserAndStatus(user, status)
+  +findExpiredNotifications(now)
+  +findNotificationsForDate(date)
+  +findReadNotificationsByUser(user)
+  +findByPriorityGreaterThanEqual(priority)
+  +countUnreadNotificationsByUser(user)
+  +countByTypeAndCreatedAtBetween(type, startDate, endDate)
+  +findByUserOrderByCreatedAtDesc(user)
+  +findUnreadNotificationsByUser(user)
+  +getNotificationTypeDistributionInDateRange(startDate, endDate)
+  +findPendingNotificationsDueForSending(now)
+  +findFailedNotificationsAboveRetryLimit(maxRetries)
+  +countByStatus(status)
+  +findByUserAndType(user, type)
+  +findByRelatedOrder(order)
+  +findByStatus(status)
+  +markAsRead(notificationId, user, readAt)
+  +findByType(type)
+  +findByUser(user)
+}
+
+
+class NotificationEntityBuilder <<Other>> {
+  -id: Long
+  -user: UserEntity
+  -title: String
+  -message: String
+  -type: NotificationType
+  -status$set: boolean
+  -status$value: NotificationStatus
+  -priority$set: boolean
+  -priority$value: Integer
+  -deepLinkUrl: String
+  -imageUrl: String
+  -relatedOrder: OrderEntity
+  -scheduledFor: Instant
+  -sentAt: Instant
+  -deliveredAt: Instant
+  -readAt: Instant
+  -expiresAt: Instant
+  -retryCount$set: boolean
+  -retryCount$value: Integer
+  -errorMessage: String
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +imageUrl(imageUrl)
+  +sentAt(sentAt)
+  +expiresAt(expiresAt)
+  +retryCount(retryCount)
+  +priority(priority)
+  +type(type)
+  +toString()
+  +id(id)
+  +status(status)
+  +message(message)
+  +build()
+  +user(user)
+  +readAt(readAt)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+  +errorMessage(errorMessage)
+  +scheduledFor(scheduledFor)
+  +relatedOrder(relatedOrder)
+  +deliveredAt(deliveredAt)
+  +deepLinkUrl(deepLinkUrl)
+  +title(title)
+}
+
+
+class UserFeedbackController <<Controller>> {
+  -feedbackFacade: UserFeedbackFacade
+  --
+  +placeFeedback(feedback)
+}
+
+
+class MenuItemRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+}
+
+
+class NotificationPreferenceRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByEmailEnabledTrue()
+  +findByMenuUpdatesEnabled()
+  +countByOrderUpdatesEnabled()
+  +findByPushEnabledTrue()
+  +findByOrderUpdatesEnabled()
+  +countByEmailEnabledTrue()
+  +countByMenuUpdatesEnabled()
+  +countByPromotionalEnabled()
+  +findByPromotionalEnabled()
+  +countByPushEnabledTrue()
+  +findByAccountUpdatesEnabled()
+  +findBySystemAnnouncementsEnabled()
+  +findByUserId(userId)
+  +findWithQuietHours()
+  +findByUser(user)
+}
+
+
+class AdminNotificationController <<Controller>> {
+  -notificationService: NotificationService
+  --
+  +sendToAll(notification)
+  +sendToUser(userId, notification)
+}
+
+
+class UserEntityBuilder <<Other>> {
+  -id: Long
+  -firstName: String
+  -lastName: String
+  -email: String
+  -password: String
+  -roles: Set
+  -accountNonExpired$set: boolean
+  -accountNonExpired$value: boolean
+  -accountNonLocked$set: boolean
+  -accountNonLocked$value: boolean
+  -credentialsNonExpired$set: boolean
+  -credentialsNonExpired$value: boolean
+  -enabled$set: boolean
+  -enabled$value: boolean
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +toString()
+  +id(id)
+  +enabled(enabled)
+  +build()
+  +lastName(lastName)
+  +credentialsNonExpired(credentialsNonExpired)
+  +accountNonExpired(accountNonExpired)
+  +accountNonLocked(accountNonLocked)
+  +password(password)
+  +email(email)
+  +roles(roles)
+  +firstName(firstName)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+}
+
+
+class UserOrderFacade <<Service>> {
+  --
+  +getUserOrders()
+  +cancelOrder(orderId)
+  +editOrder(request)
+  +payOrder(orderId)
+  +placeOrder(request)
+}
+
+
+class WebSecurityConfig <<Security>> {
+  -userDetailsService: UserDetailsService
+  -unauthorizedHandler: AuthEntryPointJwt
+  --
+  +authenticationManager(authConfig)
+  +authenticationProvider()
+  +corsConfigurationSource()
+  +authenticationJwtTokenFilter()
+  +passwordEncoder()
+  +filterChain(http)
+}
+
+
+class ResidenceManagementService <<Service>> {
+  --
+}
+
+
+class UserFinanceFacade <<Service>> {
+  --
+  +getTransactionsPaginated(page, size)
+  +getCurrentUserAccount()
+}
+
+
+class AuthService <<Service>> {
+  -authenticationManager: AuthenticationManager
+  -userRepository: UserRepository
+  -encoder: PasswordEncoder
+  -jwtUtils: JwtUtils
+  -refreshTokenService: RefreshTokenService
+  -userEventService: UserEventService
+  --
+  +registerUser(signUpRequest)
+  +refreshToken(refreshTokenValue)
+  +authenticateUser(loginRequest)
+  +logout(refreshTokenValue)
+  -getAuthResponse(userDetails, jwt, refreshToken)
+}
+
+
+class ReportEntityBuilder <<Other>> {
+  -id: Long
+  -name: String
+  -description: String
+  -type: ReportType
+  -status$set: boolean
+  -status$value: ReportStatus
+  -requestedBy: UserEntity
+  -fileUrl: String
+  -fileName: String
+  -fileSize: Long
+  -mimeType: String
+  -parameters: Map
+  -dateFrom: Instant
+  -dateTo: Instant
+  -scheduled$set: boolean
+  -scheduled$value: Boolean
+  -processingStartedAt: Instant
+  -processingCompletedAt: Instant
+  -errorMessage: String
+  -lastDownloadedAt: Instant
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +name(name)
+  +type(type)
+  +toString()
+  +fileName(fileName)
+  +id(id)
+  +status(status)
+  +parameters(parameters)
+  +build()
+  +description(description)
+  +processingStartedAt(processingStartedAt)
+  +processingCompletedAt(processingCompletedAt)
+  +lastDownloadedAt(lastDownloadedAt)
+  +requestedBy(requestedBy)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+  +dateTo(dateTo)
+  +fileSize(fileSize)
+  +dateFrom(dateFrom)
+  +scheduled(scheduled)
+  +fileUrl(fileUrl)
+  +mimeType(mimeType)
+  +errorMessage(errorMessage)
+}
+
+
+class MenuService <<Service>> {
+  --
+  +getAllActiveMenuItems()
+  +updateMenuItem(id, request)
+  +createMenuItem(request)
+  +getMenuItemDetail(itemId)
+  +getAllUpcomingMenuItems()
+  +searchMenuItemsPaginated(search, page, size)
+  +getMenuItemsPaginated(page, size)
+  +getMenu()
+}
+
+
+class CampusRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByCreatedAtBetween(startDate, endDate)
+  +findAllOrderByCampusAsc()
+  +getCampusUserCounts()
+  +findByCampusContainingIgnoreCase(name)
+  +findByCampus(campus)
+  +existsByCampus(campus)
+  +countUsersByCampus(campusId)
+}
+
+
+class TransactionRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findDebitTransactions()
+  +findCreditTransactions()
+  +sumDebitAmountInDateRange(startDate, endDate)
+  +sumCreditAmountInDateRange(startDate, endDate)
+  +findByTransactionDateAfter(fromDate)
+  +findTransactionsForDate(date)
+  +countCreditTransactionsInDateRange(startDate, endDate)
+  +getAverageDebitAmountInDateRange(startDate, endDate)
+  +findCreditTransactionsAboveAmount(amount)
+  +findDebitTransactionsAboveAmount(amount)
+  +findByTransactionDateBetween(startDate, endDate)
+  +getAverageCreditAmountInDateRange(startDate, endDate)
+  +countDebitTransactionsInDateRange(startDate, endDate)
+  +countTransactionsInDateRange(startDate, endDate)
+  +findByDescriptionContaining(description)
+}
+
+
+class UserProfileRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByCredentialNumber(credentialNumber)
+  +existsByCredentialNumber(credentialNumber)
+  +findByCampusAndResidence(campus, residence)
+  +findByCampus(campus)
+  +findByAllergyId(allergyId)
+  +findByResidence(residence)
+  +findByUserId(userId)
+  +countByResidence(residence)
+  +countByCampus(campus)
+  +findByUser(user)
+}
+
+
+class AdminAuditController <<Controller>> {
+  -auditService: AuditService
+  --
+  +getUserEventLogPaginated(page, size)
+  +getTransactionAuditPaginated(page, size)
+  +getRecentLogins()
+}
+
+
+class UserService <<Service>> {
+  -userRepository: UserRepository
+  --
+  +getAllUsers()
+  +getUserById(id)
+  +getCurrentUserId()
+  +deleteUser(id)
+  +updateUser(id, updateRequest)
+  +getCurrentUser()
+}
+
+
+class OrderStatus <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class AllergyRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +countUsersWithAllergy(allergyId)
+  +findAllOrderByAllergyAsc()
+  +findByAllergyContainingIgnoreCase(name)
+  +findByUserProfile(userProfileId)
+  +existsByAllergy(allergy)
+  +findByAllergy(allergy)
+}
+
+
+class UserSettingsFacade <<Service>> {
+  --
+  +updateUserSettings(request)
+  +getUserSettings()
+}
+
+
+class UserDeviceRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByIsActiveTrue()
+  +findByEndpoint(endpoint)
+  +findByUserId(userId)
+}
+
+
+class NotificationService <<Service>> {
+  -pushService: PushService
+  -userDeviceRepository: UserDeviceRepository
+  -objectMapper: ObjectMapper
+  --
+  -sendPushNotification(device, notificationRequest)
+  +registerDevice(userId, request)
+  +unregisterDevice(endpoint)
+  +sendNotificationToAll(notificationRequest)
+  +sendNotificationToUser(userId, notificationRequest)
+}
+
+
+class UserEventService <<Service>> {
+  +userEventRepository: UserEventRepository
+  --
+  +logEvent(userEntity, userEventType)
+}
+
+
+class AuditService <<Service>> {
+  -transactionAuditRepository: TransactionAuditRepository
+  -userEventRepository: UserEventRepository
+  --
+  +getUserEventLogPaginated(page, size)
+  +getTransactionAuditPaginated(page, size)
+  +getRecentLogins()
+}
+
+
+class TransactionAuditRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByInitiatedAtBetween(startDate, endDate)
+  +countAuditsInDateRange(startDate, endDate)
+  +findByUserAndInitiatedAtBetween(user, startDate, endDate)
+  +findByUserOrderByInitiatedAtDesc(user)
+  +findByTypeAndInitiatedAtBetween(type, startDate, endDate)
+  +findByLoadedContentContaining(content)
+  +getAuditTypeDistributionInDateRange(startDate, endDate)
+  +findAuditsForDate(date)
+  +findByUserAndType(user, type)
+  +countByType(type)
+  +countByUser(user)
+  +countByUserAndType(user, type)
+  +findByType(type)
+  +findByUser(user)
+}
+
+
+class UserOrderController <<Controller>> {
+  -userOrderFacade: UserOrderFacade
+  --
+  +getUserOrders()
+  +cancelOrder(orderId)
+  +placeUserOrder(request)
+  +editOrder(orderId, request)
+  +payOrder(orderId)
+}
+
+
+class OrderItemRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByCreatedAtBetween(startDate, endDate)
+  +findByNameContaining(name)
+  +findDistinctItemNames()
+  +findPopularItemsForDate(date)
+  +findByOrderOrderByCreatedAtAsc(order)
+  +findPopularItemsByDateRange(startDate, endDate)
+  +sumQuantityByItemNameAndDateRange(itemName, startDate, endDate)
+  +findByOrderAndNameContaining(order, name)
+  +sumQuantityByOrder(order)
+  +findByOrder(order)
+  +findByUserId(userId)
+  +countByOrder(order)
+}
+
+
+class UserEventType <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class GenericManagementController <<Other>> {
+  -service: GenericManagementService
+  --
+  +update(id, entityDetails)
+  +delete(id)
+  +create(entity)
+  +findAll()
+  +findById(id)
+}
+
+
+class FeedbackService <<Service>> {
+  --
+  +placeFeedback(feedback)
+}
+
+
+class AdminFinanceController <<Controller>> {
+  -financeService: FinanceService
+  --
+  +bulkLoadCredit(request)
+  +getUserDetail(userId)
+  +searchUsersPaginated(search, page, size)
+}
+
+
+class NotificationStatus <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class UserRepository <<Repository>> {
+  --
+  +save(entity)
+  +saveAll(entities)
+  +findById(id)
+  +existsById(id)
+  +findAll()
+  +findAllById(ids)
+  +count()
+  +deleteById(id)
+  +delete(entity)
+  +deleteAllById(ids)
+  +deleteAll(entities)
+  +deleteAll()
+  +flush()
+  +saveAndFlush(entity)
+  +saveAllAndFlush(entities)
+  +deleteAllInBatch(entities)
+  +deleteAllByIdInBatch(ids)
+  +deleteAllInBatch()
+  +getOne(id)
+  +getById(id)
+  +getReferenceById(id)
+  +findAll(sort: SpringSort)
+  +findAll(pageable: SpringPageable)
+  +findByEmail(email)
+  +existsByEmail(email)
+}
+
+
+class NotificationPreferenceEntityBuilder <<Other>> {
+  -id: Long
+  -user: UserEntity
+  -pushEnabled$set: boolean
+  -pushEnabled$value: Boolean
+  -emailEnabled$set: boolean
+  -emailEnabled$value: Boolean
+  -orderUpdates$set: boolean
+  -orderUpdates$value: Boolean
+  -menuUpdates$set: boolean
+  -menuUpdates$value: Boolean
+  -accountUpdates$set: boolean
+  -accountUpdates$value: Boolean
+  -promotional$set: boolean
+  -promotional$value: Boolean
+  -systemAnnouncements$set: boolean
+  -systemAnnouncements$value: Boolean
+  -quietHoursStart: String
+  -quietHoursEnd: String
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +toString()
+  +id(id)
+  +build()
+  +user(user)
+  +quietHoursStart(quietHoursStart)
+  +quietHoursEnd(quietHoursEnd)
+  +pushEnabled(pushEnabled)
+  +emailEnabled(emailEnabled)
+  +menuUpdates(menuUpdates)
+  +orderUpdates(orderUpdates)
+  +accountUpdates(accountUpdates)
+  +promotional(promotional)
+  +systemAnnouncements(systemAnnouncements)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+}
+
+
+class UserMenuController <<Controller>> {
+  -menuService: MenuService
+  --
+  +getMenuItemDetail(itemId)
+  +getMenu()
+}
+
+
+class NotificationPayload <<Other>> {
+  -title: String
+  -body: String
+  -icon: String
+  --
+  +equals(o)
+  +toString()
+  +hashCode()
+  +getBody()
+  +getIcon()
+  #canEqual(other)
+  +getTitle()
+}
+
+
+class AdminMenuController <<Controller>> {
+  -menuService: MenuService
+  --
+  +updateMenuItem(id, request)
+  +createMenuItem(request)
+  +getMenuPaginated(page, size)
+  +searchMenuPaginated(search, page, size)
+  +getMenu()
+}
+
+
+class ReportService <<Service>> {
+  --
+  +createReport(request)
+  +getReportStatus(reportId)
+}
+
+
+class ListService <<Service>> {
+  -allergyRepository: AllergyRepository
+  -campusRepository: CampusRepository
+  -residenceRepository: ResidenceRepository
+  --
+  +getResidenceNames()
+  +getAllergyNames()
+  +getCampusNames()
+}
+
+
+class ReportStatus <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class ListController <<Controller>> {
+  -listService: ListService
+  --
+  +getResidenceNames()
+  +getAllergyNames()
+  +getCampusNames()
+}
+
+
+
+@enduml

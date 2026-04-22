@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="464.21881"
+   preserveAspectRatio="none"
+   version="1.1"
+   viewBox="0 0 260.5 464.21881"
+   width="260.5"
+   zoomAndPan="magnify"
+   id="svg2074"
+   sodipodi:docname="elem_TransactionDTO.svg.temp.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2074"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g2074"
+     transform="translate(-1667.75,-3056.3594)">
+    <!--class UserEventEntityBuilder-->
+    <!--class LoginRequest-->
+    <!--class UserSettingsDTO-->
+    <!--class AdminLoadCreditResultBuilder-->
+    <!--class UserDeviceEntityBuilder-->
+    <!--class AdminBulkLoadRequest-->
+    <!--class OrderItemDTOBuilder-->
+    <!--class AllergyManagementController-->
+    <!--class NotificationController-->
+    <!--class FeedbackDTOBuilder-->
+    <!--class OrderService-->
+    <!--class AdminMenuItemUpdateRequest-->
+    <!--class CompactUserDTOBuilder-->
+    <!--class Role-->
+    <!--class UserDetailsServiceImpl-->
+    <!--class UserProfileFacade-->
+    <!--class FinanceService-->
+    <!--class OrderItemFeedbackEntityBuilder-->
+    <!--class AllergyDTO-->
+    <!--class AuthResponseBuilder-->
+    <!--class OrderItemRequest-->
+    <!--class NotificationRequest-->
+    <!--class UpdateUserSettingsRequest-->
+    <!--class TransactionAuditType-->
+    <!--class JwtUtils-->
+    <!--class AllergyManagementService-->
+    <!--class RefreshTokenService-->
+    <!--class CreateUserProfileRequest-->
+    <!--class TransactionAuditDTO-->
+    <!--class UserEventAuditDTO-->
+    <!--class UserAccountController-->
+    <!--class OrderEditRequest-->
+    <!--class AdminMenuItemCreateRequest-->
+    <!--class RefreshTokenCleanupService-->
+    <!--class AdminSystemNotificationRequest-->
+    <!--class AdminUserController-->
+    <!--class CampusManagementService-->
+    <!--class RegisterRequest-->
+    <!--class UserProfileController-->
+    <!--class MenuItemDTOBuilder-->
+    <!--class AuthController-->
+    <!--class UpdateUserRequest-->
+    <!--class ReportStatusDTOBuilder-->
+    <!--class ValidationErrorBuilder-->
+    <!--class AdminReportController-->
+    <!--class AllergyDTOBuilder-->
+    <!--class ResidenceManagementController-->
+    <!--class RefreshTokenEntityBuilder-->
+    <!--class UserProfileEntityBuilder-->
+    <!--class PlaceOrderRequest-->
+    <!--class UserFeedbackFacade-->
+    <!--class CampusManagementController-->
+    <!--class AdminLoadCreditResult-->
+    <!--class AuthTokenFilter-->
+    <!--class TransactionDTO-->
+    <g
+       id="elem_TransactionDTO">
+      <rect
+         codeLine="955"
+         fill="#f1f1f1"
+         height="463.71881"
+         id="TransactionDTO"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5"
+         width="260"
+         x="1668"
+         y="3056.6094" />
+      <circle
+         cx="1741.25"
+         cy="3077.9609"
+         fill="#add1b2"
+         style="stroke:#181818;stroke-width:1"
+         id="ellipse775"
+         r="11" />
+      <path
+         d="m 1744.0156,3073.8359 q 0.1563,-0.2187 0.3438,-0.3281 0.1875,-0.1094 0.4062,-0.1094 0.375,0 0.6094,0.2657 0.2344,0.25 0.2344,0.8593 v 1.4532 q 0,0.6093 -0.2344,0.875 -0.2344,0.2656 -0.6094,0.2656 -0.3437,0 -0.5468,-0.2031 -0.2032,-0.1875 -0.3125,-0.7032 -0.047,-0.3593 -0.2344,-0.5468 -0.3281,-0.375 -0.9375,-0.5938 -0.6094,-0.2187 -1.2344,-0.2187 -0.7656,0 -1.4062,0.3281 -0.625,0.3281 -1.125,1.0781 -0.4844,0.75 -0.4844,1.7813 v 1.0937 q 0,1.2344 0.8906,2.0625 0.8906,0.8125 2.4844,0.8125 0.9375,0 1.5937,-0.25 0.3907,-0.1562 0.8125,-0.5937 0.2657,-0.2657 0.4063,-0.3438 0.1562,-0.078 0.3594,-0.078 0.3281,0 0.5781,0.2656 0.2656,0.25 0.2656,0.5938 0,0.3437 -0.3437,0.75 -0.5,0.5781 -1.2969,0.9062 -1.0781,0.4531 -2.375,0.4531 -1.5156,0 -2.7188,-0.625 -0.9843,-0.5 -1.6718,-1.5625 -0.6875,-1.0781 -0.6875,-2.3593 v -1.1563 q 0,-1.3281 0.6093,-2.4687 0.625,-1.1563 1.7188,-1.7657 1.0937,-0.625 2.3281,-0.625 0.7344,0 1.375,0.1719 0.6563,0.1563 1.2031,0.5156 z"
+         fill="#000000"
+         id="path775" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="12px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="44"
+         x="1792.25"
+         y="3074.0664"
+         id="text776">«Other»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="105"
+         x="1761.75"
+         y="3091.2363"
+         id="text777">TransactionDTO</text>
+      <line
+         style="stroke:#181818;stroke-width:0.5"
+         x1="1669"
+         x2="1927"
+         y1="3099.3125"
+         y2="3099.3125"
+         id="line777" />
+      <circle
+         cx="1679"
+         cy="3113.6172"
+         fill="none"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse777"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="51"
+         x="1688"
+         y="3117.8457"
+         id="text778">id: Long</text>
+      <circle
+         cx="1679"
+         cy="3131.2266"
+         fill="none"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse778"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="109"
+         x="1688"
+         y="3135.4551"
+         id="text779">debit: BigDecimal</text>
+      <circle
+         cx="1679"
+         cy="3148.8359"
+         fill="none"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse779"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="113"
+         x="1688"
+         y="3153.0645"
+         id="text780">credit: BigDecimal</text>
+      <circle
+         cx="1679"
+         cy="3166.4453"
+         fill="none"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse780"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="177"
+         x="1688"
+         y="3170.6738"
+         id="text781">runningBalance: BigDecimal</text>
+      <circle
+         cx="1679"
+         cy="3184.0547"
+         fill="none"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse781"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="150"
+         x="1688"
+         y="3188.2832"
+         id="text782">transactionDate: Instant</text>
+      <circle
+         cx="1679"
+         cy="3201.6641"
+         fill="none"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse782"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="114"
+         x="1688"
+         y="3205.8926"
+         id="text783">description: String</text>
+      <line
+         style="stroke:#181818;stroke-width:1"
+         x1="1669"
+         x2="1927"
+         y1="3212.9688"
+         y2="3212.9688"
+         id="line783" />
+      <circle
+         cx="1679"
+         cy="3227.2734"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse783"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="60"
+         x="1688"
+         y="3231.502"
+         id="text784">equals(o)</text>
+      <circle
+         cx="1679"
+         cy="3244.8828"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse784"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="59"
+         x="1688"
+         y="3249.1113"
+         id="text785">toString()</text>
+      <circle
+         cx="1679"
+         cy="3262.4922"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse785"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="75"
+         x="1688"
+         y="3266.7207"
+         id="text786">hashCode()</text>
+      <circle
+         cx="1679"
+         cy="3280.1016"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse786"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="53"
+         x="1688"
+         y="3284.3301"
+         id="text787">builder()</text>
+      <circle
+         cx="1679"
+         cy="3297.7109"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse787"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="41"
+         x="1688"
+         y="3301.9395"
+         id="text788">getId()</text>
+      <circle
+         cx="1679"
+         cy="3315.3203"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse788"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="51"
+         x="1688"
+         y="3319.5488"
+         id="text789">setId(id)</text>
+      <circle
+         cx="1679"
+         cy="3332.9297"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse789"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="169"
+         x="1688"
+         y="3337.1582"
+         id="text790">setDescription(description)</text>
+      <circle
+         cx="1679"
+         cy="3350.5391"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse790"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="101"
+         x="1688"
+         y="3354.7676"
+         id="text791">getDescription()</text>
+      <circle
+         cx="1679"
+         cy="3368.1484"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse791"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="134"
+         x="1688"
+         y="3372.377"
+         id="text792">getRunningBalance()</text>
+      <circle
+         cx="1679"
+         cy="3385.7578"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse792"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="135"
+         x="1688"
+         y="3389.9863"
+         id="text793">getTransactionDate()</text>
+      <polygon
+         fill="#ffff44"
+         points="1679,3406.3672 1675,3402.3672 1679,3398.3672 1683,3402.3672 "
+         style="stroke:#b38d22;stroke-width:1"
+         id="polygon793" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="102"
+         x="1688"
+         y="3407.5957"
+         id="text794">canEqual(other)</text>
+      <circle
+         cx="1679"
+         cy="3420.9766"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse794"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="63"
+         x="1688"
+         y="3425.2051"
+         id="text795">getDebit()</text>
+      <circle
+         cx="1679"
+         cy="3438.5859"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse795"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="68"
+         x="1688"
+         y="3442.8145"
+         id="text796">getCredit()</text>
+      <circle
+         cx="1679"
+         cy="3456.1953"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse796"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="102"
+         x="1688"
+         y="3460.4238"
+         id="text797">setCredit(credit)</text>
+      <circle
+         cx="1679"
+         cy="3473.8047"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse797"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="93"
+         x="1688"
+         y="3478.0332"
+         id="text798">setDebit(debit)</text>
+      <circle
+         cx="1679"
+         cy="3491.4141"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse798"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="232"
+         x="1688"
+         y="3495.6426"
+         id="text799">setRunningBalance(runningBalance)</text>
+      <circle
+         cx="1679"
+         cy="3509.0234"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse799"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="234"
+         x="1688"
+         y="3513.252"
+         id="text800">setTransactionDate(transactionDate)</text>
+    </g>
+    <!--class AdminLoadCreditRequest-->
+    <!--class NotificationType-->
+    <!--class CompactUserDTO-->
+    <!--class FinanceUserDTOBuilder-->
+    <!--class GenericManagementService-->
+    <!--class AdminFinanceLoadResponse-->
+    <!--class TransactionDTOBuilder-->
+    <!--class AccountDTOBuilder-->
+    <!--class AdminLoadCreditRequestBuilder-->
+    <!--class ReportType-->
+    <!--class UserSettingsController-->
+    <!--class AuthEntryPointJwt-->
+    <!--class CampusDTOBuilder-->
+    <!--class AuthResponse-->
+    <!--class CampusDTO-->
+    <!--class ReportStatusDTO-->
+    <!--class NotificationEntityBuilder-->
+    <!--class ErrorResponseBuilder-->
+    <!--class UserFeedbackController-->
+    <!--class TransactionAuditDTOBuilder-->
+    <!--class UserProfileDTO-->
+    <!--class AdminNotificationController-->
+    <!--class OrderItemDTO-->
+    <!--class PushSubscriptionRequest-->
+    <!--class UserEntityBuilder-->
+    <!--class UserOrderFacade-->
+    <!--class WebSecurityConfig-->
+    <!--class ResidenceManagementService-->
+    <!--class UserFinanceFacade-->
+    <!--class AuthService-->
+    <!--class ReportEntityBuilder-->
+    <!--class MenuService-->
+    <!--class AdminFinanceLoadResponseBuilder-->
+    <!--class ValidationError-->
+    <!--class FinanceUserDTO-->
+    <!--class AdminAuditController-->
+    <!--class UserService-->
+    <!--class OrderStatus-->
+    <!--class UserSettingsFacade-->
+    <!--class AccountDTO-->
+    <!--class UserSettingsDTOBuilder-->
+    <!--class FeedbackDTO-->
+    <!--class AdminBulkLoadRequestBuilder-->
+    <!--class AdminCreateReportRequest-->
+    <!--class NotificationDTOBuilder-->
+    <!--class FeedbackRequest-->
+    <!--class NotificationService-->
+    <!--class ErrorResponse-->
+    <!--class UserEventService-->
+    <!--class AdminUpdateUserRequest-->
+    <!--class AuditService-->
+    <!--class OrderDTO-->
+    <!--class UserOrderController-->
+    <!--class UserEventType-->
+    <!--class GenericManagementController-->
+    <!--class FeedbackService-->
+    <!--class AdminFinanceController-->
+    <!--class NotificationStatus-->
+    <!--class UserProfileDTOBuilder-->
+    <!--class NotificationPreferenceEntityBuilder-->
+    <!--class UserMenuController-->
+    <!--class NotificationPayload-->
+    <!--class AdminMenuController-->
+    <!--class ResidenceDTO-->
+    <!--class UserEventAuditDTOBuilder-->
+    <!--class MenuItemDTO-->
+    <!--class RefreshTokenRequest-->
+    <!--class ReportService-->
+    <!--class ListService-->
+    <!--class UpdateUserProfileRequest-->
+    <!--class NotificationDTO-->
+    <!--class OrderDTOBuilder-->
+    <!--class ReportStatus-->
+    <!--class ListController-->
+    <!--class ResidenceDTOBuilder-->
+    <!--SRC=[xLtfR-D6bl_klqA31DWokWtiWLuCX600MvOtphYxFR8xW_cqeCcopB54AYJL7Ksm__lMg_FLIUfoEec_I6JThEFLEtwlway5VImhEffy_70_-tXpCvtzx-JZpSVPw9lfVrozkvgU_4ack9lEVhoUJ5NirNzDtrszqx5NvvFpInqv_VFLk-cVKTR9fzdr_JzqtYkM-zzrzFJ3lHKvlPXEJqwwibkmPYsojXrTbjcyoPQZiz55bZ_JgXYThrQBCi-wigvEJlvjT2bAoddgjgCDhRlDYhQZZANDwqNTj2VjSrcjCYX69FlbPCIBcpVrkYecaEYxxoPrrJNrOa6Rl_p5wvDGXZlQV2vpob9R7HHAUfNbMG4fSMU5oypNJTbjUA6uwqA9frKdak9kFFc_avCJyPcVMjfCFzEg4malrkMYeCtek-y-Ta_yAw4VpifYFBgfgpayT-MIZaVNLTjbLGS1QrR4M1J4ou0m2aNUipuUcnhW5UBEsC-RhhxhchAQarDuAmjI5lm9IYVmmzyUe3aY2TH2u8U_wVA9VZf5NtLJpyjgHdzQqxPpluKkit8n7edg8M35SdofcmA7yJQo_DcY9VMft-2dh7sQr0KLRtFQtSf2H42B0bJn4F5DdbLJA9NKq2ILTWfD8hnXgZmHTEgCr1tjEjQ6zlB-Osg8n8XCwkKgopl8nzBpBrstJzCgUrXGblYYhXSqgtINX29OisdpQLLa7MsjY2Mjrg7mBC_PvEj2KQkcNjQm8hE55Tvks8fSdbSLovXJLd1dv_jfNTBk-thTj7TTrdHub4pKjBA6Bsyegxyux-o9oblbXcutr0zYWUXnlpOZVgqdCGkVg1ReQ1EYMwSIVr8DqubDY6wqDJFaO9dPPZgNe8vMUVvczw79PYO4GPD3PJktHfDOqrLbmtD79NXlPWT1CqL5EyNQSqOb-XiUMsADj5vpwAFzRE9BdTdZTmYKhZ9_HDETuBclQqJzfSAiJ2eGzu0UvHRDcpj_rfl1jqXT6quSM3P12cC8o7cnBAkREYlOJ2pARaRRzQAB4dnMOFbO0XqnowfTvpbjdHM_XC63OZdjAEUND2-NsOBJbQQfc_SiHpQdk9okoQgMaIOsTDU8R0Ks1hG1oCg9_1Sh5HT4h3SUZnj7y8lOH53p27wHUvBg0c8UNO9yIM5x7xnt1hVAgbZLPMKHjjL_lllluWc7PElEUeUIpkVKpbQsv-phFzDlsPmPZnxC8Ec8pzbYJQtnOvy24wwmQEBMz3EsdQkAYNfmHnM-Yy1FQ9ENFKFK0m_D8tHq7I6PwWE9Uk2XeeU9-DDrynub-ibRFHVhnJDCe31hyIPlFr-L2zQ_xzdAAXatsS7hVfjCY6M0_KLKPNON-IwRW5lE2TGr8nQC2nWmHwjiQItMWhPvKwvWLLbJj64Jtrtmh9ryNiC4wUYSDdorrrssk0qbpu2JdfV0ADoKhPbDq0G2FwUfkOLc4MeZGSyyJhM9g0Sn_j0Umd_5F5HD8Vf9LguQJyoZDIzuyitxh6A40yYmaH56Zi3mY_X0a_T33LH5o2azsIgKL0eLOok_35IqGQVvP5vq_wwhTlq0lVH0YNmo_HMBCis-ehHuO8B6iFaKOqQ1CO1PYNS05VR1cODD1colDQloUhbqo5-OQYNfaoo5oF-qq16ZFBZL1B_mMD5s8lwiz6pBCe_UYfM3Di92v2_wWoG_mLDApc6ro7BA0qWZw9D7lzxBwWHh4X6GzY40ppbmzseu2xfW9B_PNBBAh341_kDYOmMn4kRqUzhKreO6WPUqSoGsiKGtrmKY70rbErfBlQeu6mTrES8Twq0-NgTRKUPMvjB42TXPtHfY6gPPQ1EfWYvHhnWvGds-4ITqYEuQ5NMP87Sgf-WrWdhGr6zoMzNBBAOMr4uyb2h1p7GvGTsloiJH5hDyiR4vRlOkHqdBE7n-6E6Qqz-40FrNDkq8p3qZ3zdaVIxJQ156L23c8LucDfqQGDuyTS9ZsRITIy20zt3364i4Qz9YrCu6RdYgFA8Un3Hsz0YwAKG_AQuCQYRo7t__Z3N5_LpUACuvoadCdpy-obNWSiGmYLf9iwwNguLFmO2YpkYgRikkRZPYZpBlkie5uxGWwc83lvmfMCi7jrOc2ZuojaVeqD8aKoObY6d4mPfqQe8VZ4MxOLbbJ09Ba-kMPat-12MrjzcSvM2x1n61RqShjlRUZjhoNnIBYd8rmXTVg_4NtAUGtwoMiZptHlf1TVXbJzPDmxOwg48AuYJ8BQfTVh1mKwkSOrE84NC2M_YZh64lpSs0nRAjnE3lsFhJY7uI2qn-0L4F0SwmHrSdjmnNjfl0m9XKBw_GCdiNSJOwjSlvUY-fk-1j9_ehyAIUoFbsJ2LPIWN21CqPRLTiYT38ZCwuTk6-VgOMjzFGnuQsJrvu1m6WVlPaRXCZXMwJYVwyAbbfrvKPuC6xXhVVC3a11AWxslNhKCBR1lfaWfx5Ma3VJV1BSCFXRI7yDxa1wGuW-abELDbdH3y5QLE4Sms9546HT6lr_dl3icCbPu2BLsh8aD0vHn4zCnMBTf6lvIOmF1CUwiAY8sLkS-phPh6NZUCUAjJVBzvu8n9wYa_Dmf2MN76ShNo15ghO2zPwixHPDjPSzShZuFEiVL_ltSei4kceFupPO-iHVRKb_4Pj2IdpmM6i1OYTF5ypTXDeySw2mGzVkayTamf6blMQb_7FBnqBQgWrmrdW53O6JlxUiuLH6jRcx9bkB9iAx2fNRFXO9MARwlJ-nDfJGiVfAD0qc-rhJYlQkD6WwXTqLrNoWzqQOkNb6Q5wJqPvEw8wLr9Zc10Ta626zjve1hn1Om5h5WnNl2QtpbiAGnpYbdkvzePbcVsCQsXlsIJcMZyPtyAOqrbM5VKIE1NpfcTHGp-phAnh8ACe1IdUW2YkLtmGQ25Z8UPCZO8eKmoYv3ogucBZpWV1LEAscae-qwPyt9Y1Hja4U-aM9fgCGd-4sMyf4rpvCR91iMPn2rEs-B1UFjWsjpnRCcgAEHhMTZ18CU7Q5oCibTZPjggjhJHPN06aMq9Ggum2o4Hh1bz-3b7VfMK15O540QjJYDjBI8gm4sv9sG826h8aelxCZMuefD1USCiYgEuTlNGN8ANZ887TKtnhRIq0DeYs8JM19gCtkEafirEeqQ6wJMJeu_KGcpuag7FrmA9ebSLkgTNbfo5OKso4NKGJavwNgm2ioH_cBe5gEeJKRRgKizooQIGeRPje_Gq-si1554Hqg6Aq78aBQObw35IFGWqcD72YVwvm45R33LLLHVLJKuvV2D9IeQ11erioncTNeXXP1K8ETNWzzYxhreCADPk1us-yDL6xp4JkJwzscLUxpAjTvZJ2_au4EsYuO6kPD3wZF0vnpth6HRXBPuaAgMeNjSpI1q0LbAvkokhvawsHuPF22MjfnTh4fgkb7H1MWPrvFIvL2joJaRF5-n91e42OLDKJtH0jW-eeQuA3waPzY9dQ-dljgQq3MZiHwg2zj4-Ycwnz4Dvbztc3B5JKoNsk5rmXgxtOM7XGATcqhjc99NaxMcDpl0IqBAXEO8aKd4tUMdQSbm1xZypOtNNF1u5ENsabiMP7CnpGeW1BRztYlBQ2-SKGsLAm6p1fB1FbsBTQ7jjEgNYCuwF0NfBPiC1ZM_0QPIktmS8oscnjPpieL6rRGsMHv0JA1BlH95Y4Eh3tc-uYvj7K4c27N80TjNVs1EJksJ0DjkMkPv61yavJvdFpWdHCWWnoijgMy-hJ2jDSfFmJb7U1l4X2nZ0JmLBMwowqweoHufNu7fJuWXgpwUwwh5ktmqXQmtC8vSjCFtCUYvSojieKEVYGqG9eXwy9W945pIzKmQOhB20LV5yxWTorZ6tf3QlcVROI8xzmcJq8SiSTmkwOK8nGaapM5v-1PaS4Qgy_mI5Ue6u15cC0fa8rYgW7XxY9tYFYJwnz_R74FBg4C8s-HrrFqBECKuD7pACWYBphYVWJM4lPLqGzw7GmSaGzw0-5dYRgGOS2Ioh_xTQTTmGzAqYfwbc2dl7S_L6O9HZPdy9tH-RkOqaNHOyW4HmkbetmNuaszHbxDGmE-olcVm-P5LsE92lqYdaOl9ZaE4dLYDB2Gr0Gggg1CmDMzP7mCmDsyYm0Xzbs1r-7u3AOo4aD-axmSYpq3dVlT14k4g7XqW_rUHxknSH8t0lA9KmcXPT7XVlkAJB67RY07urox_0Arn5-UuOEjOq3xu9M9N_GTSyH_OGCHs0ouVyuZDCJ-HJpNWaA88F7DsLh2dMhiDECfU29y7ngQexDB3MnSaruOw72vL0enbsQxHdR9XvGzKTOkFPeoheLTE1WIpiVPByItIkjON8coDuq9ZKyvhSQvHzXA8-WxnwaoEOQVmc3JE9mkP_2LGevwIevjg1vGIV7hyUxSMS3qHHpIm63Mz3zSUucqTeex1UfzUL9PqbkUWfwH4gcFSNEHHZzku1Bvzm46-EOhjSL2GNwebnqV6e4i2KSTZBM01H5vMoK-ZY0NDTm4yR1je0GmGBVDqKjAWLCOGEO8HdvTjH8UEdRqIDFCNdAR8Gz6X7VBla6aMectZ-KdJFhE5dnGvjrLR6PT94jiifJo60tMLStyYQYs3c2LtoFWIHY0PbPNqO2yreRCYBKwnAw4MEEYz827CEhw5NJJCZ1kr_RLEncsFqTM8-yKKw_9vsnjmQ6UFe0iMHTAdNuyTrX70yFv-ZL562Q9gcPJVr836wx5zBDrXAyiEFGmK-nE89sQAUHL0vBUbXZxaiISl0IxbiFGLfxjgm_SvxbCjl4elvEwNCixZtZRfvYaV-ultIZmaYb_Tp8q2SGz6p5yNOIwysAXsya-CMAPHz2qBDxbaC0kJJKjKsE2dbGbDdCZVy1h62PXsndZW7P02T_M6KsNf9jx_MwoJqjtPaH1RX9Zt89Hh8KoAId7O-v346eSGu0nA8sfWhueboBpguXvxWuXq0m6vuJ2w2UhYsfliiMSfDfBLS8oNizhXTGe1tto1fF2p-SbtQUO8qRpdQZ2RbgQgZ54zbqU5Z3kjykTMig9QW1NlJ5Xg1s84Iupks58H34FUvQuh2sgbk9qysQI9eU9gYtDKDXbMqDeYRHg0I7WTQLfr1Vxb0IRt2j3mrB3cAw4Jdjz3uhWn5S56O5aRC3mKHvS9n97a37GxpoMP1NFaloocS9NZd9I-rf-cjw-SkkZxdKmW7cPWlCoY928fGTm_es5nwZaGw3hUC-qMbVWqUd_GN4VjKxeSk-1yBwMVX8VnwPauzw_6KU0znZW1x0f5jxiMkHsujxnivSWt0u8Yd6LDXXpjQC4xZ-qrQSgsUOiketjt06qGzVke2cuSmS9fBJa380ZClJdtFg7QOYT5q35wBKnRwugMFhzUPfDNiC7TWnzr0UkI_fSRkpv7MEV6_DHgkyOBKefFrbjRmKyQ3bssp2PVVisu8-Pco__RQpQsbnlSZxLhlPHLs4vqwLBomyGlNSxNYmKc26lPG3A_7bb-315MrVWHk-yVR1T41x-lHvwJZuZbTWno607OVmJxaru0wpqYL296cjk8sYGjpPcxGbSF2oGdKOUX72g80gKY4z37MC0qjaGJu6f4LLMa2IkLqWxX1UYbQO1W4d6YLXVSii2cy1kT83synrO4e7Be0nk3asJaP-kWjqcPjWx9Mby2rUfmRmCAsTnOB4E3ru7bVAxdN4vX18ld3hSlN0XeXufcmPB2tPrb5yciwich86Dj7Bh2Cq9a4hLxRm3MZe0kWjjmRBGtVCHxVv4otM2rfSrOr52LfmY-iSmPPZHpsYmOY_6nI6WpIKySTyLmbWEtIK_x4nwhRr3gewbAW7GUACJrk2qVK1R2dCb0SW49r4nD-EEDwuvmCQ6eAU1q7epEmW-4LyD9eU1B_8HGjpX8W_MPeQHc8Uap2NCkWDqc773RFMESdlEPf7-pZwP-te60KiKLiqU4XYJa1wfFFEwg48gym-SlUpZTfBgzk7pQakuhy9LHFuCSCinjUTYMwRY1iGGsZqUNDQG8vn0Don1PmZu70T6-5Vs-ywgaT9MoSMAQzaE_S0p-WyvXOTH7xr2IozU2-_HtqX1w6zaXuOlwM3zxMBgE-2uCivSvnuWEGp2w6ud6CHo50nAUtFVTJ34hYIyqZd5CkJ4S6BK7_GTV5sXCiuDMd0E6P7XS-u_ieFjzxDmTcrRTdUpWbDG6oAzwCudFaUmNKCE-biaBTmm3dutXo_RLciKYTomy5AT-ZewjWzC8SxTt_xSxVKoVPQuWqUTIzNkdSglQ488YeX-DsAS-wDIQvxCWAvTmP-ArE80_cTupI6Ic27zMYobQqIfFk1iJV2NTj767if94iOJCFunETa8JA1NuOXi6sYDU5KVcbK70JcvLVXmVeFe-Qdwl0rTEvQBqHaMmd76nNYXJZfHCSJDy0nKw5U9S7GGSTKhaBEQM68YRqc-BQJ13ldO65S21dCEHx4Exyzs_ZfGeUwIs_Aw57lVwSFoZx5DkZ7SXumM0q7mQuhe0PCfluNBRxFgc81FADd4zCVR1-XfavM4sXPQKnYOebebpn9x8uZQiYfdrrWTHfEZqGMvPAbaBNagUjMrY1EgxpMEwLT7EEOFvU50oCE-DWCSghtJhY97pjzeAEPaK-hNrUmuyH0US73pk2ceYF7erkxP-F8wcsEtXXsyDnH_7RDYpon3Nlm1YBFvCQfr1C4BPwt8zOLOEZ5PZRNYZ5uwnp8ddPHKqUFbZ9f1x5rfWSrOWIC9CR6WlMGqiA2jPLADUL_cexntSOadejLpu_gZE7EMFmaOY-9QIPX6xoilrH2o8zvnUruV412NNaaBzn37aUmkqUlswd43P172dY3IW9XJbfiV0Y6HZo7zVGosj5ZUHJRXtJqNloYJlA8xoNYPe50klYL0t10pIglcRG_r_dmsICgaADR_SD7TBI3gj6dZiXpACmfsJ8IgrV45M6u-dxeQ-mOzzyJ0ZQgbMm2YCgk1pEwIg5Y1w1Mku68qLK2NlkOWBrcBfWqwZU_iyFypah7A-vRlyKHMX5DnnNsqOzvB_n1tHOEZeLvdt1dGD4XduIv7Us6GObkc72CS0iFkqEqRZRVdsBkbB7VEQzVYpyF7FUF7VfQynvmtE2advj8Uay0OcdG4K3cpJwO8gT0gTYUQAlNkV31mbCYcciz2gTr4QsH3NtWFKX3JfIpfKUr5BOzPyuho3zwLGWF1q7u9iNcVG2x6jp-5Q7QVoitJBTw_1De-RcNAA62lWb0wp6rsH9sxzo3liSDbA_NeH_i48rjHSLbubQFLUB-aPzwRlB8Ugy3-Md0fHwhn5KcD7bXIPsyzQCTUZD7yAxLh_wIrKEGk4dWGjQv2GvImiJbJE4hMPEtDysTtBlHsxYr7ZWGSS6SnWguzytrsUETQwXZBaVfswYZGcKUlqgQrpv1ntT5RAiOaOsqcVl1ghUsihf8vIG6EOGLFWXgToT4RXW4EsoxEmJQDGPetH6SYidFY-9ImzIgRALrqD8dmy6cMR6vh-5Wwy2jhCV1aWv7Z-wA4hM-YrXlEo51jyDxwhuc-id7WJfeLNwT37uDxOXRt04uR6VR-hgS8NlLjdS7xhSx181MldW578qMac_DYp4BmvihbxgXd1z- -2VDEqQULnn_Zjuysvt8hY5UM9HRLquYZ87Xvzz38_6diIaE2Msa61Ph8PD5tE80itGs5tCsywtj5d8v2bd-LI39EpDabcQJxwH8fpLruCZ1QseYrmb4Bgn1NebUIRjulBIooHf2hNoITAa_zWEdHJOlOV2QeTXYUwFDtEvwSWBHfTTp7iKdgp37lXsjyMr3_gq5Btl6j8t8eW4vsSFsH685fCUA389uh1I_ZoEk0w0hSvjbBqpAIff2IbdGu65WgJtzQQsRcqph_0ZL4X-Pt0PYpKsP60zZ5Bp-DkV2w_42l8_6MT2KeMlsfPNAd2lQKIEWTXsap7KCcgugr3bG5FNhs3cdPLjT4wmDVa0BnZLcrOHZvjpGMx1C7Vt4ioDfLUr13bbni14dg4NesmU7tlCsuLr9H8zA5dqY1eAOrrjasaeS_wgBvDdbUA9WCPH43shWB25KgKmTE9i8svY38Cm1fuKWiEROHM_QtamwqhvbPKyefy5iob341WTOYhqEKl7EEhFwnogpLQ90x7oqbplUJ8bsQGHClyCPneeCkxPGoqDNrZloKW7S3BUt3G7J62Ijb3aa3H9gEtdcQ63mVQNBNeOsuo5sa8F1VrL7iQER97OzhpjsZKtFETvug6yR-aWRSuBwZcxko5JXEvoZE1ykYUqOlWy2ZlJpOYk7bzUAzFCYqu-N5SVvEMtBJio18vuV6PO2placpiyPCDZuqDH06h-aLrFU7ygK1uiL57yzEzBIG43760yQGe2cK9KHKfDj05FRUsdbGrtOzwNb-vmVRLtV6Bja84UdVb-mwadmcjnzUyz0Otityhs1hocPpnibxOVIUzfHO8TzFOJg0AxO2SMwTv_u83lSeQuL7sPwYXqc4QRqmOiXNs-4tFz6o9VqxuxTMhtLOlAlk1v-BCBkzs473rH8tP2TrgvyxPTdemiqVwtBjAtli-_n3DyP5WLtX0_UtDf-cZoeCdYiPFzvWNs-CxlVIWSa9UvzAIwAmWhZSpV82CmusSG9iRPud73c1-8FazK1tK2GO5wu7QRBKS6XoqgbvY1sBGalzZh4b5pxL_FjSK-vfaLG237bsHHaWw_udfcM4DGgx-invan-3b7VPNUVJ3dGxDwpYxw2Suu2pZcOfHiTT6d1ksoFae1nUzkZXww3Q1dGy_V0STGM5iJwp9tyPdiqs25hUyG1KmtiCLN58KSshCWvbzW31ytjTZlG85z876hnkFFWINCTQ4Y22x6Qwq03JB3WI36pRH3A97RL57h9j2CEmvfxfUYs6VRVjm7kWN__VPa2XoFoegglqZ5jRQiAwnBcl3nW8yiZ1hBSCz5r_QOmpDdiR3M0aUtHi2mC7pJ6JD6XcH6i3nbqk_UHr297E1w_YMWaeeVa_py0]-->
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+name: Build and Deploy Prod
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+    # Call Spring Boot build
+    - name: Build Spring Boot
+      uses: ./.github/actions/build-spring-boot
+
+    # Get the JAR file name dynamically
+    - name: Get JAR file name
+      id: get-jar
+      run: echo "jar_file=$(ls build/libs/*.jar)" >> $GITHUB_ENV
+
+    # Call WireGuard setup
+    - name: Set up WireGuard
+      uses: ./.github/actions/wireguard
+      with:
+        WG_CONF: ${{ secrets.WG_CONF }}
+
+    # Call deployment to server
+    - name: Deploy to Production
+      uses: ./.github/actions/deploy-to-server
+      with:
+        ssh-key: ${{ secrets.PROD_SSH_KEY }}
+        ssh-host: ${{ vars.PROD_SSH_HOST }}
+        jar-file: ${{ env.jar_file }}

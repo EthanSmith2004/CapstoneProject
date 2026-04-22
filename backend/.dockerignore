@@ -1,0 +1,49 @@
+# Ignore build outputs
+build/
+bin/
+target/
+*.jar
+*.war
+
+# Ignore IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Ignore version control
+.git/
+.gitignore
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Ignore documentation and scripts that aren't needed in container
+README.md
+scripts/
+api-tests/
+*.md
+
+# Ignore Docker files themselves
+Dockerfile*
+docker-compose*.yml
+compose.yaml
+
+# Ignore Gradle cache (will be rebuilt in container)
+.gradle/
+
+# Ignore test outputs
+build/reports/
+build/test-results/

@@ -1,0 +1,243 @@
+@startuml ERD
+!define TABLE(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define CLASS(name,desc) class name as "desc" << (C,#AAAAFF) >>
+!define PRIMARY_KEY(x) <u>x</u>: PK
+!define FOREIGN_KEY(x) <i>x</i>: FK
+!define NOT_NULL(x) <b>x</b>
+
+title Entity Relationship Diagram
+
+' Layout directives to reduce line crossings
+skinparam ranksep 40
+skinparam nodesep 40
+skinparam linetype ortho
+left to right direction
+
+' Core entities - central positioning
+TABLE(NotificationPreferenceEntity, NotificationPreference) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(push_enabled)
+  NOT_NULL(email_enabled)
+  NOT_NULL(order_updates)
+  NOT_NULL(menu_updates)
+  NOT_NULL(account_updates)
+  NOT_NULL(promotional)
+  NOT_NULL(system_announcements)
+  NOT_NULL(quiet_hours_start)
+  NOT_NULL(quiet_hours_end)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+  FOREIGN_KEY(user_id)
+}
+TABLE(AllergyEntity, Allergy) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(allergy)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+}
+TABLE(TransactionEntity, Transaction) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(debit)
+  NOT_NULL(credit)
+  NOT_NULL(running_balance)
+  NOT_NULL(transaction_date)
+  NOT_NULL(description)
+  --
+}
+TABLE(UserDeviceEntity, UserDevice) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(endpoint)
+  NOT_NULL(p256dh)
+  NOT_NULL(auth)
+  NOT_NULL(user_agent)
+  NOT_NULL(is_active)
+  NOT_NULL(last_used)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+  FOREIGN_KEY(user_id)
+}
+CLASS(AbstractItem, AbstractItem) {
+  name
+  delivery_date
+  description
+  kcal
+  price
+  edit_by
+  image_hero
+  image_detail
+}
+TABLE(UserEventEntity, UserEvent) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(login_event)
+  NOT_NULL(event_type)
+  --
+  FOREIGN_KEY(user_id)
+}
+TABLE(MenuItemEntity, MenuItem) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  NOT_NULL(release_date)
+  NOT_NULL(order_by)
+  --
+}
+TABLE(UserProfileEntity, UserProfile) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(credential_number)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+  FOREIGN_KEY(user_id)
+  FOREIGN_KEY(campus_id)
+  FOREIGN_KEY(residence_id)
+  FOREIGN_KEY(account_id)
+}
+TABLE(OrderEntity, Order) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(total)
+  NOT_NULL(status)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+  FOREIGN_KEY(user_id)
+  FOREIGN_KEY(transaction_id)
+}
+TABLE(RefreshTokenEntity, RefreshToken) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(token)
+  NOT_NULL(expires_at)
+  NOT_NULL(created_at)
+  NOT_NULL(revoked)
+  NOT_NULL(revoked_at)
+  NOT_NULL(last_used)
+  --
+  FOREIGN_KEY(user_id)
+}
+TABLE(OrderItemFeedbackEntity, OrderItemFeedback) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(rating)
+  NOT_NULL(feedback)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+  FOREIGN_KEY(order_item_id)
+}
+TABLE(TransactionAuditEntity, TransactionAudit) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(initiated_at)
+  NOT_NULL(loaded_content)
+  NOT_NULL(type)
+  --
+  FOREIGN_KEY(user_id)
+}
+TABLE(UserEntity, User) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(first_name)
+  NOT_NULL(last_name)
+  NOT_NULL(email)
+  NOT_NULL(password)
+  NOT_NULL(roles)
+  NOT_NULL(account_non_expired)
+  NOT_NULL(account_non_locked)
+  NOT_NULL(credentials_non_expired)
+  NOT_NULL(enabled)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+}
+TABLE(NotificationEntity, Notification) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(title)
+  NOT_NULL(message)
+  NOT_NULL(type)
+  NOT_NULL(status)
+  NOT_NULL(priority)
+  NOT_NULL(deep_link_url)
+  NOT_NULL(image_url)
+  NOT_NULL(scheduled_for)
+  NOT_NULL(sent_at)
+  NOT_NULL(delivered_at)
+  NOT_NULL(read_at)
+  NOT_NULL(expires_at)
+  NOT_NULL(retry_count)
+  NOT_NULL(error_message)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+  FOREIGN_KEY(user_id)
+  FOREIGN_KEY(related_order_id)
+}
+TABLE(ReportEntity, Report) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(name)
+  NOT_NULL(description)
+  NOT_NULL(type)
+  NOT_NULL(status)
+  NOT_NULL(file_url)
+  NOT_NULL(file_name)
+  NOT_NULL(file_size)
+  NOT_NULL(mime_type)
+  NOT_NULL(parameter_value)
+  NOT_NULL(date_from)
+  NOT_NULL(date_to)
+  NOT_NULL(scheduled)
+  NOT_NULL(processing_started_at)
+  NOT_NULL(processing_completed_at)
+  NOT_NULL(error_message)
+  NOT_NULL(last_downloaded_at)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+  FOREIGN_KEY(requested_by)
+}
+TABLE(CampusEntity, Campus) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(campus)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+}
+TABLE(AccountEntity, Account) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+}
+TABLE(ResidenceEntity, Residence) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(residence)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+}
+TABLE(OrderItemEntity, OrderItem) {
+  PRIMARY_KEY(id)
+  --
+  NOT_NULL(quantity)
+  NOT_NULL(created_at)
+  NOT_NULL(updated_at)
+  --
+  FOREIGN_KEY(order_id)
+}
+
+@enduml

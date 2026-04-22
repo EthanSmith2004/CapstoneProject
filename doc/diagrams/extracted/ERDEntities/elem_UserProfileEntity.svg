@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="197.375"
+   preserveAspectRatio="none"
+   version="1.1"
+   viewBox="0 0 145.5 197.375"
+   width="145.5"
+   zoomAndPan="magnify"
+   id="svg205"
+   sodipodi:docname="elem_UserProfileEntity.svg.temp.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview205"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g205"
+     transform="translate(-228.75,-475.35941)">
+    <!--class NotificationPreferenceEntity-->
+    <!--class AllergyEntity-->
+    <!--class TransactionEntity-->
+    <!--class UserDeviceEntity-->
+    <!--class AbstractItem-->
+    <!--class UserEventEntity-->
+    <!--class MenuItemEntity-->
+    <!--class UserProfileEntity-->
+    <g
+       id="elem_UserProfileEntity">
+      <rect
+         codeLine="92"
+         fill="#f1f1f1"
+         height="196.875"
+         id="UserProfileEntity"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5"
+         width="145"
+         x="229"
+         y="475.60941" />
+      <circle
+         cx="263.79999"
+         cy="491.60941"
+         fill="#ffaaaa"
+         style="stroke:#181818;stroke-width:1"
+         id="ellipse67"
+         r="11" />
+      <path
+         d="m 264.7219,489 v 6.6563 h 1.1562 q 0.6094,0 0.8594,0.2343 0.2656,0.2344 0.2656,0.625 0,0.375 -0.2656,0.6094 -0.25,0.2344 -0.8594,0.2344 h -3.9843 q -0.625,0 -0.8907,-0.2344 -0.25,-0.2344 -0.25,-0.625 0,-0.375 0.25,-0.6094 0.2657,-0.2343 0.8907,-0.2343 h 1.125 V 489 h -1.8438 v 1.6094 q 0,0.6094 -0.2344,0.875 -0.2343,0.2656 -0.6093,0.2656 -0.375,0 -0.6094,-0.2656 -0.2344,-0.2656 -0.2344,-0.875 v -3.3125 H 268.3 v 3.3125 q 0,0.6094 -0.25,0.875 -0.2344,0.2656 -0.6094,0.2656 -0.375,0 -0.6093,-0.2656 -0.2344,-0.2656 -0.2344,-0.875 V 489 Z"
+         fill="#000000"
+         id="path67" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="69"
+         x="282.20001"
+         y="497.33789"
+         id="text68">UserProfile</text>
+      <line
+         style="stroke:#181818;stroke-width:0.5"
+         x1="230"
+         x2="373"
+         y1="507.60941"
+         y2="507.60941"
+         id="line68" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         text-decoration="underline"
+         textLength="11"
+         x="235"
+         y="526.14258"
+         id="text69"
+         style="text-decoration:underline;text-decoration-line:underline">id</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="26"
+         x="246"
+         y="526.14258"
+         id="text70">: PK</text>
+      <line
+         style="stroke:#181818;stroke-width:1"
+         x1="230"
+         x2="373"
+         y1="533.21881"
+         y2="533.21881"
+         id="line70" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="133"
+         x="235"
+         y="551.75201"
+         id="text71">credential_number</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="75"
+         x="235"
+         y="569.36133"
+         id="text72">created_at</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="79"
+         x="235"
+         y="586.9707"
+         id="text73">updated_at</text>
+      <line
+         style="stroke:#181818;stroke-width:1"
+         x1="230"
+         x2="373"
+         y1="594.04688"
+         y2="594.04688"
+         id="line73" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="47"
+         x="235"
+         y="612.58008"
+         id="text74">user_id</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="26"
+         x="282"
+         y="612.58008"
+         id="text75">: FK</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="68"
+         x="235"
+         y="630.18951"
+         id="text76">campus_id</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="26"
+         x="303"
+         y="630.18951"
+         id="text77">: FK</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="81"
+         x="235"
+         y="647.79883"
+         id="text78">residence_id</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="26"
+         x="316"
+         y="647.79883"
+         id="text79">: FK</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="69"
+         x="235"
+         y="665.4082"
+         id="text80">account_id</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="26"
+         x="304"
+         y="665.4082"
+         id="text81">: FK</text>
+    </g>
+    <!--class OrderEntity-->
+    <!--class RefreshTokenEntity-->
+    <!--class OrderItemFeedbackEntity-->
+    <!--class TransactionAuditEntity-->
+    <!--class UserEntity-->
+    <!--class NotificationEntity-->
+    <!--class ReportEntity-->
+    <!--class CampusEntity-->
+    <!--class AccountEntity-->
+    <!--class ResidenceEntity-->
+    <!--class OrderItemEntity-->
+    <!--SRC=[jLVVRzis47xtNy6s3uk111k6RGz54C1BxI5ecWHk-j0dWgREDc6AL4ZAZJliVz-HicHHabjsyV8GcSSZ-TqFVdTybS5IA22FapzlfsUAvN2UWULZmYMpbdW1OPQyziBNvFAId3sUlvdD9lWt9bTNerVxzTUtauyVazPVdx_ngsUpQFt3_ER3PFwPlfz-FdiUaylowldov_BgBNbut-ZCxkVJcx_k6XtXTGJgp0uwT_UFzExJxMrGM7Y5nTLev8IJGAOAlpio1ycSqCgkHK7U2ROoB1-DVYAtRATBHp9XW3kn1KkS9WQoaWEHVczkjBL2hUp8ReGg6AuZXgcDXOByzajBg3IQsnNwBTok0AADM-kHXAKB1uZLkZbKAm_aMXiWuC4A1751EFusJ992M-5r4CAeYjUTTc8fU33dmS0I32WEbPtdP7XsJFuUaSZV8XkZvE82_pNkAqgxfg3OGaAORIOWPq8EpcYJWQ5baJ47Dfh9GPM34unpNIetE5SOdMiFdSb8RdVMGKwPKhYK0-xjueLFfG17rxeqbbh7Z3iw2ogsW1j061bbyP8ANIqEVcgdOcdHRE_3V_PHcKW9PhMhmx0VflcTxPN_2wpw_4TCIij2EjKOMg8q71aiXEkYo3eYKogVZ7J19FEPrPvpXnEfnpcETxVSY2B0YR5_GcU-WwquPF51aeOSWrfeeMAanQ-__v6juzmhNIm8SMGhw2mLbhB01v4KsGtJriA94wYYqSd2elkuky54n_nfZIeNU5R5JmOIOPbTy6yODrx5qOOpYP_2eEVmwuD75ply9N8qagx1w6QGWSDR7GLXkaL7j6CG16aXa7eb58LjrvL1GZq9fbsa3yWRtkeQHZrEGv4KZ4CkWmHceP-h5QqjTWE9-c3qKiWeK_UYP8IPvtacgIhp1PXJ9bCivYn7IX-OC615vkl2m5nDp-sOt7jtr1Q7GPgjJhikaJlcIll_cTnceBO5SrYYqUj7lO667zkoL7kyQfJTpmLMSTi5VyGc0rlS8HkITLKZhld-hGb1yTTa1f0j6Dz4qMfFf5bgi85GgmZHijxWvS6hhfVm9RrjHAjWJKgahe525kHf9WY5ZTCGEAbPXbAkbUkILJfD1NPiSK0QfgKm65PFvVrWzwIXwueh6hRNNz1vSG9fUQJ3KdW9gWJDZivBpJVzWhPdA7jqYw5Uy4TRbdQhEjI-9jv9t-PtEazhiS0D1lPRH8HLKnj4qUbQeA3OnczeQU9WL5MqAxLyZQy7T0rTwfZQhQ-37T_ig_aGKx2Ux0ZN673O3eI8nkh6Q4E7d75InZN-POMhzdSwujm2dpq7jlMZj9ZshaAdT_oXiFhIt0jJ4FQE2L8hldRoIUH0UoU51nuuj7dBPDc1YnwXItpBzALE3wTBznd48JmxgyTCFrOj3QxpGiA0pl4427oJwIzgJuLfrUix-M7WgGJh5NpVL2V1TUX1wYIeHecDKgNx4eQPL4JNFCgguGaxoTPPyxgdEYJyNf1OSHlrbw1eodsl_gUXU2fPM7Yw8Xy8uLy0]-->
+  </g>
+</svg>

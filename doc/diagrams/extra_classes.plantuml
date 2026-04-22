@@ -1,0 +1,292 @@
+@startuml Class_Diagram
+!define CONTROLLER_COLOR #E1F5FE
+!define SERVICE_COLOR #F3E5F5
+!define FACADE_COLOR #E8F5E8
+!define SECURITY_COLOR #FFF3E0
+!define ENTITY_COLOR #FFEBEE
+skinparam class {
+  BackgroundColor<<Controller>> CONTROLLER_COLOR
+  BackgroundColor<<Service>> SERVICE_COLOR
+  BackgroundColor<<Facade>> FACADE_COLOR
+  BackgroundColor<<Security>> SECURITY_COLOR
+  BackgroundColor<<Repository>> REPOSITORY_COLOR
+}
+class LoginScreen {
+    email: String
+    password: String
+    -- 
+    + submitLogin()
+    + validate()
+    + showValidationErrors(error)
+    + redirectToUserDashboard()
+    + redirectToAdminDashboard()
+    + navigateToRegistrationScreen()
+}
+
+class RegistrationScreen {
+    -name: String
+    -email: String
+    -password: String
+    -confirmPassword: String
+    -firstName: String
+    -lastName: String
+    -campus: String
+    -residence: String
+    -allergies: List<String>
+    -- 
+    + submitRegistration()
+    + validate()
+    + showValidationErrors(error)
+    + navigateToLoginScreen()
+    + redirectToUserDashboard()
+}
+
+class UserDashboardScreen {
+    -userBalance: Decimal(19, 4) (REST state)
+    -user: UserDetails
+    --
+    + fetchUserDetails()
+    + fetchBalance()
+    + fetchMenuItems()
+    + navigateToOrders()
+    + navigateToProfile()
+    + navigateToSettings()
+    + navigateToLogout()
+}
+
+class AdminDashboardScreen {
+    -systemStatistics: Map<String, Object>
+    -- 
+    + fetchSystemStatistics()
+    + navigateToManageUsers()
+    + navigateToManageOrders()
+    + navigateToReports()
+    + navigateToSettings()
+}
+
+class ProfileScreen {
+    -user: UserDetails
+    -userProfile: UserProfile
+    -- 
+    + fetchUserDetails()
+    + fetchUserProfile()
+    + validateProfile()
+    + submitProfileChanges(newProfile: UserProfile)
+    + changePassword(oldPassword: String, newPassword: String, confirmPassword: String)
+    + navigateToUserDashboard()
+}
+
+class UserDetails {
+    id: String
+    name: String
+    email: String
+    roles: List<String>
+}
+
+class UserProfile {
+    firstName: String
+    lastName: String
+    campus: String
+    residence: String
+    allergies: List<String>
+}
+
+class AdminUserManagementScreen {
+    -users: List<UserDetails>
+    -- 
+    + fetchUsers()
+    + createUser(user: UserDetails)
+    + updateUser(user: UserDetails)
+    + disableUser(userId: String)
+    + navigateToAdminDashboard()
+}
+
+class OrderScreen {
+    -orders: List<Order>
+    -- 
+    + fetchOrders()
+    + updateOrder(order: Order)
+    + cancelOrder(orderId: String)
+    + navigateToUserDashboard()
+}
+
+class Order {
+    id: String
+    items: List<MenuItem>
+    totalAmount: Decimal(19, 4)
+    status: String
+}
+
+class MenuItem {
+    id: String
+    name: String
+    price: Decimal(19, 4)
+    description: String
+}
+
+class SettingsScreen {
+    -settings: Map<String, Object>
+    -- 
+    + fetchSettings()
+    + updateSettings(settings: Map<String, Object>)
+    + navigateToUserDashboard()
+}
+
+class AdminOrderManagementScreen {
+    -orders: List<Order>
+    -- 
+    + fetchOrders()
+    + updateOrderStatus(orderId: String, status: String)
+    + sendOrderNotification(orderId: String)
+    + navigateToAdminDashboard()
+} 
+
+class UserMenuScreen {
+    -menuItems: List<MenuItem>
+    -orderBasket: List<MenuItem> (Browser LocalStorage -> shared with UserMealDetailsScreen)
+    -- 
+    + fetchMenuItems()
+    + showAllergyInformation()
+    + navigateToMealDetails(menuItemId: Long)
+    + addItemToBasket(menuItem: MenuItem, quantity: Integer)
+    + removeItemFromBasket(menuItemId: Long)
+    + clearBasket()
+    + submitOrder()
+    + redirectToOrder()
+    + navigateToUserDashboard()
+}
+
+class UserMealDetailsScreen {
+    -menuItem: MenuItem
+    -orderBasket: List<MenuItem> (Browser LocalStorage -> shared with UserMenuScreen)
+    -- 
+    + fetchMenuItemDetails(menuItemId: Long)
+    + addToBasket(menuItem: MenuItem, quantity: Integer)
+    + navigateToMenuScreen()
+}
+
+class AdminMenuScreen {
+    -menuItems: List<MenuItem>
+    -- 
+    + fetchMenuItems()
+    + createMenuItem(menuItem: MenuItem)
+    + updateMenuItem(menuItem: MenuItem)
+    + removeMenuItem(menuItemId: String)
+    + navigateToAdminDashboard()
+}
+
+class UserFeedbackScreen {
+    -feedback: String
+    -- 
+    + submitFeedback(score: Integer, comment: String)
+    + submitFeedback(score: Integer)
+    + navigateToUserDashboard()
+}
+
+class AdminFeedbackScreen {
+    -feedbacks: List<Feedback>
+    -- 
+    + fetchFeedbacks()
+    + navigateToAdminDashboard()
+}
+
+class UserNotificationScreen {
+    - notifications: List<Notification>
+    -- 
+    + fetchNotifications()
+    + markNotificationAsRead(notificationId: String)
+    + execurteNotificationAction(notificationId: String)
+    + markAllNotificationsAsRead()
+    + navigateToUserDashboard()
+}
+
+class Notification {
+    id: String
+    message: String
+    timestamp: DateTime
+    read: Boolean
+}
+
+class AdminNotificationScreen {
+    -potentialRecipients: List<UserId>
+    -notifications: List<Notification>
+    -- 
+    + fetchNotifications()
+    + createNotification(message: String, targetUsers: List<UserId> = null)
+    + cancelNotification(notificationId: String)
+    + scheduleNotification(message: String, targetUsers: List<UserId> = null, scheduleTime: DateTime = null)
+}
+
+class AdminReportScreen {
+    -reports: List<Report>
+    -- 
+    + fetchReports()
+    + generateReport(reportType: String, parameters: Map<String, Object>)
+    + downloadReport(reportId: String, format: String)
+    + fetchReportStatuss(reportId: String)
+    + navigateToAdminDashboard()
+}
+
+class AdminFinancialManagementScreen {
+    -users: List<FinancialUser>
+    -userFinancialDetails: FinancialUserDetail
+    -- 
+    + fetchUsers()
+    + searchUser(searchQuery: SearchExpression)
+    + fetchUserFinancialDetail(userId: String)
+    + loadCreditForUser(userId: String, amount: Decimal(19, 4))
+    + bulkLoadCreditsForUsers(csvFile: File)
+    + displayLoadCreditErrors()
+    + navigateToAdminDashboard()
+}
+
+class AdminAuditScreen {
+    -auditLogs: List<AuditLog>
+    -- 
+    + fetchAuditLogs()
+    + filterAuditLogs(filterCriteria: Map<String, Object>)
+    + exportAuditLogs(format: String)
+    + navigateToAdminDashboard()
+}
+
+class AdminManagementScreen {
+    -allergies: List<Alergy>
+    -campuses: List<Campus>
+    -residences: List<Residence>
+    -- 
+    + fetchAllergies()
+    + createAllergy(allergy: Allergy)
+    + updateAllergy(allergy: Allergy)
+    + removeAllergy(allergyId: String)
+    + fetchCampuses()
+    + createCampus(campus: Campus)
+    + updateCampus(campus: Campus)
+    + removeCampus(campusId: String)
+    + fetchResidences()
+    + createResidence(residence: Residence)
+    + updateResidence(residence: Residence)
+    + removeResidence(residenceId: String)
+}
+
+class NotificationController <<Controller>> {
+  -notificationService: NotificationService
+  -userService: UserService
+  --
+  +unsubscribe(subscription)
+  +subscribe(subscription)
+  +getUserNotifications()
+  +markAsRead(notificationId)
+  +adminSendNotificaiton(notification: Notification)
+}
+
+class "Visibility Legend" {
+  + publicAttribute
+  # protectedAttribute
+  - privateAttribute
+  + publicMethod()
+  # protectedMethod()
+  - privateMethod()
+  ~ packagePrivateField
+}
+
+@enduml

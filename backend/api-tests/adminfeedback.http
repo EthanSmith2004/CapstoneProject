@@ -1,0 +1,53 @@
+### Get all feedback
+GET http://localhost:8080/api/admin/feedback
+Authorization: Bearer {{admin_auth_token}}
+
+### Get feedback statistics for a period (last 30 days)
+GET http://localhost:8080/api/admin/feedback/statistics?start=2025-09-21T00:00:00Z&end=2025-10-21T23:59:59Z
+Authorization: Bearer {{admin_auth_token}}
+
+### Get feedback statistics for a specific menu item
+GET http://localhost:8080/api/admin/feedback/statistics?start=2025-09-21T00:00:00Z&end=2025-10-21T23:59:59Z&menuItemId=1
+Authorization: Bearer {{admin_auth_token}}
+
+### Get feedback statistics by menu item
+GET http://localhost:8080/api/admin/feedback/statistics/by-item?start=2025-09-21T00:00:00Z&end=2025-10-21T23:59:59Z
+Authorization: Bearer {{admin_auth_token}}
+
+### Get filtered feedback - by date range
+GET http://localhost:8080/api/admin/feedback/filtered?start=2025-09-21T00:00:00Z&end=2025-10-21T23:59:59Z
+Authorization: Bearer {{admin_auth_token}}
+
+### Get filtered feedback - by rating (positive feedback only, 4+ stars)
+GET http://localhost:8080/api/admin/feedback/filtered?start=2025-09-21T00:00:00Z&end=2025-10-21T23:59:59Z&minRating=4
+Authorization: Bearer {{admin_auth_token}}
+
+### Get filtered feedback - by rating (negative feedback only, 2 or less stars)
+GET http://localhost:8080/api/admin/feedback/filtered?start=2025-09-21T00:00:00Z&end=2025-10-21T23:59:59Z&maxRating=2
+Authorization: Bearer {{admin_auth_token}}
+
+### Get filtered feedback - by menu item name
+GET http://localhost:8080/api/admin/feedback/filtered?start=2025-09-21T00:00:00Z&end=2025-10-21T23:59:59Z&menuItemName=Burger
+Authorization: Bearer {{admin_auth_token}}
+
+### Get filtered feedback - combined filters (positive feedback for specific item)
+GET http://localhost:8080/api/admin/feedback/filtered?start=2025-09-21T00:00:00Z&end=2025-10-21T23:59:59Z&minRating=4&menuItemName=Burger
+Authorization: Bearer {{admin_auth_token}}
+
+### Set feedback sentiment (batch update)
+POST http://localhost:8080/api/admin/feedback/sentiment
+Authorization: Bearer {{admin_auth_token}}
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "sentiment": 1,
+    "category": "positive"
+  },
+  {
+    "id": 2,
+    "sentiment": -1,
+    "category": "negative"
+  }
+]

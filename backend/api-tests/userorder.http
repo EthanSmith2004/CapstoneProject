@@ -1,0 +1,31 @@
+###
+POST http://localhost:8080/api/user/orders
+Authorization: Bearer {{user_auth_token}}
+Content-Type: application/json
+
+{
+  "items": [ {"menuItemId": 2, "quantity": 1} ]
+}
+
+###
+GET http://localhost:8080/api/user/orders/historic
+Authorization: Bearer {{user_auth_token}}
+
+###
+GET http://localhost:8080/api/user/orders/schedule
+Authorization: Bearer {{user_auth_token}}
+
+###
+DELETE http://localhost:8080/api/user/orders/{{orderItemId}}/cancel
+Authorization: Bearer {{user_auth_token}}
+
+###
+POST http://localhost:8080/api/user/feedback
+Authorization: Bearer {{user_auth_token}}
+Content-Type: application/json
+
+{
+  "menuItemId": 102,
+  "rating": 3,
+  "comment": "Toets1234"
+}

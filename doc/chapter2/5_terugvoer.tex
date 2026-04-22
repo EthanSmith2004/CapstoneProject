@@ -1,0 +1,49 @@
+% Terugvoer
+\section{Terugvoer}
+\subsection{Gebruikersgeval}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/usecase/feedback.png}
+    \caption{Gebruikersgeval vir Terugvoer}
+    \label{fig:terugvoer_use_case}
+\end{figure}
+
+Volgens FREQ-MOB-301, FREQ-MOB-302 en FREQ-MOB-303 het gebruikers die keuse om terugvoer te verskaf op 'n 5-punt skaal (\autoref{fig:feedback_screen}), en kommentaar te lewer oor die maaltyd slegs beskikbaar vir admin personeel. Na suksesvolle indiening word die terugvoer sukses skerm getoon (\autoref{fig:feedback_success_screen}).
+
+\subsection{Scenario}
+
+\textbf{Akteurs:} Klient\\
+\textbf{Voorvereistes:} Klient is ingeteken\\
+\textbf{Prekondisie:} Minstens een geskiedkundige bestelling\\
+\textbf{Postkondisie:} Terugvoer word gelewer\\
+\textbf{Inset:} 5-punt skaal waarde, kommentaar\\
+\textbf{Uitset:} Sukses- of foutboodskap\\
+\textbf{Skerms van Toepassing:} 
+\begin{itemize}
+    \item \autoref{fig:feedback_screen} (Terugvoer skerm)
+    \item \autoref{fig:feedback_success_screen} (Terugvoer sukses skerm)
+\end{itemize}
+
+
+\textbf{Hoofvloei:}
+\begin{enumerate}
+    \item Gebruiker navigeer na terugvoer bladsy of kies bestelling vir terugvoer (\autoref{fig:feedback_screen})
+    \item Stelsel toon lys van voltooide bestellings beskikbaar vir terugvoer
+    \item Gebruiker kies spesifieke maaltyd/bestelling
+    \item Stelsel toon terugvoervorm (\autoref{fig:feedback_screen})
+    \item Gebruiker gee gradering op 5-punt skaal
+    \item Gebruiker voer opsionele kommentaar in
+    \item Gebruiker dien terugvoer in
+    \item Stelsel stoor terugvoer 
+    \item Stelsel toon bevestiging boodskap (\autoref{fig:feedback_success_screen})
+    \item Gebruikersgeval eindig
+\end{enumerate}
+
+\textbf{Uitsonderingsvloei E1: Geen voltooide bestellings}
+\begin{enumerate}
+    \item[2a.] Stelsel identifiseer geen voltooide bestellings
+    \item Stelsel toon "Geen bestellings beskikbaar vir terugvoer"
+    \item Gebruikersgeval eindig
+\end{enumerate}
+

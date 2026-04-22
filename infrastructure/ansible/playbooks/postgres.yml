@@ -1,0 +1,97 @@
+- hosts: postgres
+  vars:
+    postgres_version: "15"  # PostgreSQL version
+
+  tasks:
+    - name: Ensure required packages are installed
+      apt:
+        name:
+          - sudo
+          - python3-psycopg2
+          - postgresql
+        state: present
+        update_cache: yes
+
+    - name: Deploy custom postgresql.conf to conf.d
+      template:
+        src: ../templates/postgresql.conf.j2
+        dest: "/etc/postgresql/{{ postgres_version }}/main/conf.d/custom-postgresql.conf"
+        owner: postgres
+        group: postgres
+        mode: 0644
+
+    - name: Deploy pg_hba.conf
+      template:
+        src: ../templates/pg_hba.conf.j2
+        dest: "/etc/postgresql/{{ postgres_version }}/main/pg_hba.conf"
+        owner: postgres
+        group: postgres
+        mode: 0640
+
+    - name: Restart PostgreSQL
+      service:
+        name: postgresql
+        state: restarted
+
+    - name: Set PostgreSQL password for 'postgres' user
+      become: true
+      become_user: postgres
+      postgresql_user:
+        name: postgres
+        password: "{{ lookup('env', 'POSTGRES_PASSWORD') }}"
+
+    - name: Create spys_prod database
+      become: true
+      become_user: postgres
+      postgresql_db:
+        name: spys_prod
+
+    - name: Create spys_prod user
+      become: true
+      become_user: postgres
+      postgresql_user:
+        name: spys_prod_user
+        password: "{{ lookup('env', 'PROD_DB_PASSWORD') }}"
+        priv: "ALL"
+        db: spys_prod
+
+    - name: Grant privileges on public schema to spys_prod_user
+      become: true
+      become_user: postgres
+      postgresql_privs:
+        db: spys_prod
+        roles: spys_prod_user
+        objs: public
+        type: schema
+        privs: "ALL"
+
+    - name: Create spys_dev database
+      become: true
+      become_user: postgres
+      postgresql_db:
+        name: spys_dev
+
+    - name: Create spys_dev user
+      become: true
+      become_user: postgres
+      postgresql_user:
+        name: spys_dev_user
+        password: "{{ lookup('env', 'DEV_DB_PASSWORD') }}"
+        priv: "ALL"
+        db: spys_dev
+
+    - name: Grant privileges on public schema to spys_dev_user
+      become: true
+      become_user: postgres
+      postgresql_privs:
+        db: spys_dev
+        roles: spys_dev_user
+        objs: public
+        type: schema
+        privs: "ALL"
+
+
+
+
+
+

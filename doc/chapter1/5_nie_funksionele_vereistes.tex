@@ -1,0 +1,100 @@
+\section{Nie-Funksionele Vereistes}
+
+\subsection{Prestasie}
+\begin{description}
+  \item[NREQ-PRS-001] Bladsye in die mobiele en web toepassing moet binne 2 sekondes laai onder normale netwerktoestande (3G of beter).
+  \item[NREQ-PRS-002] Bestellings moet binne 5 sekondes na indiening verwerk en bevestig word deur die stelsel.
+  \item[NREQ-PRS-003] Databasissoektogte moet voltooi word binne 1 sekonde.
+  \item[NREQ-PRS-101] Die stelsel moet ten minste 150 gelyktydige gebruikers kan hanteer sonder om prestasie te verswak.
+  \item[NREQ-PRS-201] Die stelsel moet daaglikse bestellingsverslae in minder as 30 sekondes kan genereer.
+  \item[NREQ-PRS-202] Weeklikse finansiële verslae moet binne 1 minuut gegenereer kan word.
+\end{description}
+
+\subsection{Skaalbaarheid}
+\begin{description}
+  \item[NREQ-SCL-001] Die stelsel moet ontwerp word om groei te akkommodeer, aangesien Akademia moontlik meer gebruikers of bykomende kampusse in die toekoms sal byvoeg.
+  \item[NREQ-SCL-002] Die infrastruktuur moet uitgebrei kan word sonder om die stelsel heeltemal te herontwerp.
+  \item[NREQ-SCL-003] Nuwe funksionaliteit moet toegevoeg kan word sonder om bestaande werkverrigting te beïnvloed.
+  \item[NREQ-SCL-101] Die argitektuur moet toelaat dat 'n Kaslaag soos Redis
+  bygevoeg kan word indien dit sou nodig wees om werkverrigting te verbeter.
+  \item[NREQ-SCL-102] Die databasis moet horisontaal kan skaal om meer gebruikers en data te hanteer.
+  \item[NREQ-SCL-103] Prestasie-optimalisering moet moontlik wees sonder om die databasisstruktuur fundamenteel te verander.
+\end{description}
+
+\subsection{Betroubaarheid}
+\begin{description}
+  \item[NREQ-REL-001] Die stelsel moet 'n beskikbaarheid van 99\% handhaaf, wat beteken dat onbeplande stilstand tot 'n minimum beperk word.
+  \item[NREQ-REL-002] Kritieke komponente moet foutverdraagsaam wees, met outomatiese oorskakeling na rugsteunstelsels in geval van 'n mislukking.
+  \item[NREQ-REL-003] Die stelsel moet akkurate kosteberekeninge en bestellingsdata lewer sonder foute deur om geldeenhede as heelgetalle (integers) te stoor en nie as dryfpunt (floats) syfers te stoor nie.
+  \item[NREQ-REL-101] Geen data mag verlore gaan nie, selfs tydens tegniese foute of stelselonderbrekings.
+  \item[NREQ-REL-102] Die databasis moet transaksies implementeer om datakorruptering te voorkom.
+  \item[NREQ-REL-103] Inkrementele rugsteune moet outomaties daagliks uitgevoer word, met volledige rugsteune weekliks.
+  \item[NREQ-REL-201] Die stelsel moet meeste foute elegant hanteer sonder om te misluk.
+  \item[NREQ-REL-202] Gebruikers moet duidelike terugvoer ontvang wanneer foute voorkom.
+  \item[NREQ-REL-203] 'n Omvattende foutlogboek moet beskikbaar wees vir probleemoplossing.
+\end{description}
+
+\subsection{Beskikbaarheid}
+\begin{description}
+  \item[NREQ-AVA-001] Die stelsel moet 24/7 beskikbaar wees vir administrateurs om spyskaarte, bestellings en verslae te bestuur.
+  \item[NREQ-AVA-002] Die mobiele toepassing moet 24/7 beskikbaar wees met beperkte tydsvensters om bestellings te plaas.
+  \item[NREQ-AVA-101] Beplande onderhoudsvensters moet buite piekure geskeduleer word (verkieslik tussen 22:00 en 05:00).
+  \item[NREQ-AVA-102] Gebruikers moet ten minste 48 uur vooraf in kennis gestel word van geskeduleerde onderhoud.
+  \item[NREQ-AVA-103] Die stelsel moet binne 15 minute herstel kan word na 'n onderhoud.
+  \item[NREQ-AVA-201] 'n Volledige rampherstelplan moet geïmplementeer word met herstel van data binne 2 uur na 'n katastrofiese mislukking.
+  \item[NREQ-AVA-202] Kritieke funksionaliteit moet beskikbaar bly selfs tydens gedeeltelike stelselonderbrekings.
+  \item[NREQ-AVA-203] Outomatiese oorskakeling na rugsteunstelsels moet geïmplementeer word om onderbrekings te minimaliseer.
+\end{description}
+
+\subsection{Sekuriteit}
+\begin{description}
+  \item[NREQ-SEC-001] Alle data moet geënkripteer word tydens oordrag met \ac{HTTPS} 
+  en berging met \ac{LUKS} om ongemagtigde toegang te voorkom.
+  \item[NREQ-SEC-002] Die stelsel moet voldoen aan die \ac{POPIA}
+  \item[NREQ-SEC-003] Gebruikers moet ingelig word oor datagebruik en moet toestemming gee vir die verwerking van persoonlike inligting.
+  \item[NREQ-SEC-101] Aanmeldpogings moet beveilig word met sterk wagwoorde vir verhoogde beskerming.
+  \item[NREQ-SEC-102] Staatlose sessies moet outomaties uitloop na 10 minute, en word deur 'n staatvolle sessietoken hernu wat teruggetrek kan word.
+  \item[NREQ-SEC-103] Rolgebaseerde toegangsbeheer moet geïmplementeer word om seker te maak dat gebruikers slegs toegang het tot funksionaliteit waarvoor hul gemagtig is.
+\end{description}
+
+\subsection{Databestuur}
+\begin{description}
+  \item[NREQ-DAT-001] Gebruikers- en bestellingsdata moet vir ten minste 1 jaar gestoor word.
+  \item[NREQ-DAT-002] Daaglikse inkrementele rugsteune moet outomaties uitgevoer word.
+  \item[NREQ-DAT-003] Data moet gestruktureer wees vir vinnige toegang, veral tydens verslaggewing of bestellingsverwerking.
+\end{description}
+
+\subsection{Gebruikersvriendelikheid}
+\begin{description}  \item[NREQ-UIX-001] Die stelsel moet verstaanbaar en maklik wees om te gebruik vir beide tegnies vaardige en minder vaardige gebruikers.
+  \item[NREQ-UIX-002] Die mobiele toepassing moet 'n eenvoudige, visueel aantreklike koppelvlak hê met duidelike navigasie.
+  \item[NREQ-UIX-003] Die web toepassing moet 'n georganiseerde paneelbord bied
+  vir administrateurs, met vinnige toegang tot spyskaartbestuur en
+  verslaggewing.  
+  \item[NREQ-UIX-101] Alle take moet voltooi kan word met minimale klikke of skermrakings.
+  \item[NREQ-UIX-102] Konsekwente ontwerp moet regdeur beide mobiele en web toepassings gehandhaaf word.
+  \item[NREQ-UIX-103] Foute moet duidelik gekommunikeer word met konstruktiewe voorstelle vir oplossings.
+  \item[NREQ-UIX-201] Teksgrootte moet geskik wees vir gebruikers met sigprobleme.
+  \item[NREQ-UIX-202] Kleurkontraste moet voldoende wees vir gebruikers met kleurblindheid.
+\end{description}
+
+\subsection{Onderhoubaarheid}
+\begin{description}
+  \item[NREQ-MNT-001] Die stelsel moet 'n modulêre argitektuur hê, waar komponente onafhanklik opgedateer kan word sonder om die hele stelsel te ontwrig.
+  \item[NREQ-MNT-002] Gestandaardiseerde koderingspraktyke moet regdeur die projek gehandhaaf word.
+  \item[NREQ-MNT-101] Gedetailleerde tegniese dokumentasie, insluitend kode-aantekeninge en API-beskrywings, moet voorsien word vir toekomstige ontwikkelaars.
+  \item[NREQ-MNT-102] Gebruikershandleidings moet beskikbaar wees vir beide eindgebruikers en administrateurs.
+  \item[NREQ-MNT-103] Alle API-eindpunte moet volledig gedokumenteer word.
+  \item[NREQ-MNT-201] Foutmoniteringsinstrumente soos Spring Actuator moet ingebou wees om probleme vinnig te identifiseer en op te los.
+  \item[NREQ-MNT-202] Duidelike logboeke moet beskikbaar wees vir diagnose van probleme.
+  \item[NREQ-MNT-203] Monitering van sleutel prestasie-aanwysers moet geïmplementeer word vir vroeë identifikasie van prestasieprobleme.
+\end{description}
+
+\subsection{Toetsing en Implementering}
+\begin{description}
+  \item[NREQ-TST-001] Eenheid en Integrasie toetse moet alle kernfunksionaliteit en minstens 60\% van die kode dek.
+  \item[NREQ-TST-002] Eind-tot-eindtoetse moet die interaksie van die hele stelsel in konteks toets.
+  \item[NREQ-TST-003] Formele aanvaardingskriteria moet vooraf gedefinieer en gedokumenteer word.
+  \item[NREQ-TST-004] Gebruikersaanvaardingstoetsing moet uitgevoer word met Spys, Akademia en 'n verteenwoordigende groep gebruikers.
+  \item[NREQ-TST-005] Sekuriteitstoetse en lastoetse moet uitgevoer word voor implementering.
+  \item[NREQ-TST-006] Terugvoer van aanvaardingstoetsing moet verwerk word voor finale vrystelling.
+\end{description}

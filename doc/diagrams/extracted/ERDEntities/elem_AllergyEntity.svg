@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="126.9375"
+   preserveAspectRatio="none"
+   version="1.1"
+   viewBox="0 0 91.5 126.9375"
+   width="91.5"
+   zoomAndPan="magnify"
+   id="svg205"
+   sodipodi:docname="elem_AllergyEntity.svg.temp.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview205"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g205"
+     transform="translate(-52.25,-370.85941)">
+    <!--class NotificationPreferenceEntity-->
+    <!--class AllergyEntity-->
+    <g
+       id="elem_AllergyEntity">
+      <rect
+         codeLine="33"
+         fill="#f1f1f1"
+         height="126.4375"
+         id="AllergyEntity"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5"
+         width="91"
+         x="52.5"
+         y="371.10941" />
+      <circle
+         cx="74.699997"
+         cy="387.10941"
+         fill="#ffaaaa"
+         style="stroke:#181818;stroke-width:1"
+         id="ellipse17"
+         r="11" />
+      <path
+         d="m 75.6219,384.5 v 6.6563 h 1.1562 q 0.6094,0 0.8594,0.2343 0.2656,0.2344 0.2656,0.625 0,0.375 -0.2656,0.6094 -0.25,0.2344 -0.8594,0.2344 h -3.9843 q -0.625,0 -0.8907,-0.2344 -0.25,-0.2344 -0.25,-0.625 0,-0.375 0.25,-0.6094 0.2657,-0.2343 0.8907,-0.2343 h 1.125 V 384.5 H 72.075 v 1.6094 q 0,0.6094 -0.2344,0.875 -0.2343,0.2656 -0.6093,0.2656 -0.375,0 -0.6094,-0.2656 -0.2344,-0.2656 -0.2344,-0.875 v -3.3125 H 79.2 v 3.3125 q 0,0.6094 -0.25,0.875 -0.2344,0.2656 -0.6094,0.2656 -0.375,0 -0.6093,-0.2656 -0.2344,-0.2656 -0.2344,-0.875 V 384.5 Z"
+         fill="#000000"
+         id="path17" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="43"
+         x="90.300003"
+         y="392.83789"
+         id="text18">Allergy</text>
+      <line
+         style="stroke:#181818;stroke-width:0.5"
+         x1="53.5"
+         x2="142.5"
+         y1="403.10941"
+         y2="403.10941"
+         id="line18" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         text-decoration="underline"
+         textLength="11"
+         x="58.5"
+         y="421.64261"
+         id="text19"
+         style="text-decoration:underline;text-decoration-line:underline">id</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="26"
+         x="69.5"
+         y="421.64261"
+         id="text20">: PK</text>
+      <line
+         style="stroke:#181818;stroke-width:1"
+         x1="53.5"
+         x2="142.5"
+         y1="428.71881"
+         y2="428.71881"
+         id="line20" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="47"
+         x="58.5"
+         y="447.25201"
+         id="text21">allergy</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="75"
+         x="58.5"
+         y="464.8613"
+         id="text22">created_at</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="79"
+         x="58.5"
+         y="482.4707"
+         id="text23">updated_at</text>
+      <line
+         style="stroke:#181818;stroke-width:1"
+         x1="53.5"
+         x2="142.5"
+         y1="489.54691"
+         y2="489.54691"
+         id="line23" />
+    </g>
+    <!--class TransactionEntity-->
+    <!--class UserDeviceEntity-->
+    <!--class AbstractItem-->
+    <!--class UserEventEntity-->
+    <!--class MenuItemEntity-->
+    <!--class UserProfileEntity-->
+    <!--class OrderEntity-->
+    <!--class RefreshTokenEntity-->
+    <!--class OrderItemFeedbackEntity-->
+    <!--class TransactionAuditEntity-->
+    <!--class UserEntity-->
+    <!--class NotificationEntity-->
+    <!--class ReportEntity-->
+    <!--class CampusEntity-->
+    <!--class AccountEntity-->
+    <!--class ResidenceEntity-->
+    <!--class OrderItemEntity-->
+    <!--SRC=[jLVVRzis47xtNy6s3uk111k6RGz54C1BxI5ecWHk-j0dWgREDc6AL4ZAZJliVz-HicHHabjsyV8GcSSZ-TqFVdTybS5IA22FapzlfsUAvN2UWULZmYMpbdW1OPQyziBNvFAId3sUlvdD9lWt9bTNerVxzTUtauyVazPVdx_ngsUpQFt3_ER3PFwPlfz-FdiUaylowldov_BgBNbut-ZCxkVJcx_k6XtXTGJgp0uwT_UFzExJxMrGM7Y5nTLev8IJGAOAlpio1ycSqCgkHK7U2ROoB1-DVYAtRATBHp9XW3kn1KkS9WQoaWEHVczkjBL2hUp8ReGg6AuZXgcDXOByzajBg3IQsnNwBTok0AADM-kHXAKB1uZLkZbKAm_aMXiWuC4A1751EFusJ992M-5r4CAeYjUTTc8fU33dmS0I32WEbPtdP7XsJFuUaSZV8XkZvE82_pNkAqgxfg3OGaAORIOWPq8EpcYJWQ5baJ47Dfh9GPM34unpNIetE5SOdMiFdSb8RdVMGKwPKhYK0-xjueLFfG17rxeqbbh7Z3iw2ogsW1j061bbyP8ANIqEVcgdOcdHRE_3V_PHcKW9PhMhmx0VflcTxPN_2wpw_4TCIij2EjKOMg8q71aiXEkYo3eYKogVZ7J19FEPrPvpXnEfnpcETxVSY2B0YR5_GcU-WwquPF51aeOSWrfeeMAanQ-__v6juzmhNIm8SMGhw2mLbhB01v4KsGtJriA94wYYqSd2elkuky54n_nfZIeNU5R5JmOIOPbTy6yODrx5qOOpYP_2eEVmwuD75ply9N8qagx1w6QGWSDR7GLXkaL7j6CG16aXa7eb58LjrvL1GZq9fbsa3yWRtkeQHZrEGv4KZ4CkWmHceP-h5QqjTWE9-c3qKiWeK_UYP8IPvtacgIhp1PXJ9bCivYn7IX-OC615vkl2m5nDp-sOt7jtr1Q7GPgjJhikaJlcIll_cTnceBO5SrYYqUj7lO667zkoL7kyQfJTpmLMSTi5VyGc0rlS8HkITLKZhld-hGb1yTTa1f0j6Dz4qMfFf5bgi85GgmZHijxWvS6hhfVm9RrjHAjWJKgahe525kHf9WY5ZTCGEAbPXbAkbUkILJfD1NPiSK0QfgKm65PFvVrWzwIXwueh6hRNNz1vSG9fUQJ3KdW9gWJDZivBpJVzWhPdA7jqYw5Uy4TRbdQhEjI-9jv9t-PtEazhiS0D1lPRH8HLKnj4qUbQeA3OnczeQU9WL5MqAxLyZQy7T0rTwfZQhQ-37T_ig_aGKx2Ux0ZN673O3eI8nkh6Q4E7d75InZN-POMhzdSwujm2dpq7jlMZj9ZshaAdT_oXiFhIt0jJ4FQE2L8hldRoIUH0UoU51nuuj7dBPDc1YnwXItpBzALE3wTBznd48JmxgyTCFrOj3QxpGiA0pl4427oJwIzgJuLfrUix-M7WgGJh5NpVL2V1TUX1wYIeHecDKgNx4eQPL4JNFCgguGaxoTPPyxgdEYJyNf1OSHlrbw1eodsl_gUXU2fPM7Yw8Xy8uLy0]-->
+  </g>
+</svg>

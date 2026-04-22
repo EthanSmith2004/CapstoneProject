@@ -1,0 +1,114 @@
+### Delivery Admin - Barcode Scanning API Tests
+### This file demonstrates the delivery admin barcode scanning functionality
+
+@baseUrl = http://localhost:8080
+
+### 1. Login as delivery admin
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "delivery@demo.com",
+  "password": "delivery123"
+}
+
+> {%
+    client.global.set("delivery_token", response.body.token);
+%}
+
+### 2. Get delivery statistics for today
+GET {{baseUrl}}/api/delivery/statistics
+Authorization: Bearer {{delivery_token}}
+
+### 3. Get all pending deliveries for today
+GET {{baseUrl}}/api/delivery/pending-deliveries
+Authorization: Bearer {{delivery_token}}
+
+### 4. Scan user barcode to get their pending items
+### Replace with actual credential number from user profile
+POST {{baseUrl}}/api/delivery/scan-user
+Authorization: Bearer {{delivery_token}}
+Content-Type: application/json
+
+{
+  "barcode": "123456789"
+}
+
+### 5. Mark item as delivered by scanning
+### Replace userBarcode and orderItemId with actual values from previous response
+POST {{baseUrl}}/api/delivery/scan-item
+Authorization: Bearer {{delivery_token}}
+Content-Type: application/json
+
+{
+  "userBarcode": "123456789",
+  "orderItemId": 1
+}
+
+### 6. Scan user barcode again to verify remaining items
+POST {{baseUrl}}/api/delivery/scan-user
+Authorization: Bearer {{delivery_token}}
+Content-Type: application/json
+
+{
+  "barcode": "123456789"
+}
+
+### 7. Check updated statistics after delivery
+GET {{baseUrl}}/api/delivery/statistics
+Authorization: Bearer {{delivery_token}}
+
+### Test Error Cases
+
+### 8. Try to scan non-existent user barcode
+POST {{baseUrl}}/api/delivery/scan-user
+Authorization: Bearer {{delivery_token}}
+Content-Type: application/json
+
+{
+  "barcode": "999999999"
+}
+
+### 9. Try to deliver item with wrong user barcode
+POST {{baseUrl}}/api/delivery/scan-item
+Authorization: Bearer {{delivery_token}}
+Content-Type: application/json
+
+{
+  "userBarcode": "000000000",
+  "orderItemId": 1
+}
+
+### 10. Try to deliver item that's not in IN_DELIVERY status
+POST {{baseUrl}}/api/delivery/scan-item
+Authorization: Bearer {{delivery_token}}
+Content-Type: application/json
+
+{
+  "userBarcode": "123456789",
+  "orderItemId": 999
+}
+
+### 11. Login as regular admin to prepare items for delivery (set to IN_DELIVERY status)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@demo.com",
+  "password": "admin123"
+}
+
+> {%
+    client.global.set("admin_token", response.body.token);
+%}
+
+### 12. Bulk update items to IN_DELIVERY status for testing
+PUT {{baseUrl}}/api/admin/orders/bulk-status
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{
+  "deliveryDate": "2024-12-15T00:00:00Z",
+  "status": "IN_DELIVERY",
+  "previousStatus": "IN_PROGRESS"
+}

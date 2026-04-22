@@ -1,0 +1,23 @@
+###
+GET http://localhost:8080/api/user/profile
+Authorization: Bearer {{user_auth_token}}
+
+###
+PUT http://localhost:8080/api/user/profile
+Authorization: Bearer {{user_auth_token}}
+Content-Type: application/json
+
+{
+  "credentialNumber": "12345",
+  "campusId": 1,
+  "allergyIds": []
+}
+###
+POST http://localhost:8080/api/user/profile
+Authorization: Bearer {{user_auth_token}}
+Content-Type: application/json
+
+{
+  "credentialNumber": "1234879",
+  "allergyIds": []
+}

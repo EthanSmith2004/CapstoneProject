@@ -1,0 +1,13 @@
+package com.jel.spys.entity;
+
+public enum NotificationType {
+    ORDER_CONFIRMATION,
+    ORDER_READY,
+    ORDER_CANCELLED,
+    MENU_UPDATE,
+    ACCOUNT_BALANCE_LOW,
+    ACCOUNT_CREDITED,
+    SYSTEM_MAINTENANCE,
+    PROMOTIONAL,
+    GENERAL_ANNOUNCEMENT
+}

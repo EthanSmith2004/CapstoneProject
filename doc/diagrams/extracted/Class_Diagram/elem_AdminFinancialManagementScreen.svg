@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="224.5938"
+   preserveAspectRatio="none"
+   version="1.1"
+   viewBox="0 0 391.5 224.5938"
+   width="391.5"
+   zoomAndPan="magnify"
+   id="svg223"
+   sodipodi:docname="elem_AdminFinancialManagementScreen.svg.temp.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview223"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g223"
+     transform="translate(-1763.25,-928.75)">
+    <!--class LoginScreen-->
+    <!--class RegistrationScreen-->
+    <!--class UserDashboardScreen-->
+    <!--class AdminDashboardScreen-->
+    <!--class ProfileScreen-->
+    <!--class UserDetails-->
+    <!--class UserProfile-->
+    <!--class AdminUserManagementScreen-->
+    <!--class OrderScreen-->
+    <!--class Order-->
+    <!--class MenuItem-->
+    <!--class SettingsScreen-->
+    <!--class AdminOrderManagementScreen-->
+    <!--class UserMenuScreen-->
+    <!--class UserMealDetailsScreen-->
+    <!--class AdminMenuScreen-->
+    <!--class UserFeedbackScreen-->
+    <!--class AdminFeedbackScreen-->
+    <!--class UserNotificationScreen-->
+    <!--class Notification-->
+    <!--class AdminNotificationScreen-->
+    <!--class AdminReportScreen-->
+    <!--class AdminFinancialManagementScreen-->
+    <g
+       id="elem_AdminFinancialManagementScreen">
+      <rect
+         codeLine="229"
+         fill="#f1f1f1"
+         height="224.0938"
+         id="AdminFinancialManagementScreen"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5"
+         width="391"
+         x="1763.5"
+         y="929" />
+      <circle
+         cx="1843.25"
+         cy="945"
+         fill="#add1b2"
+         style="stroke:#181818;stroke-width:1"
+         id="ellipse171"
+         r="11" />
+      <path
+         d="m 1846.0156,940.875 q 0.1563,-0.2187 0.3438,-0.3281 0.1875,-0.1094 0.4062,-0.1094 0.375,0 0.6094,0.2656 0.2344,0.25 0.2344,0.8594 v 1.4531 q 0,0.6094 -0.2344,0.875 -0.2344,0.2657 -0.6094,0.2657 -0.3437,0 -0.5468,-0.2032 -0.2032,-0.1875 -0.3125,-0.7031 -0.047,-0.3594 -0.2344,-0.5469 -0.3281,-0.375 -0.9375,-0.5937 -0.6094,-0.2188 -1.2344,-0.2188 -0.7656,0 -1.4062,0.3282 -0.625,0.3281 -1.125,1.0781 -0.4844,0.75 -0.4844,1.7812 v 1.0938 q 0,1.2344 0.8906,2.0625 0.8906,0.8125 2.4844,0.8125 0.9375,0 1.5937,-0.25 0.3907,-0.1563 0.8125,-0.5938 0.2657,-0.2656 0.4063,-0.3437 0.1562,-0.0781 0.3594,-0.0781 0.3281,0 0.5781,0.2656 0.2656,0.25 0.2656,0.5937 0,0.3438 -0.3437,0.75 -0.5,0.5782 -1.2969,0.9063 -1.0781,0.4531 -2.375,0.4531 -1.5156,0 -2.7188,-0.625 -0.9843,-0.5 -1.6718,-1.5625 -0.6875,-1.0781 -0.6875,-2.3594 v -1.1562 q 0,-1.3281 0.6093,-2.4688 0.625,-1.1562 1.7188,-1.7656 1.0937,-0.625 2.3281,-0.625 0.7344,0 1.375,0.1719 0.6563,0.1562 1.2031,0.5156 z"
+         fill="#000000"
+         id="path171" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="223"
+         x="1863.75"
+         y="950.72852"
+         id="text172">AdminFinancialManagementScreen</text>
+      <line
+         style="stroke:#181818;stroke-width:0.5"
+         x1="1764.5"
+         x2="2153.5"
+         y1="961"
+         y2="961"
+         id="line172" />
+      <rect
+         fill="none"
+         height="6"
+         style="stroke:#c82930;stroke-width:1"
+         width="6"
+         x="1771.5"
+         y="972.30469"
+         id="rect172" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="167"
+         x="1783.5"
+         y="979.5332"
+         id="text173">users: List&lt;FinancialUser&gt;</text>
+      <rect
+         fill="none"
+         height="6"
+         style="stroke:#c82930;stroke-width:1"
+         width="6"
+         x="1771.5"
+         y="989.91412"
+         id="rect173" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="258"
+         x="1783.5"
+         y="997.14258"
+         id="text174">userFinancialDetails: FinancialUserDetail</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="10"
+         x="1783.5"
+         y="1014.752"
+         id="text175">--</text>
+      <line
+         style="stroke:#181818;stroke-width:0.5"
+         x1="1764.5"
+         x2="2153.5"
+         y1="1021.8281"
+         y2="1021.8281"
+         id="line175" />
+      <circle
+         cx="1774.5"
+         cy="1036.1328"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse175"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="77"
+         x="1783.5"
+         y="1040.3613"
+         id="text176">fetchUsers()</text>
+      <circle
+         cx="1774.5"
+         cy="1053.7422"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse176"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="286"
+         x="1783.5"
+         y="1057.9707"
+         id="text177">searchUser(searchQuery: SearchExpression)</text>
+      <circle
+         cx="1774.5"
+         cy="1071.3516"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse177"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="247"
+         x="1783.5"
+         y="1075.5801"
+         id="text178">fetchUserFinancialDetail(userId: String)</text>
+      <circle
+         cx="1774.5"
+         cy="1088.9609"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse178"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="365"
+         x="1783.5"
+         y="1093.1895"
+         id="text179">loadCreditForUser(userId: String, amount: Decimal(19, 4))</text>
+      <circle
+         cx="1774.5"
+         cy="1106.5703"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse179"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="246"
+         x="1783.5"
+         y="1110.7988"
+         id="text180">bulkLoadCreditsForUsers(csvFile: File)</text>
+      <circle
+         cx="1774.5"
+         cy="1124.1797"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse180"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="163"
+         x="1783.5"
+         y="1128.4082"
+         id="text181">displayLoadCreditErrors()</text>
+      <circle
+         cx="1774.5"
+         cy="1141.7891"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse181"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="190"
+         x="1783.5"
+         y="1146.0176"
+         id="text182">navigateToAdminDashboard()</text>
+    </g>
+    <!--class AdminAuditScreen-->
+    <!--class AdminManagementScreen-->
+    <!--class NotificationController-->
+    <!--class Visibility Legend-->
+    <!--SRC=[hLdTRzis47_FNy6rBmhY02ks0btG6N1S6J3Wn9dj5DZJG4kCmqKYFP9A6WpTtxxZXoHIeXMdxLEY- -BT_Ox78_rJJkue8sYwlDwibej5klfhkbmiL-Xj-cxsVfQU_EG4rkdgytoQrjpPB-dxsVk6EvjC9vyQPlfXzZxzuAbERrVppP-DxWoqVsxOwVKcOAQNQNeY7oZROu5Bb1LOIlJl2KANE7lO2LwnVCeBBZv-d7Ac12yA8iRZNWGnXJKHZpGZ81s44nETuGpdMj8FBMupgmHLpyQe7sXCU4NsN5B5XHPVfJVBzNopNDKANqzii0k-esoT2KAO2HmXKc9QNA2r4fJj36KFWazSv07n_1oPlsT8LjkIAcCeENMqHrpG72lI4EGzV_fiYPIpL0WkP4Bqdrf2a9mAagaDlvL4VCBoVikno9C-VvANbFK567waErXpmrTaHwKIPYaR6mXzFN4XzxakydE6In86sK_6UJmR6MTtL9GtKIPmfBhk6GTl8jGCb_jAXZH19Cq9opgYMDVZZXAGNa187orl7CN7Z_fxO6gpx9LEyZA8JVe3HfZ_2bYNkC0cq4yaeoKkadU_ZT2lfoXPfUiDaWgMFcsbBwmveW0cwU9shjmHbTrxtCP7mt3BXCGhmggv8gMCrDHIv4J463U2tz62H3XheXJW4LE2tF5A-Ma9YphCYtoMuDKQOWS8QGPmN-6zGtk4bjk_8UDTr4r0wuvYn9ChpF2Ew3mTvXwCNVSOeUHmx4s8BbDzp2CeQhAJjrpt4Olo8CYUNg_aktIxInnrUe_PZiY4aQUO4xLEPiJgFP_m8k_k_n7I9dh40zsYdyRXNMHZTfcaOTFfzR9-AuFphDSwWWLSk6w1U1UBDh583ukti4CTBDmMsXTRYILXgby_jRQNbF6XGcbB1Cn0ZZKjwHLXBLFjynTbSYhnjcY5vWDuzewk9b2pnyBGkDbsBZR3ZqRLsPtMPKDCZ8KBQxi9M_UzmkFFlwN-Z7wyygZkeCxhkgDQnnLNk9YKCAIeRdytVDtTlR9f5gkj75dfUq7x1uZXv4HcWkxrsTPVfMvPdTxhgCVtt6xNju0qv463hq30b9A1uT3M-ExwMHiykbKowk3KT532SgDspHMzevaTDLuiiVwMG7uFqjY7OPNrAHsjCHlr9POFH7K5K78f-1COXR4tmyKQXcD873eVmzo3ONH1JrJTkrLnuRQvNVmqbhd-lA3dfudfQSzpTiT56SvRti7QBf3K0UaiBNYR8vpdchpXDff6xgBP42FqJuMPWYl11PepHNR46wTB_aYqq4pmicEXkr9M4EnorZaGRP_eZtSX_SW3gvVLBgHjP3yKoxg21a4y0erlGy87lVQajv5VNUOlLQ8ztMfwnEDmlnyXQ2kg9_Xjnvq6PaP8leLhQnZtdQCEtZPhrKHcN90cvNgoAdKZxFMc8QtNDjrXlskyQgaeNZKpDZeF9yrlhg43Y7cisWjVFEg9Bz1wKsBnu7CcSaLmdlWhz74dN_JxX2A1OcOQuB2YNWswPk2AM_4LsFZgyKcX9592amXeYW9LmRmA0uEs3vzkNiMWVCbXHiQiKm27CTXp1TL7SR62uMDFuNz_Dftd3e8VY9JTvy6HsmbpX1GMEw9kEvCoU8D-HwmgYd0q36mD0oUpUv9NnNSkFshiwEotE3JUXTctbyumxy9UH9rvAn5DOlV6kYEC25ZFqXDhP_EyzzmtRuD46Uy7HhQSFx62upomv4zDTXpefj3poevRigVwcXPX6nHbW2HKuJ6NfaPOWp9k-GtT7OmNA92qr9TlMH8c2qjBxBz_L4J08Ras7-cNFLmC9PHDx-BUMV_0rKfdVAh74ZNZ8d856o4SlM_K-jkgU5WqDgGp8fDCFixCjN_ctVVXfhSly7Chxnx8NWtGf0Bb41AiIGk-gs6PkEze5TTCxxs35b2XBTr-JmLSnWJ5WuLBlkXoyrIZTNfqR8TghdlLdvWfUUm_UZQygVaSTnu_s-tj2F7SrEjqMgGRonFh1rIW8uHpq4jITWZgIFNBqdWoTK5r7B7af7uZiP-X5uCYreL0v803JQAwBZICn7kMQOYXByV9MgSYihvhqQEw_MK5TNvcqOKJ79NkDvMBGDyHJrpRQcHksuyJzonyLZ4O1FKJm9OaxZ_p6A2ZE1jWkUEhVmAVcT4bDXmPBjOROWttubgJgiwP6iRYfUZDPohfbXPmeq0Bc59P_iOav0pjgsr1iuc2f6uhfODxY_O21ezCaTmdd-kNa4TTr1wnrhyYwfxR-SfJzwYDjaVx3mx3x06szurbpIWfSl3vVm00]-->
+  </g>
+</svg>

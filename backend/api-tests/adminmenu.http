@@ -1,0 +1,40 @@
+###
+GET http://localhost:8080/api/admin/menu/items
+Authorization: Bearer {{admin_auth_token}}
+
+
+###
+GET http://localhost:8080/api/admin/menu/items
+Authorization: Bearer {{admin_auth_token}}
+
+###
+GET http://localhost:8080/api/admin/menu/current
+Authorization: Bearer {{admin_auth_token}}
+
+###
+GET http://localhost:8080/api/admin/menu/historic
+Authorization: Bearer {{admin_auth_token}}
+
+###
+POST http://localhost:8080/api/admin/menu
+Content-Type: application/json
+Authorization: Bearer {{admin_auth_token}}
+
+{
+  "name": "Hello1",
+  "description": "World",
+  "price": 59.99,
+  "kcal": 800,
+  "imageHero": "",
+  "imageDetail": "",
+  "allergyIds": []
+}
+
+###
+GET http://localhost:8080/api/admin/menu/search?
+    search={{$random.alphanumeric(8)}}&
+    page={{$random.integer(100)}}&
+    size={{$random.integer(100)}}
+
+###
+PUT http://localhost:8080/api/admin/menu/1

@@ -1,0 +1,68 @@
+- hosts: nginx
+  become: true
+  tasks:
+    - name: Update and upgrade apt packages
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install NGINX and Certbot
+      apt:
+        name:
+          - nginx
+          - certbot
+          - python3-certbot-dns-cloudflare
+          - curl
+        state: present
+
+    - name: Copy cloudflare.ini
+      copy:
+        content: |
+          dns_cloudflare_email = {{ lookup('env', 'CLOUDFLARE_EMAIL') | trim }}
+          dns_cloudflare_api_key = {{ lookup('env', 'CLOUDFLARE_API_KEY') | trim }}
+        dest: /etc/letsencrypt/cloudflare.ini
+        mode: 0600
+
+      changed_when: false
+
+    - name: Check if wildcard certificate exists
+      stat:
+        path: "/etc/letsencrypt/live/{{ lookup('env', 'CERTBOT_DOMAIN') }}/fullchain.pem"
+      register: cert_status
+
+    - name: Get wildcard certificate
+      command: >
+        certbot certonly
+        --dns-cloudflare
+        --dns-cloudflare-credentials /etc/letsencrypt/cloudflare.ini
+        -d "*.{{ lookup('env', 'CERTBOT_DOMAIN') }}"
+        -m {{ lookup('env', 'CERTBOT_EMAIL') }}
+        --agree-tos --non-interactive
+      when: not cert_status.stat.exists
+
+    - name: Add GitHub Actions private key for nginx
+      authorized_key:
+        user: root
+        key: "{{ lookup('file', playbook_dir + '/../../keys/api-prod-github-actions.pub') }}"
+
+    - name: Add GitHub Actions webhook secret for nginx
+      authorized_key:
+        user: root
+        key: "{{ lookup('file', playbook_dir + '/../../keys/api-dev-github-actions.pub') }}"
+
+    - name: Configure nginx
+      template:
+        src: ../templates/nginx.conf.j2
+        dest: /etc/nginx/sites-available/default
+
+    - name: Reload nginx
+      systemd:
+        name: nginx
+        state: restarted
+
+    - name: Configure Certbot auto-renewal
+      cron:
+        name: "Certbot Auto Renewal"
+        minute: "0"
+        hour: "3"
+        job: "/usr/bin/certbot renew --quiet --no-self-upgrade && systemctl reload nginx"

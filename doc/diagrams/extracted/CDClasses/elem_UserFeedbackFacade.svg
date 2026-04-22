@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="76.8125"
+   preserveAspectRatio="none"
+   version="1.1"
+   viewBox="0 0 191.5 76.8125"
+   width="191.5"
+   zoomAndPan="magnify"
+   id="svg791"
+   sodipodi:docname="elem_UserFeedbackFacade.svg.temp.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview791"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g791"
+     transform="translate(-2485.75,-1163.8594)">
+    <!--class UserEventEntityBuilder-->
+    <!--class UserDeviceEntityBuilder-->
+    <!--class AllergyManagementController-->
+    <!--class NotificationController-->
+    <!--class OrderService-->
+    <!--class OrderItemFeedbackRepository-->
+    <!--class Role-->
+    <!--class UserDetailsServiceImpl-->
+    <!--class UserProfileFacade-->
+    <!--class FinanceService-->
+    <!--class OrderItemFeedbackEntityBuilder-->
+    <!--class TransactionAuditType-->
+    <!--class JwtUtils-->
+    <!--class AllergyManagementService-->
+    <!--class RefreshTokenService-->
+    <!--class OrderRepository-->
+    <!--class UserAccountController-->
+    <!--class AccountRepository-->
+    <!--class RefreshTokenCleanupService-->
+    <!--class AdminUserController-->
+    <!--class CampusManagementService-->
+    <!--class UserProfileController-->
+    <!--class AuthController-->
+    <!--class UserEventRepository-->
+    <!--class AdminReportController-->
+    <!--class ResidenceManagementController-->
+    <!--class RefreshTokenEntityBuilder-->
+    <!--class ResidenceRepository-->
+    <!--class UserProfileEntityBuilder-->
+    <!--class UserFeedbackFacade-->
+    <g
+       id="elem_UserFeedbackFacade">
+      <rect
+         codeLine="365"
+         fill="#f3e5f5"
+         height="76.3125"
+         id="UserFeedbackFacade"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5"
+         width="191"
+         x="2486"
+         y="1164.1094" />
+      <circle
+         cx="2509.55"
+         cy="1185.4609"
+         fill="#add1b2"
+         style="stroke:#181818;stroke-width:1"
+         id="ellipse260"
+         r="11" />
+      <path
+         d="m 2512.3156,1181.3359 q 0.1563,-0.2187 0.3438,-0.3281 0.1875,-0.1094 0.4062,-0.1094 0.375,0 0.6094,0.2657 0.2344,0.25 0.2344,0.8593 v 1.4532 q 0,0.6093 -0.2344,0.875 -0.2344,0.2656 -0.6094,0.2656 -0.3437,0 -0.5468,-0.2031 -0.2032,-0.1875 -0.3125,-0.7032 -0.047,-0.3593 -0.2344,-0.5468 -0.3281,-0.375 -0.9375,-0.5938 -0.6094,-0.2187 -1.2344,-0.2187 -0.7656,0 -1.4062,0.3281 -0.625,0.3281 -1.125,1.0781 -0.4844,0.75 -0.4844,1.7813 v 1.0937 q 0,1.2344 0.8906,2.0625 0.8906,0.8125 2.4844,0.8125 0.9375,0 1.5937,-0.25 0.3907,-0.1562 0.8125,-0.5937 0.2657,-0.2657 0.4063,-0.3438 0.1562,-0.078 0.3594,-0.078 0.3281,0 0.5781,0.2656 0.2656,0.25 0.2656,0.5938 0,0.3437 -0.3437,0.75 -0.5,0.5781 -1.2969,0.9062 -1.0781,0.4531 -2.375,0.4531 -1.5156,0 -2.7188,-0.625 -0.9843,-0.5 -1.6718,-1.5625 -0.6875,-1.0781 -0.6875,-2.3593 v -1.1563 q 0,-1.3281 0.6093,-2.4687 0.625,-1.1563 1.7188,-1.7657 1.0937,-0.625 2.3281,-0.625 0.7344,0 1.375,0.1719 0.6563,0.1563 1.2031,0.5156 z"
+         fill="#000000"
+         id="path260" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="12px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="55"
+         x="2567.95"
+         y="1181.5664"
+         id="text261">«Service»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="140"
+         x="2525.45"
+         y="1198.7363"
+         id="text262">UserFeedbackFacade</text>
+      <line
+         style="stroke:#181818;stroke-width:0.5"
+         x1="2487"
+         x2="2676"
+         y1="1206.8125"
+         y2="1206.8125"
+         id="line262" />
+      <line
+         style="stroke:#181818;stroke-width:1"
+         x1="2487"
+         x2="2676"
+         y1="1214.8125"
+         y2="1214.8125"
+         id="line263" />
+      <circle
+         cx="2497"
+         cy="1229.1172"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse263"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="165"
+         x="2506"
+         y="1233.3457"
+         id="text263">placeFeedback(feedback)</text>
+    </g>
+    <!--class CampusManagementController-->
+    <!--class AuthTokenFilter-->
+    <!--class NotificationType-->
+    <!--class GenericManagementService-->
+    <!--class RefreshTokenRepository-->
+    <!--class ReportRepository-->
+    <!--class ReportType-->
+    <!--class UserSettingsController-->
+    <!--class AuthEntryPointJwt-->
+    <!--class NotificationRepository-->
+    <!--class NotificationEntityBuilder-->
+    <!--class UserFeedbackController-->
+    <!--class MenuItemRepository-->
+    <!--class NotificationPreferenceRepository-->
+    <!--class AdminNotificationController-->
+    <!--class UserEntityBuilder-->
+    <!--class UserOrderFacade-->
+    <!--class WebSecurityConfig-->
+    <!--class ResidenceManagementService-->
+    <!--class UserFinanceFacade-->
+    <!--class AuthService-->
+    <!--class ReportEntityBuilder-->
+    <!--class MenuService-->
+    <!--class CampusRepository-->
+    <!--class TransactionRepository-->
+    <!--class UserProfileRepository-->
+    <!--class AdminAuditController-->
+    <!--class UserService-->
+    <!--class OrderStatus-->
+    <!--class AllergyRepository-->
+    <!--class UserSettingsFacade-->
+    <!--class UserDeviceRepository-->
+    <!--class NotificationService-->
+    <!--class UserEventService-->
+    <!--class AuditService-->
+    <!--class TransactionAuditRepository-->
+    <!--class UserOrderController-->
+    <!--class OrderItemRepository-->
+    <!--class UserEventType-->
+    <!--class GenericManagementController-->
+    <!--class FeedbackService-->
+    <!--class AdminFinanceController-->
+    <!--class NotificationStatus-->
+    <!--class UserRepository-->
+    <!--class NotificationPreferenceEntityBuilder-->
+    <!--class UserMenuController-->
+    <!--class NotificationPayload-->
+    <!--class AdminMenuController-->
+    <!--class ReportService-->
+    <!--class ListService-->
+    <!--class ReportStatus-->
+    <!--class ListController-->
+    <!--SRC=[lHnhR-Csydj-XGyzuBZe1hW7zb0OYmAEOxSfiflKILhSfuCYqOwwjkHIKhPfSV_zPlWSFcJ9IRPV4eeS3idXS5uS-Yy5NvSLdyolFjwkhYul5wl_pgykhrQJhnR_MBvRBax-eW5k5gkVBkOBqxhyr-BTyfrjNSxcitFRkFXc-Mxn3UawlrjTtFx7zbr2xx_RvjNY-khculPgHG0MPul5oKbRjbkOsZPhcibvcMr4jfkSJiwo_1ElYibilz-MUTQMTNLoyhV9kSAMI-YcvOBNxTEUDvCCOFDwMulcfFbKLliCqIYmFquc4jr6r5rLp17e_VjvNRMYtcwv-FRRY2wf3ZTSF9Ov1sYFI2dGPPPd1K9IWgLnvfqesoU9b98l1RpY-xefsreWU4ZEa_-Td9oevTurN2mUUTKkAY3jqrbNRWik9k_VNxKFShL8ZzEoc4ukwsg3vRRSyUdaechQh6gneWCKKuL8ui0wZYXlWTPJDm9-Ojif_FcwhMzQKLORzWQ_oeALXImXTeP_vDSzJaU1u2WC_yWlYv_PqfjWLUSSTs3qifAhg8fzNLRjTA8cYtNxVxxxT_50QxAkzRuHqsp3_MvbCylRyf7_jU5GVr_NMvvLNiDZjks0N6Uk2PRImeGAZzgvu5dBYrdhxy6-IDGUfBGPc9b2I75S5yC_AVfhoZ1JaBLsRioML5ypEsPB5gUa5BCbMQzepDG_MMD8mKo1xlOC3-RcwKDMPHk-0oJkk4w2i_k78elh-x5koxKM6GFTAWAgp_VKwwyh3GzOc3ltONUbgvhklib5US-PBkqHXrnjNvERzfKeBCu95JT_s14s70ab96IZTdI_pN8kAvZWltQyQIES5otVBJalxa6WE1ao2GIA6mK4R77sD3VRVSRRpvnN35XGjETGztO278A5DtfEiqSkO9jMGB5giwpbWAo4Fn-pdGMwh3_3v5Q84ziRjYihCwivI3d59chi2zqNDomhA-Hq3nr2_Los3n_hQh7Rjqy6Zo99ZjXCLN8wQXGrtqlUDBSFMRNujSksJCWwCsS5SLusSDhkEzomljLv9BYea3ghhDhmFghH6NmdAIsIar1mkEaNXJnH5qNKFuQtsyvgKqfGDrh4RRq_k3-EhrOWq4B9Atb7IZpDch9yjMQL72AKvB2nsqOp-SLklurP7fVhM5ITEVTjXzpMMO5DYamuc2HKQjHhKQ_BBLVgkUUCAJ57eDsvicAlhrMVJzD4Xr-MLLRb_F3vlk-sdovXEN3sYh9DeLPqevpGy4pa3zZMN6SR60KsaAdAjvCzyEJRILF-RlTutWa1uXJXPxayASnklyYg9ikHpGagYkA0O1cjb2r7JXqIfvuLAwF6Q_c62wnQwn6ewdqrZKbqux6QhkuvP28-b4OycGAb9A7wh8DTHxldsKVhXy_jNGldQkAPbXB7BvzRg1BSCs6WSl7RlXHIrtreffFIqUpq4tzYbFTGL2n5lOD1RckmpLcBVpL41VAlvR8UOQAZ2EBF3cIMK28vBJOqIsu9nlO7VtBC6ydh1WojzVL16-B0uIEYZQy5RzHCUZi80aH5r2fPRuIPD9az4uBMX7ZFksXRTjblT8JcceixQUFgzWRt71LFKSFnkY5Vbei4VuIkG1higB1O4_3K45VrLFHLPmFjrsuljuCNkXjHAI4_g1D4v-hiJ7MAmXvgNgJs9sHnnIbSbEidnmgcLo2DnfisDstMTisiAb8s3hI0k3kajQNiJ7J65Gvq7MjK8VIy1gt80LgPUsfSHqO4KKP-kbtATjKqmXwHq7PfYa1kGV0Hh_y8e8lA0-CXe9mceSuvRtAtagRRtTPjjWK0GvAUlUidl9viC4r57h3f49eL0J7IVP3POJAHqGRcacomWDSm2n2pUdVukXRyd6V5jgnWA5q8wA3Nx1ijMaqFU39hPLyeqqO9boMjeZx4InI_xZlsi86WIMxkCyw475SF3zm-ptPxs9rS_lEiOhIUK2Dasu_TxXwecWSLANGhtfG0bAD1fqiUKchNTQuymaYVwnccfhfoOqNZgWbkjsQEdZb9HUjS2MUdhF2Or1MiEAMkhFv9A3fd1AVbFM630lWTLpp0beDECxAZKaQDPso0csADD6TqGytRYVfS4UEuu2WLD02TfgBzaHO0sUeHg_DyYcdiPdnfns86zi_0DD54ifimSn_4ADYK64kL56pAJNMtf-Gb9fOYyhO68K4XA8Dv4mV8kcjJeGbh_WoAae3h44GCYKCXWGYlaq_AUxf1INhLoHm_RS9WLMh-zkW-AqP53z_uC2r2K_DTcjIy2HmUwxv4WKdNeYEJf9Som8geZwcFOvcw9NJ24a5N4-6BaDk6U3vZtJO_YDac3T7OgTDpP_f_Nq3IGSvQPaigN6fepsmfoHvV9E9ciIiHhDL3f7CjsCoeNAbAfBGTLdcstONXBZOLc37phE7QzOo17J9D9f0iJKzxKkQEFWwXMWy3zY4NAlqxrKg1n1pCXAPkrrnhfhp8Y7LDlURSIrYch5RQUceC9JBy5uXP-ColnsRw_xEY6g9d7tDgRgdH506O_cz66pAz_3stOTf38JaPuruU2gA4Ulu8IJmpOOTbkMqbV29o8eCgKnjUCHpcHp6dYSYcMSDNHQtmOs1BL1ZaLIhbxGJe3DPQ0uTyBI7c3t3Mf3k-pqI3WOwK-g6N52yA6Ns7Fd-Pfsma3w4WOOuVzfaVtO0rr9t8EOQ8w34yTQmcJJSkJuCc4J7T36ih7cKAZ0eqwZ1emp2jJCU8Mz_PNIcnlios3NTdgIzEWlj5rO3dxQPHfKCaQk7QmdPzzL1L_TbV8PeXhwzAWdY8l7qrCP1MNi1Q81j2m8kNic9hKUyKmhOEy5bGSdzJK92Rjii_WRZFUTD0ereT29UkhTVhsp9GB9BtEHIF3hfO0myNHgznHaH40kFmoDxHt9DUi73jDF0Wjy4Zluub648D1ZQMSBvuuO4F13N8LFkcHK4yvhPXcRkgg3zNU24J34xd6b82RPCunk9849w25qaxvOAs69flHhck2fHwTtvTU3ThMbdWrTdwX2n75GHsWdYwncjt4FW99QG5rswdTNEaFD19M_oMy-XUcMgArvSWkqnymY15i-9PiQo53MFXt38g9UayufZRwD2YbfWUDYKkZuazafEMaYh8UGEXt6jHrhX1KI1mhnkEYd4Y75BGMrOgv7jNYI4mPUCFmn71ui6TTnosvqQrUAHLOiK3djtNZ-3Z0FDUbhkoPVAA0YIbfZESYj1IUQOatMOc5AxksmPbeEK3AKiK3rYXEXJYzIImv779u8mcZ5nWB2h5wJt1N4g85-KmoOGvQcRjG8-2zKQhMfce5T9UNXB9nKR-ZAxMxeoN0oDRf46gMJlgR1ki7s-lRmlEzvTbzUbERBtagHrCEAWJP9FrxR1RT9C_yA83zWFUz7ob1gp5m7q2swfyv29ogzG-ULNf48f0XfP-TI8UOflYnN8XQl4XtesZVJz3K5-Qj1vRzlc7JSJKcZ-O_d_OYrH4OeIdZ_KXpTuoKz292hXFJFtJ8nbICbVi3wx8L4BWV2R_QYFQCXSZPMDW6oPWfAn79kA4VgYP4bPZz4FDZUmnenzzlktGpOtd0ayJRl4HZl07NdMOYN14K9KUzMl1rq2cey9MOCVlQkoSRHTLTW-KeZRVOWSwGzVVYewpC4tfJh9EutNLqhaFisu-XFgwQnwY9eCsrQQw8VaEJ6YWkNSz2hcE2FK3t3o1TRsRLHM0vT8NJq6bxvdGA_knAtdxFJZY3HlIHJAI_eKI9K_rQGTVrewDkfBYUEDWqBltcu9BWh6gSbsAfWqZ41ZB3UiuCewN00nZVGQhmbD68F4RJAAWOJrCE5JsPnmFZ22qUaZ2NDRvfuD8D42CmqNKcWEpIKF5sBZYhwY_gK-E_pfXJ3q4q_z3fMGsZfd2irHHj2iigWdW5E5PM164DmbLMR9MgHda8IR_gcHTpMVC51GXa1sP_AkFhUPZPalXcP2Ivc3CD94gd6Csm9QOq5fyOAvXa47SarWib_0KO70p-vdV6xSL9CYwt2JysF5Xqwv2bnQCdzzvyNrM5Liq2YDNsIxOpmC3rV5OuZIrV1QDcf7EgRgHqKhs9kweug12ffMfBdfFR6YMFRJjtjlEHPNNTYmVdKbJKy5VDd21EFfwsaljwEU0Lqhs95V6yLX9ygcDYgh7PVLoHSxfvDgdRtyi_fZyXd69U5_aMjnzsEIsKyn_03mh7STXv7oydS1gqRbq_VmxzGXV62eRhJghG4CMt3vHY9rA5uORxKxIIAhQC1jA39rRl08C_4Ai2dKurjq0dxerxCeTLy-Jg68Nq0-s41ZcGxQNIuFTmWnLts6K6Oc-Msdi_dXfjYM-4z_ReFODXZCYZUZQNIvRu93sk92e1izjTBNlod-iKfQvkVOAzv1VQOZFJ67GstH4PwuOgdV2OOoKdwNapSupKx0JHxzG_rUZodrcwf-5GZvYfc3Xa4cOAVX-eNCAXpn2RSZGZMDXXHOL_V7t15EnH5q0InYC9Mj3lt7mxP5CHiECK-DbUb5kKoal-gZ9e3RHDWTvJQPUlsp0DodQBj6DLcNXPTm-hy5nsGGJ86Xwb9bzA960IpsM2A-MlypL6ycEbAFOD0tKtR8cbTzXe0-dPPZ4YtbqSKzpG0vaKVhzaWyMnbBbdD-NdiNXvOwxUYJER8s6ahbTT7TCyabCZAFfTXBxR8Uh6X5FXWuAr-WUE3mTE7bt4SzFHiRL82pRsT2MUopsZ6b4XEmPHD_3EhbARs93QIkpYwFfZxiYrKivRWkI-puc-_V8-Sa-4Sc6EYQJaeuw_oEoZ-tf70LDJwHC5J0vEkfqocj0agjpE1zPFuk1fioKHkHnwH1NZpJfxvSK9YDYK_8jr61UAy2Gn5Rt5Rh1qho_h3Uzoi7tY2IgGx0hdYk4PP0NJLASd_sWSKnAjE_SNHGiKSjUc3oj7YHBk-xPz-sQsOv_Bg0x9X8NCT8vytFFKlmz9ccn9wdVn4Nq6Pqb4jsyeLnBEj5WJA3cENa3xYSHnekdFgcmIBx-rmbN-jS4TBGyVNNGo_Lmubts-RNxSD4WVmNJvBhaqz7xNtZUWX-tb_U3vCk-MSIGCev1PmOQ3t7v0MZVJLT-lXhJngkzzFmg0FB8XADwLwtzWMywRjmjZ8Ml3kJDzn7ywoxEh9-cqkt92-gDR98JLfwukjbUf7w8WyhPUBVRG8hIETpsjdc1cR7J_hDbU__qXmxTHLM2HX__o0cnZpN0p9lX8zCgUbFDrE1zR-8IcIO7yom64p4yW0ITHZogr4ayYSuZqdX8QWv142Vdd3rTIdSTrOfECDRsTAvgUhD71fxtoS57fAAHaFyql0CO_84GM-bvtyCN0hhMbuM7hW3ia_unXmDSiH-xJCKexQzIpDGMAUOrlr3nYizgyPoKLTwQyJnVDFZH4SzSkAxttJQJY-jBNvEhJ-KtXXbB4WPM6emdmK1Vz0rBKclP85VxMjwZTJgDAgobjzgcEg67NZVxt3i97ix6s11z6Uj_NiAvIS4u734RpjQGdew-ondtljSQKlxlYVmvlo3IO_Yzp4FmdQ1-OM6iyKLqMshJJ4pjK6xBYvBlzYvx94w38stntG0d-IhnXJjjZFlM9BKawkirndrtBcibwahRufwPbx7IbwtGtt_l4dWIAOEkBUxPnAamyJrC0YR6zAjDYf61Sdgbufh0-_dIFo_Z9zaTUyL1E8kHCirTqDl0_4_tKpMcdNwu_0E3d7x8Lez8pFio5mvc7naf1tqbxLdmhNCJBGSoKbQIATvXbgWBnGd6-0V4wSxTTqpfvGUrfCRSJFI8ckm9BtT2qHBbxTxNnPEN59lxzwrAy65MEMnRucxk8MiUvdN1tQs-p8yqNsU0tdvS06xvyLLkCjLhd5oaZrw3UWCtGff-lLxOy8qH2wvqnYekxo5uVqJc-S_2yHreVwv460sRnW4ozrALWeMtKDwxLVyNYA9ABoD4uY5shmesuXJyIel7L4SqV9dQHpeDSDdMaN9AwVfww_a_]-->
+  </g>
+</svg>

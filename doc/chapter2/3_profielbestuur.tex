@@ -1,0 +1,66 @@
+% Profielbestuur
+\section{Profielbestuur}
+\subsection{Gebruikersgeval}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/usecase/profile.png}
+    \caption{Gebruikersgeval vir Profielbestuur}
+    \label{fig:profielbestuur_use_case}
+\end{figure}
+
+Volgens FREQ-USR-201, FREQ-USR-202 en FREQ-USR-203 moet gebruikers hul profiel kan besigtig (\autoref{fig:profile_screen}) en hul koshuis en kampus ligging, allergene en wagwoord verander deur 'n profielwysigingsproses (\autoref{fig:profile_edit_screen}). Verder moet die gebruiker hul huidige rekeningbalans en transaksie geskiedenis kan sien volgens FREQ-MOB-203 en FREQ-MOB-204.
+
+\subsection{Scenario}
+
+\textbf{Akteurs:} Klient\\
+\textbf{Voorvereistes:} Klient is ingeteken\\
+\textbf{Prekondisie:} Klientprofiel is geskep\\
+\textbf{Postkondisie:} Klientprofiel word gewysig\\
+\textbf{Inset:} Inligting wat gewysig moet word\\
+\textbf{Uitset:} Sukses- of foutboodskap\\
+\textbf{Skerms van Toepassing:} 
+\begin{itemize}
+    \item \autoref{fig:profile_screen} (Profielbesigtig skerm)
+    \item \autoref{fig:profile_edit_screen} (Profielwysiging skerm)
+\end{itemize}
+
+\textbf{Hoofvloei:}
+\begin{enumerate}
+    \item Gebruiker navigeer na profiel bladsy (\autoref{fig:profile_screen})
+    \item Stelsel toon huidige profiel inligting (\autoref{fig:profile_screen})
+    \item Stelsel toon huidige rekeningbalans
+    \item Stelsel toon transaksiegeskiedenis (regs bo)
+    \item Gebruiker kies om profiel te wysig (\autoref{fig:profile_edit_screen})
+    \item Stelsel maak velde bewerkbaar
+    \item Gebruiker wysig gewenste inligting (koshuis, kampus, allergieë, wagwoord)
+    \item Gebruiker klik "Stoor Veranderinge"
+    \item Stelsel valideer gewysigde inligting
+    \item Stelsel werk profiel by
+    \item Stelsel toon sukses boodskap
+    \item Stelsel toon bygewerkte profiel inligting (\autoref{fig:profile_screen})
+    \item Gebruikersgeval eindig
+\end{enumerate}
+
+\textbf{Alternatiewe vloei A1: Gebruiker kyk net profiel}
+\begin{enumerate}
+    \item[5a.] Gebruiker kies nie om te wysig nie
+    \item Gebruikersgeval eindig
+\end{enumerate}
+
+\textbf{Alternatiewe vloei A2: Wagwoord wysiging}
+\begin{enumerate}
+    \item[7a.] Gebruiker kies om wagwoord te wysig
+    \item Stelsel vra huidige wagwoord
+    \item Stelsel vra nuwe wagwoord (twee keer)
+    \item Stelsel valideer huidige wagwoord
+    \item Gaan verder met stap 8
+\end{enumerate}
+
+\textbf{Uitsonderingsvloei E1: Ongeldige of uitgelate wysigings}
+\begin{enumerate}
+    \item[9a.] Stelsel identifiseer ongeldige of uitgelate inligting
+    \item Stelsel toon foutboodskappe
+    \item Gaan terug na stap 7
+\end{enumerate}
+

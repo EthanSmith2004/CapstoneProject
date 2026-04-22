@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="94.421898"
+   preserveAspectRatio="none"
+   version="1.1"
+   viewBox="0 0 299.5 94.421898"
+   width="299.5"
+   zoomAndPan="magnify"
+   id="svg1205"
+   sodipodi:docname="elem_UserEventService.svg.temp.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1205"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g1205"
+     transform="translate(-976.75,-5292.3594)">
+    <!--class UserEventEntityBuilder-->
+    <!--class UserDeviceEntityBuilder-->
+    <!--class AllergyManagementController-->
+    <!--class NotificationController-->
+    <!--class OrderService-->
+    <!--class OrderItemFeedbackRepository-->
+    <!--class Role-->
+    <!--class UserDetailsServiceImpl-->
+    <!--class UserProfileFacade-->
+    <!--class FinanceService-->
+    <!--class OrderItemFeedbackEntityBuilder-->
+    <!--class TransactionAuditType-->
+    <!--class JwtUtils-->
+    <!--class AllergyManagementService-->
+    <!--class RefreshTokenService-->
+    <!--class OrderRepository-->
+    <!--class UserAccountController-->
+    <!--class AccountRepository-->
+    <!--class RefreshTokenCleanupService-->
+    <!--class AdminUserController-->
+    <!--class CampusManagementService-->
+    <!--class UserProfileController-->
+    <!--class AuthController-->
+    <!--class UserEventRepository-->
+    <!--class AdminReportController-->
+    <!--class ResidenceManagementController-->
+    <!--class RefreshTokenEntityBuilder-->
+    <!--class ResidenceRepository-->
+    <!--class UserProfileEntityBuilder-->
+    <!--class UserFeedbackFacade-->
+    <!--class CampusManagementController-->
+    <!--class AuthTokenFilter-->
+    <!--class NotificationType-->
+    <!--class GenericManagementService-->
+    <!--class RefreshTokenRepository-->
+    <!--class ReportRepository-->
+    <!--class ReportType-->
+    <!--class UserSettingsController-->
+    <!--class AuthEntryPointJwt-->
+    <!--class NotificationRepository-->
+    <!--class NotificationEntityBuilder-->
+    <!--class UserFeedbackController-->
+    <!--class MenuItemRepository-->
+    <!--class NotificationPreferenceRepository-->
+    <!--class AdminNotificationController-->
+    <!--class UserEntityBuilder-->
+    <!--class UserOrderFacade-->
+    <!--class WebSecurityConfig-->
+    <!--class ResidenceManagementService-->
+    <!--class UserFinanceFacade-->
+    <!--class AuthService-->
+    <!--class ReportEntityBuilder-->
+    <!--class MenuService-->
+    <!--class CampusRepository-->
+    <!--class TransactionRepository-->
+    <!--class UserProfileRepository-->
+    <!--class AdminAuditController-->
+    <!--class UserService-->
+    <!--class OrderStatus-->
+    <!--class AllergyRepository-->
+    <!--class UserSettingsFacade-->
+    <!--class UserDeviceRepository-->
+    <!--class NotificationService-->
+    <!--class UserEventService-->
+    <g
+       id="elem_UserEventService">
+      <rect
+         codeLine="1181"
+         fill="#f3e5f5"
+         height="93.921898"
+         id="UserEventService"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5"
+         width="299"
+         x="977"
+         y="5292.6094" />
+      <circle
+         cx="1066.25"
+         cy="5313.9609"
+         fill="#add1b2"
+         style="stroke:#181818;stroke-width:1"
+         id="ellipse974"
+         r="11" />
+      <path
+         d="m 1069.0156,5309.8359 q 0.1563,-0.2187 0.3438,-0.3281 0.1875,-0.1094 0.4062,-0.1094 0.375,0 0.6094,0.2657 0.2344,0.25 0.2344,0.8593 v 1.4532 q 0,0.6093 -0.2344,0.875 -0.2344,0.2656 -0.6094,0.2656 -0.3437,0 -0.5468,-0.2031 -0.2032,-0.1875 -0.3125,-0.7032 -0.047,-0.3593 -0.2344,-0.5468 -0.3281,-0.375 -0.9375,-0.5938 -0.6094,-0.2187 -1.2344,-0.2187 -0.7656,0 -1.4062,0.3281 -0.625,0.3281 -1.125,1.0781 -0.4844,0.75 -0.4844,1.7813 v 1.0937 q 0,1.2344 0.8906,2.0625 0.8906,0.8125 2.4844,0.8125 0.9375,0 1.5937,-0.25 0.3907,-0.1562 0.8125,-0.5937 0.2657,-0.2657 0.4063,-0.3438 0.1562,-0.078 0.3594,-0.078 0.3281,0 0.5781,0.2656 0.2656,0.25 0.2656,0.5938 0,0.3437 -0.3437,0.75 -0.5,0.5781 -1.2969,0.9062 -1.0781,0.4531 -2.375,0.4531 -1.5156,0 -2.7188,-0.625 -0.9843,-0.5 -1.6718,-1.5625 -0.6875,-1.0781 -0.6875,-2.3593 v -1.1563 q 0,-1.3281 0.6093,-2.4687 0.625,-1.1563 1.7188,-1.7657 1.0937,-0.625 2.3281,-0.625 0.7344,0 1.375,0.1719 0.6563,0.1563 1.2031,0.5156 z"
+         fill="#000000"
+         id="path974" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="12px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="55"
+         x="1115.25"
+         y="5310.0664"
+         id="text975">«Service»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="112"
+         x="1086.75"
+         y="5327.2363"
+         id="text976">UserEventService</text>
+      <line
+         style="stroke:#181818;stroke-width:0.5"
+         x1="978"
+         x2="1275"
+         y1="5335.3125"
+         y2="5335.3125"
+         id="line976" />
+      <circle
+         cx="988"
+         cy="5349.6172"
+         fill="none"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse976"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="273"
+         x="997"
+         y="5353.8457"
+         id="text977">userEventRepository: UserEventRepository</text>
+      <line
+         style="stroke:#181818;stroke-width:1"
+         x1="978"
+         x2="1275"
+         y1="5360.9219"
+         y2="5360.9219"
+         id="line977" />
+      <circle
+         cx="988"
+         cy="5375.2266"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse977"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="232"
+         x="997"
+         y="5379.4551"
+         id="text978">logEvent(userEntity, userEventType)</text>
+    </g>
+    <!--class AuditService-->
+    <!--class TransactionAuditRepository-->
+    <!--class UserOrderController-->
+    <!--class OrderItemRepository-->
+    <!--class UserEventType-->
+    <!--class GenericManagementController-->
+    <!--class FeedbackService-->
+    <!--class AdminFinanceController-->
+    <!--class NotificationStatus-->
+    <!--class UserRepository-->
+    <!--class NotificationPreferenceEntityBuilder-->
+    <!--class UserMenuController-->
+    <!--class NotificationPayload-->
+    <!--class AdminMenuController-->
+    <!--class ReportService-->
+    <!--class ListService-->
+    <!--class ReportStatus-->
+    <!--class ListController-->
+    <!--SRC=[xJtRRYEviU_-2WKRu72G6I3d74mG28i0iYqbNdZ6Zcmdo5FGxgRapaZTlUnkpogB_7kgU2rUMcffPlTbz6AnYxTYaImMwqB_fk2hikAJgxkFZykxszlvyfzNTxTtoybty_zTl5_CBtwZ2ppCbt-xkPgRtCN_pzyltjlSnUngTcqpvtzSl9__aLIzUbhUFFx3rbr0xT_RxENy_kxXvl5kIGhCB-VpYukkx3Q0sYPhsybrcQr5jfsycrnc-ITU5PDPqspAFElAkhgu-9_9jMejbwNRZWjUTxk6jvCCokRrfXRjHVkfh9eCcr75VhwOoERMekwhuWeBVV_zLLrrejvikFZJdoAwf2eySF5QvXnAUqHA5LraULPWIKgmT9jvByfk9nkbv4iLNlAcRikk5bWy9EV5VoukBjHmdrekvg-ywkOLa7PtsPURWel9zz_VTIzoj4YFTsKndTpMrHhJNRdbqybDrNPPrI6WXoQcgY7P1i8uDla8j9ww7l0Jyzx1dzzrzKCdochDtk1NMR2oa2bidU4V-VMCwAWYs0l3F_BBjiziwaqmgckECp1wMCbHL4LJbrKtdIXa4TRyt_i_52yKalMTzuqjpTRShrQsixmhN_blMmxmvxhUyApoCbwpJG_akdHPC9GE42eyQkU2PnqlPfq_1qsHWEwbjEcOcKH8SHmNmpyf-clAC9DGPGmMpAOatEBCR4h2pG2PITYU9FsOJKcueZnJFtIsPxWnrxiFMPMj-HQAk-qw2VRkpueihkx7kYjNccKSg5QHedf_Jxtw6cZMW2tpv3xihFHLsp-tkIYVETEf1jkG8ntAScZVYSAsEQ7ivcVRmveZIOKisQePRJPPpYM02VvZpzikQlEcuzi5vyKpC1J7GoO1Gt6zj1ci82vtp1lp3VEXG2Ll9H2uS76vkx5BZ_zKjbrB8LW2gz4FdQ-Qo86tTIgxu1lUSLfRGIWQ2X8sOg4-UWwikj_qxGjpewcAXOJ4e_IpekPkgikiouTo4JDJ8aBGPBpHCtbNSJDO-A9ZXyybNy7HLkKyHT6s5iY86cG13v3sCXlOCDdpXfi2z_gRpDeIbZOm3o5_21pN5lJMonywox20FcR0n4kTC5W-riqIzpuMQDcshCmokyAf9ItOTSXgauhm-RFa8-Bn9QlcF_RPXkA7595Vrx3AO1Vrk7aMjMeon6hsoWKCMbMugQwXrMLMhM7dTPdeyFFj17WS9WWILuQDNVBkC-VLKEcmWoGMScaROYHBq97VyhOT6lPj_Hdsz3Wgctb2FfUL5SvnrEVVo-xbOrtDjqstC-qmoZAMS5Q5Xwfa2_8mqrn7fkzMh99DXuSqTBvfDV-wsJQRc9lX4dFSHx5JzssxtDHPWLbgQM9dSd6cUhqNzQhSS2Lv3R1FTLAHqevbEkPgiiZfbwpXkb-KLGOxTHJhLiIXM-ovttowXN72-YlApiEevPd8Nx1Q2xiOUe55m1JmxGJt-Tj9M_xRxKQHLMsMuzOWvUDoLxq0rYBHcUM62UyvCqRBMtPlJrqZJl9Iwng5cOwlkK3GIlT0fQgl9WnHGVD88SRWnKn2GaN4DkiKMtEK91Cows5oKQGzUMlzyBbxwc1VJRnRWspZNvyx00dkIQS0dF_Kb4AACH_QwQHqD7ltYUziRoLI15f_hE6-9OL3cJAhvGU_7NDyLS02Wsfu9YgfYUudv3uBKMzjqOwqhbgHS2mJxN9WlRRllUBXdir7M1jV2TwguGrM4AGGPL7B9DmmCtaRygH32WdRlUwZQTbcFz4UsdikdkJrHUUtEETuZXKrRAy7ycLNaJe4GYAhbKtRTYA_uAy083N-XejFBGmkojNEpJnfKUsXi1_L5amCegt6u3hAyVxJDx8vNkXSp7bdre0QaMequaPdgVKijUuUkgphMnJBuCTDHIe3AwXB4iXUABcnmXVsdhoRhuF9IaGMlEPj7fPJtG75Kn8ZvC1XEondtWC0XgUGk-IhMl1hdXMR4iXQwCGRkfcxR1C9nY02oem0-HHAYFjUXCOBlfBQ2l7HGhL6Iv7iXg03dsHBNjKW9S9wqvEMcX-bpnZE3_hoUgABvK2fjjzAqW9P34u3CnqDsfT7jMHrGF-mKgAZabhLkR6W82e-EbbjhBX7pajLzyn7ptnqj-HjMM3ZqBHmwH5wWAjisy0sBbYk4q4TSqVgNTfDDL9NhSBMMnH9bkkpfmBfdMq-zjjdsFPv03YLbHbi24KYUWG55G78yDEovPMITfo8YRoahW3fb91ffSQ4UEgkhca1Ykpm0au5d8G37EUW5bEBxS6Ar79TIpUiPCAwYBie0-JjH7qkuxkoek2HSZjPMoD6vsa2fh5ou9TM1ypWAdG0JRmjsKcOkG-Bck3h4erRag1jkQwUcYN1ZIuV3sbo3LEJiQdXOA1L0L3tNGflUsavdnBVxYaHC1ISVN58Y16o465Zv9Eo5PsX92zLoR1PVKT5K6ffMWPzaZs8yjNn9b4iJVKfKX71sq03PVL6aH7GvMWh8Acbxif5LCV0OxkXpWcrOWa3fx6xHOtRZ1YVqNeqJ-pk0Ws0fH2pgHDCXNQapAOet42Jo-FCkSxoRKgQy-PmAFzeCv1jI8bTJhALKo_5fNsofI__sd8pN_orS6VKkLbNjU1NMSlP7al8Q4uNojEXtqF8O9JqEzMY7D7l6qodRaEwt4nfR2EkPE2QATt274cmahcdvkPAklybx0CUNzDzC_rhUDY8MqXExmSdMHuqEPZ-rPmliM3zERUcndtcB-agi8XD6yFI-H67xCpO3HRbffFb4rOAQS2OMbE6MM6-nN2Qi2AQCNnNrAfzD2A92gsbIbfuEm7Qm1shXMswaYMkNc2tI1LpauaMBHKfoOBwUdoHUURFgCSkyzJDncjG49F23qtcMn9W37KlSeus4xeDtxcb9AzNYh5h4j43fQJo5EN_qN5bEMzQJZgVfEUJD38bAHIr3W88i5IYcDP6LFNdXA9LbrbacvQ7XgVOM8JRc0fzdcOtqHHTl7XvE2_RyxBTQNK7XwHX-PWERJ1gnH1bv0AuAIyyi5xBqYkramwf3aYxIPg8HfkgmWve8w5w5CN3eBgrL3nLHVsvGgUPO1Z7YRQ1cKlYPanR0OxM38HkHMN5LgBUgWQxEcZF5YNUIPvLxg7hyqyWlEQyRSdqv7rNhrQFvPR8tPY3Q55li14sgK07SMJjQ74bDTUf1UVLEivA5pAuBv9HbBgtG_ULTfIQM1MbcbGV5iWcj41AbshpGdKfIFTYTuy-no2c9KH7fQwjjrij1KSY7-ezvp_bF7AgfVBT-N0u7mv6bf1CJMsx9DizWdSl-IOpfclb1oOpjvduD6kNF2iOzJA_GUk8bdIoMCm9JvB4oVDKOKswi2E3E3csKkm6splW570loXftOEHxqEYCenqdHg2DnPPZ2XrxberqGz2IhTUz5Mj7EHd8IOUD9ETzKGkBUZJTNYT9BnKjfdW5htiEPHzKZaKDzanuZptXR5FYZzVTxBb-vKiEpFcst9OTaqvgq2xIBCrZloWsHmQ2qNll5aG1sC8KrCa0f72uqaDEJaEaOD9WhL_oOZjaZjGGw4KTLROPLcTkVLSBpflRilhq93PUKD0M40vWWd08xHhh1jtcBxpeWV8miPxogWK-6-YpW9-Mhrn4UYwrjZnGsbmXS2wbgZ9XUx1PyM2v4BNu4C_6qSeuGr2VZtGUbnjIsBKH0zRhW-dV_MezHIH6zg6YC5C_gZCzUymazXes7CcOI-g3pouEHjBcK3IJo4XQOKGM0wCV2Wyo2un-Q6p8EKG_Jb94oht8vDyXPUCXtoPF9pbDw2cFq4n-u5MFxjLd6Uvic_PFd7jXkZglZMzUlaSrn5_xadT_gNlXAJ-6VDfImkN33gxgsrbLmIJcKfdVpYlifw0jQilKasIdgGBtG6eDVXGzfrdpBGXR0td8wbADQg5UilGz-VUYtjQuCR9DAdjVpuUQFe3Pdl4caGfyJNwXiDrt-gGl7cixrtW9essySMLmcVbPWOVKM05tLOgs2mqvwEaGmZZEY1UE3drzXeka9qA2dDPYt0UrZc8Sdxgon6RLg8GMwf9bRklyqzv6T86u3MS6RVTWaouLjyRLseZg6tYo_wzZ3TPTCFqRYf9cufX9K4kn9H0B0K4fFN8MGKuIqP9KPKce6Y8kD2R_Ae4HrnIJVrKekLvtp2Jq1jRhcDbKk2SatzWVUOakxHkY8haftXmHq8x85sKNGvji5pJgCFixVpPwHE0WgtATK2oEjpxt5UeOuShoRrxy9QkA3Lxb8jqbYSMoDcZsqdMDH-1vbTU8TEYo2Up6HCafAxTXhw9L8z1XOm_II9oghipFGeRZgIg9Gi2CNqlL_ruNkz6-kLx8md3ywrUAJoN-id5VINAeYOh0umAHkPgiwUJUdxrXbuPZdBl7nGwUu1FiFbnCtq7lu7VewGs5bbgnpiZ-U3k1qQ8QoxNiEnH7FOQsYz57PnMSa0Mt3sR4gY1d5ncj1A9683LXrZeJggJGaohGvY0eFCCHzW1Bs8rXMswvUYo77km2wi4KmeBva3LoQ30L6FdggtbaUAMl33AwW7XeDYVs6csiDUq1zNxHYUZoNRHJe4OQKFpWCNXjZOr3Jh5Z3sKPyrkPKtMVDiWGdvd4GHsH8pfpoV1u9okCaRGz-kbGMGZGss_OwBnVRtFiiP-SD9Q41kNj8c09c2KlwgpqhuNXscOceLHlUdqpar1qrCkPcOI5FjPC_VXwBgVa2hKz-vzJKAGoMY7f54Nb0aKncntO8WrSFyQ0RsGuUGGp6GrxQV8QRYThKqcBAUeP1WiSypv3ed1SI8P9OQWZxI_qq3jhEiwMJ3yOpPkzE8Tw94T1R46BUnoDJpA_aHW_sRvrS4PHJq8y_-dayndd1NzUyBjhTp1J7wBWkCQor_ovzAuRqf0vsogtxgtpwfOXslBX7LfwXC5KrZobJeJQQCyZKWbpHkoyU6G3T71lMadqL85n3bMwdkfgTCNaY6OhlF8Q5xBXoMHx1iXC5F-H246DuuQEtTEEVHD-CYBZpCJEJEnGz55qSWzPBxJEVU2eFzIFVZy9cinCwe1DvAWmV7NEepEFGK8XA5ts4Y5P8neFZ0NoFQs3KTPGXeHPkwyms5tgMsxhzJx1VCbpLQYisjGR7BBzG-zma83xan_56nEWxslHReeKz4j3-TLxfVAYVR97gbw7PyxuJND6CqkpHF2RnwyIEGFlZdZyJDVUVx5nLoGq8WST9aCsTHbrdqbxMUzLYN-1qxHx3FkyTSv2nQ1pmppvfBUUQVr4k3RLfvrh1iygECpT2oRtxiCPrVp5EKqkMVbewFE_UDvzo9f6EaUIB_Amjh5zg0RyuGHvnhxlFwJgEzp6PlxbtjA3ZWFKTeBLa1AqAjnE4Qc1IectLuO8_hi-VfrbcdgoXRoTkvPP4czbq52Uv_FKw_fKEefdkml478h3us2UPzyQY_QlBP4Det_cfzyWFqq6_8sA796h9_RazwDXKvL9YTIJXliZGXJiLbgYKBxHGVjQDvOhI50RyBYfO7AE3WeXWHwaWTGRcNguYMv6F4YPgBNt7JT9-97QAlCCyp7n4Gbdbn7HSyGfPXfwoPpi5sE10xunkWt_zDld96FVwJxplM-QxxNzzgzzfXmqTc4estuXConD_LI3HkxhfjzaShsr929ulvPODWJK3_wpWMmP12lVC2KBfsAc7IBUKCs_J9YfRXKwvfycVAM7SrNf07qFRqgNP2mOigkooZk3RdmRj5BTrtl1n6DoNfkjaVo7NZtvzHujCL4Z-zq53WUOIAsYTcGRzsYllVxu___Xr_cF3mFNjI_JnlaAn_Cvy0shukQ1hp09Mp3GG-4uNnGAshXOWZWea-J5Fc-S13Z4ZkGqCwvRam28gAwN6TVTkk28g2hDYsjcNY39a1V-SFt61LSa0bXTNbopZGDTOl_2H9cufHzjq8rqAAEkWYvhNXM_-7zwyMvCPAKmafPv0SOi-0xA0EhC-tB__qLF3ACVEZhLpZeZQHeJOBBzJ-UjRv2d7yQfpymh8-cJ70eJCymIiF2aG0Ur0oVbrldnJQbJ7pqZnpZZ3R2QR8Skc25hYQB8d-jYvuLevxuViSI4u-i6C8a9dzENh7svgWlkT4moDXQ_lilDkmWrec0At40FjlGbT1z7EtqDwXrmWjJq6rIX7NQI35qTnyeatXF0mm41fpy8ZCz43iS0X4R5QMndT0zPqcAXTwNthAN_pu0YeFUl6bHtHb8FdWlrmQhFMAYdn3bPeaCw7LXb6qVAAQNhrnlFVm40]-->
+  </g>
+</svg>

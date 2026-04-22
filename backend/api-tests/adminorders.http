@@ -1,0 +1,22 @@
+###
+GET http://localhost:8080/api/admin/orders/report/delivery?
+    date=2025-09-15T10:00:00Z
+Authorization: Bearer {{admin_auth_token}}
+
+###
+
+GET http://localhost:8080/api/admin/orders/report/kitchen?
+    date=2025-09-15T10:00:00Z
+Authorization: Bearer {{admin_auth_token}}
+
+###
+PUT http://localhost:8080/api/admin/orders/bulk-status
+Authorization: Bearer {{admin_auth_token}}
+Content-Type: application/json
+
+{
+  "deliveryDate": "2025-09-15T10:00:00Z",
+  "status": "PAID",
+  "previousStatus": "IN_PROGRESS",
+  "itemName": "Hello"
+}

@@ -1,0 +1,88 @@
+% Gebruiker en Toegangsbeheer
+\section{Gebruiker en Toegangsbeheer}
+\subsection{Gebruikersgeval}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/usecase/management.png}
+    \caption{Gebruikersgeval vir Gebruiker en Toegangsbeheer}
+    \label{fig:gebruiker_toegangsbeheer_use_case}
+\end{figure}
+
+Volgens FREQ-WEB-301, FREQ-WEB-302 en FREQ-WEB-303 moet administrasie gebruikers kan toegangsregte en toegangsgeskiedenis van gebruikers sien asook rol en toegangsregte wysig. Hierdie funksies word uitgevoer op die gebruikerswysiging skerm (\autoref{fig:user_edit_screen}).
+
+Verder moet die stelsel funksionaliteit bied om kennisgewings aan gebruikers te stuur (FREQ-WEB-304).
+
+\subsection{Scenario}
+
+\textbf{Akteurs:} Admin\\
+\textbf{Voorvereistes:} Admin is ingeteken, Admin het die korrekte regte\\
+\textbf{Prekondisie:} Minstens een gebruiker anders as admin bestaan\\
+\textbf{Postkondisie:} Gebruiker rol en toegang verander\\
+\textbf{Inset:} Gebruiker, gebruiker rolle, blokasie (ja, ne)\\
+\textbf{Uitset:} Sukses- of foutboodskap\\
+\textbf{Skerms van Toepassing:} 
+\begin{itemize}
+    \item \autoref{fig:user_edit_screen} (Gebruikerswysiging skerm)
+\end{itemize}
+
+
+\textbf{Hoofvloei:}
+\begin{enumerate}
+    \item Administrasie gebruiker navigeer na gebruiker bestuur (\autoref{fig:user_edit_screen})
+    \item Stelsel toon gebruiker bestuur dashboard (\autoref{fig:user_edit_screen})
+    \item Admin soek vir spesifieke gebruiker of blaai deur gebruiker lys
+    \item Stelsel toon gebruiker lys met basiese inligting
+    \item Admin kies gebruiker om te bestuur (\autoref{fig:user_edit_screen})
+    \item Stelsel toon gebruiker besonderhede, rol, en toegangsgeskiedenis (\autoref{fig:user_edit_screen})
+    \item Admin kies aksie: rol wysig, toegang blokkeer/deblokkeer, of kyk geskiedenis
+    \item Stelsel toon relevante vorm/inligting (\autoref{fig:user_edit_screen})
+    \item Admin maak nodige veranderinge
+    \item Admin bevestig aksie
+    \item Stelsel werk gebruiker inligting by
+    \item Stelsel toon bevestiging (\autoref{fig:user_edit_screen})
+    \item Gebruikersgeval eindig
+\end{enumerate}
+
+\textbf{Alternatiewe vloei A1: Rol wysiging (gewone gebruiker na admin)}
+\begin{enumerate}
+    \item[7a.] Admin kies "Rol Wysig"
+    \item Stelsel toon beskikbare rolle
+    \item Admin kies nuwe rol (admin)
+    \item Stelsel vra bevestiging vir rol opgradering
+    \item Gaan na stap 10
+\end{enumerate}
+
+\textbf{Alternatiewe vloei A2: Gebruiker blokkeer/deblokkeer}
+\begin{enumerate}
+    \item[7b.] Admin kies "Toegang Blokkeer" of "Toegang Deblokkeer"
+    \item Stelsel vra rede vir aksie
+    \item Admin voer rede in
+    \item Gaan na stap 10
+\end{enumerate}
+
+\textbf{Alternatiewe vloei A3: Stuur kennisgewings}
+\begin{enumerate}
+    \item[7c.] Admin kies "Stuur Kennisgewing"
+    \item Stelsel bied opsies: individuele gebruiker of stelselwyde
+    \item Admin skryf kennisgewingboodskap
+    \item Admin kies ontvangers (indien individueel)
+    \item Admin stuur kennisgewing
+    \item Stelsel stuur kennisgewing aan gekose gebruikers
+\end{enumerate}
+
+\textbf{Alternatiewe vloei A4: Kyk toegangsgeskiedenis}
+\begin{enumerate}
+    \item[7d.] Admin kies "Toegangsgeskiedenis"
+    \item Stelsel toon gebruiker se inteken geskiedenis en aktiwiteite
+    \item Admin kan periode filter
+    \item Gebruikersgeval eindig
+\end{enumerate}
+
+\textbf{Uitsonderingsvloei E1: Kan nie eie rol wysig}
+\begin{enumerate}
+    \item[A1.3.] Admin probeer om sy eie rol te wysig
+    \item Stelsel verhoed aksie
+    \item Stelsel toon "Kan nie eie rol wysig nie" foutboodskap
+    \item Gebruikersgeval eindig
+\end{enumerate}

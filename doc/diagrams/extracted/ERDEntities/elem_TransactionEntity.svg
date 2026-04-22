@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="162.1563"
+   preserveAspectRatio="none"
+   version="1.1"
+   viewBox="0 0 130.5 162.1563"
+   width="130.5"
+   zoomAndPan="magnify"
+   id="svg205"
+   sodipodi:docname="elem_TransactionEntity.svg.temp.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview205"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g205"
+     transform="translate(-32.75,-536.85937)">
+    <!--class NotificationPreferenceEntity-->
+    <!--class AllergyEntity-->
+    <!--class TransactionEntity-->
+    <g
+       id="elem_TransactionEntity">
+      <rect
+         codeLine="41"
+         fill="#f1f1f1"
+         height="161.6563"
+         id="TransactionEntity"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5"
+         width="130"
+         x="33"
+         y="537.10938" />
+      <circle
+         cx="58.349998"
+         cy="553.10938"
+         fill="#ffaaaa"
+         style="stroke:#181818;stroke-width:1"
+         id="ellipse23"
+         r="11" />
+      <path
+         d="m 59.2719,550.5 v 6.6563 h 1.1562 q 0.6094,0 0.8594,0.2343 0.2656,0.2344 0.2656,0.625 0,0.375 -0.2656,0.6094 -0.25,0.2344 -0.8594,0.2344 h -3.9843 q -0.625,0 -0.8907,-0.2344 -0.25,-0.2344 -0.25,-0.625 0,-0.375 0.25,-0.6094 0.2657,-0.2343 0.8907,-0.2343 h 1.125 V 550.5 H 55.725 v 1.6094 q 0,0.6094 -0.2344,0.875 -0.2343,0.2656 -0.6093,0.2656 -0.375,0 -0.6094,-0.2656 -0.2344,-0.2656 -0.2344,-0.875 v -3.3125 H 62.85 v 3.3125 q 0,0.6094 -0.25,0.875 -0.2344,0.2656 -0.6094,0.2656 -0.375,0 -0.6093,-0.2656 -0.2344,-0.2656 -0.2344,-0.875 V 550.5 Z"
+         fill="#000000"
+         id="path23" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="75"
+         x="74.650002"
+         y="558.83789"
+         id="text24">Transaction</text>
+      <line
+         style="stroke:#181818;stroke-width:0.5"
+         x1="34"
+         x2="162"
+         y1="569.10938"
+         y2="569.10938"
+         id="line24" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         text-decoration="underline"
+         textLength="11"
+         x="39"
+         y="587.64258"
+         id="text25"
+         style="text-decoration:underline;text-decoration-line:underline">id</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="26"
+         x="50"
+         y="587.64258"
+         id="text26">: PK</text>
+      <line
+         style="stroke:#181818;stroke-width:1"
+         x1="34"
+         x2="162"
+         y1="594.71881"
+         y2="594.71881"
+         id="line26" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="36"
+         x="39"
+         y="613.25201"
+         id="text27">debit</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="41"
+         x="39"
+         y="630.86133"
+         id="text28">credit</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="118"
+         x="39"
+         y="648.4707"
+         id="text29">running_balance</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="118"
+         x="39"
+         y="666.08008"
+         id="text30">transaction_date</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         font-weight="bold"
+         lengthAdjust="spacing"
+         textLength="80"
+         x="39"
+         y="683.68951"
+         id="text31">description</text>
+      <line
+         style="stroke:#181818;stroke-width:1"
+         x1="34"
+         x2="162"
+         y1="690.76562"
+         y2="690.76562"
+         id="line31" />
+    </g>
+    <!--class UserDeviceEntity-->
+    <!--class AbstractItem-->
+    <!--class UserEventEntity-->
+    <!--class MenuItemEntity-->
+    <!--class UserProfileEntity-->
+    <!--class OrderEntity-->
+    <!--class RefreshTokenEntity-->
+    <!--class OrderItemFeedbackEntity-->
+    <!--class TransactionAuditEntity-->
+    <!--class UserEntity-->
+    <!--class NotificationEntity-->
+    <!--class ReportEntity-->
+    <!--class CampusEntity-->
+    <!--class AccountEntity-->
+    <!--class ResidenceEntity-->
+    <!--class OrderItemEntity-->
+    <!--SRC=[jLVVRzis47xtNy6s3uk111k6RGz54C1BxI5ecWHk-j0dWgREDc6AL4ZAZJliVz-HicHHabjsyV8GcSSZ-TqFVdTybS5IA22FapzlfsUAvN2UWULZmYMpbdW1OPQyziBNvFAId3sUlvdD9lWt9bTNerVxzTUtauyVazPVdx_ngsUpQFt3_ER3PFwPlfz-FdiUaylowldov_BgBNbut-ZCxkVJcx_k6XtXTGJgp0uwT_UFzExJxMrGM7Y5nTLev8IJGAOAlpio1ycSqCgkHK7U2ROoB1-DVYAtRATBHp9XW3kn1KkS9WQoaWEHVczkjBL2hUp8ReGg6AuZXgcDXOByzajBg3IQsnNwBTok0AADM-kHXAKB1uZLkZbKAm_aMXiWuC4A1751EFusJ992M-5r4CAeYjUTTc8fU33dmS0I32WEbPtdP7XsJFuUaSZV8XkZvE82_pNkAqgxfg3OGaAORIOWPq8EpcYJWQ5baJ47Dfh9GPM34unpNIetE5SOdMiFdSb8RdVMGKwPKhYK0-xjueLFfG17rxeqbbh7Z3iw2ogsW1j061bbyP8ANIqEVcgdOcdHRE_3V_PHcKW9PhMhmx0VflcTxPN_2wpw_4TCIij2EjKOMg8q71aiXEkYo3eYKogVZ7J19FEPrPvpXnEfnpcETxVSY2B0YR5_GcU-WwquPF51aeOSWrfeeMAanQ-__v6juzmhNIm8SMGhw2mLbhB01v4KsGtJriA94wYYqSd2elkuky54n_nfZIeNU5R5JmOIOPbTy6yODrx5qOOpYP_2eEVmwuD75ply9N8qagx1w6QGWSDR7GLXkaL7j6CG16aXa7eb58LjrvL1GZq9fbsa3yWRtkeQHZrEGv4KZ4CkWmHceP-h5QqjTWE9-c3qKiWeK_UYP8IPvtacgIhp1PXJ9bCivYn7IX-OC615vkl2m5nDp-sOt7jtr1Q7GPgjJhikaJlcIll_cTnceBO5SrYYqUj7lO667zkoL7kyQfJTpmLMSTi5VyGc0rlS8HkITLKZhld-hGb1yTTa1f0j6Dz4qMfFf5bgi85GgmZHijxWvS6hhfVm9RrjHAjWJKgahe525kHf9WY5ZTCGEAbPXbAkbUkILJfD1NPiSK0QfgKm65PFvVrWzwIXwueh6hRNNz1vSG9fUQJ3KdW9gWJDZivBpJVzWhPdA7jqYw5Uy4TRbdQhEjI-9jv9t-PtEazhiS0D1lPRH8HLKnj4qUbQeA3OnczeQU9WL5MqAxLyZQy7T0rTwfZQhQ-37T_ig_aGKx2Ux0ZN673O3eI8nkh6Q4E7d75InZN-POMhzdSwujm2dpq7jlMZj9ZshaAdT_oXiFhIt0jJ4FQE2L8hldRoIUH0UoU51nuuj7dBPDc1YnwXItpBzALE3wTBznd48JmxgyTCFrOj3QxpGiA0pl4427oJwIzgJuLfrUix-M7WgGJh5NpVL2V1TUX1wYIeHecDKgNx4eQPL4JNFCgguGaxoTPPyxgdEYJyNf1OSHlrbw1eodsl_gUXU2fPM7Yw8Xy8uLy0]-->
+  </g>
+</svg>

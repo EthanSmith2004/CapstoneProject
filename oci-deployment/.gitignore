@@ -1,0 +1,37 @@
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Environment variables
+.env
+
+# Temporary files
+tmp/
+temp/
+
+# Docker
+.dockerignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+
+# SSH keys
+*.pem
+*.key
+id_rsa*

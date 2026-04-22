@@ -1,0 +1,49 @@
+name: Deploy to Server
+
+description: Copies the JAR file to the server and restarts the application.
+
+inputs:
+  jar-file:
+    description: Path to the JAR file to deploy.
+    required: true
+  ssh-key:
+    description: SSH private key for authentication.
+    required: true
+  ssh-host:
+    description: Hostname or IP address of the server.
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    # Write SSH key to a temporary file
+    - name: Write SSH key to file
+      shell: bash
+      env:
+        SSH_KEY: ${{ inputs.ssh-key }}
+      run: |
+        echo "$SSH_KEY" > /tmp/ssh_key
+        chmod 600 /tmp/ssh_key
+
+    # Copy artifact to server
+    - name: Copy artifact to server
+      shell: bash
+      env:
+        JAR_FILE: ${{ inputs.jar-file }}
+      run: |
+        scp -o StrictHostKeyChecking=no -i /tmp/ssh_key $JAR_FILE root@${{ inputs.ssh-host }}:/opt/app/app.jar
+
+    # Restart app on remote server
+    - name: Restart app on remote server
+      shell: bash
+      run: |
+        ssh -o StrictHostKeyChecking=no -i /tmp/ssh_key root@${{ inputs.ssh-host }} << 'EOF'
+          systemctl stop app
+          systemctl start app
+        EOF
+
+    # Clean up temporary SSH key file
+    - name: Clean up SSH key file
+      shell: bash
+      run: |
+        rm -f /tmp/ssh_key

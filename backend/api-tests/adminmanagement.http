@@ -1,0 +1,66 @@
+###
+GET http://spys-demo.superuserdone.com/api/admin/allergies
+Authorization: Bearer {{admin_auth_token}}
+
+###
+POST https://spys-demo.superuserdone.com/api/admin/allergies
+Authorization: Bearer {{admin_auth_token}}
+Content-Type: application/json
+
+{
+    "allergy": ""
+}
+
+###
+GET http://localhost:8080/api/admin/allergies/{{id}}
+
+###
+PUT http://localhost:8080/api/admin/allergies/{{id}}
+
+###
+DELETE http://localhost:8080/api/admin/allergies/{{id}}
+
+###
+GET http://spys-demo.superuserdone.com/api/admin/campuses
+Authorization: Bearer {{admin_auth_token}}
+
+###
+POST https://spys-demo.superuserdone.com/api/admin/campuses
+Authorization: Bearer {{admin_auth_token}}
+Content-Type: application/json
+
+{
+  "campus": "Paarl"
+}
+
+###
+GET http://localhost:8080/api/admin/campuses/{{id}}
+
+###
+PUT http://localhost:8080/api/admin/campuses/{{id}}
+
+###
+DELETE http://localhost:8080/api/admin/campuses/{{id}}
+
+###
+GET http://spys-demo.superuserdone.com/api/admin/residences
+Authorization: Bearer {{admin_auth_token}}
+
+###
+POST https://spys-demo.superuserdone.com/api/admin/residences
+Authorization: Bearer {{admin_auth_token}}
+Content-Type: application/json
+
+{
+  "residence": "Hennops"
+}
+
+
+###
+GET http://localhost:8080/api/admin/residences/{{id}}
+
+###
+PUT http://localhost:8080/api/admin/residences/{{id}}
+
+###
+DELETE http://localhost:8080/api/admin/residences/{{id}}

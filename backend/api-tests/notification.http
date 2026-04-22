@@ -1,0 +1,24 @@
+
+###
+POST http://localhost:8080/api/user/notifications/subscribe
+
+###
+POST http://localhost:8080/api/user/notifications/unsubscribe
+
+###
+POST http://spys-demo.superuserdone.com/api/admin/notifications/send-to-all
+Authorization: Bearer {{admin_auth_token}}
+Content-Type: application/json
+
+{
+  "title": "Bestelling Item #53 gereed vir afhaal",
+  "body": "Bestelling Item #53 is gereed vir afhaal by die Gerhard Straat Spys tak",
+  "icon": "Test",
+  "url": "Test",
+  "type": "GENERAL_ANNOUNCEMENT"
+}
+
+
+
+###
+POST http://localhost:8080/api/admin/notifications/send-to-user/{{userId}}

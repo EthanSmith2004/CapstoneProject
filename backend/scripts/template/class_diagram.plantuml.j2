@@ -1,0 +1,56 @@
+@startuml Class_Diagram
+!define CONTROLLER_COLOR #E1F5FE
+!define SERVICE_COLOR #F3E5F5
+!define FACADE_COLOR #E8F5E8
+!define SECURITY_COLOR #FFF3E0
+!define ENTITY_COLOR #FFEBEE
+
+title Class Diagram - {{ project_name | default("Backend Application") }}
+
+' Define class stereotypes and colors
+skinparam class {
+  BackgroundColor<<Controller>> CONTROLLER_COLOR
+  BackgroundColor<<Service>> SERVICE_COLOR
+  BackgroundColor<<Facade>> FACADE_COLOR
+  BackgroundColor<<Security>> SECURITY_COLOR
+  BackgroundColor<<Entity>> ENTITY_COLOR
+}
+
+{% for cls in classes %}
+class {{ cls.name }} <<{{ cls.type | title }}>> {
+{%- for field in cls.fields %}
+  {{ field.visibility == 'private' and '-' or (field.visibility == 'protected' and '#' or '+') }}{{ field.name }}: {{ field.type }}
+{%- endfor %}
+  --
+{%- for method in cls.methods %}
+  {{ method.visibility == 'private' and '-' or (method.visibility == 'protected' and '#' or '+') }}{{ method.name }}
+{%- endfor %}
+}
+
+{% endfor %}
+
+' Dependencies - Controllers to Services/Facades
+{%- for cls in classes %}
+{%- if cls.type == 'controller' %}
+{%- for field in cls.fields %}
+{%- for service_cls in classes %}
+{%- if service_cls.type in ['service', 'facade'] and field.type.lower().replace('service', '').replace('facade', '') in service_cls.name.lower() %}
+{{ cls.name }} --> {{ service_cls.name }} : uses
+{%- endif %}
+{%- endfor %}
+{%- endfor %}
+{%- endif %}
+{%- endfor %}
+
+' Facades to Services
+{%- for cls in classes %}
+{%- if cls.type == 'facade' %}
+{%- for service_cls in classes %}
+{%- if service_cls.type == 'service' and service_cls.name.lower().replace('service', '') in cls.name.lower().replace('facade', '') %}
+{{ cls.name }} --> {{ service_cls.name }} : delegates to
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- endfor %}
+
+@enduml

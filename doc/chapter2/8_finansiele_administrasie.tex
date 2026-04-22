@@ -1,0 +1,76 @@
+% Finansiële Administrasie
+\section{Finansiële Administrasie}
+\subsection{Gebruikersgeval}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/usecase/finance.png}
+    \caption{Gebruikersgeval vir Finansiële Administrasie}
+    \label{fig:finansiele_admin_use_case}
+\end{figure}
+
+Volgens FREQ-WEB-101 moet administrasie gebruikers krediet inlees vir gebruikersrekeninge. Die finansiële administrasie proses word uitgevoer op die finansiële administrasie skerm (\autoref{fig:finance_management_screen}).
+
+\subsection{Scenario}
+
+\textbf{Akteurs:} Admin\\
+\textbf{Voorvereistes:} Admin is ingeteken, Admin het die korrekte regte\\
+\textbf{Prekondisie:} Minstens een Klient bestaan\\
+\textbf{Postkondisie:} Gebruiker se rekening aangepas\\
+\textbf{Inset:} Gebruikers inligting, aantal Krediet/Debiet\\
+\textbf{Uitset:} Sukses- of foutboodskap\\
+\textbf{Skerms van Toepassing:} 
+\begin{itemize}
+    \item \autoref{fig:finance_management_screen} (Finansiële Administrasie skerm)
+\end{itemize}
+
+\textbf{Hoofvloei:}
+\begin{enumerate}
+    \item Administrasie gebruiker navigeer na krediet bestuur (\autoref{fig:finance_management_screen})
+    \item Stelsel toon gebruiker soek funksie
+    \item Admin soek vir gebruiker (naam, e-pos, of studentnommer)
+    \item Stelsel toon soekresultate
+    \item Admin kies korrekte gebruiker
+    \item Stelsel toon gebruiker se huidige balans en transaksie geskiedenis (\autoref{fig:finance_management_screen})
+    \item Admin voer krediet bedrag in om by te voeg
+    \item Admin voeg verwysing by
+    \item Admin bevestig krediet toevoeging
+    \item Stelsel valideer bedrag
+    \item Stelsel werk gebruiker se balans by
+    \item Stelsel skep transaksierekord
+    \item Stelsel toon sukses bevestiging met nuwe balans (\autoref{fig:finance_management_screen})
+    \item Gebruikersgeval eindig
+\end{enumerate}
+
+\textbf{Alternatiewe vloei A1: Bulk krediet laai}
+\begin{enumerate}
+    \item[3a.] Admin kies bulk krediet opsie
+    \item Stelsel bied CSV oplaai
+    \item Admin laai CSV lêer op met gebruiker besonderhede en bedrae
+    \item Stelsel verifieer lêer formaat
+    \item Stelsel verifieer studente/personeel nommers.
+    \item Stelsel prosesseer alle krediterings
+    \item Stelsel toon opsomming van sukses/onsuksesvolle transaksies
+\end{enumerate}
+
+\textbf{Alternatiewe vloei A2: Debiteer rekening}
+\begin{enumerate}
+    \item[7a.] Admin voer negatiewe bedrag in (debitering)
+    \item Stelsel vra bevestiging vir debitering
+    \item Gaan na stap 9
+\end{enumerate}
+
+\textbf{Uitsonderingsvloei E1: Gebruiker nie gevind}
+\begin{enumerate}
+    \item[4a.] Stelsel vind geen passende gebruikers
+    \item Stelsel toon "Geen gebruikers gevind nie"
+    \item Gaan terug na stap 3
+\end{enumerate}
+
+\textbf{Uitsonderingsvloei E2: Gebruiker nie gevind in bulk krediet transaksie}
+\begin{enumerate}
+    \item[4b.] Stelsel vind nie 'n gebruiker in 'n rekord nie.
+    \item Stelsel toon die rekords wat nie pas nie
+    \item Gaan terug na stap 3
+\end{enumerate}
+

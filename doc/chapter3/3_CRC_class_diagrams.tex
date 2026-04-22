@@ -1,0 +1,71 @@
+\section{CRC-kaarte en Klasdiagramme}
+
+\subsection{Inleiding}
+
+Die \ac{CRC}-kaarte en klasdiagramme is noodsaaklike elemente in die ontwerp van die stelsel, aangesien dit die struktuur en interaksies tussen verskillende klasse visueel voorstel. Hierdie elemente help om die verantwoordelikhede van elke klas te verstaan en hoe hulle saamwerk om die stelsel se funksionaliteit te lewer. Die \ac{CRC}-kaarte fokus op die verantwoordelikhede en samewerking van klasse, terwyl die klasdiagramme 'n meer gedetailleerde voorstelling van die klasse, hul eienskappe en verhoudings bied.
+
+In die Spring-raamwerk word klasse geannoteer met \textit{Spring stereotypes} soos \textit{@Controller}, \textit{@Service} en \textit{@Repository} om hul rolle in die stelsel te identifiseer. Hierdie word in die klasdiagramme aangedui deur die naam van die \textit{Spring stereotype} as 'n agtervoegsel by die klasnaam te gebruik, asook deur die \textit{<<interface>>} annotasie vir klasse. Dit help om duidelik onderskeid te tref.
+
+Hier volg 'n oorsig van die belangrikste stereotipes en hul rolle.
+
+\begin{itemize}
+    \item \textbf{@Controller}: Dien as die skakelpunt tussen die gebruikerskoppelvlak en die dienslaag. Dit hanteer inkomende versoeke.
+    \item \textbf{@Facade}: Integreer die verskillende komponente van die
+    stelsel, byvoorbeeld deur die gebruiker te prameter outomaties uit die
+    sessie te haal en dit aan die dienslaag te stuur. Facades word uitgelaat in
+    die klasdiagramme, aangesien hulle nie noodsaaklik is vir die begrip van die stelsel se struktuur nie.
+    \item \textbf{@Service}: Is die dienslaag en bevat die besigheidslogika van die toepassing. Dit is verantwoordelik vir die verwerking van data en die uitvoering van besigheidsreëls.
+    \item \textbf{@Repository}: Hanteer die interaksie met die databasis. Dit is verantwoordelik vir die berging en opvraging van data. In die klasdiagramme word nie eksplisiet aangedui dat dit aan die databasis koppel nie, maar dit word implisiet aanvaar.
+\end{itemize}
+
+Sommige klasse word as <<Other>> of <<Security>> aangedui, wat beteken dat hulle nie direk met die Spring-raamwerk verband hou nie, maar steeds 'n belangrike rol in die stelsel speel. Dit sluit klasse in wat spesifieke funksies blootstel of sekuriteitsverwante funksies hanteer, soos die \textit{JwtUtils}-klas wat verantwoordelik is vir die hantering van sessietokens.
+
+Die skerms van die gebruikerskoppelvlak word in die klasdiagramme ingesluit,
+maar die spesifieke implementering van individuele komponente word nie getoon
+nie. Let daarop dat daar nie 'n een-tot-een-verhouding tussen die skerms in die
+klasdiagramme en die skerms in die \textit{sitemap} is nie. Die fokus is op die
+struktuur en interaksies tussen die dienslaagklasse, eerder as op die
+spesifieke implementering van die gebruikerskoppelvlak. Dit is ook omdat die
+React-raamwerk nie op objektgeoriënteerde programmering gebaseer is nie.
+
+Let ook daarop dat CRC-kaarte vir \textit{repositories} nie ingesluit is nie,
+aangesien hulle relatief gestandaardiseerd is. 'n Algemene CRC-kaart vir
+\textit{repositories} is hieronder ingesluit.
+
+\begin{table}[H]\centering\begin{tabular}{|p{0.5\textwidth}|p{0.5\textwidth}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Repository}} \\
+    \hline
+    \textbf{Verantwoordelikhede} & \textbf{Medewerkers} \\
+    \hline
+    Hanteer data toegang en berging \newline
+    Voer CRUD operasies uit \newline
+    Valideer data integriteit \newline
+    Hanteer transaksies en verbindings
+    &
+    Databasis \\
+    \hline
+\end{tabular}
+\caption{CRC vir Repository}
+\label{tab:crc_repository}
+\end{table}
+
+
+\include{chapter3/3_2_Gebruikersbestuur}
+\nopagebreak[4]
+\include{chapter3/3_3_Ouditasie_substelsel}
+\nopagebreak[4]
+\include{chapter3/3_4_Terugvoer_substelsel}
+\nopagebreak[4]
+\include{chapter3/3_5_Finansiele_bestuur_substelsel}
+\nopagebreak[4]
+\include{chapter3/3_6_Bestuur_substelsel}
+\nopagebreak[4]
+\include{chapter3/3_7_Spyskaart_bestelling_substelsel}
+\nopagebreak[4]
+\include{chapter3/3_8_Kennisgewing_substelsel}
+\nopagebreak[4]
+\include{chapter3/3_9_Verslaggewing_substelsel}
+\nopagebreak[4]
+\include{chapter3/3_10_Wagwoord_herstel_substelsel}
+\nopagebreak[4]

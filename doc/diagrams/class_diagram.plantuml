@@ -1,0 +1,825 @@
+@startuml Class_Diagram
+!define CONTROLLER_COLOR #E1F5FE
+!define SERVICE_COLOR #F3E5F5
+!define FACADE_COLOR #E8F5E8
+!define SECURITY_COLOR #FFF3E0
+!define ENTITY_COLOR #FFEBEE
+
+title Class Diagram - Backend Application
+
+' Define class stereotypes and colors
+skinparam class {
+  BackgroundColor<<Controller>> CONTROLLER_COLOR
+  BackgroundColor<<Service>> SERVICE_COLOR
+  BackgroundColor<<Facade>> FACADE_COLOR
+  BackgroundColor<<Security>> SECURITY_COLOR
+  BackgroundColor<<Entity>> ENTITY_COLOR
+}
+
+
+class UserEventEntityBuilder <<Other>> {
+  -id: Long
+  -time: Instant
+  -user: UserEntity
+  -eventType: UserEventType
+  --
+  +toString()
+  +id(id)
+  +time(time)
+  +build()
+  +user(user)
+  +eventType(eventType)
+}
+
+
+class NotificationEntityBuilder <<Other>> {
+  -id: Long
+  -user: UserEntity
+  -title: String
+  -message: String
+  -type: NotificationType
+  -status$set: boolean
+  -status$value: NotificationStatus
+  -priority$set: boolean
+  -priority$value: Integer
+  -deepLinkUrl: String
+  -imageUrl: String
+  -relatedOrder: OrderEntity
+  -scheduledFor: Instant
+  -sentAt: Instant
+  -deliveredAt: Instant
+  -readAt: Instant
+  -expiresAt: Instant
+  -retryCount$set: boolean
+  -retryCount$value: Integer
+  -errorMessage: String
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +priority(priority)
+  +type(type)
+  +toString()
+  +id(id)
+  +status(status)
+  +message(message)
+  +build()
+  +user(user)
+  +readAt(readAt)
+  +title(title)
+  +errorMessage(errorMessage)
+  +deliveredAt(deliveredAt)
+  +scheduledFor(scheduledFor)
+  +deepLinkUrl(deepLinkUrl)
+  +relatedOrder(relatedOrder)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+  +sentAt(sentAt)
+  +retryCount(retryCount)
+  +expiresAt(expiresAt)
+  +imageUrl(imageUrl)
+}
+
+
+class UserFeedbackController <<Controller>> {
+  -feedbackFacade: UserFeedbackFacade
+  --
+  +placeFeedback(feedback)
+}
+
+
+class UserDeviceEntityBuilder <<Other>> {
+  -id: Long
+  -user: UserEntity
+  -endpoint: String
+  -p256dh: String
+  -auth: String
+  -userAgent: String
+  -isActive$set: boolean
+  -isActive$value: Boolean
+  -lastUsed: Instant
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +toString()
+  +id(id)
+  +isActive(isActive)
+  +build()
+  +auth(auth)
+  +user(user)
+  +endpoint(endpoint)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+  +lastUsed(lastUsed)
+  +p256dh(p256dh)
+  +userAgent(userAgent)
+}
+
+
+class AllergyManagementController <<Controller>> {
+  --
+}
+
+
+class NotificationController <<Controller>> {
+  -notificationService: NotificationService
+  -userService: UserService
+  --
+  +unsubscribe(subscription)
+  +subscribe(subscription)
+}
+
+
+class OrderService <<Service>> {
+  --
+  +getUserOrders()
+  +placeOrder(request)
+}
+
+
+class Role <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class UserDetailsServiceImpl <<Service>> {
+  -userRepository: UserRepository
+  --
+  +loadUserByUsername(username)
+}
+
+
+class UserProfileFacade <<Service>> {
+  --
+  +updateUserProfile(request)
+  +createUserProfile(request)
+  +getUserProfile()
+}
+
+
+class FinanceService <<Service>> {
+  --
+  +searchUsersPaginated(search, page, size)
+  +getTransactionsPaginated(page, size)
+  +getCurrentUserAccount()
+  +getUserDetail(userId)
+  +bulkLoadCredit(request)
+}
+
+
+class OrderItemFeedbackEntityBuilder <<Other>> {
+  -id: Long
+  -orderItem: OrderItemEntity
+  -rating: Integer
+  -feedback: String
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +toString()
+  +id(id)
+  +build()
+  +feedback(feedback)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+  +rating(rating)
+  +orderItem(orderItem)
+}
+
+
+class AdminNotificationController <<Controller>> {
+  -notificationService: NotificationService
+  --
+  +sendToAll(notification)
+  +sendToUser(userId, notification)
+}
+
+
+class UserEntityBuilder <<Other>> {
+  -id: Long
+  -firstName: String
+  -lastName: String
+  -email: String
+  -password: String
+  -roles: Set
+  -accountNonExpired$set: boolean
+  -accountNonExpired$value: boolean
+  -accountNonLocked$set: boolean
+  -accountNonLocked$value: boolean
+  -credentialsNonExpired$set: boolean
+  -credentialsNonExpired$value: boolean
+  -enabled$set: boolean
+  -enabled$value: boolean
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +toString()
+  +id(id)
+  +enabled(enabled)
+  +build()
+  +lastName(lastName)
+  +credentialsNonExpired(credentialsNonExpired)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+  +accountNonLocked(accountNonLocked)
+  +accountNonExpired(accountNonExpired)
+  +password(password)
+  +roles(roles)
+  +firstName(firstName)
+  +email(email)
+}
+
+
+class UserOrderFacade <<Service>> {
+  --
+  +getUserOrders()
+  +cancelOrder(orderId)
+  +placeOrder(request)
+  +editOrder(request)
+  +payOrder(orderId)
+}
+
+
+class WebSecurityConfig <<Security>> {
+  -userDetailsService: UserDetailsService
+  -unauthorizedHandler: AuthEntryPointJwt
+  --
+  +corsConfigurationSource()
+  +authenticationProvider()
+  +authenticationManager(authConfig)
+  +authenticationJwtTokenFilter()
+  +filterChain(http)
+  +passwordEncoder()
+}
+
+
+class ResidenceManagementService <<Service>> {
+  --
+}
+
+
+class UserFinanceFacade <<Service>> {
+  --
+  +getTransactionsPaginated(page, size)
+  +getCurrentUserAccount()
+}
+
+
+class AuthService <<Service>> {
+  -authenticationManager: AuthenticationManager
+  -userRepository: UserRepository
+  -encoder: PasswordEncoder
+  -jwtUtils: JwtUtils
+  -refreshTokenService: RefreshTokenService
+  -userEventService: UserEventService
+  --
+  +authenticateUser(loginRequest)
+  +registerUser(signUpRequest)
+  +refreshToken(refreshTokenValue)
+  +logout(refreshTokenValue)
+  -getAuthResponse(userDetails, jwt, refreshToken)
+}
+
+
+class ReportEntityBuilder <<Other>> {
+  -id: Long
+  -name: String
+  -description: String
+  -type: ReportType
+  -status$set: boolean
+  -status$value: ReportStatus
+  -requestedBy: UserEntity
+  -fileUrl: String
+  -fileName: String
+  -fileSize: Long
+  -mimeType: String
+  -parameters: Map
+  -dateFrom: Instant
+  -dateTo: Instant
+  -scheduled$set: boolean
+  -scheduled$value: Boolean
+  -processingStartedAt: Instant
+  -processingCompletedAt: Instant
+  -errorMessage: String
+  -lastDownloadedAt: Instant
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +name(name)
+  +type(type)
+  +toString()
+  +fileName(fileName)
+  +id(id)
+  +status(status)
+  +parameters(parameters)
+  +build()
+  +description(description)
+  +processingStartedAt(processingStartedAt)
+  +processingCompletedAt(processingCompletedAt)
+  +errorMessage(errorMessage)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+  +dateFrom(dateFrom)
+  +dateTo(dateTo)
+  +fileSize(fileSize)
+  +mimeType(mimeType)
+  +fileUrl(fileUrl)
+  +scheduled(scheduled)
+  +requestedBy(requestedBy)
+  +lastDownloadedAt(lastDownloadedAt)
+}
+
+
+class MenuService <<Service>> {
+  --
+  +getAllUpcomingMenuItems()
+  +getMenuItemsPaginated(page, size)
+  +searchMenuItemsPaginated(search, page, size)
+  +getMenuItemDetail(itemId)
+  +getAllActiveMenuItems()
+  +getMenu()
+  +createMenuItem(request)
+  +updateMenuItem(id, request)
+}
+
+
+class TransactionAuditType <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class JwtUtils <<Security>> {
+  -jwtSecret: String
+  -jwtExpirationMs: int
+  --
+  -key()
+  +getUserNameFromJwtToken(token)
+  +generateTokenFromUsername(username, expiration)
+  +validateJwtToken(authToken)
+  +generateJwtToken(authentication)
+  +getJwtExpirationMs()
+}
+
+
+class AllergyManagementService <<Service>> {
+  --
+}
+
+
+class AdminAuditController <<Controller>> {
+  -auditService: AuditService
+  --
+  +getUserEventLogPaginated(page, size)
+  +getRecentLogins()
+  +getTransactionAuditPaginated(page, size)
+}
+
+
+class RefreshTokenService <<Service>> {
+  -refreshTokenRepository: RefreshTokenRepository
+  -userEventService: UserEventService
+  -refreshTokenDurationMs: int
+  -maxRefreshTokensPerUser: int
+  -secureRandom: SecureRandom
+  --
+  +revokeAllUserTokens(user)
+  -generateSecureToken()
+  +cleanupExpiredTokens()
+  +findByToken(token)
+  +updateToken(token)
+  +verifyExpiration(token)
+  +createRefreshToken(user)
+  +revokeToken(tokenValue)
+}
+
+
+class UserService <<Service>> {
+  -userRepository: UserRepository
+  --
+  +getCurrentUserId()
+  +updateUser(id, updateRequest)
+  +deleteUser(id)
+  +getUserById(id)
+  +getAllUsers()
+  +getCurrentUser()
+}
+
+
+class OrderStatus <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class UserSettingsFacade <<Service>> {
+  --
+  +getUserSettings()
+  +updateUserSettings(request)
+}
+
+
+class UserAccountController <<Controller>> {
+  -financeFacade: UserFinanceFacade
+  --
+  +getTransactionsPaginated(page, size)
+  +getAccount()
+}
+
+
+class RefreshTokenCleanupService <<Other>> {
+  -refreshTokenService: RefreshTokenService
+  --
+  +cleanupExpiredTokens()
+}
+
+
+class AdminUserController <<Controller>> {
+  -userService: UserService
+  --
+  +updateUser(id, updateRequest)
+  +deleteUser(id)
+  +getUserById(id)
+  +getAllUsers()
+}
+
+
+class CampusManagementService <<Service>> {
+  --
+}
+
+
+class UserProfileController <<Controller>> {
+  -userProfileFacade: UserProfileFacade
+  --
+  +updateUserProfile(request)
+  +createUserProfile(request)
+  +getUserProfile()
+}
+
+
+class NotificationService <<Service>> {
+  -pushService: PushService
+  -userDeviceRepository: UserDeviceRepository
+  -objectMapper: ObjectMapper
+  --
+  +sendNotificationToUser(userId, notificationRequest)
+  +sendNotificationToAll(notificationRequest)
+  +registerDevice(userId, request)
+  +unregisterDevice(endpoint)
+  -sendPushNotification(device, notificationRequest)
+}
+
+
+class AuthController <<Controller>> {
+  -authService: AuthService
+  --
+  +authenticateUser(loginRequest)
+  +registerUser(signUpRequest)
+  +refreshToken(request)
+  +logout(request)
+}
+
+
+class UserEventService <<Service>> {
+  +userEventRepository: UserEventRepository
+  --
+  +logEvent(userEntity, userEventType)
+}
+
+
+class AdminReportController <<Controller>> {
+  -reportService: ReportService
+  --
+  +createReport(request)
+  +getReportStatus(reportId)
+}
+
+
+class AuditService <<Service>> {
+  -transactionAuditRepository: TransactionAuditRepository
+  -userEventRepository: UserEventRepository
+  --
+  +getUserEventLogPaginated(page, size)
+  +getRecentLogins()
+  +getTransactionAuditPaginated(page, size)
+}
+
+
+class ResidenceManagementController <<Controller>> {
+  --
+}
+
+
+class RefreshTokenEntityBuilder <<Other>> {
+  -id: Long
+  -token: String
+  -expiresAt: Instant
+  -createdAt$set: boolean
+  -createdAt$value: Instant
+  -revoked$set: boolean
+  -revoked$value: Boolean
+  -revokedAt: Instant
+  -user: UserEntity
+  -lastUsed$set: boolean
+  -lastUsed$value: Instant
+  --
+  +toString()
+  +id(id)
+  +build()
+  +user(user)
+  +token(token)
+  +createdAt(createdAt)
+  +expiresAt(expiresAt)
+  +revoked(revoked)
+  +revokedAt(revokedAt)
+  +lastUsed(lastUsed)
+}
+
+
+class UserOrderController <<Controller>> {
+  -userOrderFacade: UserOrderFacade
+  --
+  +getUserOrders()
+  +cancelOrder(orderId)
+  +placeUserOrder(request)
+  +editOrder(orderId, request)
+  +payOrder(orderId)
+}
+
+
+class UserProfileEntityBuilder <<Other>> {
+  -id: Long
+  -credentialNumber: String
+  -user: UserEntity
+  -campus: CampusEntity
+  -residence: ResidenceEntity
+  -allergy$set: boolean
+  -allergy$value: List
+  -account: AccountEntity
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +toString()
+  +id(id)
+  +build()
+  +user(user)
+  +account(account)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+  +allergy(allergy)
+  +campus(campus)
+  +credentialNumber(credentialNumber)
+  +residence(residence)
+}
+
+
+class UserFeedbackFacade <<Service>> {
+  --
+  +placeFeedback(feedback)
+}
+
+
+class CampusManagementController <<Controller>> {
+  --
+}
+
+
+class UserEventType <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class GenericManagementController <<Other>> {
+  -service: GenericManagementService
+  --
+  +update(id, entityDetails)
+  +delete(id)
+  +create(entity)
+  +findAll()
+  +findById(id)
+}
+
+
+class AuthTokenFilter <<Security>> {
+  -jwtUtils: JwtUtils
+  -userDetailsService: UserDetailsService
+  --
+  -parseJwt(request)
+  #doFilterInternal(request, response, filterChain)
+}
+
+
+class FeedbackService <<Service>> {
+  --
+  +placeFeedback(feedback)
+}
+
+
+class AdminFinanceController <<Controller>> {
+  -financeService: FinanceService
+  --
+  +searchUsersPaginated(search, page, size)
+  +getUserDetail(userId)
+  +bulkLoadCredit(request)
+}
+
+
+class NotificationStatus <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class NotificationPreferenceEntityBuilder <<Other>> {
+  -id: Long
+  -user: UserEntity
+  -pushEnabled$set: boolean
+  -pushEnabled$value: Boolean
+  -emailEnabled$set: boolean
+  -emailEnabled$value: Boolean
+  -orderUpdates$set: boolean
+  -orderUpdates$value: Boolean
+  -menuUpdates$set: boolean
+  -menuUpdates$value: Boolean
+  -accountUpdates$set: boolean
+  -accountUpdates$value: Boolean
+  -promotional$set: boolean
+  -promotional$value: Boolean
+  -systemAnnouncements$set: boolean
+  -systemAnnouncements$value: Boolean
+  -quietHoursStart: String
+  -quietHoursEnd: String
+  -createdAt: Instant
+  -updatedAt: Instant
+  --
+  +toString()
+  +id(id)
+  +build()
+  +user(user)
+  +systemAnnouncements(systemAnnouncements)
+  +menuUpdates(menuUpdates)
+  +quietHoursEnd(quietHoursEnd)
+  +quietHoursStart(quietHoursStart)
+  +pushEnabled(pushEnabled)
+  +emailEnabled(emailEnabled)
+  +orderUpdates(orderUpdates)
+  +accountUpdates(accountUpdates)
+  +promotional(promotional)
+  +createdAt(createdAt)
+  +updatedAt(updatedAt)
+}
+
+
+class NotificationType <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class UserMenuController <<Controller>> {
+  -menuService: MenuService
+  --
+  +getMenuItemDetail(itemId)
+  +getMenu()
+}
+
+
+class NotificationPayload <<Other>> {
+  -title: String
+  -body: String
+  -icon: String
+  --
+  +equals(o)
+  +toString()
+  +hashCode()
+  +getBody()
+  +getIcon()
+  #canEqual(other)
+  +getTitle()
+}
+
+
+class AdminMenuController <<Controller>> {
+  -menuService: MenuService
+  --
+  +searchMenuPaginated(search, page, size)
+  +getMenu()
+  +createMenuItem(request)
+  +updateMenuItem(id, request)
+  +getMenuPaginated(page, size)
+}
+
+
+class GenericManagementService <<Other>> {
+  -repository: JpaRepository
+  -resourceName: String
+  --
+  +update(id, entityDetails)
+  +delete(id)
+  +create(entity)
+  +findAll()
+  +findById(id)
+}
+
+
+class ReportService <<Service>> {
+  --
+  +createReport(request)
+  +getReportStatus(reportId)
+}
+
+
+class ListService <<Service>> {
+  -allergyRepository: AllergyRepository
+  -campusRepository: CampusRepository
+  -residenceRepository: ResidenceRepository
+  --
+  +getResidenceNames()
+  +getCampusNames()
+  +getAllergyNames()
+}
+
+
+class ReportType <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class ReportStatus <<Other>> {
+  --
+  +values()
+  +valueOf(name)
+}
+
+
+class ListController <<Controller>> {
+  -listService: ListService
+  --
+  +getResidenceNames()
+  +getCampusNames()
+  +getAllergyNames()
+}
+
+
+class UserSettingsController <<Controller>> {
+  -userSettingsFacade: UserSettingsFacade
+  --
+  +getUserSettings()
+  +updateUserSettings(request)
+}
+
+
+class AuthEntryPointJwt <<Security>> {
+  --
+  +commence(request, response, authException)
+}
+
+
+
+' Dependencies - Controllers to Services/Facades
+UserFeedbackController --> UserFeedbackFacade : uses
+NotificationController --> NotificationService : uses
+NotificationController --> UserDetailsServiceImpl : uses
+NotificationController --> UserProfileFacade : uses
+NotificationController --> UserOrderFacade : uses
+NotificationController --> UserFinanceFacade : uses
+NotificationController --> MenuService : uses
+NotificationController --> UserService : uses
+NotificationController --> UserSettingsFacade : uses
+NotificationController --> UserEventService : uses
+NotificationController --> UserFeedbackFacade : uses
+AdminNotificationController --> NotificationService : uses
+AdminAuditController --> AuditService : uses
+UserAccountController --> UserFinanceFacade : uses
+AdminUserController --> UserDetailsServiceImpl : uses
+AdminUserController --> UserProfileFacade : uses
+AdminUserController --> UserOrderFacade : uses
+AdminUserController --> UserFinanceFacade : uses
+AdminUserController --> MenuService : uses
+AdminUserController --> UserService : uses
+AdminUserController --> UserSettingsFacade : uses
+AdminUserController --> UserEventService : uses
+AdminUserController --> UserFeedbackFacade : uses
+UserProfileController --> UserProfileFacade : uses
+AuthController --> AuthService : uses
+AdminReportController --> ReportService : uses
+UserOrderController --> UserOrderFacade : uses
+AdminFinanceController --> FinanceService : uses
+AdminFinanceController --> UserFinanceFacade : uses
+UserMenuController --> MenuService : uses
+AdminMenuController --> MenuService : uses
+ListController --> ListService : uses
+UserSettingsController --> UserSettingsFacade : uses
+
+' Facades to Services
+
+@enduml

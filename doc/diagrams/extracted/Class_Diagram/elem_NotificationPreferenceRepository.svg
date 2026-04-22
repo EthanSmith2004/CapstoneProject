@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   height="728.35938"
+   preserveAspectRatio="none"
+   version="1.1"
+   viewBox="0 0 275.5 728.35938"
+   width="275.5"
+   zoomAndPan="magnify"
+   id="svg1205"
+   sodipodi:docname="elem_NotificationPreferenceRepository.svg.temp.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1205"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g1205"
+     transform="translate(-914.75,-3258.3594)">
+    <!--class UserEventEntityBuilder-->
+    <!--class UserDeviceEntityBuilder-->
+    <!--class AllergyManagementController-->
+    <!--class NotificationController-->
+    <!--class OrderService-->
+    <!--class OrderItemFeedbackRepository-->
+    <!--class Role-->
+    <!--class UserDetailsServiceImpl-->
+    <!--class UserProfileFacade-->
+    <!--class FinanceService-->
+    <!--class OrderItemFeedbackEntityBuilder-->
+    <!--class TransactionAuditType-->
+    <!--class JwtUtils-->
+    <!--class AllergyManagementService-->
+    <!--class RefreshTokenService-->
+    <!--class OrderRepository-->
+    <!--class UserAccountController-->
+    <!--class AccountRepository-->
+    <!--class RefreshTokenCleanupService-->
+    <!--class AdminUserController-->
+    <!--class CampusManagementService-->
+    <!--class UserProfileController-->
+    <!--class AuthController-->
+    <!--class UserEventRepository-->
+    <!--class AdminReportController-->
+    <!--class ResidenceManagementController-->
+    <!--class RefreshTokenEntityBuilder-->
+    <!--class ResidenceRepository-->
+    <!--class UserProfileEntityBuilder-->
+    <!--class UserFeedbackFacade-->
+    <!--class CampusManagementController-->
+    <!--class AuthTokenFilter-->
+    <!--class NotificationType-->
+    <!--class GenericManagementService-->
+    <!--class RefreshTokenRepository-->
+    <!--class ReportRepository-->
+    <!--class ReportType-->
+    <!--class UserSettingsController-->
+    <!--class AuthEntryPointJwt-->
+    <!--class NotificationRepository-->
+    <!--class NotificationEntityBuilder-->
+    <!--class UserFeedbackController-->
+    <!--class MenuItemRepository-->
+    <!--class NotificationPreferenceRepository-->
+    <g
+       id="elem_NotificationPreferenceRepository">
+      <rect
+         codeLine="753"
+         fill="#ffebee"
+         height="727.85938"
+         id="NotificationPreferenceRepository"
+         rx="2.5"
+         ry="2.5"
+         style="stroke:#181818;stroke-width:0.5"
+         width="275"
+         x="915"
+         y="3258.6094" />
+      <circle
+         cx="946.20001"
+         cy="3279.9609"
+         fill="#add1b2"
+         style="stroke:#181818;stroke-width:1"
+         id="ellipse607"
+         r="11" />
+      <path
+         d="m 948.9656,3275.8359 q 0.1563,-0.2187 0.3438,-0.3281 0.1875,-0.1094 0.4062,-0.1094 0.375,0 0.6094,0.2657 0.2344,0.25 0.2344,0.8593 v 1.4532 q 0,0.6093 -0.2344,0.875 -0.2344,0.2656 -0.6094,0.2656 -0.3437,0 -0.5468,-0.2031 -0.2032,-0.1875 -0.3125,-0.7032 -0.0469,-0.3593 -0.2344,-0.5468 -0.3281,-0.375 -0.9375,-0.5938 -0.6094,-0.2187 -1.2344,-0.2187 -0.7656,0 -1.4062,0.3281 -0.625,0.3281 -1.125,1.0781 -0.4844,0.75 -0.4844,1.7813 v 1.0937 q 0,1.2344 0.8906,2.0625 0.8906,0.8125 2.4844,0.8125 0.9375,0 1.5937,-0.25 0.3907,-0.1562 0.8125,-0.5937 0.2657,-0.2657 0.4063,-0.3438 0.1562,-0.078 0.3594,-0.078 0.3281,0 0.5781,0.2656 0.2656,0.25 0.2656,0.5938 0,0.3437 -0.3437,0.75 -0.5,0.5781 -1.2969,0.9062 -1.0781,0.4531 -2.375,0.4531 -1.5156,0 -2.7188,-0.625 -0.9843,-0.5 -1.6718,-1.5625 -0.6875,-1.0781 -0.6875,-2.3593 v -1.1563 q 0,-1.3281 0.6093,-2.4687 0.625,-1.1563 1.7188,-1.7657 1.0937,-0.625 2.3281,-0.625 0.7344,0 1.375,0.1719 0.6563,0.1563 1.2031,0.5156 z"
+         fill="#000000"
+         id="path607" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="12px"
+         font-style="italic"
+         lengthAdjust="spacing"
+         textLength="73"
+         x="1030.8"
+         y="3276.0664"
+         id="text607">«Repository»</text>
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="207"
+         x="963.79999"
+         y="3293.2363"
+         id="text608">NotificationPreferenceRepository</text>
+      <line
+         style="stroke:#181818;stroke-width:0.5"
+         x1="916"
+         x2="1189"
+         y1="3301.3125"
+         y2="3301.3125"
+         id="line608" />
+      <line
+         style="stroke:#181818;stroke-width:1"
+         x1="916"
+         x2="1189"
+         y1="3309.3125"
+         y2="3309.3125"
+         id="line609" />
+      <circle
+         cx="926"
+         cy="3323.6172"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse609"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="74"
+         x="935"
+         y="3327.8457"
+         id="text609">save(entity)</text>
+      <circle
+         cx="926"
+         cy="3341.2266"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse610"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="100"
+         x="935"
+         y="3345.4551"
+         id="text610">saveAll(entities)</text>
+      <circle
+         cx="926"
+         cy="3358.8359"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse611"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="71"
+         x="935"
+         y="3363.0645"
+         id="text611">findById(id)</text>
+      <circle
+         cx="926"
+         cy="3376.4453"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse612"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="83"
+         x="935"
+         y="3380.6738"
+         id="text612">existsById(id)</text>
+      <circle
+         cx="926"
+         cy="3394.0547"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse613"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="48"
+         x="935"
+         y="3398.2832"
+         id="text613">findAll()</text>
+      <circle
+         cx="926"
+         cy="3411.6641"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse614"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="93"
+         x="935"
+         y="3415.8926"
+         id="text614">findAllById(ids)</text>
+      <circle
+         cx="926"
+         cy="3429.2734"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse615"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="45"
+         x="935"
+         y="3433.502"
+         id="text615">count()</text>
+      <circle
+         cx="926"
+         cy="3446.8828"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse616"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="87"
+         x="935"
+         y="3451.1113"
+         id="text616">deleteById(id)</text>
+      <circle
+         cx="926"
+         cy="3464.4922"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse617"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="83"
+         x="935"
+         y="3468.7207"
+         id="text617">delete(entity)</text>
+      <circle
+         cx="926"
+         cy="3482.1016"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse618"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="109"
+         x="935"
+         y="3486.3301"
+         id="text618">deleteAllById(ids)</text>
+      <circle
+         cx="926"
+         cy="3499.7109"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse619"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="109"
+         x="935"
+         y="3503.9395"
+         id="text619">deleteAll(entities)</text>
+      <circle
+         cx="926"
+         cy="3517.3203"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse620"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="64"
+         x="935"
+         y="3521.5488"
+         id="text620">deleteAll()</text>
+      <circle
+         cx="926"
+         cy="3534.9297"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse621"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="40"
+         x="935"
+         y="3539.1582"
+         id="text621">flush()</text>
+      <circle
+         cx="926"
+         cy="3552.5391"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse622"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="134"
+         x="935"
+         y="3556.7676"
+         id="text622">saveAndFlush(entity)</text>
+      <circle
+         cx="926"
+         cy="3570.1484"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse623"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="160"
+         x="935"
+         y="3574.377"
+         id="text623">saveAllAndFlush(entities)</text>
+      <circle
+         cx="926"
+         cy="3587.7578"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse624"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="156"
+         x="935"
+         y="3591.9863"
+         id="text624">deleteAllInBatch(entities)</text>
+      <circle
+         cx="926"
+         cy="3605.3672"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse625"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="156"
+         x="935"
+         y="3609.5957"
+         id="text625">deleteAllByIdInBatch(ids)</text>
+      <circle
+         cx="926"
+         cy="3622.9766"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse626"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="111"
+         x="935"
+         y="3627.2051"
+         id="text626">deleteAllInBatch()</text>
+      <circle
+         cx="926"
+         cy="3640.5859"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse627"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="68"
+         x="935"
+         y="3644.8145"
+         id="text627">getOne(id)</text>
+      <circle
+         cx="926"
+         cy="3658.1953"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse628"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="68"
+         x="935"
+         y="3662.4238"
+         id="text628">getById(id)</text>
+      <circle
+         cx="926"
+         cy="3675.8047"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse629"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="134"
+         x="935"
+         y="3680.0332"
+         id="text629">getReferenceById(id)</text>
+      <circle
+         cx="926"
+         cy="3693.4141"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse630"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="147"
+         x="935"
+         y="3697.6426"
+         id="text630">findAll(sort: SpringSort)</text>
+      <circle
+         cx="926"
+         cy="3711.0234"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse631"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="216"
+         x="935"
+         y="3715.252"
+         id="text631">findAll(pageable: SpringPageable)</text>
+      <circle
+         cx="926"
+         cy="3728.6328"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse632"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="132"
+         x="935"
+         y="3732.8613"
+         id="text632">findWithQuietHours()</text>
+      <circle
+         cx="926"
+         cy="3746.2422"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse633"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="128"
+         x="935"
+         y="3750.4707"
+         id="text633">findByUserId(userId)</text>
+      <circle
+         cx="926"
+         cy="3763.8516"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse634"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="106"
+         x="935"
+         y="3768.0801"
+         id="text634">findByUser(user)</text>
+      <circle
+         cx="926"
+         cy="3781.4609"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse635"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="249"
+         x="935"
+         y="3785.6895"
+         id="text635">findBySystemAnnouncementsEnabled()</text>
+      <circle
+         cx="926"
+         cy="3799.0703"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse636"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="204"
+         x="935"
+         y="3803.2988"
+         id="text636">findByAccountUpdatesEnabled()</text>
+      <circle
+         cx="926"
+         cy="3816.6797"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse637"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="163"
+         x="935"
+         y="3820.9082"
+         id="text637">findByPushEnabledTrue()</text>
+      <circle
+         cx="926"
+         cy="3834.2891"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse638"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="165"
+         x="935"
+         y="3838.5176"
+         id="text638">findByEmailEnabledTrue()</text>
+      <circle
+         cx="926"
+         cy="3851.8984"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse639"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="188"
+         x="935"
+         y="3856.127"
+         id="text639">findByMenuUpdatesEnabled()</text>
+      <circle
+         cx="926"
+         cy="3869.5078"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse640"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="202"
+         x="935"
+         y="3873.7363"
+         id="text640">countByOrderUpdatesEnabled()</text>
+      <circle
+         cx="926"
+         cy="3887.1172"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse641"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="188"
+         x="935"
+         y="3891.3457"
+         id="text641">countByPromotionalEnabled()</text>
+      <circle
+         cx="926"
+         cy="3904.7266"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse642"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="177"
+         x="935"
+         y="3908.9551"
+         id="text642">countByEmailEnabledTrue()</text>
+      <circle
+         cx="926"
+         cy="3922.3359"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse643"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="190"
+         x="935"
+         y="3926.5645"
+         id="text643">findByOrderUpdatesEnabled()</text>
+      <circle
+         cx="926"
+         cy="3939.9453"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse644"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="200"
+         x="935"
+         y="3944.1738"
+         id="text644">countByMenuUpdatesEnabled()</text>
+      <circle
+         cx="926"
+         cy="3957.5547"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse645"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="175"
+         x="935"
+         y="3961.7832"
+         id="text645">countByPushEnabledTrue()</text>
+      <circle
+         cx="926"
+         cy="3975.1641"
+         fill="#84be84"
+         style="stroke:#038048;stroke-width:1"
+         id="ellipse646"
+         r="3" />
+      <text
+         fill="#000000"
+         font-family="sans-serif"
+         font-size="14px"
+         lengthAdjust="spacing"
+         textLength="176"
+         x="935"
+         y="3979.3926"
+         id="text646">findByPromotionalEnabled()</text>
+    </g>
+    <!--class AdminNotificationController-->
+    <!--class UserEntityBuilder-->
+    <!--class UserOrderFacade-->
+    <!--class WebSecurityConfig-->
+    <!--class ResidenceManagementService-->
+    <!--class UserFinanceFacade-->
+    <!--class AuthService-->
+    <!--class ReportEntityBuilder-->
+    <!--class MenuService-->
+    <!--class CampusRepository-->
+    <!--class TransactionRepository-->
+    <!--class UserProfileRepository-->
+    <!--class AdminAuditController-->
+    <!--class UserService-->
+    <!--class OrderStatus-->
+    <!--class AllergyRepository-->
+    <!--class UserSettingsFacade-->
+    <!--class UserDeviceRepository-->
+    <!--class NotificationService-->
+    <!--class UserEventService-->
+    <!--class AuditService-->
+    <!--class TransactionAuditRepository-->
+    <!--class UserOrderController-->
+    <!--class OrderItemRepository-->
+    <!--class UserEventType-->
+    <!--class GenericManagementController-->
+    <!--class FeedbackService-->
+    <!--class AdminFinanceController-->
+    <!--class NotificationStatus-->
+    <!--class UserRepository-->
+    <!--class NotificationPreferenceEntityBuilder-->
+    <!--class UserMenuController-->
+    <!--class NotificationPayload-->
+    <!--class AdminMenuController-->
+    <!--class ReportService-->
+    <!--class ListService-->
+    <!--class ReportStatus-->
+    <!--class ListController-->
+    <!--SRC=[xJtRRYEviU_-2WKRu72G6I3d74mG28i0iYqbNdZ6Zcmdo5FGxgRapaZTlUnkpogB_7kgU2rUMcffPlTbz6AnYxTYaImMwqB_fk2hikAJgxkFZykxszlvyfzNTxTtoybty_zTl5_CBtwZ2ppCbt-xkPgRtCN_pzyltjlSnUngTcqpvtzSl9__aLIzUbhUFFx3rbr0xT_RxENy_kxXvl5kIGhCB-VpYukkx3Q0sYPhsybrcQr5jfsycrnc-ITU5PDPqspAFElAkhgu-9_9jMejbwNRZWjUTxk6jvCCokRrfXRjHVkfh9eCcr75VhwOoERMekwhuWeBVV_zLLrrejvikFZJdoAwf2eySF5QvXnAUqHA5LraULPWIKgmT9jvByfk9nkbv4iLNlAcRikk5bWy9EV5VoukBjHmdrekvg-ywkOLa7PtsPURWel9zz_VTIzoj4YFTsKndTpMrHhJNRdbqybDrNPPrI6WXoQcgY7P1i8uDla8j9ww7l0Jyzx1dzzrzKCdochDtk1NMR2oa2bidU4V-VMCwAWYs0l3F_BBjiziwaqmgckECp1wMCbHL4LJbrKtdIXa4TRyt_i_52yKalMTzuqjpTRShrQsixmhN_blMmxmvxhUyApoCbwpJG_akdHPC9GE42eyQkU2PnqlPfq_1qsHWEwbjEcOcKH8SHmNmpyf-clAC9DGPGmMpAOatEBCR4h2pG2PITYU9FsOJKcueZnJFtIsPxWnrxiFMPMj-HQAk-qw2VRkpueihkx7kYjNccKSg5QHedf_Jxtw6cZMW2tpv3xihFHLsp-tkIYVETEf1jkG8ntAScZVYSAsEQ7ivcVRmveZIOKisQePRJPPpYM02VvZpzikQlEcuzi5vyKpC1J7GoO1Gt6zj1ci82vtp1lp3VEXG2Ll9H2uS76vkx5BZ_zKjbrB8LW2gz4FdQ-Qo86tTIgxu1lUSLfRGIWQ2X8sOg4-UWwikj_qxGjpewcAXOJ4e_IpekPkgikiouTo4JDJ8aBGPBpHCtbNSJDO-A9ZXyybNy7HLkKyHT6s5iY86cG13v3sCXlOCDdpXfi2z_gRpDeIbZOm3o5_21pN5lJMonywox20FcR0n4kTC5W-riqIzpuMQDcshCmokyAf9ItOTSXgauhm-RFa8-Bn9QlcF_RPXkA7595Vrx3AO1Vrk7aMjMeon6hsoWKCMbMugQwXrMLMhM7dTPdeyFFj17WS9WWILuQDNVBkC-VLKEcmWoGMScaROYHBq97VyhOT6lPj_Hdsz3Wgctb2FfUL5SvnrEVVo-xbOrtDjqstC-qmoZAMS5Q5Xwfa2_8mqrn7fkzMh99DXuSqTBvfDV-wsJQRc9lX4dFSHx5JzssxtDHPWLbgQM9dSd6cUhqNzQhSS2Lv3R1FTLAHqevbEkPgiiZfbwpXkb-KLGOxTHJhLiIXM-ovttowXN72-YlApiEevPd8Nx1Q2xiOUe55m1JmxGJt-Tj9M_xRxKQHLMsMuzOWvUDoLxq0rYBHcUM62UyvCqRBMtPlJrqZJl9Iwng5cOwlkK3GIlT0fQgl9WnHGVD88SRWnKn2GaN4DkiKMtEK91Cows5oKQGzUMlzyBbxwc1VJRnRWspZNvyx00dkIQS0dF_Kb4AACH_QwQHqD7ltYUziRoLI15f_hE6-9OL3cJAhvGU_7NDyLS02Wsfu9YgfYUudv3uBKMzjqOwqhbgHS2mJxN9WlRRllUBXdir7M1jV2TwguGrM4AGGPL7B9DmmCtaRygH32WdRlUwZQTbcFz4UsdikdkJrHUUtEETuZXKrRAy7ycLNaJe4GYAhbKtRTYA_uAy083N-XejFBGmkojNEpJnfKUsXi1_L5amCegt6u3hAyVxJDx8vNkXSp7bdre0QaMequaPdgVKijUuUkgphMnJBuCTDHIe3AwXB4iXUABcnmXVsdhoRhuF9IaGMlEPj7fPJtG75Kn8ZvC1XEondtWC0XgUGk-IhMl1hdXMR4iXQwCGRkfcxR1C9nY02oem0-HHAYFjUXCOBlfBQ2l7HGhL6Iv7iXg03dsHBNjKW9S9wqvEMcX-bpnZE3_hoUgABvK2fjjzAqW9P34u3CnqDsfT7jMHrGF-mKgAZabhLkR6W82e-EbbjhBX7pajLzyn7ptnqj-HjMM3ZqBHmwH5wWAjisy0sBbYk4q4TSqVgNTfDDL9NhSBMMnH9bkkpfmBfdMq-zjjdsFPv03YLbHbi24KYUWG55G78yDEovPMITfo8YRoahW3fb91ffSQ4UEgkhca1Ykpm0au5d8G37EUW5bEBxS6Ar79TIpUiPCAwYBie0-JjH7qkuxkoek2HSZjPMoD6vsa2fh5ou9TM1ypWAdG0JRmjsKcOkG-Bck3h4erRag1jkQwUcYN1ZIuV3sbo3LEJiQdXOA1L0L3tNGflUsavdnBVxYaHC1ISVN58Y16o465Zv9Eo5PsX92zLoR1PVKT5K6ffMWPzaZs8yjNn9b4iJVKfKX71sq03PVL6aH7GvMWh8Acbxif5LCV0OxkXpWcrOWa3fx6xHOtRZ1YVqNeqJ-pk0Ws0fH2pgHDCXNQapAOet42Jo-FCkSxoRKgQy-PmAFzeCv1jI8bTJhALKo_5fNsofI__sd8pN_orS6VKkLbNjU1NMSlP7al8Q4uNojEXtqF8O9JqEzMY7D7l6qodRaEwt4nfR2EkPE2QATt274cmahcdvkPAklybx0CUNzDzC_rhUDY8MqXExmSdMHuqEPZ-rPmliM3zERUcndtcB-agi8XD6yFI-H67xCpO3HRbffFb4rOAQS2OMbE6MM6-nN2Qi2AQCNnNrAfzD2A92gsbIbfuEm7Qm1shXMswaYMkNc2tI1LpauaMBHKfoOBwUdoHUURFgCSkyzJDncjG49F23qtcMn9W37KlSeus4xeDtxcb9AzNYh5h4j43fQJo5EN_qN5bEMzQJZgVfEUJD38bAHIr3W88i5IYcDP6LFNdXA9LbrbacvQ7XgVOM8JRc0fzdcOtqHHTl7XvE2_RyxBTQNK7XwHX-PWERJ1gnH1bv0AuAIyyi5xBqYkramwf3aYxIPg8HfkgmWve8w5w5CN3eBgrL3nLHVsvGgUPO1Z7YRQ1cKlYPanR0OxM38HkHMN5LgBUgWQxEcZF5YNUIPvLxg7hyqyWlEQyRSdqv7rNhrQFvPR8tPY3Q55li14sgK07SMJjQ74bDTUf1UVLEivA5pAuBv9HbBgtG_ULTfIQM1MbcbGV5iWcj41AbshpGdKfIFTYTuy-no2c9KH7fQwjjrij1KSY7-ezvp_bF7AgfVBT-N0u7mv6bf1CJMsx9DizWdSl-IOpfclb1oOpjvduD6kNF2iOzJA_GUk8bdIoMCm9JvB4oVDKOKswi2E3E3csKkm6splW570loXftOEHxqEYCenqdHg2DnPPZ2XrxberqGz2IhTUz5Mj7EHd8IOUD9ETzKGkBUZJTNYT9BnKjfdW5htiEPHzKZaKDzanuZptXR5FYZzVTxBb-vKiEpFcst9OTaqvgq2xIBCrZloWsHmQ2qNll5aG1sC8KrCa0f72uqaDEJaEaOD9WhL_oOZjaZjGGw4KTLROPLcTkVLSBpflRilhq93PUKD0M40vWWd08xHhh1jtcBxpeWV8miPxogWK-6-YpW9-Mhrn4UYwrjZnGsbmXS2wbgZ9XUx1PyM2v4BNu4C_6qSeuGr2VZtGUbnjIsBKH0zRhW-dV_MezHIH6zg6YC5C_gZCzUymazXes7CcOI-g3pouEHjBcK3IJo4XQOKGM0wCV2Wyo2un-Q6p8EKG_Jb94oht8vDyXPUCXtoPF9pbDw2cFq4n-u5MFxjLd6Uvic_PFd7jXkZglZMzUlaSrn5_xadT_gNlXAJ-6VDfImkN33gxgsrbLmIJcKfdVpYlifw0jQilKasIdgGBtG6eDVXGzfrdpBGXR0td8wbADQg5UilGz-VUYtjQuCR9DAdjVpuUQFe3Pdl4caGfyJNwXiDrt-gGl7cixrtW9essySMLmcVbPWOVKM05tLOgs2mqvwEaGmZZEY1UE3drzXeka9qA2dDPYt0UrZc8Sdxgon6RLg8GMwf9bRklyqzv6T86u3MS6RVTWaouLjyRLseZg6tYo_wzZ3TPTCFqRYf9cufX9K4kn9H0B0K4fFN8MGKuIqP9KPKce6Y8kD2R_Ae4HrnIJVrKekLvtp2Jq1jRhcDbKk2SatzWVUOakxHkY8haftXmHq8x85sKNGvji5pJgCFixVpPwHE0WgtATK2oEjpxt5UeOuShoRrxy9QkA3Lxb8jqbYSMoDcZsqdMDH-1vbTU8TEYo2Up6HCafAxTXhw9L8z1XOm_II9oghipFGeRZgIg9Gi2CNqlL_ruNkz6-kLx8md3ywrUAJoN-id5VINAeYOh0umAHkPgiwUJUdxrXbuPZdBl7nGwUu1FiFbnCtq7lu7VewGs5bbgnpiZ-U3k1qQ8QoxNiEnH7FOQsYz57PnMSa0Mt3sR4gY1d5ncj1A9683LXrZeJggJGaohGvY0eFCCHzW1Bs8rXMswvUYo77km2wi4KmeBva3LoQ30L6FdggtbaUAMl33AwW7XeDYVs6csiDUq1zNxHYUZoNRHJe4OQKFpWCNXjZOr3Jh5Z3sKPyrkPKtMVDiWGdvd4GHsH8pfpoV1u9okCaRGz-kbGMGZGss_OwBnVRtFiiP-SD9Q41kNj8c09c2KlwgpqhuNXscOceLHlUdqpar1qrCkPcOI5FjPC_VXwBgVa2hKz-vzJKAGoMY7f54Nb0aKncntO8WrSFyQ0RsGuUGGp6GrxQV8QRYThKqcBAUeP1WiSypv3ed1SI8P9OQWZxI_qq3jhEiwMJ3yOpPkzE8Tw94T1R46BUnoDJpA_aHW_sRvrS4PHJq8y_-dayndd1NzUyBjhTp1J7wBWkCQor_ovzAuRqf0vsogtxgtpwfOXslBX7LfwXC5KrZobJeJQQCyZKWbpHkoyU6G3T71lMadqL85n3bMwdkfgTCNaY6OhlF8Q5xBXoMHx1iXC5F-H246DuuQEtTEEVHD-CYBZpCJEJEnGz55qSWzPBxJEVU2eFzIFVZy9cinCwe1DvAWmV7NEepEFGK8XA5ts4Y5P8neFZ0NoFQs3KTPGXeHPkwyms5tgMsxhzJx1VCbpLQYisjGR7BBzG-zma83xan_56nEWxslHReeKz4j3-TLxfVAYVR97gbw7PyxuJND6CqkpHF2RnwyIEGFlZdZyJDVUVx5nLoGq8WST9aCsTHbrdqbxMUzLYN-1qxHx3FkyTSv2nQ1pmppvfBUUQVr4k3RLfvrh1iygECpT2oRtxiCPrVp5EKqkMVbewFE_UDvzo9f6EaUIB_Amjh5zg0RyuGHvnhxlFwJgEzp6PlxbtjA3ZWFKTeBLa1AqAjnE4Qc1IectLuO8_hi-VfrbcdgoXRoTkvPP4czbq52Uv_FKw_fKEefdkml478h3us2UPzyQY_QlBP4Det_cfzyWFqq6_8sA796h9_RazwDXKvL9YTIJXliZGXJiLbgYKBxHGVjQDvOhI50RyBYfO7AE3WeXWHwaWTGRcNguYMv6F4YPgBNt7JT9-97QAlCCyp7n4Gbdbn7HSyGfPXfwoPpi5sE10xunkWt_zDld96FVwJxplM-QxxNzzgzzfXmqTc4estuXConD_LI3HkxhfjzaShsr929ulvPODWJK3_wpWMmP12lVC2KBfsAc7IBUKCs_J9YfRXKwvfycVAM7SrNf07qFRqgNP2mOigkooZk3RdmRj5BTrtl1n6DoNfkjaVo7NZtvzHujCL4Z-zq53WUOIAsYTcGRzsYllVxu___Xr_cF3mFNjI_JnlaAn_Cvy0shukQ1hp09Mp3GG-4uNnGAshXOWZWea-J5Fc-S13Z4ZkGqCwvRam28gAwN6TVTkk28g2hDYsjcNY39a1V-SFt61LSa0bXTNbopZGDTOl_2H9cufHzjq8rqAAEkWYvhNXM_-7zwyMvCPAKmafPv0SOi-0xA0EhC-tB__qLF3ACVEZhLpZeZQHeJOBBzJ-UjRv2d7yQfpymh8-cJ70eJCymIiF2aG0Ur0oVbrldnJQbJ7pqZnpZZ3R2QR8Skc25hYQB8d-jYvuLevxuViSI4u-i6C8a9dzENh7svgWlkT4moDXQ_lilDkmWrec0At40FjlGbT1z7EtqDwXrmWjJq6rIX7NQI35qTnyeatXF0mm41fpy8ZCz43iS0X4R5QMndT0zPqcAXTwNthAN_pu0YeFUl6bHtHb8FdWlrmQhFMAYdn3bPeaCw7LXb6qVAAQNhrnlFVm40]-->
+  </g>
+</svg>

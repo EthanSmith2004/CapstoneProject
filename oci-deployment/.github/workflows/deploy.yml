@@ -1,0 +1,62 @@
+name: Deploy to OCI
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+      backend_tag:
+        description: 'Backend image tag'
+        required: false
+        default: 'latest'
+      frontend_tag:
+        description: 'Frontend image tag'
+        required: false
+        default: 'latest'
+
+env:
+  REGISTRY: ghcr.io
+  BACKEND_IMAGE_NAME: capstoneprojek/backend
+  FRONTEND_IMAGE_NAME: capstoneprojek/react-frontend
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    
+    steps:
+    - name: Checkout deployment repository
+      uses: actions/checkout@v4
+    
+    - name: Set up environment variables
+      run: |
+        echo "BACKEND_IMAGE=${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE_NAME }}:${{ inputs.backend_tag }}" >> $GITHUB_ENV
+        echo "FRONTEND_IMAGE=${{ env.REGISTRY }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ inputs.frontend_tag }}" >> $GITHUB_ENV
+        echo "REMOTE_HOST=${{ secrets.OCI_HOST }}" >> $GITHUB_ENV
+        echo "REMOTE_USER=${{ secrets.OCI_USER }}" >> $GITHUB_ENV
+        echo "REMOTE_PATH=${{ secrets.OCI_DEPLOY_PATH }}" >> $GITHUB_ENV
+    
+    - name: Setup SSH key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.OCI_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.OCI_HOST }} >> ~/.ssh/known_hosts
+    
+    - name: Make deploy script executable
+      run: chmod +x deploy.sh
+    
+    - name: Deploy to OCI
+      run: ./deploy.sh
+    
+    - name: Cleanup SSH
+      if: always()
+      run: |
+        rm -f ~/.ssh/id_rsa
+        rm -f ~/.ssh/known_hosts

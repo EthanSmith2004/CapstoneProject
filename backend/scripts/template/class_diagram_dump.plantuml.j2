@@ -1,0 +1,32 @@
+@startuml Class_Diagram
+!define CONTROLLER_COLOR #E1F5FE
+!define SERVICE_COLOR #F3E5F5
+!define FACADE_COLOR #E8F5E8
+!define SECURITY_COLOR #FFF3E0
+!define REPOSITORY_COLOR #FFEBEE
+
+title Class Diagram - {{ project_name | default("Backend Application") }}
+
+' Define class stereotypes and colors
+skinparam class {
+  BackgroundColor<<Controller>> CONTROLLER_COLOR
+  BackgroundColor<<Service>> SERVICE_COLOR
+  BackgroundColor<<Facade>> FACADE_COLOR
+  BackgroundColor<<Security>> SECURITY_COLOR
+  BackgroundColor<<Repository>> REPOSITORY_COLOR
+}
+
+{% for cls in classes %}
+class {{ cls.name }} <<{{ cls.type | title }}>> {
+{%- for field in cls.fields %}
+  {{ field.visibility == 'private' and '-' or (field.visibility == 'protected' and '#' or '+') }}{{ field.name }}: {{ field.type }}
+{%- endfor %}
+  --
+{%- for method in cls.methods %}
+  {{ method.visibility == 'private' and '-' or (method.visibility == 'protected' and '#' or '+') }}{{ method.name }}
+{%- endfor %}
+}
+
+{% endfor %}
+
+@enduml

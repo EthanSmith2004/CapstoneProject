@@ -1,0 +1,51 @@
+% Verslaggewing
+\section{Verslaggewing}
+\subsection{Gebruikersgeval}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/usecase/report.png}
+    \caption{Gebruikersgeval vir Verslaggewing}
+    \label{fig:verslaggewing_use_case}
+\end{figure}
+
+Volgens FREQ-WEB-102 en FREQ-WEB-103 moet finansiële verslae oor die balans van gebruikers op die stelsel, asook statistiek soos hoeveel deur gebruikers bestee word op die platform gegenereer kan word. Hierdie verslae word besigtig op die verslaggewing skerm (\autoref{fig:report_screen}). Verder volg FREQ-WEB-201 en FREQ-WEB-202 dat versale oor die huidige, verlede en gekansellerde bestellings gegenereer kan word, asook 'n verslag oor aantal etes wat voorberei moet word.
+
+\subsection{Scenario}
+
+\textbf{Akteurs:} Admin\\
+\textbf{Voorvereistes:} Admin is ingeteken, Admin het die korrekte regte\\
+\textbf{Prekondisie:} Inligting is beskikbaar vir 'n gegewe tydsreeks\\
+\textbf{Postkondisie:} Verslag is beskikbaar\\
+\textbf{Inset:} Tipe verslag, Verslag parameters, Datumreeks\\
+\textbf{Uitset:} Sukses- of foutboodskap\\
+\textbf{Skerms van Toepassing:} 
+\begin{itemize}
+    \item \autoref{fig:report_screen} (Verslaggewing skerm)
+\end{itemize}
+
+\textbf{Hoofvloei:}
+\begin{enumerate}
+    \item Administrasie gebruiker navigeer na verslag afdeling (\autoref{fig:report_screen})
+    \item Stelsel toon beskikbare verslag opsies (\autoref{fig:report_screen})
+    \item Admin kies verslag tipe 
+    \item Stelsel toon verslag parameters vorm
+    \item Admin spesifiseer datumreeks
+    \item Admin spesifiseer addisionele filters (indien van toepassing)
+    \item Admin klik "Genereer Verslag"
+    \item Stelsel versamel relevante data
+    \item Stelsel genereer verslag
+    \item Stelsel toon verslag aan admin (\autoref{fig:report_screen})
+    \item Admin kan verslag aflaai of druk
+    \item Gebruikersgeval eindig
+\end{enumerate}
+
+\textbf{Uitsonderingsvloei E1: Geen data vir gekose periode}
+\begin{enumerate}
+    \item[8a.] Stelsel vind geen data vir parameters
+    \item Stelsel toon "Geen data beskikbaar"
+    \item Stelsel bied opsie om parameters te wysig
+    \item Gaan terug na stap 5
+\end{enumerate}
+
+

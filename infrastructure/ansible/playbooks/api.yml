@@ -1,0 +1,73 @@
+- hosts: api-dev:api-prod
+  tasks:
+    - name: Update and upgrade apt packages
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install OpenSSH server
+      apt:
+        name: openssh-server
+        state: present
+
+    - name: Add GitHub Actions SSH key for dev
+      authorized_key:
+        user: root
+        key: "{{ lookup('file', playbook_dir + '/../../keys/api-dev-github-actions.pub') }}"
+      when: inventory_hostname in groups['api-dev']
+
+    - name: Add GitHub Actions SSH key for prod
+      authorized_key:
+        user: root
+        key: "{{ lookup('file', playbook_dir + '/../../keys/api-prod-github-actions.pub') }}"
+      when: inventory_hostname in groups['api-prod']
+
+    - name: Ensure /opt/app directory exists
+      file:
+        path: /opt/app
+        state: directory
+        mode: '0755'
+
+    - name: Install OpenJDK 17
+      apt:
+        name: openjdk-17-jdk
+        state: present
+
+    - name: Debug inventory_hostname
+      debug:
+        msg: "Current host: {{ inventory_hostname }}"
+
+    - name: Create environment file
+      copy:
+        dest: /etc/app.env
+        content: |
+          SPRING_PROFILES_ACTIVE={{ 'dev' if 'api-dev' in group_names else 'prod' }}
+          DB_PASSWORD={{ lookup('env', 'PROD_DB_PASSWORD') if 'api-prod' in group_names else '' }}
+          JWT_SECRET_KEY={{ lookup('env', 'JWT_SECRET_KEY') | default('changeme_in_production_' ~ 999999999999 | random) }}
+        mode: 0600
+        
+    - name: Create systemd service for Spring Boot app
+      copy:
+        dest: /etc/systemd/system/app.service
+        content: |
+          [Unit]
+          Description=Spring Boot Application
+          After=network.target
+
+          [Service]
+          User=root
+          EnvironmentFile=/etc/app.env
+          ExecStart=/usr/bin/java -jar /opt/app/app.jar
+          Restart=always
+
+          [Install]
+          WantedBy=multi-user.target
+
+    - name: Reload systemd daemon
+      command: systemctl daemon-reload
+
+    - name: Enable and start Spring Boot app service
+      systemd:
+        name: app
+        enabled: true
+        state: started

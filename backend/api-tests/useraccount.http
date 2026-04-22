@@ -1,0 +1,10 @@
+###
+GET http://localhost:8080/api/user/account
+Authorization: Bearer {{user_auth_token}}
+
+###
+GET http://localhost:8080/api/user/transactions?
+    page=0&
+    size=100
+Authorization: Bearer {{user_auth_token}}
+

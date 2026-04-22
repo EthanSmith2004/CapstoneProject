@@ -1,0 +1,52 @@
+###
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "louisvdw99@gmail.com",
+  "password": "LOUIS((("
+}
+
+> {%
+    client.global.set("user_auth_token", response.body.accessToken);
+%}
+
+###
+POST https://spys-demo.superuserdone.com/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@demo.com",
+  "password": "admin123"
+}
+
+> {%
+    client.global.set("admin_auth_token", response.body.accessToken);
+%}
+
+###
+POST http://localhost:8080/api/auth/logout
+Content-Type: application/json
+
+{
+  "refreshToken": ""
+}
+
+###
+POST http://localhost:8080/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "pUxusmoNzhExmJILXCI3pW1_VbFtMSrZQNiCzS8BeH8"
+}
+
+###
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "demo",
+  "lastName": "demo",
+  "email": "demo1@demo.com",
+  "password": "demo123"
+}
