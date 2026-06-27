@@ -6,6 +6,7 @@ import * as TanStackQueryProvider from './integrations/tanstack-query/root-provi
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 import { registerSW } from 'virtual:pwa-register'
 import { registerPushEventHandlers } from './lib/sw-push-integration'
+import { ErrorFallback } from './components/general/ErrorFallback'
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
@@ -24,6 +25,7 @@ const router = createRouter({
   scrollRestoration: true,
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
+  defaultErrorComponent: ErrorFallback,
 })
 
 // Register the router instance for type safety
