@@ -1,0 +1,5 @@
+# Proxy API calls to the Render backend (replace with your actual Render service URL)
+/api/*  https://YOUR-BACKEND-SERVICE.onrender.com/api/:splat  200
+
+# SPA fallback for client-side routing
+/*      /index.html  200

@@ -101,20 +101,20 @@ export function generatePDFReport(
       const pageCount = doc.getNumberOfPages()
       doc.setFontSize(8)
       doc.text(
-        `Bladsy ${data.pageNumber} van ${pageCount}`,
+        `Page ${data.pageNumber} of ${pageCount}`,
         doc.internal.pageSize.width / 2,
         doc.internal.pageSize.height - 5,
         { align: 'center' }
       )
       
       // Add generation date at the bottom
-      const today = new Date().toLocaleDateString('af-ZA', {
+      const today = new Date().toLocaleDateString('en-ZA', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       })
       doc.text(
-        `Gegenereer: ${today}`,
+        `Generated: ${today}`,
         doc.internal.pageSize.width - 10,
         doc.internal.pageSize.height - 5,
         { align: 'right' }
@@ -136,7 +136,7 @@ export function prepareDataForExport(data: any[][]): any[][] {
       if (cell && typeof cell === 'object') {
         // Handle dates
         if (cell instanceof Date) {
-          return `${cell.toLocaleDateString('af-ZA')} ${cell.toLocaleTimeString('af-ZA')}`
+          return `${cell.toLocaleDateString('en-ZA')} ${cell.toLocaleTimeString('en-ZA')}`
         }
         // Handle arrays
         if (Array.isArray(cell)) {

@@ -25,15 +25,15 @@ export function PresetSelector({
 }: PresetSelectorProps) {
   return (
     <div className="flex items-center gap-2">
-      <Label htmlFor="preset-select">Templaat:</Label>
+      <Label htmlFor="preset-select">Template:</Label>
       <Select value={selectedPreset || undefined} onValueChange={onPresetChange}>
         <SelectTrigger id="preset-select" className="w-64">
-          <SelectValue placeholder="Kies 'n Templaat" />
+          <SelectValue placeholder="Select a Template" />
         </SelectTrigger>
         <SelectContent>
           {presets.map((preset) => (
             <SelectItem key={preset.presetName} value={preset.presetName || ''}>
-              {preset.presetName} ({preset.templateCount} tydslotte)
+              {preset.presetName} ({preset.templateCount} timeslots)
             </SelectItem>
           ))}
         </SelectContent>

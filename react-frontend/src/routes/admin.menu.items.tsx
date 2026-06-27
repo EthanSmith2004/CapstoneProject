@@ -106,30 +106,30 @@ function RouteComponent() {
     const columns: ColumnDef<MenuItemDTO>[] = [
       {
         accessorKey: 'name',
-        header: 'Naam',
+        header: 'Name',
         cell: ({ row }) => <div>{row.getValue('name') || 'N/A'}</div>,
       },
       {
         accessorKey: 'description',
-        header: 'Beskrywing',
+        header: 'Description',
         cell: ({ row }) => <div>{(row.getValue('description') || 'N/A')}</div>,
       },
       {
         accessorKey: 'imageHero',
-        header: 'Beeld',
+        header: 'Image',
         enableSorting: false,
         cell: ({ row }) => {
           const imageUrl = row.getValue('imageHero') as string | undefined
           return imageUrl ? (
-                <img src={imageUrl} alt="Hoof Beeld" className="w-32 h-32 object-cover" />
+                <img src={imageUrl} alt="Main Image" className="w-32 h-32 object-cover" />
               ) : (
-                'Geen Beeld'
+                'No Image'
               )
         },
       },
       {
         accessorKey: 'price',
-        header: 'Prys',
+        header: 'Price',
         cell: ({ row }) => {
           const price = row.getValue('price') as number | undefined
           return <div>{price ? `R ${price.toFixed(2)}` : 'N/A'}</div>
@@ -137,7 +137,7 @@ function RouteComponent() {
       },
       {
         accessorKey: "kcal",
-        header: 'Voedingswaarde',
+        header: 'Nutritional Value',
         cell: ({ row }) => {
           const kcal = row.getValue('kcal') as number | undefined
           return <div>{kcal ? `${kcal} Kcal` : 'N/A'}</div>
@@ -145,7 +145,7 @@ function RouteComponent() {
       },
       {
         accessorKey: 'allergies',
-        header: 'Allergieë',
+        header: 'Allergies',
         enableSorting: false,
         cell: ({ row }) => {
           const allergies = row.getValue('allergies') as string[] | undefined
@@ -158,7 +158,7 @@ function RouteComponent() {
                   </Badge>
                 ))
               ) : (
-                <span>Geen Allergieë</span>
+                <span>No Allergies</span>
               )}
             </div>
           )
@@ -166,7 +166,7 @@ function RouteComponent() {
       },
       {
         id: 'actions',
-        header: 'Aksies',
+        header: 'Actions',
         cell: ({ row }) => {
           const menuItem = row.original
           return (
@@ -206,12 +206,12 @@ function RouteComponent() {
       if (itemToDelete && itemToDelete.id) {
         deleteMenuItemMutation.mutate(itemToDelete.id, {
           onSuccess: () => {
-            toast.success('Item suksesvol verwyder')
+            toast.success('Item deleted successfully')
             setItemToDelete(null)
           },
           onError: (error: any) => {
-            toast.error('Fout met verwyder van item', {
-              description: error.response?.data?.message || error.message || 'Kon nie die item verwyder nie'
+            toast.error('Error deleting item', {
+              description: error.response?.data?.message || error.message || 'Could not delete the item'
             })
             setItemToDelete(null)
           }
@@ -244,10 +244,10 @@ function RouteComponent() {
             text-3xl 
             font-bold"
           >
-            Item Bestuur
+            Item Management
           </h1>
           <p className="text-muted-foreground">
-            Bestuur en skep nuwe spyskaart items.
+            Manage and create new menu items.
           </p>
         </div>
         <Dialog 
@@ -258,7 +258,7 @@ function RouteComponent() {
             <Button 
               onClick={() => setSelectedMenuItem(undefined)}
             >
-              Nuwe Item
+              New Item
             </Button>
           </DialogTrigger>
           <DialogContent className='
@@ -270,9 +270,9 @@ function RouteComponent() {
             flex-col'
           >
             <DialogHeader className="flex-shrink-0">
-              <DialogTitle>{selectedMenuItem ? 'Wysig Item' : 'Nuwe Item'}</DialogTitle>
+              <DialogTitle>{selectedMenuItem ? 'Edit Item' : 'New Item'}</DialogTitle>
               <DialogDescription>
-                {selectedMenuItem ? 'Wysig die besonderhede van die item.' : 'Voeg \'n nuwe item by die spyskaart.'}
+                {selectedMenuItem ? 'Edit the details of the item.' : 'Add a new item to the menu.'}
               </DialogDescription>
             </DialogHeader>
             <div className="flex-1 overflow-y-auto pr-2">
@@ -292,7 +292,7 @@ function RouteComponent() {
         enableSorting
         pageSize={10}
         loading={isMenuItemsLoading}
-        emptyMessage="Geen items gevind nie"
+        emptyMessage="No items found"
         className="space-y-4"
       />
 
@@ -300,17 +300,17 @@ function RouteComponent() {
       <Dialog open={!!itemToDelete} onOpenChange={(open) => !open && setItemToDelete(null)}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Verwyder item?</DialogTitle>
+            <DialogTitle>Delete item?</DialogTitle>
             <DialogDescription>
-              Is jy seker jy wil "{itemToDelete?.name}" verwyder?
+              Are you sure you want to delete "{itemToDelete?.name}"?
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
             <Button variant="outline" onClick={() => setItemToDelete(null)}>
-              Kanselleer
+              Cancel
             </Button>
             <Button variant="destructive" onClick={confirmDeleteMenuItem}>
-              Verwyder
+              Delete
             </Button>
           </DialogFooter>
         </DialogContent>

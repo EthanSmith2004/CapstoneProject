@@ -9,33 +9,33 @@ export function MealScreen({ meal, isLoading = false }: MealScreenProps) {
   // Fallback descriptions if the API doesn't provide them
   const fallbackDescriptions: Record<string, { beskrywing: string; voedingswaarde: string }> = {
     'Spaghetti Bolognese': {
-      beskrywing: "\'n Klassieke Italiaanse gereg met maalvleis in \'n ryk tamatie-en-kruie sous, bedien oor spaghetti.",
-      voedingswaarde: "Energie: 450 kcal | Proteïen: 25g | Koolhidrate: 55g | Vet: 15g",
+      beskrywing: "A classic Italian dish with minced beef in a rich tomato and herb sauce, served over spaghetti.",
+      voedingswaarde: "Energy: 450 kcal | Protein: 25g | Carbohydrates: 55g | Fat: 15g",
     },
     'Hoender Wrap': {
-      beskrywing: "Gegrilde hoenderfilet met slaai, tamatie en jogurtversiersel, toegedraai in \'n sagte tortillabrood.",
-      voedingswaarde: "Energie: 380 kcal | Proteïen: 30g | Koolhidrate: 35g | Vet: 12g",
+      beskrywing: "Grilled chicken fillet with lettuce, tomato, and a yogurt dressing, wrapped in a soft tortilla.",
+      voedingswaarde: "Energy: 380 kcal | Protein: 30g | Carbohydrates: 35g | Fat: 12g",
     },
     'Beesburger': {
-      beskrywing: "\'n Sappige beesvleispattie op \'n geroosterde broodjie met kaas, blaarslaai en sous.",
-      voedingswaarde: "Energie: 520 kcal | Proteïen: 28g | Koolhidrate: 40g | Vet: 25g",
+      beskrywing: "A juicy beef patty on a toasted bun with cheese, lettuce, and sauce.",
+      voedingswaarde: "Energy: 520 kcal | Protein: 28g | Carbohydrates: 40g | Fat: 25g",
     },
     'Groente Curry': {
-      beskrywing: "Seisoenale groente in \'n mild kerrie-kokosmelksous, bedien met geurige rys.",
-      voedingswaarde: "Energie: 400 kcal | Proteïen: 10g | Koolhidrate: 60g | Vet: 12g",
+      beskrywing: "Seasonal vegetables in a mild curry coconut sauce, served with fragrant rice.",
+      voedingswaarde: "Energy: 400 kcal | Protein: 10g | Carbohydrates: 60g | Fat: 12g",
     },
   }
 
   if (isLoading) {
     return (
       <div className="
-        min-h-screen 
-        bg-[rgb(252,225,211)] 
-        flex 
-        items-center 
+        min-h-screen
+        bg-[rgb(252,225,211)]
+        flex
+        items-center
         justify-center"
       >
-        <p>Laai gereg besonderhede...</p>
+        <p>Loading meal details...</p>
       </div>
     )
   }
@@ -43,108 +43,106 @@ export function MealScreen({ meal, isLoading = false }: MealScreenProps) {
   if (!meal) {
     return (
       <div className="
-        min-h-screen 
-        bg-[rgb(252,225,211)] 
-        flex 
-        flex-col 
-        items-center 
-        justify-center 
+        min-h-screen
+        bg-[rgb(252,225,211)]
+        flex
+        flex-col
+        items-center
+        justify-center
         p-4"
       >
         <p className="
-          text-center 
+          text-center
           mb-4"
         >
-          Gereg nie gevind nie.
+          Meal not found.
         </p>
         <Button
           onClick={() => navigate({ to: '/user/menu' })}
           className="
-            bg-orange-600 
-            text-white 
-            font-bold 
-            py-2 
+            bg-orange-600
+            text-white
+            font-bold
+            py-2
             px-4"
         >
-          Terug na Spyskaart
+          Back to Menu
         </Button>
       </div>
     )
   }
 
-  // Get fallback description if needed
   const fallback = fallbackDescriptions[meal.name || ''] || {
-    beskrywing: 'Geen beskrywing beskikbaar nie.',
-    voedingswaarde: 'Geen voedingswaarde beskikbaar nie.',
+    beskrywing: 'No description available.',
+    voedingswaarde: 'No nutritional information available.',
   }
 
-  // Use API description if available, otherwise use fallback
   const beskrywing = meal.description || fallback.beskrywing
-  const voedingswaarde = meal.kcal ? `Energie: ${meal.kcal} kcal` : fallback.voedingswaarde
+  const voedingswaarde = meal.kcal ? `Energy: ${meal.kcal} kcal` : fallback.voedingswaarde
 
   return (
     <div className="
-      min-h-screen 
-      bg-[rgb(252,225,211)] 
-      pb-20 
+      min-h-screen
+      bg-[rgb(252,225,211)]
+      pb-20
       pt-4"
     >
       <div className="
-        px-4 
-        mt-4 
+        px-4
+        mt-4
         space-y-6"
       >
-        <img 
-          src={meal.imageDetail || meal.imageHero || '/images/default-meal.jpg'} 
-          alt={meal.name} 
+        <img
+          src={meal.imageDetail || meal.imageHero || '/images/default-meal.jpg'}
+          alt={meal.name}
           className="
-            w-full 
-            h-52 
-            object-cover 
-            rounded-xl 
-            shadow" 
+            w-full
+            h-52
+            object-cover
+            rounded-xl
+            shadow"
         />
 
         <div className="
-          bg-white 
-          p-6 
-          rounded-xl 
-          shadow 
+          bg-white
+          p-6
+          rounded-xl
+          shadow
           space-y-4"
         >
           <h2 className="
-            text-2xl 
+            text-2xl
             font-bold"
           >
             {meal.name}
           </h2>
           <p className="
-            text-gray-600 
+            text-gray-600
             font-semibold"
           >
-            Allergieë: {meal.allergies?.join(', ') || 'Geen'}
+            Allergies: {meal.allergies?.join(', ') || 'None'}
           </p>
           <p className="
-            text-orange-700 
+            text-orange-700
             font-semibold"
           >
-            Koste: R{meal.price?.toFixed(2) || '0.00'}
+            Price: R{meal.price?.toFixed(2) || '0.00'}
           </p>
-          
+
           {meal.deliveryDate && (
             <p className="
               text-gray-600"
             >
-              Aflewering: <strong>{formatDate(meal.deliveryDate)}</strong>
+              Delivery: <strong>{formatDate(meal.deliveryDate)}</strong>
             </p>
           )}
 
           <div>
             <h3 className="
-              font-semibold 
+              font-semibold
               mb-1"
             >
-              Beskrywing
+              Description
             </h3>
             <p>{beskrywing}</p>
           </div>
@@ -153,7 +151,7 @@ export function MealScreen({ meal, isLoading = false }: MealScreenProps) {
             <h3 className="
               font-semibold mb-1"
             >
-              Voedingswaarde
+              Nutritional Information
             </h3>
             <p>{voedingswaarde}</p>
           </div>
@@ -162,13 +160,13 @@ export function MealScreen({ meal, isLoading = false }: MealScreenProps) {
         <Button
           onClick={() => navigate({ to: '/user/menu' })}
           className="
-            w-full 
-            bg-orange-600 
-            text-white 
-            font-bold 
+            w-full
+            bg-orange-600
+            text-white
+            font-bold
             py-3"
         >
-          Terug
+          Back
         </Button>
       </div>
     </div>

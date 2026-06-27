@@ -1,4 +1,4 @@
-import { type UserProfileDTO, UserProfileApi} from "@/api";
+﻿import { type UserProfileDTO, UserProfileApi} from "@/api";
 import { LoadScreen } from "@/components/general/LoadScreen";
 import { useQuery } from "@tanstack/react-query";
 import { createContext, useContext, useEffect } from "react";
@@ -35,7 +35,7 @@ export function MobileUserProvider({ children }: { children: React.ReactNode; })
     }, [profileError, navigate]);
     
     if (userProfileLoading) {
-        return <LoadScreen message="Laai Gebruikers Profiel..."/>;
+        return <LoadScreen message="Loading User Profile..."/>;
     }
 
     if (profileError && (profileError as any).status === 404) {
@@ -44,10 +44,10 @@ export function MobileUserProvider({ children }: { children: React.ReactNode; })
     }
 
     if (profileError) {
-        return <div className="text-red-500">Fout met gebruikers profiel: {profileError.message}</div>;
+        return <div className="text-red-500">Error loading user profile: {profileError.message}</div>;
     }
     if (!userProfile) {
-        return <div className="text-red-500">Gebruikers profiel nie gevind nie.</div>;
+        return <div className="text-red-500">User profile not found.</div>;
     }
 
     const value: MobileUserContextType = {

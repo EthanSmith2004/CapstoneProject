@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { 
     Card, 
@@ -16,7 +16,7 @@ import {
     ThumbsDown, 
     Star,
     Plus,
-    Minu
+    Minus
 } from 'lucide-react'
 import type { MenuItemDTO } from '@/api/models'
 import {
@@ -198,7 +198,7 @@ export function MenuItemCard({
                                             text-xs 
                                             text-gray-500"
                                     >
-                                        Geen allergieë
+                                        No allergies
                                     </Badge>
                                 )}
                         </div>
@@ -215,7 +215,7 @@ export function MenuItemCard({
                                 w-4" 
                             />
                             <span className="truncate">
-                                Aflewering {formatDateLong(meal.deliveryDate)}
+                                Delivery {formatDateLong(meal.deliveryDate)}
                             </span>
                         </div>
                     </div>
@@ -294,7 +294,7 @@ export function MenuItemCard({
                         font-medium 
                         text-gray-700"
                     >
-                        Aantal:
+                        Quantity:
                     </Label>
                     <div className="
                         flex 
@@ -357,10 +357,11 @@ export function MenuItemCard({
                         gap-1 text-orange-600 
                         font-semibold"
                     >
-                        <span>Totaal: R{itemCost.toFixed(2)}</span>
+                        <span>Total: R{itemCost.toFixed(2)}</span>
                     </div>
                 )}
             </CardContent>
         </Card>
     )
 }
+

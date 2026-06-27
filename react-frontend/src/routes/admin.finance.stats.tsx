@@ -30,26 +30,26 @@ function RouteComponent() {
       end: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), 23, 59, 59),
       previousStart: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 14),
       previousEnd: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 8, 23, 59, 59),
-      name: 'Laaste 7 dae',
-      contrastName: 'Vorige 7 dae',
+      name: 'Last 7 days',
+      contrastName: 'Previous 7 days',
     },
     {
       start: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 30),
       end: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), 23, 59, 59),
       previousStart: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 60),
       previousEnd: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 31, 23, 59, 59),
-      name: 'Laaste 30 dae',
-      contrastName: 'Vorige 30 dae',
+      name: 'Last 30 days',
+      contrastName: 'Previous 30 days',
     },
     {
       start: new Date(new Date().getFullYear(), 0, 1),
       end: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), 23, 59, 59),
-      name: 'Jaar tot datum',
+      name: 'Year to date',
     },
     {
       start: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
       end: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), 23, 59, 59),
-      name: 'Maand tot op datum',
+      name: 'Month to date',
     },
   ];
 
@@ -85,13 +85,13 @@ function RouteComponent() {
         end: dateRange.to,
         previousStart: undefined,
         previousEnd: undefined,
-        name: "Eie"
+        name: "Custom"
       });
     }
   }, [dateRange]);
 
   useEffect(() => {
-    if (statisticPeriod.name !== "Eie") {
+    if (statisticPeriod.name !== "Custom") {
       setDateRange({
         from: statisticPeriod.start,
         to: statisticPeriod.end
@@ -103,7 +103,7 @@ function RouteComponent() {
   return (
     <div className="p-4 flex flex-col lg:flex-row">
       <div>
-        <Label htmlFor="period">Periode</Label>
+        <Label htmlFor="period">Period</Label>
         <Select onValueChange={(value) => {
           const period = predefinedPeriods.find(p => p.name === value);
           if (period) {
@@ -111,10 +111,10 @@ function RouteComponent() {
           }
         }} value={statisticPeriod.name}>
           <SelectTrigger id="period" className="w-[180px] mb-4">
-            <SelectValue placeholder="Kies 'n periode" />
+            <SelectValue placeholder="Select a period" />
           </SelectTrigger>
           <SelectContent className='bg-white z-40'>
-            <SelectItem value="Eie" disabled hidden>Eie</SelectItem>
+            <SelectItem value="Custom" disabled hidden>Custom</SelectItem>
             {predefinedPeriods.map((period) => (
               <SelectItem key={period.name} value={period.name}>
                 {period.name}

@@ -12,9 +12,9 @@ function RouteComponent() {
 
 function Settings() {
   const navigation: TabItem[] = [
-    { name: 'Kampusse', href: '/admin/settings/campus' },
-    { name: 'Koshuise', href: '/admin/settings/residence' },
-    { name: 'Alergeë', href: '/admin/settings/alergen' },
+    { name: 'Campuses', href: '/admin/settings/campus' },
+    { name: 'Residences', href: '/admin/settings/residence' },
+    { name: 'Allergies', href: '/admin/settings/alergen' },
   ]
 
   return (

@@ -27,8 +27,8 @@ export const Route = createFileRoute('/admin/finance/load-individual')({
 })
 
 const formSchema = z.object({
-  amount: z.coerce.number().positive({ message: 'Bedrag moet positief wees' }),
-  description: z.string().min(3, { message: 'Beskrywing moet ten minste 3 karakters bevat' }),
+  amount: z.coerce.number().positive({ message: 'Amount must be positive' }),
+  description: z.string().min(3, { message: 'Description must be at least 3 characters' }),
   query: z.string().optional(),
 })
 
@@ -107,16 +107,16 @@ function RouteComponent() {
   return (
     <div className="container mx-auto py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">Individuele Krediet Laai</h1>
+        <h1 className="text-3xl font-bold">Individual Credit Load</h1>
         <p className="text-muted-foreground">
-          Voeg krediet by aan 'n individuele gebruiker se rekening
+          Add credit to an individual user's account
         </p>
       </div>      {loadSuccess && (
         <Alert className="mb-6 bg-green-50 border-green-500">
           <Check className="h-4 w-4 text-green-500" />
-          <AlertTitle className="text-green-800">Sukses</AlertTitle>
+          <AlertTitle className="text-green-800">Success</AlertTitle>
           <div className="text-green-700">
-            Krediet is suksesvol gelaai na die gebruiker se rekening.
+            Credit loaded successfully to the user's account.
           </div>
         </Alert>
       )}
@@ -124,17 +124,17 @@ function RouteComponent() {
       {loadCreditMutation.isError && (
         <Alert className="mb-6 bg-red-50 border-red-500">
           <AlertTriangle className="h-4 w-4 text-red-500" />
-          <AlertTitle className="text-red-800">Fout</AlertTitle>
+          <AlertTitle className="text-red-800">Error</AlertTitle>
           <div className="text-red-700">
-            Daar was 'n probleem met die laai van krediet. Probeer asseblief weer.
+            There was a problem loading credit. Please try again.
           </div>
         </Alert>
       )}
 
       <Card className='bg-background'>
         <CardHeader>
-          <CardTitle>Laai Krediet</CardTitle>
-          <CardDescription>Soek vir 'n gebruiker en spesifiseer die bedrag om te laai</CardDescription>
+          <CardTitle>Load Credit</CardTitle>
+          <CardDescription>Search for a user and specify the amount to load</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -145,11 +145,11 @@ function RouteComponent() {
                   name="query"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Soek Gebruiker</FormLabel>
+                      <FormLabel>Search User</FormLabel>
                       <div className="relative">
                         <FormControl>
                           <Input 
-                            placeholder="Soek deur naam of e-pos" 
+                            placeholder="Search by name or email"
                             {...field} 
                             onChange={(e) => {
                               field.onChange(e);
@@ -168,9 +168,9 @@ function RouteComponent() {
                 {!selectedUser && searchQuery.length >= 3 && (
                   <div className="border rounded-md max-h-60 overflow-y-auto">
                     {isFetching ? (
-                      <div className="p-4 text-center">Besig om te soek...</div>
+                      <div className="p-4 text-center">Searching...</div>
                     ) : searchResults?.data?.length === 0 ? (
-                      <div className="p-4 text-center">Geen gebruikers gevind nie.</div>
+                      <div className="p-4 text-center">No users found.</div>
                     ) : (
                       <ul>
                         {searchResults?.data.map((user) => (
@@ -193,7 +193,7 @@ function RouteComponent() {
                     <div className="flex items-start gap-3">
                       <Info className="h-5 w-5 text-blue-500 mt-0.5" />
                       <div>
-                        <div className="font-medium">Gekose Gebruiker</div>
+                        <div className="font-medium">Selected User</div>
                         <div>{selectedUser.firstName} {selectedUser.lastName}</div>
                         <div className="text-sm text-muted-foreground">{selectedUser.email}</div>
                       </div>
@@ -206,7 +206,7 @@ function RouteComponent() {
                   name="amount"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Bedrag (R)</FormLabel>
+                      <FormLabel>Amount (R)</FormLabel>
                       <FormControl>
                         <Input type="number" step="0.01" placeholder="0.00" {...field} />
                       </FormControl>
@@ -220,9 +220,9 @@ function RouteComponent() {
                   name="description"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Beskrywing</FormLabel>
+                      <FormLabel>Description</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="Verskaf 'n beskrywing vir die transaksie" {...field} />
+                        <Textarea placeholder="Provide a description for the transaction" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -234,7 +234,7 @@ function RouteComponent() {
                 type="submit" 
                 disabled={!selectedUser || form.formState.isSubmitting || loadCreditMutation.isPending}
               >
-                {loadCreditMutation.isPending ? 'Besig...' : 'Laai Krediet'}
+                {loadCreditMutation.isPending ? 'Loading...' : 'Load Credit'}
               </Button>
             </form>
           </Form>

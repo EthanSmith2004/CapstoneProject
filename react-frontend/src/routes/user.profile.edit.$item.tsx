@@ -1,4 +1,4 @@
-import { ListApi, UserProfileApi } from '@/api';
+﻿import { ListApi, UserProfileApi } from '@/api';
 import { useAuth } from '@/contexts/AuthContext';
 import { getItemByValueProperty } from '@/data/user-profile-schema';
 import { SettingsEditor } from '@/components/mobile/SettingsEditor';
@@ -36,7 +36,7 @@ function RouteComponent() {
                 text-sm 
                 text-gray-600'
             >
-                Hier kan jy jou {itemSchema?.label.toLowerCase()} verander.
+                You can change your {itemSchema?.label.toLowerCase()} here.
             </p>
             <SettingsEditor 
                 item={itemSchema} 
@@ -46,3 +46,4 @@ function RouteComponent() {
             />
         </div>);
 }
+

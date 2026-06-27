@@ -1,4 +1,4 @@
-import { useForm } from '@tanstack/react-form'
+﻿import { useForm } from '@tanstack/react-form'
 import { UserPlus } from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
 
@@ -45,11 +45,11 @@ export function ProfileForm({submit, isLoading, initialData}: {submit: (data: Cr
     onSubmit: async ({ value }) => {
       // Basic validation
       if (!value.credentialNumber || value.credentialNumber.trim() === '') {
-        throw new Error('Student/Personeel nommer word versoek')
+        throw new Error('Student/Staff number is required')
       }
       
       if (!value.campusId || value.campusId === 0) {
-        throw new Error('Kampus is verpligtend')
+        throw new Error('Campus is required')
       }
       
       try {
@@ -83,10 +83,10 @@ export function ProfileForm({submit, isLoading, initialData}: {submit: (data: Cr
                                 font-bold 
                                 text-center"
           >
-            Skep Profiel
+            Create Profile
           </CardTitle>
           <CardDescription className="text-center">
-            Voer jou profiel inligting in om te begin
+            Enter your profile information to get started
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -104,7 +104,7 @@ export function ProfileForm({submit, isLoading, initialData}: {submit: (data: Cr
                 validators={{
                   onChange: ({ value }) => {
                     if (!value || value.trim() === '') {
-                      return 'Student/Personeel nommer word versoek'
+                      return 'Student/Staff number is required'
                     }
                     return undefined
                   }
@@ -112,14 +112,14 @@ export function ProfileForm({submit, isLoading, initialData}: {submit: (data: Cr
               >
                 {(field) => (
                   <div className="space-y-2">
-                    <Label htmlFor="credentialNumber">Student/Personeel Nommer</Label>
+                    <Label htmlFor="credentialNumber">Student/Staff Number</Label>
                     <Input
                       id="credentialNumber"
                       name={field.name}
                       value={field.state.value}
                       onBlur={field.handleBlur}
                       onChange={(e) => field.handleChange(e.target.value)}
-                      placeholder="Voer jou student of personeel nommer in"
+                      placeholder="Enter your student or staff number"
                       autoComplete="off"
                     />
                     {field.state.meta.errors.length > 0 && (
@@ -138,7 +138,7 @@ export function ProfileForm({submit, isLoading, initialData}: {submit: (data: Cr
                 validators={{
                   onChange: ({ value }) => {
                     if (!value || value === 0) {
-                      return 'Kampus is verpligtend'
+                      return 'Campus is required'
                     }
                     return undefined
                   }
@@ -146,18 +146,18 @@ export function ProfileForm({submit, isLoading, initialData}: {submit: (data: Cr
               >
                 {(field) => (
                   <div className="space-y-2">
-                    <Label htmlFor="campusId">Kampus</Label>
+                    <Label htmlFor="campusId">Campus</Label>
                     <Select
                       value={field.state.value?.toString() || "0"}
                       onValueChange={(value) => field.handleChange(parseInt(value))}
                     >
                       <SelectTrigger id="campusId">
-                        <SelectValue placeholder="Kies jou kampus" />
+                        <SelectValue placeholder="Select your campus" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="0" disabled>--Kies--</SelectItem>
+                        <SelectItem value="0" disabled>--Select--</SelectItem>
                         {campusesLoading ? (
-                          <SelectItem value="-1" disabled>Laai...</SelectItem>
+                          <SelectItem value="-1" disabled>Loading...</SelectItem>
                         ) : (
                           campuses.map((campus: SelectDTO) => (
                             <SelectItem key={campus.id} value={campus.id?.toString() || ""}>
@@ -183,18 +183,18 @@ export function ProfileForm({submit, isLoading, initialData}: {submit: (data: Cr
               >
                 {(field) => (
                   <div className="space-y-2">
-                    <Label htmlFor="residenceId">Koshuis (Opsioneel)</Label>
+                    <Label htmlFor="residenceId">Residence (Optional)</Label>
                     <Select
                       value={field.state.value?.toString() || "0"}
                       onValueChange={(value) => field.handleChange(value ? parseInt(value) : undefined)}
                     >
                       <SelectTrigger id="residenceId">
-                        <SelectValue placeholder="Kies jou koshuis (indien van toepassing)" />
+                        <SelectValue placeholder="Select your residence (if applicable)" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="0">Geen</SelectItem>
+                        <SelectItem value="0">None</SelectItem>
                         {residencesLoading ? (
-                          <SelectItem value="-1" disabled>Laai...</SelectItem>
+                          <SelectItem value="-1" disabled>Loading...</SelectItem>
                         ) : (
                           residences.map((residence: SelectDTO) => (
                             <SelectItem key={residence.id} value={residence.id?.toString() || ""}>
@@ -215,10 +215,10 @@ export function ProfileForm({submit, isLoading, initialData}: {submit: (data: Cr
               >
                 {(field) => (
                   <div className="space-y-2">
-                    <Label htmlFor="allergyIds">Allergieë (Opsioneel)</Label>
+                    <Label htmlFor="allergyIds">Allergies (Optional)</Label>
                     <div className="space-y-2 max-h-40 overflow-y-auto border rounded p-3">
                       {allergiesLoading ? (
-                        <p className="text-sm text-gray-500">Laai allergieë...</p>
+                        <p className="text-sm text-gray-500">Loading allergies...</p>
                       ) : allergies.length > 0 ? (
                         allergies.map((allergy: SelectDTO) => (
                           <div key={allergy.id} className="flex items-center space-x-2">
@@ -243,7 +243,7 @@ export function ProfileForm({submit, isLoading, initialData}: {submit: (data: Cr
                           </div>
                         ))
                       ) : (
-                        <p className="text-sm text-gray-500">Geen allergieë beskikbaar nie</p>
+                        <p className="text-sm text-gray-500">No allergies available</p>
                       )}
                     </div>
                   </div>
@@ -263,12 +263,12 @@ export function ProfileForm({submit, isLoading, initialData}: {submit: (data: Cr
                   {(isSubmitting || isLoading) ? (
                     <>
                       <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-white" />
-                      Profiel word geskep...
+                      Creating profile...
                     </>
                   ) : (
                     <>
                       <UserPlus className="mr-2 h-4 w-4" />
-                      Skep Profiel
+                      Create Profile
                     </>
                   )}
                 </Button>

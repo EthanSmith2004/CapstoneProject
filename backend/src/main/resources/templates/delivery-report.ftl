@@ -11,26 +11,26 @@
   <fo:page-sequence master-reference="A4">
     <fo:static-content flow-name="xsl-region-before">
       <fo:block text-align="center" font-size="24pt" font-weight="bold" color="#2c3e50" margin-bottom="10pt">
-        Aflewering Verslag
+        Delivery Report
       </fo:block>
       <fo:block text-align="center" font-size="12pt" color="#7f8c8d">
-        Verslag Datum: ${date?string("yyyy-MM-dd HH:mm")}
+        Report Date: ${date?string("yyyy-MM-dd HH:mm")}
       </fo:block>
       <fo:block text-align="center" font-size="10pt" color="#7f8c8d" margin-top="5pt">
-        Geskep: ${generatedAt?string("yyyy-MM-dd HH:mm:ss")}
+        Created: ${generatedAt?string("yyyy-MM-dd HH:mm:ss")}
       </fo:block>
     </fo:static-content>
 
     <fo:static-content flow-name="xsl-region-after">
       <fo:block text-align="center" font-size="10pt" color="#7f8c8d">
-        Bladsy <fo:page-number/> van <fo:page-number-citation ref-id="last-page"/>
+        Page <fo:page-number/> of <fo:page-number-citation ref-id="last-page"/>
       </fo:block>
     </fo:static-content>
 
     <fo:flow flow-name="xsl-region-body">
       <!-- Delivery Details Section -->
       <fo:block font-size="16pt" font-weight="bold" color="#34495e" margin-bottom="15pt" margin-top="5pt">
-        Aflewering
+        Delivery
       </fo:block>
 
       <fo:table table-layout="fixed" width="100%" border="1pt solid #bdc3c7" font-size="9pt">
@@ -44,7 +44,7 @@
         <fo:table-header background-color="#c0c0c0c0">
           <fo:table-row>
             <fo:table-cell padding="8pt" border="1pt solid #bdc3c7">
-              <fo:block font-weight="bold">Aflewering</fo:block>
+              <fo:block font-weight="bold">Delivery</fo:block>
             </fo:table-cell>
             <fo:table-cell padding="8pt" border="1pt solid #bdc3c7">
               <fo:block font-weight="bold">Item</fo:block>
@@ -53,16 +53,16 @@
               <fo:block font-weight="bold" text-align="center">Qty</fo:block>
             </fo:table-cell>
             <fo:table-cell padding="8pt" border="1pt solid #bdc3c7">
-              <fo:block font-weight="bold">Klient</fo:block>
+              <fo:block font-weight="bold">Customer</fo:block>
             </fo:table-cell>
             <fo:table-cell padding="8pt" border="1pt solid #bdc3c7">
-              <fo:block font-weight="bold">Student/Personeel Nr</fo:block>
+              <fo:block font-weight="bold">Student/Staff No.</fo:block>
             </fo:table-cell>
             <fo:table-cell padding="8pt" border="1pt solid #bdc3c7">
-              <fo:block font-weight="bold">Kampus</fo:block>
+              <fo:block font-weight="bold">Campus</fo:block>
             </fo:table-cell>
             <fo:table-cell padding="8pt" border="1pt solid #bdc3c7">
-              <fo:block font-weight="bold">Koshuis</fo:block>
+              <fo:block font-weight="bold">Residence</fo:block>
             </fo:table-cell>
           </fo:table-row>
         </fo:table-header>

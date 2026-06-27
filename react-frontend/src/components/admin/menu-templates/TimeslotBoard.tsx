@@ -222,7 +222,7 @@ export function TimeslotBoard({
           <CardContent className="h-full flex flex-col items-center justify-center p-6">
             <Plus className="w-8 h-8 text-muted-foreground mb-2" />
             <p className="text-sm font-medium text-muted-foreground">
-              Voeg tydslot by
+              Add timeslot
             </p>
           </CardContent>
         </Card>

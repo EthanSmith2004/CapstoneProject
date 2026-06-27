@@ -88,7 +88,7 @@ public class RogueAdminSimulator implements CommandLineRunner {
             authService.registerUser(RegisterRequest.builder()
                     .email("evil@demo.com")
                     .firstName("Evil")
-                    .lastName("Gebruiker")
+                    .lastName("User")
                     .password("evil123")
                     .build());
 
@@ -148,7 +148,7 @@ public class RogueAdminSimulator implements CommandLineRunner {
             AdminLoadCreditRequest loadRequest = AdminLoadCreditRequest.builder()
                     .credentialNumber(evilUserProfile.get().getCredentialNumber())
                     .amount(BigDecimal.valueOf(1.00))
-                    .description("Laai Krediet ")
+                    .description("Load Credit ")
                     .build();
 
             financeService.loadCredit(loadRequest);

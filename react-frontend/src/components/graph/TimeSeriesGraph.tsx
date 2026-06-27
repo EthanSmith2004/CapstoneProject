@@ -1,4 +1,4 @@
-import { useMemo, useState, useRef, useEffect } from "react";
+﻿import { useMemo, useState, useRef, useEffect } from "react";
 import * as d3 from "d3";
 import type { ColumnFiltersState } from "@tanstack/react-table";
 import { formatDate } from "@/lib/utils";
@@ -520,9 +520,9 @@ export function TimeSeriesGraph({
                     
                     if (d) {
                         const selectedLabel = valueKeys.find(v => v.key === selectedValueKey)?.label || selectedValueKey;
-                        const aggregationLabel = aggregationType === 'sum' ? 'Som' : 'Gemiddelde';
+                        const aggregationLabel = aggregationType === 'sum' ? 'Sum' : 'Gemiddelde';
                         const tooltipContent = [
-                            `Datum: ${d3.timeFormat(selectedAggregation === 'hourly' ? '%Y-%m-%d %H:%M' : '%Y-%m-%d')(d.date)}`,
+                            `Date: ${d3.timeFormat(selectedAggregation === 'hourly' ? '%Y-%m-%d %H:%M' : '%Y-%m-%d')(d.date)}`,
                             `${selectedLabel} (${aggregationLabel}): ${d[selectedValueKey]?.toFixed(2) || 0}`
                         ].join('<br>');
 
@@ -591,7 +591,7 @@ export function TimeSeriesGraph({
                 {/* Value Key Selector */}
                 <div className="flex items-center gap-2">
                     <label htmlFor="value-select" className="text-sm font-medium text-gray-700">
-                        Data Reeks:
+                        Data Series:
                     </label>
                     <select
                         id="value-select"
@@ -615,7 +615,7 @@ export function TimeSeriesGraph({
                                 onClick={() => setSelectedAggregation(agg)}
                                 variant={agg == selectedAggregation ? 'default' : 'outline'}
                             >
-                                {agg === 'hourly' ? 'Uurliks' : 'Daagliks'}
+                                {agg === 'hourly' ? 'Hourly' : 'Daily'}
                             </Button>
                         ))}
                     </div>
@@ -633,9 +633,9 @@ export function TimeSeriesGraph({
                             <div className="flex items-center gap-2 text-sm">
                                 <span className="text-gray-600">Filter:</span>
                                 <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded">
-                                    {startDate && endDate ? `${formatDate(startDate)} tot ${formatDate(endDate)}` : 
-                                     startDate ? `Vanaf ${formatDate(startDate)}` : 
-                                     endDate ? `Tot ${formatDate(endDate)}` : ''}
+                                    {startDate && endDate ? `${formatDate(startDate)} to ${formatDate(endDate)}` : 
+                                     startDate ? `From ${formatDate(startDate)}` : 
+                                     endDate ? `To ${formatDate(endDate)}` : ''}
                                 </span>
                                 <Button
                                     onClick={() => {
@@ -644,7 +644,7 @@ export function TimeSeriesGraph({
                                     }}
                                     variant='destructive'
                                 >
-                                    Verwyder Filter
+                                    Remove Filter
                                 </Button>
                             </div>
                         );
@@ -656,7 +656,7 @@ export function TimeSeriesGraph({
             {/* Instructions */}
             {setColumnFilters && (
                 <div className="text-xs text-gray-500 space-y-1">
-                    <strong>Sleep</strong> om 'n datumreeks te kies
+                    <strong>Drag</strong> to select a date range
                 </div>
             )}
             

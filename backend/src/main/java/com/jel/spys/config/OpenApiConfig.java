@@ -15,8 +15,8 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Spys API")
-                        .description("REST API for Spys")
+                        .title("Meal Orders API")
+                        .description("REST API for Meal Orders")
                         .version("1.0.0")
                 ).addSecurityItem(new SecurityRequirement().addList("Bearer Authentication"))
                 .components(new Components()

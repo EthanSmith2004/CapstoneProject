@@ -57,7 +57,7 @@ export function BestellingScreen({ ordersAPI }: BestellingScreenProps) {
     },
     onError: (error) => {
       console.error('Error placing order:', error)
-      setErrorMessage('Fout: Nie genoeg balans om bestelling te plaas nie.')  
+      setErrorMessage('Error: Not enough balance to place order.')  
     }
   })
 
@@ -77,7 +77,7 @@ export function BestellingScreen({ ordersAPI }: BestellingScreenProps) {
       <div className="bg-white shadow-sm border-b border-orange-200 p-4">
         <div className="flex items-center gap-2 mb-2">
           <ShoppingCart className="h-6 w-6 text-orange-600" />
-          <h1 className="text-xl font-bold text-gray-800">Jou Bestelling</h1>
+          <h1 className="text-xl font-bold text-gray-800">Your Order</h1>
         </div>
         <div className="text-sm text-orange-600 font-medium">
           {totalItems} item{totalItems !== 1 ? 's' : ''} • R{totalCost.toFixed(2)}
@@ -101,7 +101,7 @@ export function BestellingScreen({ ordersAPI }: BestellingScreenProps) {
         {bestelling.length === 0 && (
           <div className="text-center py-12">
             <AlertCircle className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-            <p className="text-gray-500 text-lg">Geen items in jou bestelling nie</p>
+            <p className="text-gray-500 text-lg">No items in your order</p>
           </div>
         )}
       </div>
@@ -112,15 +112,15 @@ export function BestellingScreen({ ordersAPI }: BestellingScreenProps) {
         <div className="p-4 border-b border-gray-100">
           <div className="flex items-center gap-2 mb-3">
             <Receipt className="h-5 w-5 text-orange-600" />
-            <h2 className="text-lg font-semibold text-gray-800">Bestelling Opsomming</h2>
+            <h2 className="text-lg font-semibold text-gray-800">Order Summary</h2>
           </div>
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <span className="text-gray-600">Totale Items:</span>
+              <span className="text-gray-600">Total Items:</span>
               <span className="font-semibold">{totalItems}</span>
             </div>
             <div className="flex justify-between items-center text-lg">
-              <span className="font-semibold text-gray-800">Totale Koste:</span>
+              <span className="font-semibold text-gray-800">Total Cost:</span>
               <span className="font-bold text-orange-600">R{totalCost.toFixed(2)}</span>
             </div>
           </div>
@@ -143,10 +143,10 @@ export function BestellingScreen({ ordersAPI }: BestellingScreenProps) {
               <Receipt className="h-5 w-5" />
               <span>
                 {placeOrderMutation.isPending 
-                  ? 'Besig om te plaas...' 
+                  ? 'Placing order...'
                   : bestelling.length > 0
-                    ? `Bevestig Bestelling • R${totalCost.toFixed(2)}`
-                    : 'Geen items om te bevestig nie'
+                    ? `Confirm Order • R${totalCost.toFixed(2)}`
+                    : 'No items to confirm'
                 }
               </span>
             </div>
@@ -156,14 +156,14 @@ export function BestellingScreen({ ordersAPI }: BestellingScreenProps) {
 
       {showMessage && (
         <SuccessOverlay
-          message="Bestelling Suksesvol Geplaas"
+          message="Order Placed Successfully"
           redirectTo="/user/order"
         />
       )}
 
       {errorMessage && (
         <FailureOverlay
-          message="Fout: Nie genoeg balans om bestelling te plaas nie."
+          message="Error: Not enough balance to place order."
           onClose={() => setErrorMessage('')}
         />
       )}

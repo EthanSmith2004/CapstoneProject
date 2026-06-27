@@ -1,4 +1,4 @@
-
+﻿
 import { createFileRoute, Outlet } from '@tanstack/react-router'
 import { TabBar, type TabItem } from '@/components/ui/tabBar'
 
@@ -8,8 +8,8 @@ export const Route = createFileRoute('/user/menu')({
 
 function RouteComponent() {
   const navigation: TabItem[] = [
-  { name: 'Alle Geregte', href: '/user/menu/all' },
-  { name: 'Gunstelinge', href: '/user/menu/favourites' },
+  { name: 'All Meals', href: '/user/menu/all' },
+  { name: 'Favourites', href: '/user/menu/favourites' },
   ]
 
   return (
@@ -41,3 +41,4 @@ function RouteComponent() {
       </div>
     );
 }
+

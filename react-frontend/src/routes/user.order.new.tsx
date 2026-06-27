@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+﻿import { createFileRoute } from '@tanstack/react-router'
 import { BestellingScreen } from '@/components/bestelling/BestellingScreen'
 import { UserOrdersApi } from '@/api'
 import { useAuth } from '@/contexts/AuthContext'
@@ -15,10 +15,11 @@ function RouteComponent() {
   const mobileNavigation = useMobileNavigation()
   
   useEffect(() => {
-    if (mobileNavigation.title !== 'Plaas Bestelling') {
-      mobileNavigation.setTitle('Plaas Bestelling')
+    if (mobileNavigation.title !== 'Place Order') {
+      mobileNavigation.setTitle('Place Order')
     }
   }, [mobileNavigation])
   
   return <BestellingScreen ordersAPI={ordersAPI} />
 }
+

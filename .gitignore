@@ -1,1 +1,5 @@
 nested-repo-git-backups/
+.gradle-user/
+backend/.gradle-user/
+react-frontend/.npm-cache/
+.demo-verify/

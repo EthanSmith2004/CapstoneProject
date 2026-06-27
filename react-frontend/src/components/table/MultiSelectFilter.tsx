@@ -1,4 +1,4 @@
-import { Checkbox } from "../ui/checkbox";
+﻿import { Checkbox } from "../ui/checkbox";
 import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 import type { Column } from "@tanstack/react-table";
 import React from "react";
@@ -46,7 +46,7 @@ export function MultiSelectFilter<TData, TValue>({
           onClick={selectAll}
           className="flex-1 h-7 text-xs"
         >
-          Kies almal
+          Select all
         </Button>
         <Button
           variant="outline"
@@ -54,7 +54,7 @@ export function MultiSelectFilter<TData, TValue>({
           onClick={clearAll}
           className="flex-1 h-7 text-xs"
         >
-          Maak skoon
+          Clear
         </Button>
       </div>
       <DropdownMenuSeparator />
@@ -76,7 +76,7 @@ export function MultiSelectFilter<TData, TValue>({
       </div>
       {selectedValues.size > 0 && (
         <div className="text-xs text-muted-foreground pt-1">
-          {selectedValues.size} van {options.length} gekies
+          {selectedValues.size} van {options.length} selected
         </div>
       )}
     </div>

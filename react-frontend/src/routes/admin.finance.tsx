@@ -8,11 +8,11 @@ export const Route = createFileRoute('/admin/finance')({
 
 function RouteComponent() {
   const navigation: TabItem[] = [
-    { name: 'Statistiek', href: '/admin/finance/stats' },
-    { name: 'Gebruikers', href: '/admin/finance/users' },
-    { name: 'Transaksies', href: '/admin/finance/transactions' },
-    { name: 'Laai Individueel', href: '/admin/finance/load-individual' },
-    { name: 'Laai Bulk', href: '/admin/finance/load-bulk' },
+    { name: 'Statistics', href: '/admin/finance/stats' },
+    { name: 'Users', href: '/admin/finance/users' },
+    { name: 'Transactions', href: '/admin/finance/transactions' },
+    { name: 'Load Individual', href: '/admin/finance/load-individual' },
+    { name: 'Load Bulk', href: '/admin/finance/load-bulk' },
   ]
 
   return (

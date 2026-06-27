@@ -29,9 +29,9 @@ function ComparisonIndicator({ current, previous, contrastName, isRevenue = fals
         <div className={`flex items-center gap-1 text-sm mt-1 ${isPositive ? 'text-green-600' : 'text-red-600'}`}>
             {isPositive ? <ArrowUp className="h-4 w-4" /> : <ArrowDown className="h-4 w-4" />}
             <span className="font-medium">
-                {isPositive ? 'Op' : 'Af'} {Math.abs(percentageChange).toFixed(1)}% 
-                ({isRevenue ? 'R' : ''}{Math.abs(difference).toFixed(isRevenue ? 2 : 0)}) 
-                vanaf {contrastName}
+                {isPositive ? 'Up' : 'Down'} {Math.abs(percentageChange).toFixed(1)}%
+                ({isRevenue ? 'R' : ''}{Math.abs(difference).toFixed(isRevenue ? 2 : 0)})
+                from {contrastName}
             </span>
         </div>
     );
@@ -57,7 +57,7 @@ function TopSellersList({ title, items, valueKey, isRevenue = false }: TopSeller
         return (
             <div className="p-4 bg-white rounded-lg shadow">
                 <h3 className="text-lg font-medium mb-2">{title}</h3>
-                <p className="text-gray-500">Geen data beskikbaar</p>
+                <p className="text-gray-500">No data available</p>
             </div>
         );
     }
@@ -95,7 +95,7 @@ function TopSellersList({ title, items, valueKey, isRevenue = false }: TopSeller
                                     <DropdownMenuItem onClick={() => {
                                         navigate({to: '/admin/feedback/list', search: { menuItem: item.menuItemName || '' } });
                                     }}>
-                                        Bekyk terugvoer
+                                        View feedback
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
@@ -107,7 +107,7 @@ function TopSellersList({ title, items, valueKey, isRevenue = false }: TopSeller
             {sortedItems.length > 3 && !isExpanded && (
                 <div className="mt-2 text-center">
                     <span className="text-sm text-gray-500 cursor-pointer" onClick={() => setIsExpanded(true)}>
-                        en {sortedItems.length - 3} meer items...
+                        and {sortedItems.length - 3} more items...
                     </span>
                 </div>
             )}
@@ -129,7 +129,7 @@ export function AdminMenuStats({ stats, previousStats, contrastName }: AdminMenu
             {/* Overall Stats */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 bg-white rounded-lg shadow">
-                    <h2 className="text-lg font-medium mb-2">Bruto Verkope</h2>
+                    <h2 className="text-lg font-medium mb-2">Gross Sales</h2>
                     <p className="text-2xl font-bold text-green-600">R {totalRevenue.toFixed(2)}</p>
                     <ComparisonIndicator 
                         current={totalRevenue} 
@@ -140,7 +140,7 @@ export function AdminMenuStats({ stats, previousStats, contrastName }: AdminMenu
                 </div>
                 
                 <div className="p-4 bg-white rounded-lg shadow">
-                    <h2 className="text-lg font-medium mb-2">Totale Items</h2>
+                    <h2 className="text-lg font-medium mb-2">Total Items</h2>
                     <p className="text-2xl font-bold text-blue-600">{totalQuantity}</p>
                     <ComparisonIndicator 
                         current={totalQuantity} 
@@ -153,14 +153,14 @@ export function AdminMenuStats({ stats, previousStats, contrastName }: AdminMenu
             {/* Top Sellers */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <TopSellersList 
-                    title="Top verkopers: Bruto Verkope"
+                    title="Top Sellers: Gross Sales"
                     items={stats}
                     valueKey="totalRevenue"
                     isRevenue={true}
                 />
                 
                 <TopSellersList 
-                    title="Top verkopers: Aantal"
+                    title="Top Sellers: Quantity"
                     items={stats}
                     valueKey="totalQuantity"
                 />

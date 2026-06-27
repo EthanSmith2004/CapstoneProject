@@ -8,7 +8,7 @@ export function formatDate(dateString: string | undefined){
   if (!dateString) 
     return 'N/A';
   const date = new Date(dateString)
-  return date.toLocaleString('af-ZA', {
+  return date.toLocaleString('en-ZA', {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
@@ -21,7 +21,7 @@ export function formatDateLong(dateString: string | undefined){
   if (!dateString) 
     return 'N/A';
   const date = new Date(dateString)
-  return date.toLocaleString('af-ZA', {
+  return date.toLocaleString('en-ZA', {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
@@ -36,7 +36,7 @@ export function formatDateNoTime(dateString: string | undefined){
   if (!dateString) 
     return 'N/A';
   const date = new Date(dateString)
-  return date.toLocaleDateString('af-ZA', {
+  return date.toLocaleDateString('en-ZA', {
     weekday: 'long',
     month: 'long',
     day: '2-digit',

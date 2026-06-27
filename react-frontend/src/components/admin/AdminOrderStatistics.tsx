@@ -46,12 +46,12 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
             const reportData = response.data;
 
             if (!reportData.items || reportData.items.length === 0) {
-                toast.error('Geen data beskikbaar vir die geselekteerde datum');
+                toast.error('No data available for the selected date');
                 return;
             }
 
             // Prepare data for export
-            const columns = ['Item Naam', 'Hoeveelheid', 'Totale Verkope (R)'];
+            const columns = ['Item Name', 'Quantity', 'Total Sales (R)'];
             const rows = reportData.items.map(item => [
                 item.name || '',
                 item.quantity || 0,
@@ -60,23 +60,23 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
 
             // Add summary row
             rows.push([
-                'TOTAAL:',
+                'TOTAL:',
                 reportData.totalQuantity || 0,
                 `R ${(reportData.totalRevenue || 0).toFixed(2)}`
             ]);
 
-            const filename = `kombuis-verslag-${date}`;
+            const filename = `kitchen-report-${date}`;
 
             if (format === 'csv') {
                 generateCSVReport(columns, rows, filename);
             } else {
-                generatePDFReport(columns, rows, filename, `Kombuis Verslag - ${new Date(date).toLocaleDateString('af-ZA')}`);
+                generatePDFReport(columns, rows, filename, `Kitchen Report -${new Date(date).toLocaleDateString('en-ZA')}`);
             }
 
-            toast.success('Verslag suksesvol gegenereer');
+            toast.success('Report generated successfully');
         } catch (error) {
             console.error('Error generating kitchen report:', error);
-            toast.error('Fout met die generering van kombuis verslag');
+            toast.error('Error generating kitchen report');
         }
     }
 
@@ -86,12 +86,12 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
             const reportData = response.data;
 
             if (!reportData.items || reportData.items.length === 0) {
-                toast.error('Geen data beskikbaar vir die geselekteerde periode');
+                toast.error('No data available for the selected period');
                 return;
             }
 
             // Prepare data for export
-            const columns = ['Item Naam', 'Hoeveelheid', 'Totale Verkope (R)'];
+            const columns = ['Item Name', 'Quantity', 'Total Sales (R)'];
             const rows = reportData.items.map(item => [
                 item.name || '',
                 item.quantity || 0,
@@ -100,23 +100,23 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
 
             // Add summary row
             rows.push([
-                'TOTAAL:',
+                'TOTAL:',
                 reportData.totalQuantity || 0,
                 `R ${(reportData.totalRevenue || 0).toFixed(2)}`
             ]);
 
-            const filename = `kombuis-verslag-periode-${new Date(startDate).toLocaleDateString('af-ZA')}-${new Date(endDate).toLocaleDateString('af-ZA')}`;
+            const filename = `kitchen-report-period-${new Date(startDate).toLocaleDateString('en-ZA')}-${new Date(endDate).toLocaleDateString('en-ZA')}`;
 
             if (format === 'csv') {
                 generateCSVReport(columns, rows, filename);
             } else {
-                generatePDFReport(columns, rows, filename, `Kombuis Verslag - ${formatDateLong(startDate)} tot ${formatDateLong(endDate)}`);
+                generatePDFReport(columns, rows, filename, `Kitchen Report -${formatDateLong(startDate)} to ${formatDateLong(endDate)}`);
             }
 
-            toast.success('Verslag suksesvol gegenereer');
+            toast.success('Report generated successfully');
         } catch (error) {
             console.error('Error generating kitchen report for period:', error);
-            toast.error('Fout met die generering van kombuis verslag');
+            toast.error('Error generating kitchen report');
         }
     }
 
@@ -126,17 +126,17 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
             const reportData = response.data;
 
             if (!reportData.deliveries || reportData.deliveries.length === 0) {
-                toast.error('Geen data beskikbaar vir die geselekteerde datum');
+                toast.error('No data available for the selected date');
                 return;
             }
 
             // Prepare data for export
             const columns = [
-                'Aflewering Datum', 'Item Naam', 'Hoeveelheid',
-                'Voornaam', 'Van', 'Student Nommer', 'Koshuis', 'Kampus'
+                'Delivery Date', 'Item Name', 'Quantity',
+                'First Name', 'Last Name', 'Student Number', 'Residence', 'Campus'
             ];
             const rows = reportData.deliveries.map(delivery => [
-                delivery.deliveryDate ? new Date(delivery.deliveryDate).toLocaleDateString('af-ZA') : '',
+                delivery.deliveryDate ? new Date(delivery.deliveryDate).toLocaleDateString('en-ZA') : '',
                 delivery.itemName || '',
                 delivery.quantity || 0,
                 delivery.firstName || '',
@@ -146,18 +146,18 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
                 delivery.campusName || ''
             ]);
 
-            const filename = `aflewering-verslag-${date}`;
+            const filename = `delivery-report-${date}`;
 
             if (format === 'csv') {
                 generateCSVReport(columns, rows, filename);
             } else {
-                generatePDFReport(columns, rows, filename, `Aflewering Verslag - ${new Date(date).toLocaleDateString('af-ZA')}`);
+                generatePDFReport(columns, rows, filename, `Delivery Report -${new Date(date).toLocaleDateString('en-ZA')}`);
             }
 
-            toast.success('Verslag suksesvol gegenereer');
+            toast.success('Report generated successfully');
         } catch (error) {
             console.error('Error generating delivery report:', error);
-            toast.error('Fout met die generering van aflewering verslag');
+            toast.error('Error generating delivery report');
         }
     }
 
@@ -167,17 +167,17 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
             const reportData = response.data;
 
             if (!reportData.deliveries || reportData.deliveries.length === 0) {
-                toast.error('Geen data beskikbaar vir die geselekteerde periode');
+                toast.error('No data available for the selected period');
                 return;
             }
 
             // Prepare data for export
             const columns = [
-                'Aflewering Datum', 'Item Naam', 'Hoeveelheid',
-                'Voornaam', 'Van', 'Student Nommer', 'Koshuis', 'Kampus'
+                'Delivery Date', 'Item Name', 'Quantity',
+                'First Name', 'Last Name', 'Student Number', 'Residence', 'Campus'
             ];
             const rows = reportData.deliveries.map(delivery => [
-                delivery.deliveryDate ? new Date(delivery.deliveryDate).toLocaleDateString('af-ZA') : '',
+                delivery.deliveryDate ? new Date(delivery.deliveryDate).toLocaleDateString('en-ZA') : '',
                 delivery.itemName || '',
                 delivery.quantity || 0,
                 delivery.firstName || '',
@@ -187,18 +187,18 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
                 delivery.campusName || ''
             ]);
 
-            const filename = `aflewering-verslag-periode-${new Date(startDate).toLocaleDateString('af-ZA')}-${new Date(endDate).toLocaleDateString('af-ZA')}`;
+            const filename = `delivery-report-period-${new Date(startDate).toLocaleDateString('en-ZA')}-${new Date(endDate).toLocaleDateString('en-ZA')}`;
 
             if (format === 'csv') {
                 generateCSVReport(columns, rows, filename);
             } else {
-                generatePDFReport(columns, rows, filename, `Aflewering Verslag - ${formatDateLong(startDate)} tot ${formatDateLong(endDate)}`);
+                generatePDFReport(columns, rows, filename, `Delivery Report -${formatDateLong(startDate)} to ${formatDateLong(endDate)}`);
             }
 
-            toast.success('Verslag suksesvol gegenereer');
+            toast.success('Report generated successfully');
         } catch (error) {
             console.error('Error generating delivery report for period:', error);
-            toast.error('Fout met die generering van aflewering verslag');
+            toast.error('Error generating delivery report');
         }
     }
 
@@ -207,7 +207,7 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
             <Card>
                 <CardContent className="p-6">
                     <p className="text-center text-muted-foreground">
-                        Geen bestelling statistieke beskikbaar nie
+                        No order statistics available
                     </p>
                 </CardContent>
             </Card>
@@ -232,7 +232,7 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
 
     // Group by delivery date
     const groupedByDate = statistics.reduce((acc, item) => {
-        const date = item.deliveryDate || 'Onbekende Datum';
+        const date = item.deliveryDate || 'Unknown Date';
         if (!acc[date]) {
             acc[date] = [];
         }
@@ -247,7 +247,7 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
                 <Card className="gap-0 bg-gray-50">
                     <CardHeader className="">
                         <CardTitle className="text-xl font-medium text-muted-foreground">
-                            Totale Items
+                            Total Items
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -260,7 +260,7 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
                 <Card className='gap-0 bg-gray-50'>
                     <CardHeader className="">
                         <CardTitle className="text-xl font-medium text-muted-foreground">
-                            Totale Inkomste
+                            Total Revenue
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -279,23 +279,23 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
                     <CardTitle className="flex justify-between items-center">
                         <div>
                             <h1 className='text-lg'>
-                                Bestelling Detail per Datum
+                                Order Detail by Date
                             </h1>
                         </div>
                         <div className="flex flex-wrap gap-2">
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <Button variant={'default'}>
-                                        Kombuis Verslag
+                                        Kitchen Report
                                         <ChevronDownIcon className="ml-2 h-4 w-4" />
                                     </Button>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent>
                                     <DropdownMenuItem onClick={() => generateKitchenReportPeriod('pdf')}>
-                                        Laai PDF af
+                                        Download PDF
                                     </DropdownMenuItem>
                                     <DropdownMenuItem onClick={() => generateKitchenReportPeriod('csv')}>
-                                        Laai CSV af
+                                        Download CSV
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
@@ -303,16 +303,16 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <Button variant={'default'}>
-                                        Aflewering Verslag
+                                        Delivery Report
                                         <ChevronDownIcon className="ml-2 h-4 w-4" />
                                     </Button>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent>
                                     <DropdownMenuItem onClick={() => generateDeliveryReportPeriod('pdf')}>
-                                        Laai PDF af
+                                        Download PDF
                                     </DropdownMenuItem>
                                     <DropdownMenuItem onClick={() => generateDeliveryReportPeriod('csv')}>
-                                        Laai CSV af
+                                        Download CSV
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
@@ -354,10 +354,10 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
                                         >
                                             <div className="flex-1">
                                                 <div className="font-medium">
-                                                    {item.itemName || 'Onbekende Item'}
+                                                    {item.itemName || 'Unknown Item'}
                                                 </div>
                                                 <div className="text-sm text-muted-foreground flex gap-2">
-                                                    <span>Hoeveelheid: {item.itemCount || 0}</span>
+                                                    <span>Quantity: {item.itemCount || 0}</span>
                                                 </div>
                                                 {item.itemStatus && (
                                                     <Select value={item.itemStatus} onValueChange={(value) => mutateItemStatus.mutate(
@@ -386,7 +386,7 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
                                                     R{(item.totalRevenue || 0).toFixed(2)}
                                                 </div>
                                                 <div className="text-sm text-muted-foreground">
-                                                    @R{item.itemCount ? ((item.totalRevenue || 0) / item.itemCount).toFixed(2) : '0.00'} elk
+                                                    @R{item.itemCount ? ((item.totalRevenue || 0) / item.itemCount).toFixed(2) : '0.00'} each
                                                 </div>
                                             </div>
                                         </div>
@@ -395,16 +395,16 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>
                                                 <Button variant={'outline'}>
-                                                    Kombuis Verslag
+                                                    Kitchen Report
                                                     <ChevronDownIcon className="ml-2 h-4 w-4" />
                                                 </Button>
                                             </DropdownMenuTrigger>
                                             <DropdownMenuContent>
                                                 <DropdownMenuItem onClick={() => generateKitchenReport(date, 'pdf')}>
-                                                    Laai PDF af
+                                                    Download PDF
                                                 </DropdownMenuItem>
                                                 <DropdownMenuItem onClick={() => generateKitchenReport(date, 'csv')}>
-                                                    Laai CSV af
+                                                    Download CSV
                                                 </DropdownMenuItem>
                                             </DropdownMenuContent>
                                         </DropdownMenu>
@@ -412,16 +412,16 @@ export function AdminOrderStatistics({ data, startDate, endDate, campusId, resid
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>
                                                 <Button variant={'outline'}>
-                                                    Aflewering Verslag
+                                                    Delivery Report
                                                     <ChevronDownIcon className="ml-2 h-4 w-4" />
                                                 </Button>
                                             </DropdownMenuTrigger>
                                             <DropdownMenuContent>
                                                 <DropdownMenuItem onClick={() => generateDeliveryReport(date, 'pdf')}>
-                                                    Laai PDF af
+                                                    Download PDF
                                                 </DropdownMenuItem>
                                                 <DropdownMenuItem onClick={() => generateDeliveryReport(date, 'csv')}>
-                                                    Laai CSV af
+                                                    Download CSV
                                                 </DropdownMenuItem>
                                             </DropdownMenuContent>
                                         </DropdownMenu>

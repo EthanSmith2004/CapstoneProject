@@ -1,13 +1,13 @@
-import type { SettingItem } from '@/components/mobile/MobileSettings'
+﻿import type { SettingItem } from '@/components/mobile/MobileSettings'
 
 export const userProfileSchema: SettingItem[] = [
   {
-    label: 'Naam',
+    label: 'Name',
     type: 'string',
     valueProperty: 'name'
   },
   {
-    label: 'E-pos',
+    label: 'Email',
     type: 'string',
     valueProperty: 'email',
     onClick: (_, navigate) => {
@@ -17,12 +17,12 @@ export const userProfileSchema: SettingItem[] = [
       return user.email;
     },
     updateValue(value, _, __, ___, userAPI) {
-      return userAPI.updateUser({ email: value });
+      return userAPI.updateUserEmail({ newEmail: value });
     },
     invalidateQueries: ['userProfile', 'user']
   },
   {
-    label: 'Wagwoord',
+    label: 'Password',
     type: 'string',
     valueProperty: 'changePassword',
     onClick: (_, navigate) => {
@@ -37,7 +37,7 @@ export const userProfileSchema: SettingItem[] = [
     invalidateQueries: ['user']
   },
   {
-    label: 'Kampus',
+    label: 'Campus',
     type: 'select',
     valueProperty: 'campus',
     onClick: (_, navigate) => {
@@ -52,7 +52,7 @@ export const userProfileSchema: SettingItem[] = [
     invalidateQueries: ['userProfile']
   },
   {
-    label: 'Koshuis',
+    label: 'Residence',
     type: 'select',
     valueProperty: 'residence',
     onClick: (_, navigate) => {
@@ -67,7 +67,7 @@ export const userProfileSchema: SettingItem[] = [
     invalidateQueries: ['userProfile']
   },
   {
-    label: 'Allergieë',
+    label: 'Allergies',
     type: 'checkboxList',
     valueProperty: 'allergies',
     onClick: (_, navigate) => {
@@ -85,7 +85,7 @@ export const userProfileSchema: SettingItem[] = [
     invalidateQueries: ['userProfile']
   },
   {
-    label: 'Rekening',
+    label: 'Account Balance',
     type: 'string',
     valueProperty: 'accountBalance',
     onClick: (_, navigate: any) => {
@@ -93,7 +93,7 @@ export const userProfileSchema: SettingItem[] = [
     },
   },
   {
-    label: 'Voorkeure',
+    label: 'Preferences',
     type: 'preferences',
     valueProperty: 'preferences',
     onClick: (_, navigate) => {
@@ -101,7 +101,7 @@ export const userProfileSchema: SettingItem[] = [
     },
   },
   {
-    label: 'Teken uit',
+    label: 'Sign Out',
     type: 'navigateOnly',
     onClick: (_, navigate) => {
       navigate({ to: '/logout' })
@@ -112,3 +112,5 @@ export const userProfileSchema: SettingItem[] = [
 export function getItemByValueProperty(valueProperty: string) {
   return userProfileSchema.find(item => item.valueProperty === valueProperty)
 }
+
+

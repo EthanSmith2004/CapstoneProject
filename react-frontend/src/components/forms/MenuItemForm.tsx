@@ -10,7 +10,7 @@ const formSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   description: z.string().optional(),
   price: z.number().positive('Price must be positive'),
-  kcal: z.number().positive("Die kaloriee van 'n dis moet positief wees").optional(),
+  kcal: z.number().positive("The calories of a dish must be positive").optional(),
   imageHero: z.string().optional(),
   imageDetail: z.string().optional(),
   allergies: z.array(z.number()).optional(),
@@ -50,7 +50,7 @@ export function MenuItemForm({ onSubmit, defaultValues, allergiesList }: MenuIte
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Naam</FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input placeholder="Spaghetti" {...field} />
               </FormControl>
@@ -63,7 +63,7 @@ export function MenuItemForm({ onSubmit, defaultValues, allergiesList }: MenuIte
           name="description"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Beskrywing</FormLabel>
+              <FormLabel>Description</FormLabel>
               <FormControl>
                 <Input placeholder="A delicious plate of spaghetti." {...field} />
               </FormControl>
@@ -76,7 +76,7 @@ export function MenuItemForm({ onSubmit, defaultValues, allergiesList }: MenuIte
           name="price"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Prys</FormLabel>
+              <FormLabel>Price</FormLabel>
               <FormControl>
                 <Input type="number" {...field} onChange={e => field.onChange(parseFloat(e.target.value) || 0)} />
               </FormControl>
@@ -102,7 +102,7 @@ export function MenuItemForm({ onSubmit, defaultValues, allergiesList }: MenuIte
           name="imageHero"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Spyskaart Prent</FormLabel>
+              <FormLabel>Menu Image</FormLabel>
               <FormControl>
                 <Input placeholder="https://example.com/image.jpg" {...field} />
               </FormControl>
@@ -111,7 +111,7 @@ export function MenuItemForm({ onSubmit, defaultValues, allergiesList }: MenuIte
                   <img 
                     src={field.value} 
                     className='w-full h-32 object-cover rounded-md border' 
-                    alt="Spyskaart prent voorskou"
+                    alt="Menu image preview"
                   />
                 </div>
               )}
@@ -133,7 +133,7 @@ export function MenuItemForm({ onSubmit, defaultValues, allergiesList }: MenuIte
                   <img 
                     src={field.value} 
                     className='w-full h-32 object-cover rounded-md border' 
-                    alt="Detail prent voorskou"
+                    alt="Detail image preview"
                   />
                 </div>
               )}

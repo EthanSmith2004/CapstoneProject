@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+﻿import { createFileRoute } from '@tanstack/react-router'
 import { UserOrdersApi, UserProfileApi } from '@/api'
 import { useAuth } from '@/contexts/AuthContext'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
@@ -19,8 +19,8 @@ function RouteComponent() {
   const queryClient = useQueryClient();
   
   useEffect(() => {
-    if (mobileNavigation.title !== 'Bestellings') {
-      mobileNavigation.setTitle('Bestellings')
+    if (mobileNavigation.title !== 'Orders') {
+      mobileNavigation.setTitle('Orders')
     }
   }, [mobileNavigation])
 
@@ -78,8 +78,9 @@ function RouteComponent() {
         </div>
       )}
       
-      <OrderView loading={isPendingOrdersLoading} orders={userPendingOrders} title='Huidige Bestellings' cancelOrder={cancelOrder}/>
-      <OrderView loading={isCompletedOrdersLoading} orders={userCompletedOrders} title="Verlede Bestellings" completed defaultOpen={false}/>
+      <OrderView loading={isPendingOrdersLoading} orders={userPendingOrders} title='Current Orders' cancelOrder={cancelOrder}/>
+      <OrderView loading={isCompletedOrdersLoading} orders={userCompletedOrders} title="Past Orders" completed defaultOpen={false}/>
     </div>
   );
 }
+

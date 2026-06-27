@@ -3,48 +3,48 @@ import { AppBar } from '@/components/ui/appbar'
 export function PrivacyPolicyScreen() {
   return (
     <div className="min-h-screen bg-white text-gray-800">
-      <AppBar title="Privaatheidsbeleid" balance={0}  />
+      <AppBar title="Privacy Policy" balance={0} />
 
       <div className="p-6 pt-24 space-y-6 text-sm leading-relaxed">
         <section>
-          <h2 className="text-lg font-bold text-orange-600 mb-2">1. Versameling van Inligting</h2>
+          <h2 className="text-lg font-bold text-orange-600 mb-2">1. Information Collection</h2>
           <p>
-            Ons versamel slegs die minimum persoonlike inligting wat benodig word om u aan te meld en u kosbestellings te verwerk. Dit sluit in u naam, studentenommer, en gekose maaltye.
+            We only collect the minimum personal information needed to sign you in and process your meal orders. This includes your name, student number, and selected meals.
           </p>
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-orange-600 mb-2">2. Gebruik van Inligting</h2>
+          <h2 className="text-lg font-bold text-orange-600 mb-2">2. Use of Information</h2>
           <p>
-            U data word gebruik om u bestellings te verwerk, u rekeningbalans te bereken en aflewerings te organiseer. Geen inligting word aan derde partye verkoop of gedeel nie.
+            Your data is used to process your orders, calculate your account balance, and organize deliveries. No information is sold or shared with third parties.
           </p>
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-orange-600 mb-2">3. Toestemming</h2>
+          <h2 className="text-lg font-bold text-orange-600 mb-2">3. Consent</h2>
           <p>
-            Deur die “Ek stem saam” knoppie op die vorige skerm te klik, gee u uitdruklike toestemming dat ons u data mag verwerk soos in hierdie beleid uiteengesit.
+            By clicking the "I agree" button on the previous screen, you give explicit consent for us to process your data as outlined in this policy.
           </p>
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-orange-600 mb-2">4. Beveiliging van Inligting</h2>
+          <h2 className="text-lg font-bold text-orange-600 mb-2">4. Information Security</h2>
           <p>
-            Alle data word beveilig gestoor in ’n databasis wat slegs toeganklik is vir gemagtigde personeel. Ons gebruik industrie-standaard praktyke vir databeskerming.
+            All data is stored securely in a database that is only accessible to authorized staff. We use industry-standard practices for data protection.
           </p>
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-orange-600 mb-2">5. U Regte</h2>
+          <h2 className="text-lg font-bold text-orange-600 mb-2">5. Your Rights</h2>
           <p>
-            U het die reg om toegang tot u data aan te vra, dit reg te stel, of die verwerking daarvan te laat beëindig. U kan ook enige tyd u toestemming terugtrek.
+            You have the right to request access to your data, correct it, or ask for its processing to be stopped. You may also withdraw your consent at any time.
           </p>
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-orange-600 mb-2">6. Kontakbesonderhede</h2>
+          <h2 className="text-lg font-bold text-orange-600 mb-2">6. Contact Details</h2>
           <p>
-            Enige navrae rakende hierdie beleid kan gestuur word na <span className="text-blue-600">admin@koshuiskos.co.za</span>.
+            Any questions about this policy can be sent to <span className="text-blue-600">admin@koshuiskos.co.za</span>.
           </p>
         </section>
       </div>

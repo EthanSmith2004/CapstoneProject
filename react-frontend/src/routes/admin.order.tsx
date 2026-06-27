@@ -7,8 +7,8 @@ export const Route = createFileRoute('/admin/order')({
 
 function RouteComponent() {
   const navigation: TabItem[] = [
-    { name: 'Oorsig', href: '/admin/order/overview' },
-    { name: 'Geskiedenis', href: '/admin/order/history' },
+    { name: 'Overview', href: '/admin/order/overview' },
+    { name: 'History', href: '/admin/order/history' },
   ]
 
   return (

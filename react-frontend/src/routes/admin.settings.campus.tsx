@@ -63,7 +63,7 @@ function CampusForm({
           name="campus"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Kampus Naam</FormLabel>
+              <FormLabel>Campus Name</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -72,7 +72,7 @@ function CampusForm({
           )}
         />
         <Button type="submit" className="w-full">
-          {defaultValues ? 'Opdateer' : 'Skep'}
+          {defaultValues ? 'Update' : 'Create'}
         </Button>
       </form>
     </Form>
@@ -99,7 +99,7 @@ function RouteComponent() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-campuses'] })
       setIsDialogOpen(false)
-      toast.success('Die kampus is suksesvol geskep.')
+      toast.success('The campus was created successfully.')
     },
   })
 
@@ -112,7 +112,7 @@ function RouteComponent() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-campuses'] })
       setIsDialogOpen(false)
-      toast.success('Die kampus is suksesvol opgedateer.')
+      toast.success('The campus was updated successfully.')
     },
   })
 
@@ -120,7 +120,7 @@ function RouteComponent() {
     mutationFn: (id: number) => apiClient.delete1(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-campuses'] })
-      toast.success('Die kampus is suksesvol verwyder.');
+      toast.success('The campus was deleted successfully.');
     },
   })
 
@@ -129,7 +129,7 @@ function RouteComponent() {
   const columns: ColumnDef<CampusEntity>[] = [
     {
       accessorKey: 'campus',
-      header: 'Kampus',
+      header: 'Campus',
       meta: {
         filterVariant: 'string'
       },
@@ -137,7 +137,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'createdAt',
-      header: 'Geskep',
+      header: 'Created',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: 'date-range'
@@ -146,7 +146,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'updatedAt',
-      header: 'Opgedateer',
+      header: 'Updated',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: 'date-range'
@@ -155,7 +155,7 @@ function RouteComponent() {
     },
     {
       id: 'actions',
-      header: 'Aksies',
+      header: 'Actions',
       cell: ({ row }) => {
         const campus = row.original
         return (
@@ -188,7 +188,7 @@ function RouteComponent() {
   }
 
   const handleDeleteCampus = (campus: CampusEntity) => {
-    if (confirm(`Is jy seker jy wil die kampus "${campus.campus}" verwyder?`)) {
+    if (confirm(`Are you sure you want to delete the campus "${campus.campus}"?`)) {
       deleteCampusMutation.mutate(campus.id!)
     }
   }
@@ -205,18 +205,18 @@ function RouteComponent() {
     <div className="container mx-auto py-6">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Kampus Bestuur</h1>
-          <p className="text-muted-foreground">Bestuur kampusse vir gebruikersprofiele</p>
+          <h1 className="text-3xl font-bold">Campus Management</h1>
+          <p className="text-muted-foreground">Manage campuses for user profiles</p>
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button onClick={() => setSelectedCampus(undefined)}>Nuwe Kampus</Button>
+            <Button onClick={() => setSelectedCampus(undefined)}>New Campus</Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>{selectedCampus ? 'Wysig Kampus' : 'Nuwe Kampus'}</DialogTitle>
+              <DialogTitle>{selectedCampus ? 'Edit Campus' : 'New Campus'}</DialogTitle>
               <DialogDescription>
-                {selectedCampus ? 'Wysig die besonderhede van die kampus.' : 'Voeg \'n nuwe kampus by.'}
+                {selectedCampus ? 'Edit the campus details.' : 'Add a new campus.'}
               </DialogDescription>
             </DialogHeader>
             <CampusForm onSubmit={handleFormSubmit} defaultValues={selectedCampus} />
@@ -230,10 +230,10 @@ function RouteComponent() {
         enableSorting
         enableFiltering
         enableSearching
-        searchPlaceholder="Soek kampusse..."
+        searchPlaceholder="Search campuses..."
         pageSize={10}
         loading={isCampusesLoading}
-        emptyMessage="Geen kampusse gevind nie."
+        emptyMessage="No campuses found."
         className="space-y-4"
       />
     </div>

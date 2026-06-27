@@ -1,4 +1,4 @@
-import React from "react"
+﻿import React from "react"
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
 import type { Column } from "@tanstack/react-table"
@@ -10,7 +10,7 @@ export function StringFilter<TData, TValue>({ column }: { column: Column<TData, 
   return (
     <div className="p-2 space-y-2">
       <Input
-        placeholder="Soek..."
+        placeholder="Search..."
         value={value}
         onChange={(e) => {
           setValue(e.target.value)
@@ -28,10 +28,11 @@ export function StringFilter<TData, TValue>({ column }: { column: Column<TData, 
           }}
           className="w-full"
         >
-          Maak skoon
+          Clear
         </Button>
       )}
     </div>
   )
 }
+
 

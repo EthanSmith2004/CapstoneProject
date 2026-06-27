@@ -151,7 +151,7 @@ function RouteComponent() {
     {
       id: 'user',
       accessorFn: (r) => `${r.firstName} ${r.lastName} ${r.email} ${r.credentialNumber}`,
-      header: 'Gebruiker',
+      header: 'User',
       cell: ({ row }) => {
         const userData = row.original
         return (
@@ -167,7 +167,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'balance',
-      header: 'Balans',
+      header: 'Balance',
       filterFn: 'inNumberRange',
       meta: {
         filterVariant: 'numeric-range'
@@ -184,7 +184,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'movementDay',
-      header: 'Beweging (Dag)',
+      header: 'Movement (Day)',
       filterFn: 'inNumberRange',
       meta: {
         filterVariant: 'numeric-range'
@@ -201,7 +201,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'movementWeek',
-      header: 'Beweging (Week)',
+      header: 'Movement (Week)',
       filterFn: 'inNumberRange',
       meta: {
         filterVariant: 'numeric-range'
@@ -218,7 +218,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'movementMonth',
-      header: 'Beweging (Maand)',
+      header: 'Movement (Month)',
       filterFn: 'inNumberRange',
       meta: {
         filterVariant: 'numeric-range'
@@ -235,7 +235,7 @@ function RouteComponent() {
     },
     {
       id: 'actions',
-      header: 'Aksies',
+      header: 'Actions',
       cell: ({ row }) => {
         const userData = row.original;
         const userId = userData.id;
@@ -248,7 +248,7 @@ function RouteComponent() {
                 to="/admin/user"
                 search={{ userId }}
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 px-3"
-                title="Bekyk gebruiker"
+                title="View user"
               >
                 <User className="h-4 w-4" />
               </Link>
@@ -258,7 +258,7 @@ function RouteComponent() {
                 to="/admin/finance/transactions"
                 search={{ userEmail }}
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 px-3"
-                title="Bekyk transaksies"
+                title="View transactions"
               >
                 <FileText className="h-4 w-4" />
               </Link>
@@ -272,9 +272,9 @@ function RouteComponent() {
   return (
     <div className="container mx-auto py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">Finansiële Gebruikers</h1>
+        <h1 className="text-3xl font-bold">Financial Users</h1>
         <p className="text-muted-foreground">
-          Bekyk alle gebruikers met hulle rekeningbalanse en beweging
+          View all users with their account balances and movement
         </p>
       </div>
 
@@ -283,11 +283,11 @@ function RouteComponent() {
         <div className="rounded-lg border p-4">
           <div className="grid grid-cols-1 gap-4">
             <div className="bg-muted p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Totale Gebruikers</div>
+              <div className="text-sm text-muted-foreground">Total Users</div>
               <div className="text-2xl font-bold">{users?.length || 0}</div>
             </div>
             <div className="bg-muted p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Gemiddelde Balans</div>
+              <div className="text-sm text-muted-foreground">Average Balance</div>
               <div className="text-2xl font-bold">
                 {formatAmount(
                   (users && users.length > 0)
@@ -297,7 +297,7 @@ function RouteComponent() {
               </div>
             </div>
             <div className="bg-muted p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Hoogste Balans</div>
+              <div className="text-sm text-muted-foreground">Highest Balance</div>
               <div className="text-2xl font-bold text-green-600">
                 {formatAmount(
                   Math.max(...(users || []).map(u => u.balance || 0))
@@ -316,11 +316,11 @@ function RouteComponent() {
                 }}
               >
                 <TrendingUp className="h-4 w-4 mr-2" />
-                Bekyk Gebruiker
+                View User
               </Button>
             </div>
             <div className="bg-muted p-4 rounded-lg">
-              <div className="text-sm text-muted-foreground">Laagste Balans</div>
+              <div className="text-sm text-muted-foreground">Lowest Balance</div>
               <div className="text-2xl font-bold text-destructive">
                 {formatAmount(
                   Math.min(...(users || []).map(u => u.balance || 0))
@@ -339,7 +339,7 @@ function RouteComponent() {
                 }}
               >
                 <TrendingDown className="h-4 w-4 mr-2" />
-                Bekyk Gebruiker
+                View User
               </Button>
             </div>
           </div>
@@ -348,18 +348,18 @@ function RouteComponent() {
         {/* Balance Distribution Histogram */}
         <div className="lg:col-span-2 rounded-lg border p-4">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-lg font-semibold">Verspreiding</h3>
+            <h3 className="text-lg font-semibold">Distribution</h3>
             <div className="flex items-center gap-2">
-              <Label className="text-sm font-medium">Veranderlike:</Label>
+              <Label className="text-sm font-medium">Variable:</Label>
               <Select value={selectedMetric} onValueChange={handleMetricChange}>
                 <SelectTrigger className="w-[200px]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="balance">Balans</SelectItem>
-                  <SelectItem value="movementDay">Beweging (Dag)</SelectItem>
-                  <SelectItem value="movementWeek">Beweging (Week)</SelectItem>
-                  <SelectItem value="movementMonth">Beweging (Maand)</SelectItem>
+                  <SelectItem value="balance">Balance</SelectItem>
+                  <SelectItem value="movementDay">Movement (Day)</SelectItem>
+                  <SelectItem value="movementWeek">Movement (Week)</SelectItem>
+                  <SelectItem value="movementMonth">Movement (Month)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -411,9 +411,9 @@ function RouteComponent() {
         pageSize={25}
         loading={isUsersLoading}
         enableReporting
-        reportTitle='Finansiële Gebruikers Verslag'
-        reportFilename='finansiele-gebruikers'
-        emptyMessage="Geen gebruikers gevind nie."
+        reportTitle='Financial Users Report'
+        reportFilename='financial-users'
+        emptyMessage="No users found."
         columnFilters={columnFilters}
         setColumnFilters={setColumnFilters}
       />

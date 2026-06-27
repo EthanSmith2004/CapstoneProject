@@ -45,7 +45,7 @@ export function MenuItemSidebar({ items, isLoading }: MenuItemSidebarProps) {
         <div className="relative">
           <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Soek items..."
+            placeholder="Search items..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-8"
@@ -56,11 +56,11 @@ export function MenuItemSidebar({ items, isLoading }: MenuItemSidebarProps) {
       <div className="flex-1 overflow-y-auto p-4 space-y-2">
         {isLoading ? (
           <div className="text-sm text-muted-foreground text-center py-8">
-            Laai...
+            Loading...
           </div>
         ) : filteredItems.length === 0 ? (
           <div className="text-sm text-muted-foreground text-center py-8">
-            {searchTerm ? 'Geen items gevind nie' : 'Geen items beskikbaar nie'}
+            {searchTerm ? 'No items found' : 'No items available'}
           </div>
         ) : (
           filteredItems.map((item) => (

@@ -1,5 +1,5 @@
 /**
- * AddTimeslotDialog - Form modal for creating new timeslots with Afrikaans text
+ * AddTimeslotDialog - Form modal for creating new timeslots
  */
 
 import { useState } from 'react';
@@ -41,15 +41,15 @@ export function AddTimeslotDialog({
   const [description, setDescription] = useState('');
   
   // Delivery settings
-  const [deliveryDay, setDeliveryDay] = useState<string>('Maandag');
+  const [deliveryDay, setDeliveryDay] = useState<string>('Monday');
   const [deliveryTime, setDeliveryTime] = useState('12:00');
-  
+
   // Order by settings
-  const [orderByDay, setOrderByDay] = useState<string>('Vrydag');
+  const [orderByDay, setOrderByDay] = useState<string>('Friday');
   const [orderByTime, setOrderByTime] = useState('10:00');
-  
+
   // Release settings
-  const [releaseDay, setReleaseDay] = useState<string>('Donderdag');
+  const [releaseDay, setReleaseDay] = useState<string>('Thursday');
   const [releaseTime, setReleaseTime] = useState('08:00');
   
   const deliveryOffset = dayTimeToOffset(deliveryDay, deliveryTime);
@@ -86,11 +86,11 @@ export function AddTimeslotDialog({
     
     // Reset form
     setDescription('');
-    setDeliveryDay('Maandag');
+    setDeliveryDay('Monday');
     setDeliveryTime('12:00');
-    setOrderByDay('Vrydag');
+    setOrderByDay('Friday');
     setOrderByTime('10:00');
-    setReleaseDay('Donderdag');
+    setReleaseDay('Thursday');
     setReleaseTime('08:00');
   };
 
@@ -99,42 +99,42 @@ export function AddTimeslotDialog({
       <DialogContent className="sm:max-w-[600px]">
         <form onSubmit={handleSubmit}>
           <DialogHeader>
-            <DialogTitle>Voeg 'n nuwe tydslot by</DialogTitle>
+            <DialogTitle>Add a new timeslot</DialogTitle>
             <DialogDescription>
-              Stel die tye vir aflewering, bestellings en vrystelling in.
+              Set the times for delivery, ordering and release.
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-6 py-4">
             {/* Preset Name */}
             <div className="space-y-2">
-              <Label htmlFor="preset-name">Preset Naam</Label>
+              <Label htmlFor="preset-name">Preset Name</Label>
               <Input
                 id="preset-name"
                 value={presetName}
                 onChange={(e) => setPresetName(e.target.value)}
-                placeholder="bv. weeklikse-rooster"
+                placeholder="e.g. weekly-schedule"
                 required
               />
             </div>
 
             {/* Description */}
             <div className="space-y-2">
-              <Label htmlFor="description">Beskrywing</Label>
+              <Label htmlFor="description">Description</Label>
               <Input
                 id="description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="bv. Maandag Middagete"
+                placeholder="e.g. Monday Lunch"
                 required
               />
             </div>
 
             {/* Delivery Time */}
             <div className="space-y-2">
-              <Label>Aflewering</Label>
+              <Label>Delivery</Label>
               <p className="text-sm text-muted-foreground">
-                Aflewering vir{' '}
+                Delivery on{' '}
                 <Select value={deliveryDay} onValueChange={setDeliveryDay}>
                   <SelectTrigger className="inline-flex w-32">
                     <SelectValue />
@@ -147,7 +147,7 @@ export function AddTimeslotDialog({
                     ))}
                   </SelectContent>
                 </Select>
-                , om{' '}
+                , at{' '}
                 <Input
                   type="time"
                   value={deliveryTime}
@@ -160,9 +160,9 @@ export function AddTimeslotDialog({
 
             {/* Order By Time */}
             <div className="space-y-2">
-              <Label>Bestel teen</Label>
+              <Label>Order by</Label>
               <p className="text-sm text-muted-foreground">
-                Bestellings moet teen{' '}
+                Orders must be placed by{' '}
                 <Input
                   type="time"
                   value={orderByTime}
@@ -170,7 +170,7 @@ export function AddTimeslotDialog({
                   className="inline-flex w-24"
                   required
                 />{' '}
-                (die vorige){' '}
+                (the previous){' '}
                 <Select value={orderByDay} onValueChange={setOrderByDay}>
                   <SelectTrigger className="inline-flex w-32">
                     <SelectValue />
@@ -182,23 +182,22 @@ export function AddTimeslotDialog({
                       </SelectItem>
                     ))}
                   </SelectContent>
-                </Select>{' '}
-                geplaas word.
+                </Select>.
               </p>
             </div>
 
             {/* Release Time */}
             <div className="space-y-2">
-              <Label>Vrystelling</Label>
+              <Label>Release</Label>
               <p className="text-sm text-muted-foreground">
-                Die item word{' '}
+                The item is released at{' '}
                 <Input
                   type="time"
                   value={releaseTime}
                   onChange={(e) => setReleaseTime(e.target.value)}
                   className="inline-flex w-24"
                   required
-                />{' (die vorige) '}
+                />{' (the previous) '}
                 <Select value={releaseDay} onValueChange={setReleaseDay}>
                   <SelectTrigger className="inline-flex w-32">
                     <SelectValue />
@@ -210,8 +209,7 @@ export function AddTimeslotDialog({
                       </SelectItem>
                     ))}
                   </SelectContent>
-                </Select>{' '}
-                vrygestel.
+                </Select>.
               </p>
             </div>
           </div>
@@ -222,9 +220,9 @@ export function AddTimeslotDialog({
               variant="outline"
               onClick={() => onOpenChange(false)}
             >
-              Kanselleer
+              Cancel
             </Button>
-            <Button type="submit">Voeg by</Button>
+            <Button type="submit">Add</Button>
           </DialogFooter>
         </form>
       </DialogContent>

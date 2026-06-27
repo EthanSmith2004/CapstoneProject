@@ -38,7 +38,7 @@ public class DeliveryService {
     public UserDeliveryItemsResponse getUserPendingDeliveryItems(String userBarcode) {
         // Find user by credential number (barcode)
         UserProfileEntity userProfile = userProfileRepository.findByCredentialNumber(userBarcode)
-                .orElseThrow(() -> new IllegalArgumentException("Gebruiker nie gevind met barcode: " + userBarcode));
+                .orElseThrow(() -> new IllegalArgumentException("User not found with barcode: " + userBarcode));
 
         UserEntity user = userProfile.getUser();
 
@@ -70,22 +70,22 @@ public class DeliveryService {
     public DeliveryConfirmationResponse markItemAsDelivered(String userBarcode, Long orderItemId) {
         // Verify user exists
         UserProfileEntity userProfile = userProfileRepository.findByCredentialNumber(userBarcode)
-                .orElseThrow(() -> new IllegalArgumentException("Gebruiker nie gevind met barcode: " + userBarcode));
+                .orElseThrow(() -> new IllegalArgumentException("User not found with barcode: " + userBarcode));
 
         UserEntity user = userProfile.getUser();
 
         // Get the order item
         OrderItemEntity orderItem = orderItemRepository.findById(orderItemId)
-                .orElseThrow(() -> new IllegalArgumentException("Bestelling item nie gevind: " + orderItemId));
+                .orElseThrow(() -> new IllegalArgumentException("Order item not found: " + orderItemId));
 
         // Verify the item belongs to this user
         if (!orderItem.getOrder().getUser().getId().equals(user.getId())) {
-            throw new IllegalArgumentException("Hierdie item behoort nie aan die gespesifiseerde gebruiker nie");
+            throw new IllegalArgumentException("This item does not belong to the specified user");
         }
 
         // Verify the item is in IN_DELIVERY status
         if (orderItem.getStatus() != OrderItemStatus.IN_DELIVERY) {
-            throw new IllegalStateException("Item moet in IN_DELIVERY status wees om afgelewer te word. Huidige status: " + orderItem.getStatus());
+            throw new IllegalStateException("Item must be in IN_DELIVERY status before it can be marked as delivered. Current status: " + orderItem.getStatus());
         }
 
         // Mark as delivered
@@ -95,8 +95,8 @@ public class DeliveryService {
 
         // Send notification to user
         NotificationRequest notification = new NotificationRequest();
-        notification.setTitle("Bestelling Afgelewer");
-        notification.setBody(orderItem.getName() + " is suksesvol afgelewer. Geniet jou ete!");
+        notification.setTitle("Order Delivered");
+        notification.setBody(orderItem.getName() + " was delivered successfully. Enjoy your meal!");
         notification.setType(NotificationType.ORDER_READY);
         notificationService.sendNotificationToUser(user.getId(), notification);
 
@@ -109,7 +109,7 @@ public class DeliveryService {
 
         return DeliveryConfirmationResponse.builder()
                 .deliveredItem(convertOrderItemToDTO(orderItem))
-                .message("Item suksesvol afgelewer")
+                .message("Item delivered successfully")
                 .remainingItems(remainingItems.size())
                 .build();
     }

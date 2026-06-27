@@ -11,19 +11,19 @@
   <fo:page-sequence master-reference="A4">
     <fo:static-content flow-name="xsl-region-before">
       <fo:block text-align="center" font-size="24pt" font-weight="bold" color="#2c3e50" margin-bottom="10pt">
-        Kombuis Verslag
+        Kitchen Report
       </fo:block>
       <fo:block text-align="center" font-size="10pt" color="#7f8c8d" margin-bottom="5pt">
-        Geskep: ${generatedAt?string("yyyy-MM-dd HH:mm:ss")}
+        Created: ${generatedAt?string("yyyy-MM-dd HH:mm:ss")}
       </fo:block>
       <fo:block text-align="center" font-size="10pt" color="#7f8c8d" margin-bottom="5pt">
-        Verslag Datum: ${date?string("yyyy-MM-dd HH:mm:ss")}
+        Report Date: ${date?string("yyyy-MM-dd HH:mm:ss")}
       </fo:block>
     </fo:static-content>
 
     <fo:static-content flow-name="xsl-region-after">
       <fo:block text-align="center" font-size="10pt" color="#7f8c8d">
-        Bladsy <fo:page-number/> van <fo:page-number-citation ref-id="last-page"/>
+        Page <fo:page-number/> of <fo:page-number-citation ref-id="last-page"/>
       </fo:block>
     </fo:static-content>
 
@@ -38,10 +38,10 @@
         <fo:table-header background-color="#c0c0c0">
           <fo:table-row>
             <fo:table-cell padding="3pt" border="1pt solid #bdc3c7">
-              <fo:block font-weight="bold" text-align="center">Aantal</fo:block>
+              <fo:block font-weight="bold" text-align="center">Quantity</fo:block>
             </fo:table-cell>
             <fo:table-cell padding="3pt" border="1pt solid #bdc3c7">
-              <fo:block font-weight="bold">Item Naam</fo:block>
+              <fo:block font-weight="bold">Item Name</fo:block>
             </fo:table-cell>
           </fo:table-row>
         </fo:table-header>

@@ -43,7 +43,7 @@ function TransactionDetailsSubTable({ auditId }: { auditId: number | undefined }
   const columns: ColumnDef<any>[] = [
     {
       accessorKey: 'transactionDate',
-      header: 'Datum',
+      header: 'Date',
       cell: ({ row }) => (
         <div className="text-sm">
           {row.getValue('transactionDate') ? formatDate(row.getValue('transactionDate')) : 'N/A'}
@@ -52,12 +52,12 @@ function TransactionDetailsSubTable({ auditId }: { auditId: number | undefined }
     },
     {
       accessorKey: 'description',
-      header: 'Beskrywing',
+      header: 'Description',
       cell: ({ row }) => <div className="text-sm">{row.getValue('description') || 'N/A'}</div>,
     },
     {
       accessorKey: 'debit',
-      header: 'Debiet',
+      header: 'Debit',
       cell: ({ row }) => {
         const debit = row.getValue('debit') as number | undefined;
         return (
@@ -69,7 +69,7 @@ function TransactionDetailsSubTable({ auditId }: { auditId: number | undefined }
     },
     {
       accessorKey: 'credit',
-      header: 'Krediet',
+      header: 'Credit',
       cell: ({ row }) => {
         const credit = row.getValue('credit') as number | undefined;
         return (
@@ -81,7 +81,7 @@ function TransactionDetailsSubTable({ auditId }: { auditId: number | undefined }
     },
     {
       accessorKey: 'runningBalance',
-      header: 'Balans',
+      header: 'Balance',
       cell: ({ row }) => {
         const balance = row.getValue('runningBalance') as number | undefined;
         const isNegative = (balance || 0) < 0;
@@ -95,7 +95,7 @@ function TransactionDetailsSubTable({ auditId }: { auditId: number | undefined }
     {
       id: 'accountOwner',
       accessorFn: (row) => `${row.accountOwnerName} ${row.accountOwnerEmail}`,
-      header: 'Rekening Eienaar',
+      header: 'Account Owner',
       cell: ({ row }) => (
         <div className="text-sm">
           <div className="font-medium">{row.original.accountOwnerName || 'N/A'}</div>
@@ -105,7 +105,7 @@ function TransactionDetailsSubTable({ auditId }: { auditId: number | undefined }
     },
     {
       id: 'actions',
-      header: 'Aksies',
+      header: 'Actions',
       cell: ({ row }) => {
         const userEmail = row.original.accountOwnerEmail;
         
@@ -116,7 +116,7 @@ function TransactionDetailsSubTable({ auditId }: { auditId: number | undefined }
                 to="/admin/user"
                 search={{ userEmail }}
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 px-3"
-                title="Bekyk gebruiker"
+                title="View user"
               >
                 <User className="h-4 w-4" />
               </Link>
@@ -126,7 +126,7 @@ function TransactionDetailsSubTable({ auditId }: { auditId: number | undefined }
                 to="/admin/finance/transactions"
                 search={{ userEmail }}
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 px-3"
-                title="Bekyk transaksies"
+                title="View transactions"
               >
                 <FileText className="h-4 w-4" />
               </Link>
@@ -140,7 +140,7 @@ function TransactionDetailsSubTable({ auditId }: { auditId: number | undefined }
   if (isLoading) {
     return (
       <div className="p-4 text-center text-muted-foreground">
-        Laai transaksies...
+        Loading transactions...
       </div>
     );
   }
@@ -148,21 +148,21 @@ function TransactionDetailsSubTable({ auditId }: { auditId: number | undefined }
   if (!transactionDetails || transactionDetails.length === 0) {
     return (
       <div className="p-4 text-center text-muted-foreground">
-        Geen transaksies gevind nie.
+        No transactions found.
       </div>
     );
   }
 
   return (
     <div className="p-4 bg-muted/30">
-      <h4 className="font-semibold mb-3 text-sm">Transaksie Besonderhede</h4>
+      <h4 className="font-semibold mb-3 text-sm">Transaction Details</h4>
       <DataTable
         columns={columns}
         data={transactionDetails}
         enableSorting
         enableFiltering
         pageSize={5}
-        emptyMessage="Geen transaksies gevind nie."
+        emptyMessage="No transactions found."
       />
     </div>
   );
@@ -185,7 +185,7 @@ function RouteComponent() {
     {
       id: 'compactUser',
       accessorFn: (row) => `${row?.compactUser?.firstName} ${row?.compactUser?.lastName} (${row?.compactUser?.email})`,
-      header: 'Gebruiker',
+      header: 'User',
       cell: ({ row }) => {
         const user = row.original.compactUser
         if (!user) return <div>N/A</div>
@@ -202,7 +202,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'transactionAuditType',
-      header: 'Tipe',
+      header: 'Type',
       cell: ({ row }) => {
         const type = row.getValue('transactionAuditType') as string
         return <Badge variant="outline">{type || 'N/A'}</Badge>
@@ -210,15 +210,15 @@ function RouteComponent() {
     },
     {
       accessorKey: 'transactionCount',
-      header: 'Transaksies',
+      header: 'Transactions',
       cell: ({ row }) => {
         const count = row.getValue('transactionCount') as number | undefined
-        return <div>{count !== undefined ? `${count} transaksie(s)` : 'N/A'}</div>
+        return <div>{count !== undefined ? `${count} transaction(s)` : 'N/A'}</div>
       },
     },
     {
       accessorKey: 'loadedContent',
-      header: 'Besonderhede',
+      header: 'Details',
       cell: ({ row }) => <div className="max-w-md truncate text-sm">{row.getValue('loadedContent') || 'N/A'}</div>,
     },
   ]
@@ -226,9 +226,9 @@ function RouteComponent() {
   return (
     <div className="container mx-auto py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">Transaksie Oudit Logboek</h1>
+        <h1 className="text-3xl font-bold">Transaction Audit Log</h1>
         <p className="text-muted-foreground">
-          Bekyk alle transaksie gebeure en aktiwiteite
+          View all transaction events and activity
         </p>
       </div>
 
@@ -240,9 +240,9 @@ function RouteComponent() {
         pageSize={10}
         loading={transactionLogLoading}
         enableReporting
-        reportTitle='Transaksie Oudit Verslag'
-        reportFilename='transaksie-oudit'
-        emptyMessage="Geen transaksie logboeke gevind nie."
+        reportTitle='Transaction Audit Report'
+        reportFilename='transaction-audit'
+        emptyMessage="No transaction audit logs found."
         className="space-y-4"
         getRowCanExpand={(row) => {
           const count = row.original.transactionCount

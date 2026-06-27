@@ -17,15 +17,15 @@ export default defineConfig({
       includeAssets: ['favicon.ico'],
       injectRegister: 'auto',
       manifest: {
-        name: 'Spys Bestellings',
-        short_name: 'Spys',
+        name: 'Meal Orders',
+        short_name: 'Meals',
         start_url: '/',
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#000000',
         orientation: 'portrait-primary',
         categories: ['food', 'shopping'],
-        description: 'Order food from Spys with push notifications for updates',
+        description: 'Order food with push notifications for updates',
         icons: [
           {
             src: 'logo192.png',
@@ -60,9 +60,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://spys-dev-backend.superuserdone.com/',
+        // Defaults to the local backend. To target the remote dev backend instead,
+        // set VITE_API_TARGET=https://spys-dev-backend.superuserdone.com
+        target: process.env.VITE_API_TARGET || 'http://localhost:8080',
         changeOrigin: true,
-        secure: true,
+        secure: !(process.env.VITE_API_TARGET || 'http://localhost:8080').startsWith('http://'),
       },
     },
   },

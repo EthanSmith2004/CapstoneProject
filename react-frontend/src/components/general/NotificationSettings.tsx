@@ -164,7 +164,7 @@ export const NotificationSettings: React.FC<NotificationSettingsProps> = ({
                 if ('serviceWorker' in navigator && 'PushManager' in window) {
                   // Test notification
                   new Notification('Test Notification', {
-                    body: 'This is a test notification from Spys!',
+                    body: 'This is a test notification from Meal Orders!',
                     icon: '/logo192.png',
                     badge: '/favicon.ico',
                   });

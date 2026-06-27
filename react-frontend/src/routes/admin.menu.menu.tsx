@@ -144,13 +144,13 @@ function RouteComponent() {
       },
       {
         onSuccess: () => {
-          toast.success('Spyskaart item suksesvol bygevoeg', {
-            description: `${menuItem.name} is geskeduleer vir aflewering`
+          toast.success('Menu item added successfully', {
+            description: `${menuItem.name} has been scheduled for delivery`
           });
         },
         onError: (error) => {
-          toast.error('Fout met skedulering', {
-            description: error.message || 'Kon nie die item byvoeg nie'
+          toast.error('Error scheduling', {
+            description: error.message || 'Could not add the item'
           });
         }
       }
@@ -164,11 +164,11 @@ function RouteComponent() {
   const handleAddTimeslot = (data: any) => {
     createTemplateMutation.mutate(data, {
       onSuccess: () => {
-        toast.success('Tydslot suksesvol bygevoeg');
+        toast.success('Timeslot added successfully');
       },
       onError: (error) => {
-        toast.error('Fout met byvoeg van tydslot', {
-          description: error.message || 'Kon nie die tydslot byvoeg nie'
+        toast.error('Error adding timeslot', {
+          description: error.message || 'Could not add the timeslot'
         });
       }
     });
@@ -182,12 +182,12 @@ function RouteComponent() {
     if (templateToDelete) {
       deleteTemplateMutation.mutate(templateToDelete, {
         onSuccess: () => {
-          toast.success('Tydslot suksesvol verwyder');
+          toast.success('Timeslot deleted successfully');
           setTemplateToDelete(null);
         },
         onError: (error) => {
-          toast.error('Fout met verwyder van tydslot', {
-            description: error.message || 'Kon nie die tydslot verwyder nie'
+          toast.error('Error deleting timeslot', {
+            description: error.message || 'Could not delete the timeslot'
           });
           setTemplateToDelete(null);
         }
@@ -203,12 +203,12 @@ function RouteComponent() {
     if (menuItemToDelete) {
       deleteMenuItemMutation.mutate(menuItemToDelete, {
         onSuccess: () => {
-          toast.success('Item suksesvol verwyder');
+          toast.success('Item deleted successfully');
           setMenuItemToDelete(null);
         },
         onError: (error: any) => {
-          toast.error('Fout met verwyder van item', {
-            description: error.response?.data?.message || error.message || 'Kon nie die item verwyder nie'
+          toast.error('Error deleting item', {
+            description: error.response?.data?.message || error.message || 'Could not delete the item'
           });
           setMenuItemToDelete(null);
         }
@@ -221,7 +221,7 @@ function RouteComponent() {
       {/* Header */}
       <div className="border-b bg-background p-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <h1 className="text-2xl font-bold">Spyskaart Beplanning</h1>
+          <h1 className="text-2xl font-bold">Menu Planning</h1>
           <PresetSelector
             presets={presets}
             selectedPreset={selectedPreset}
@@ -279,17 +279,17 @@ function RouteComponent() {
       <Dialog open={!!templateToDelete} onOpenChange={(open) => !open && setTemplateToDelete(null)}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Verwyder tydslot?</DialogTitle>
+            <DialogTitle>Delete timeslot?</DialogTitle>
             <DialogDescription>
-              Is jy seker jy wil hierdie tydslot verwyder? 
+              Are you sure you want to delete this timeslot?
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
             <Button variant="outline" onClick={() => setTemplateToDelete(null)}>
-              Kanselleer
+              Cancel
             </Button>
             <Button variant="destructive" onClick={confirmDeleteTemplate}>
-              Verwyder
+              Delete
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -299,17 +299,17 @@ function RouteComponent() {
       <Dialog open={menuItemToDelete !== null} onOpenChange={(open) => !open && setMenuItemToDelete(null)}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Verwyder spyskaartitem?</DialogTitle>
+            <DialogTitle>Delete menu item?</DialogTitle>
             <DialogDescription>
-              Is jy seker jy wil hierdie spyskaartitem verwyder?
+              Are you sure you want to delete this menu item?
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
             <Button variant="outline" onClick={() => setMenuItemToDelete(null)}>
-              Kanselleer
+              Cancel
             </Button>
             <Button variant="destructive" onClick={confirmDeleteMenuItem}>
-              Verwyder
+              Delete
             </Button>
           </DialogFooter>
         </DialogContent>

@@ -1,11 +1,11 @@
 
 
 export const orderItemStatusTranslations: Record<string, string> = {
-    'PAID': 'Betaal',
-    'IN_PROGRESS': 'In Voorbereiding',
-    'IN_DELIVERY': 'In Aflewering',
-    'DELIVERED': 'Voltooi',
-    'CANCELLED': 'Gekanselleer',
-    'REFUNDED': 'Terugbetaal',
-    'UNK': 'Onbekend',
+    'PAID': 'Paid',
+    'IN_PROGRESS': 'In Progress',
+    'IN_DELIVERY': 'In Delivery',
+    'DELIVERED': 'Delivered',
+    'CANCELLED': 'Cancelled',
+    'REFUNDED': 'Refunded',
+    'UNK': 'Unknown',
 };

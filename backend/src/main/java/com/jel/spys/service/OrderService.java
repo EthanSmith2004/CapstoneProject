@@ -186,8 +186,8 @@ public class OrderService {
         order.setTransaction(financeService.debitUserAccount(user.getId(), total, orderItemList.toString()));
         orderRepository.save(order);
         NotificationRequest notification = new NotificationRequest();
-        notification.setBody("Bestelling #" + order.getId() + " geplaas!");
-        notification.setTitle("Bestelling Geplaas");
+        notification.setBody("Order #" + order.getId() + " placed successfully!");
+        notification.setTitle("Order Placed");
         notification.setType(NotificationType.ORDER_CONFIRMATION);
         notificationService.sendNotificationToUser(user.getId(), notification);
 
@@ -433,13 +433,13 @@ public class OrderService {
         
         switch (newStatus) {
             case PENDING:
-                notification.setTitle("Bestelling Status Opdatering");
-                notification.setBody("Bestelling #" + order.getId() + " is nou hangende.");
+                notification.setTitle("Order Status Update");
+                notification.setBody("Order #" + order.getId() + " is now pending.");
                 notification.setType(NotificationType.ORDER_CONFIRMATION);
                 break;
             case HISTORIC:
-                notification.setTitle("Bestelling Voltooi");
-                notification.setBody("Bestelling #" + order.getId() + " is voltooi en is nou histories.");
+                notification.setTitle("Order Completed");
+                notification.setBody("Order #" + order.getId() + " is complete and has moved to your order history.");
                 notification.setType(NotificationType.ORDER_READY);
                 break;
             default:
@@ -459,31 +459,31 @@ public class OrderService {
         
         switch (newStatus) {
             case IN_PROGRESS:
-                notification.setTitle("Jou Bestelling word Voorberei");
-                notification.setBody(orderItem.getName() + " word nou voorberei vir aflewering op " + 
+                notification.setTitle("Your Order Is Being Prepared");
+                notification.setBody(orderItem.getName() + " is now being prepared for delivery on " + 
                                    orderItem.getDeliveryDate().toString().substring(0, 10));
                 notification.setType(NotificationType.ORDER_CONFIRMATION);
                 break;
             case IN_DELIVERY:
-                notification.setTitle("Jou Bestelling is Op Pad");
-                notification.setBody(orderItem.getName() + " is nou op pad vir aflewering!");
+                notification.setTitle("Your Order Is On The Way");
+                notification.setBody(orderItem.getName() + " is now out for delivery!");
                 notification.setType(NotificationType.ORDER_READY);
                 break;
             case DELIVERED:
-                notification.setTitle("Bestelling Afgelewer");
-                notification.setBody(orderItem.getName() + " is suksesvol afgelewer. Geniet jou ete!");
+                notification.setTitle("Order Delivered");
+                notification.setBody(orderItem.getName() + " was delivered successfully. Enjoy your meal!");
                 notification.setType(NotificationType.ORDER_READY);
                 break;
             case CANCELLED:
-                notification.setTitle("Bestelling Gekanselleer");
-                notification.setBody(orderItem.getName() + " is gekanselleer" + 
-                                   (previousStatus == OrderItemStatus.IN_PROGRESS ? " terwyl dit voorberei is" : "") + 
-                                   ". Jy sal 'n terugbetaling ontvang.");
+                notification.setTitle("Order Cancelled");
+                notification.setBody(orderItem.getName() + " was cancelled" + 
+                                   (previousStatus == OrderItemStatus.IN_PROGRESS ? " while it was being prepared" : "") + 
+                                   ". A refund will be issued to your account.");
                 notification.setType(NotificationType.ORDER_CANCELLED);
                 break;
             case REFUNDED:
-                notification.setTitle("Terugbetaling Verwerk");
-                notification.setBody("Terugbetaling vir " + orderItem.getName() + " is verwerk na jou rekening.");
+                notification.setTitle("Refund Processed");
+                notification.setBody("The refund for " + orderItem.getName() + " has been processed to your account.");
                 notification.setType(NotificationType.ACCOUNT_CREDITED);
                 break;
             case PAID:
@@ -519,30 +519,30 @@ public class OrderService {
 
             switch (newStatus) {
                 case IN_PROGRESS:
-                    notification.setTitle("Jou Bestelling word Voorberei");
-                    notification.setBody(itemNames + " word nou voorberei.");
+                    notification.setTitle("Your Order Is Being Prepared");
+                    notification.setBody(itemNames + " are now being prepared.");
                     notification.setType(NotificationType.ORDER_CONFIRMATION);
                     break;
                 case IN_DELIVERY:
-                    notification.setTitle("Jou Bestelling is Op Pad");
-                    notification.setBody(itemNames + " is nou op pad vir aflewering!");
+                    notification.setTitle("Your Order Is On The Way");
+                    notification.setBody(itemNames + " are now out for delivery!");
                     notification.setType(NotificationType.ORDER_READY);
                     break;
                 case DELIVERED:
-                    notification.setTitle("Bestelling Afgelewer");
-                    notification.setBody(itemNames + " is suksesvol afgelewer. Geniet jou ete!");
+                    notification.setTitle("Order Delivered");
+                    notification.setBody(itemNames + " were delivered successfully. Enjoy your meal!");
                     notification.setType(NotificationType.ORDER_READY);
                     break;
                 case CANCELLED:
-                    notification.setTitle("Bestelling Gekanselleer");
-                    notification.setBody(itemNames + " is gekanselleer" + 
-                                       (previousStatus == OrderItemStatus.IN_PROGRESS ? " terwyl dit voorberei is" : "") + 
-                                       ". Jy sal 'n terugbetaling ontvang.");
+                    notification.setTitle("Order Cancelled");
+                    notification.setBody(itemNames + " were cancelled" + 
+                                       (previousStatus == OrderItemStatus.IN_PROGRESS ? " while they were being prepared" : "") + 
+                                       ". A refund will be issued to your account.");
                     notification.setType(NotificationType.ORDER_CANCELLED);
                     break;
                 case REFUNDED:
-                    notification.setTitle("Terugbetalings Verwerk");
-                    notification.setBody("Terugbetalings vir " + itemNames + " is verwerk na jou rekening.");
+                    notification.setTitle("Refunds Processed");
+                    notification.setBody("Refunds for " + itemNames + " have been processed to your account.");
                     notification.setType(NotificationType.ACCOUNT_CREDITED);
                     break;
                 default:

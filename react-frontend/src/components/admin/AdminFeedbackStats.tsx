@@ -85,7 +85,7 @@ export function AdminFeedbackStats({
         <Card className='bg-white'>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">
-              Gemiddelde Gradering
+              Average Rating
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -113,13 +113,13 @@ export function AdminFeedbackStats({
         <Card className='bg-white'>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">
-              Totale Terugvoer
+              Total Feedback
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-4xl font-bold">{currentStats.totalFeedbackCount || 0}</div>
             <p className="text-xs text-muted-foreground mt-1">
-              Vir geselekteerde periode
+              For the selected period
             </p>
             {previousStats && (
               <ComparisonIndicator 
@@ -134,7 +134,7 @@ export function AdminFeedbackStats({
         <Card className='bg-white'>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">
-              Tevredenheidskoers
+              Satisfaction Rate
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -142,13 +142,13 @@ export function AdminFeedbackStats({
               {currentStats.satisfactionRate?.toFixed(1) || '0.0'}%
             </div>
             <p className="text-xs text-muted-foreground mt-1">
-              {currentStats.positiveFeedbackCount || 0} positiewe uit {currentStats.totalFeedbackCount || 0}
+              {currentStats.positiveFeedbackCount || 0} positive out of {currentStats.totalFeedbackCount || 0}
             </p>
             {previousStats && (
               <ComparisonIndicator 
                 current={currentStats.satisfactionRate || 0} 
                 previous={previousStats.satisfactionRate || 0}
-                suffix=" punte"
+                suffix=" points"
               />
             )}
           </CardContent>
@@ -158,7 +158,7 @@ export function AdminFeedbackStats({
         <Card className='bg-white'>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">
-              Gradering Verspreiding
+              Rating Distribution
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -194,7 +194,7 @@ export function AdminFeedbackStats({
       <Card className='bg-white'>
         <CardHeader>
           <div className="flex justify-between items-center">
-            <CardTitle>Gradering per Item</CardTitle>
+            <CardTitle>Rating by Item</CardTitle>
             <Button 
               variant="outline" 
               size="sm"
@@ -203,12 +203,12 @@ export function AdminFeedbackStats({
               {showAllItems ? (
                 <>
                   <ChevronUp className="mr-2 h-4 w-4" />
-                  Versteek
+                  Hide
                 </>
               ) : (
                 <>
                   <ChevronDown className="mr-2 h-4 w-4" />
-                  Wys Alles ({itemStats.length})
+                  Show All ({itemStats.length})
                 </>
               )}
             </Button>
@@ -217,7 +217,7 @@ export function AdminFeedbackStats({
         <CardContent>
           {itemStats.length === 0 ? (
             <p className="text-muted-foreground text-center py-4">
-              Geen item-spesifieke terugvoer in hierdie periode nie
+              No item-specific feedback in this period
             </p>
           ) : (
             <div className="space-y-3">
@@ -231,7 +231,7 @@ export function AdminFeedbackStats({
                         {item.averageRating?.toFixed(1) || '0.0'}/5
                       </span>
                       <span className="text-xs text-muted-foreground">
-                        ({item.feedbackCount} resensies)
+                        ({item.feedbackCount} reviews)
                       </span>
                     </div>
                   </div>
@@ -244,7 +244,7 @@ export function AdminFeedbackStats({
                       menuItem: item.menuItemName 
                     })}
                   >
-                    Bekyk Terugvoer
+                    View Feedback
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
@@ -258,27 +258,27 @@ export function AdminFeedbackStats({
       {contrastName && previousStats && (
         <Card className="bg-white">
           <CardHeader>
-            <CardTitle>Periode Vergelyking</CardTitle>
+            <CardTitle>Period Comparison</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-4 items-center">
               <div>
                 <div className="text-sm text-muted-foreground mb-2">{contrastName}</div>
                 <div className="text-2xl font-bold">{previousStats.averageRating?.toFixed(1) || '0.0'}</div>
-                <div className="text-sm">{previousStats.totalFeedbackCount || 0} resensies</div>
+                <div className="text-sm">{previousStats.totalFeedbackCount || 0} reviews</div>
                 <div className="text-sm text-muted-foreground">
-                  {previousStats.satisfactionRate?.toFixed(1) || '0.0'}% tevrede
+                  {previousStats.satisfactionRate?.toFixed(1) || '0.0'}% satisfied
                 </div>
               </div>
               <div className="flex items-center justify-center">
                 <ChevronRight className="h-8 w-8 text-muted-foreground" />
               </div>
               <div>
-                <div className="text-sm text-muted-foreground mb-2">Huidige Periode</div>
+                <div className="text-sm text-muted-foreground mb-2">Current Period</div>
                 <div className="text-2xl font-bold">{currentStats.averageRating?.toFixed(1) || '0.0'}</div>
-                <div className="text-sm">{currentStats.totalFeedbackCount || 0} resensies</div>
+                <div className="text-sm">{currentStats.totalFeedbackCount || 0} reviews</div>
                 <div className="text-sm text-muted-foreground">
-                  {currentStats.satisfactionRate?.toFixed(1) || '0.0'}% tevrede
+                  {currentStats.satisfactionRate?.toFixed(1) || '0.0'}% satisfied
                 </div>
               </div>
             </div>
@@ -294,7 +294,7 @@ export function AdminFeedbackStats({
               onClick={() => navigateToList({ startDate, endDate })}
             >
               <List className="mr-2 h-4 w-4" />
-              Bekyk Alle Terugvoer vir Periode
+              View All Feedback for Period
             </Button>
             
             <Button 
@@ -302,7 +302,7 @@ export function AdminFeedbackStats({
               onClick={() => navigateToList({ startDate, endDate, minRating: 4 })}
             >
               <ThumbsUp className="mr-2 h-4 w-4" />
-              Bekyk Positiewe Terugvoer
+              View Positive Feedback
             </Button>
             
             <Button 
@@ -310,7 +310,7 @@ export function AdminFeedbackStats({
               onClick={() => navigateToList({ startDate, endDate, maxRating: 2 })}
             >
               <ThumbsDown className="mr-2 h-4 w-4" />
-              Bekyk Negatiewe Terugvoer
+              View Negative Feedback
             </Button>
           </div>
         </CardContent>

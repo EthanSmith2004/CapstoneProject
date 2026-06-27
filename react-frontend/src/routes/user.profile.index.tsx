@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+﻿import { createFileRoute } from '@tanstack/react-router'
 import { UserProfileApi } from '@/api'
 import { useAuth } from '@/contexts/AuthContext'
 import { useQuery } from '@tanstack/react-query'
@@ -18,8 +18,8 @@ function RouteComponent() {
   const mobileNavigation = useMobileNavigation()
   
   useEffect(() => {
-    if (mobileNavigation.title !== 'Profiel') {
-      mobileNavigation.setTitle('Profiel')
+    if (mobileNavigation.title !== 'Profile') {
+      mobileNavigation.setTitle('Profile')
     }
   }, [mobileNavigation])
     const { data: profile, isLoading: profileLoading } = useQuery({
@@ -31,7 +31,7 @@ function RouteComponent() {
   })
 
   if (profileLoading) {
-    return <LoadScreen message='Laai Gebruikersprofiel'/>;
+    return <LoadScreen message='Loading User Profile'/>;
   }
 
   const settingsData = {
@@ -41,8 +41,9 @@ function RouteComponent() {
     residence: profile?.residence,
     allergies: profile?.allergies,
     accountBalance: profile?.balance ? `R${profile.balance.toFixed(2)}` : 'R0.00',
-    changePassword: 'Verander wagwoord...'
+    changePassword: 'Change password...'
   }
 
   return <MobileSettings data={settingsData} schema={userProfileSchema}/>;
 }
+

@@ -27,7 +27,7 @@ function RouteComponent() {
   const columns: ColumnDef<UserEventAuditDTO>[] = [
     {
       accessorKey: 'timestamp',
-      header: 'Tyd',
+      header: 'Time',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: "date-range"
@@ -37,7 +37,7 @@ function RouteComponent() {
     {
       id: 'user',
       accessorFn: (row) => `${row?.user?.firstName} ${row?.user?.lastName} (${row?.user?.email})`,
-      header: 'Gebruiker',
+      header: 'User',
       cell: ({ row }) => {
         const user = row.original.user
         if (!user) return <div>N/A</div>
@@ -54,7 +54,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'type',
-      header: 'Gebeurtenis Tipe',
+      header: 'Event Type',
       cell: ({ row }) => {
         const type = row.getValue('type') as string
         return <Badge variant="outline">{type || 'N/A'}</Badge>
@@ -65,9 +65,9 @@ function RouteComponent() {
   return (
     <div className="container mx-auto py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">Gebruiker Oudit Logboek</h1>
+        <h1 className="text-3xl font-bold">User Audit Log</h1>
         <p className="text-muted-foreground">
-          Bekyk alle gebruiker gebeure en aktiwiteite
+          View all user events and activity
         </p>
       </div>
 
@@ -79,9 +79,9 @@ function RouteComponent() {
         pageSize={10}
         loading={userLogLoading}
         enableReporting
-        reportTitle='Gebruiker Oudit Verslag'
-        reportFilename='gebruiker-oudit'
-        emptyMessage="Geen gebruiker logboeke gevind nie."
+        reportTitle='User Audit Report'
+        reportFilename='user-audit'
+        emptyMessage="No user audit logs found."
         className="space-y-4"
       />
     </div>

@@ -128,14 +128,14 @@ public class FinanceService {
                     // Get values by column index (works with or without headers)
                     String identifier = record.get(0);
                     String amountStr = record.get(1);
-                    String description = record.size() > 2 ? record.get(2) : "Bulk laai";
+                    String description = record.size() > 2 ? record.get(2) : "Bulk credit load";
                     
                     // Validate identifier
                     if (identifier == null || identifier.trim().isEmpty()) {
                         results.add(AdminLoadCreditResult.builder()
-                                .identifier("Ry " + record.getRecordNumber())
+                                .identifier("Row " + record.getRecordNumber())
                                 .success(false)
-                                .errorMessage("Identifiseerder is nie geldig nie")
+                                .errorMessage("Identifier is not valid")
                                 .build());
                         failedLoads++;
                         continue;
@@ -149,7 +149,7 @@ public class FinanceService {
                             results.add(AdminLoadCreditResult.builder()
                                     .identifier(identifier)
                                     .success(false)
-                                    .errorMessage("Bedrag moet positief wees!")
+                                    .errorMessage("Amount must be positive")
                                     .build());
                             failedLoads++;
                             continue;
@@ -158,7 +158,7 @@ public class FinanceService {
                         results.add(AdminLoadCreditResult.builder()
                                 .identifier(identifier)
                                 .success(false)
-                                .errorMessage("Formaat van bedrag is verkeerd: " + amountStr)
+                                .errorMessage("Amount format is invalid: " + amountStr)
                                 .build());
                         failedLoads++;
                         continue;
@@ -185,15 +185,15 @@ public class FinanceService {
                     results.add(AdminLoadCreditResult.builder()
                             .identifier(record.get(0))
                             .success(false)
-                            .errorMessage("Gebruiker nie gevind nie: " + e.getMessage())
+                            .errorMessage("User not found: " + e.getMessage())
                             .build());
                     failedLoads++;
                 } catch (Exception e) {
-                    log.error("Fout met die hanetering van gebruiker rekord {}: {}", record.getRecordNumber(), e.getMessage());
+                    log.error("Error processing user record {}: {}", record.getRecordNumber(), e.getMessage());
                     results.add(AdminLoadCreditResult.builder()
-                            .identifier(record.size() > 0 ? record.get(0) : "Ry " + record.getRecordNumber())
+                            .identifier(record.size() > 0 ? record.get(0) : "Row " + record.getRecordNumber())
                             .success(false)
-                            .errorMessage("Verwerking fout: " + e.getMessage())
+                            .errorMessage("Processing error: " + e.getMessage())
                             .build());
                     failedLoads++;
                 }

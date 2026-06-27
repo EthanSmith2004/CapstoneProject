@@ -80,7 +80,7 @@ export function TimeslotCard({
             )}
             {isHistoric && (
               <span className="text-xs bg-gray-200 text-gray-800 px-2 py-0.5 rounded">
-                Histories
+                Historic
               </span>
             )}
             {onDelete && !isHeuristic && (
@@ -94,7 +94,7 @@ export function TimeslotCard({
                     onDelete(template.id);
                   }
                 }}
-                aria-label="Verwyder tydslot"
+                aria-label="Delete timeslot"
               >
                 <Trash2 className="h-3 w-3" />
               </Button>
@@ -114,7 +114,7 @@ export function TimeslotCard({
         >
           {assignedItems.length === 0 ? (
             <p className="text-xs text-muted-foreground text-center">
-              {isHistoric ? 'Histories vir verwysing' : 'Sleep items hierheen'}
+              {isHistoric ? 'Historic for reference' : 'Drag items here'}
             </p>
           ) : (
             assignedItems.map((item) => (
@@ -139,7 +139,7 @@ export function TimeslotCard({
                         onDeleteMenuItem(item.id);
                       }
                     }}
-                    aria-label="Verwyder item"
+                    aria-label="Delete item"
                   >
                     <Trash2 className="h-3 w-3" />
                   </Button>
@@ -153,11 +153,11 @@ export function TimeslotCard({
         <div className="space-y-1 text-xs text-muted-foreground">
           <div className="flex items-center gap-1">
             <Calendar className="w-3 h-3" />
-            <span>Bestel teen: {formatAfrikaansDateTime(orderByDate)}</span>
+            <span>Order by: {formatAfrikaansDateTime(orderByDate)}</span>
           </div>
           <div className="flex items-center gap-1">
             <Clock className="w-3 h-3" />
-            <span>Vrygestel: {formatAfrikaansDateTime(releaseDate)}</span>
+            <span>Released: {formatAfrikaansDateTime(releaseDate)}</span>
           </div>
         </div>
       </CardContent>

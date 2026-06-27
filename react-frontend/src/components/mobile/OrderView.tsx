@@ -42,7 +42,7 @@ export function OrderView({
   };
 
   const renderStarRating = (rating?: number) => {
-    if (!rating) return <span className="text-muted-foreground">Geen gradering</span>;
+    if (!rating) return <span className="text-muted-foreground">No rating</span>;
 
     return (
       <div className="flex items-center gap-1">
@@ -80,7 +80,7 @@ export function OrderView({
 
           {!loading && (!orders || orders.length === 0) && (
             <p className="p-4 text-center text-gray-500">
-              Geen {completed ? "verlede" : "huidige"} bestellings nie.
+              No {completed ? "past" : "current"} orders.
             </p>
           )}
 
@@ -89,7 +89,7 @@ export function OrderView({
               {Object.entries(groupByDate(orders)).map(([date, ordersOnDate]) => (
                 <div key={date} className="border-t pt-2">
                   <h3 className="px-4 py-2 font-semibold bg-gray-100">
-                    Vir aflewering op {date}
+                    For delivery on {date}
                   </h3>
                   {ordersOnDate.map((order) => {
                     const canEdit =
@@ -111,11 +111,11 @@ export function OrderView({
                             </p>
                             {canEdit ? (
                               <p className="text-sm text-blue-600">
-                                Jy kan hierdie bestelling kanselleer voor {formatDateLong(order.editBy!)}
+                                You can cancel this order before {formatDateLong(order.editBy!)}
                               </p>
                             ) : (
                               <p className="text-sm text-gray-600">
-                                Hierdie bestelling kan nie meer gekanselleer word nie.
+                                This order can no longer be cancelled.
                               </p>
                             )}
                             {order.feedback && (
@@ -128,7 +128,7 @@ export function OrderView({
 
                           <div className="text-right">
                             <p className="font-medium">
-                              Totaal: R{(order.totalPrice ?? 0).toFixed(2)}
+                              Total: R{(order.totalPrice ?? 0).toFixed(2)}
                             </p>
                             {canEdit && (
                               <Ban

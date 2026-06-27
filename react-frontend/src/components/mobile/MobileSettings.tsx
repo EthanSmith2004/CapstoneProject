@@ -1,4 +1,4 @@
-import type { JSX } from 'react'
+﻿import type { JSX } from 'react'
 import { z } from 'zod'
 import { ArrowRight } from 'lucide-react'
 import type {
@@ -75,7 +75,7 @@ function getStringItem(item: SettingItem, data: any, key: number) {
   return (
     <LabeledSetting key={key} item={item} data={data}>
       <label className="text-sm text-gray-600 dark:text-gray-300">
-        {data[item.valueProperty || ''] ?? '—'}
+        {data[item.valueProperty || ''] ?? '-'}
       </label>
     </LabeledSetting>
   )
@@ -85,7 +85,7 @@ function getNumberItem(item: SettingItem, data: any, key: number) {
   return (
     <LabeledSetting key={key} item={item} data={data}>
       <label className="text-sm text-gray-600 dark:text-gray-300">
-        {data[item.valueProperty || ''] ?? '—'}
+        {data[item.valueProperty || ''] ?? '-'}
       </label>
     </LabeledSetting>
   )
@@ -95,7 +95,7 @@ function getBooleanItem(item: SettingItem, data: any, key: number) {
   return (
     <LabeledSetting key={key} item={item} data={data}>
       <label className="text-sm text-gray-600 dark:text-gray-300">
-        {data[item.valueProperty || ''] ? 'Ja' : 'Nee'}
+        {data[item.valueProperty || ''] ? 'Yes' : 'No'}
       </label>
     </LabeledSetting>
   )
@@ -105,7 +105,7 @@ function getSelectItem(item: SettingItem, data: any, key: number) {
   return (
     <LabeledSetting key={key} item={item} data={data}>
       <label className="text-sm text-gray-600 dark:text-gray-300">
-        {data[item.valueProperty || '']?.name ?? 'Geen'}
+        {data[item.valueProperty || '']?.name ?? 'None'}
       </label>
     </LabeledSetting>
   )
@@ -117,7 +117,7 @@ function getCheckboxListItem(item: SettingItem, data: any, key: number) {
       <label className="text-sm text-gray-600 dark:text-gray-300">
         {data[item.valueProperty || '']
           ?.map((v: any) => v.name)
-          .join(', ') || '—'}
+          .join(', ') || '-'}
       </label>
     </LabeledSetting>
   )
@@ -138,17 +138,18 @@ function getPreferencesItem(item: SettingItem, data: any, key: number) {
       item={item}
       data={data}
     >
-             <label className="
-                block 
-                text-sm 
-                font-meduim 
-                text-gray-700 
-                mb-0.5"
-            >
-                {data[item.valueProperty || ""]?.map((v: any) => v.name).join(", ")}
-            </label>
-        </LabeledSetting>
-    );
+      <label
+        className="
+          block
+          text-sm
+          font-medium
+          text-gray-700
+          mb-0.5"
+      >
+        Customize your experience
+      </label>
+    </LabeledSetting>
+  );
 }
 
 
@@ -187,3 +188,4 @@ export function MobileSettings({
     </div>
   )
 }
+

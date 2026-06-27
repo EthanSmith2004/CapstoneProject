@@ -63,7 +63,7 @@ function AllergenForm({
           name="allergy"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Allergie Naam</FormLabel>
+              <FormLabel>Allergy Name</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -72,7 +72,7 @@ function AllergenForm({
           )}
         />
         <Button type="submit" className="w-full">
-          {defaultValues ? 'Opdateer' : 'Skep'}
+          {defaultValues ? 'Update' : 'Create'}
         </Button>
       </form>
     </Form>
@@ -99,20 +99,20 @@ function RouteComponent() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-allergens'] })
       setIsDialogOpen(false)
-      toast.success('Die allergie is suksesvol geskep.');
+      toast.success('The allergy was created successfully.');
     },
   })
 
   const updateAllergenMutation = useMutation({
-    mutationFn: (data: AllergenFormValues) => 
-      apiClient.update2(selectedAllergen!.id!, { 
-        ...selectedAllergen!, 
-        allergy: data.allergy 
+    mutationFn: (data: AllergenFormValues) =>
+      apiClient.update2(selectedAllergen!.id!, {
+        ...selectedAllergen!,
+        allergy: data.allergy
       }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-allergens'] })
       setIsDialogOpen(false)
-      toast.success('Die allergie is suksesvol opgedateer.');
+      toast.success('The allergy was updated successfully.');
     },
   })
 
@@ -120,7 +120,7 @@ function RouteComponent() {
     mutationFn: (id: number) => apiClient.delete2(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-allergens'] })
-      toast.success('Die allergie is suksesvol verwyder.');
+      toast.success('The allergy was deleted successfully.');
     },
   })
 
@@ -129,7 +129,7 @@ function RouteComponent() {
   const columns: ColumnDef<AllergyEntity>[] = [
     {
       accessorKey: 'allergy',
-      header: 'Allergie',
+      header: 'Allergy',
       meta: {
         filterVariant: 'string'
       },
@@ -137,7 +137,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'createdAt',
-      header: 'Geskep',
+      header: 'Created',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: 'date-range'
@@ -146,7 +146,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'updatedAt',
-      header: 'Opgedateer',
+      header: 'Updated',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: 'date-range'
@@ -155,7 +155,7 @@ function RouteComponent() {
     },
     {
       id: 'actions',
-      header: 'Aksies',
+      header: 'Actions',
       cell: ({ row }) => {
         const allergen = row.original
         return (
@@ -188,7 +188,7 @@ function RouteComponent() {
   }
 
   const handleDeleteAllergen = (allergen: AllergyEntity) => {
-    if (confirm(`Is jy seker jy wil die allergie "${allergen.allergy}" verwyder?`)) {
+    if (confirm(`Are you sure you want to delete the allergy "${allergen.allergy}"?`)) {
       deleteAllergenMutation.mutate(allergen.id!)
     }
   }
@@ -205,18 +205,18 @@ function RouteComponent() {
     <div className="container mx-auto py-6">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Allergieë Bestuur</h1>
-          <p className="text-muted-foreground">Bestuur allergieë vir spyskaartitems</p>
+          <h1 className="text-3xl font-bold">Allergy Management</h1>
+          <p className="text-muted-foreground">Manage allergies for menu items</p>
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button onClick={() => setSelectedAllergen(undefined)}>Nuwe Allergie</Button>
+            <Button onClick={() => setSelectedAllergen(undefined)}>New Allergy</Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>{selectedAllergen ? 'Wysig Allergie' : 'Nuwe Allergie'}</DialogTitle>
+              <DialogTitle>{selectedAllergen ? 'Edit Allergy' : 'New Allergy'}</DialogTitle>
               <DialogDescription>
-                {selectedAllergen ? 'Wysig die besonderhede van die allergie.' : 'Voeg \'n nuwe allergie by.'}
+                {selectedAllergen ? 'Edit the allergy details.' : 'Add a new allergy.'}
               </DialogDescription>
             </DialogHeader>
             <AllergenForm onSubmit={handleFormSubmit} defaultValues={selectedAllergen} />
@@ -230,10 +230,10 @@ function RouteComponent() {
         enableSorting
         enableFiltering
         enableSearching
-        searchPlaceholder="Soek allergieë..."
+        searchPlaceholder="Search allergies..."
         pageSize={10}
         loading={isAllergensLoading}
-        emptyMessage="Geen allergieë gevind nie."
+        emptyMessage="No allergies found."
         className="space-y-4"
       />
     </div>

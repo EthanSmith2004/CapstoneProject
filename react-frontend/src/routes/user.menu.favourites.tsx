@@ -1,4 +1,4 @@
-import { UserMenuApi } from '@/api'
+﻿import { UserMenuApi } from '@/api'
 import { Button } from '@/components/ui/button'
 import { MenuItemCard } from '@/components/menu/MenuItemCard'
 import { useAuth } from '@/contexts/AuthContext'
@@ -23,8 +23,8 @@ function RouteComponent() {
   const menuAPI = auth.getApiClient(UserMenuApi);
 
   useEffect(() => {
-    if (mobileNavigation.title !== 'Spyskaart') {
-      mobileNavigation.setTitle('Spyskaart')
+    if (mobileNavigation.title !== 'Menu') {
+      mobileNavigation.setTitle('Menu')
     }
   }, [mobileNavigation])
 
@@ -140,7 +140,7 @@ function RouteComponent() {
               text-gray-500 
               text-lg"
             >
-              Geen gunstelinge beskikbaar nie
+              No favourites available
             </p>
           </div>
         )}
@@ -178,8 +178,8 @@ function RouteComponent() {
             <ShoppingCart className="h-5 w-5" />
             <span>
               {hasItemSelected 
-                ? `Plaas Bestelling • R${totalCost.toFixed(2)}` 
-                : 'Kies Items om te Bestel'
+                ? `Place Order - R${totalCost.toFixed(2)}` 
+                : 'Choose Items to Order'
               }
             </span>
           </div>

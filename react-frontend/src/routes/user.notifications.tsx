@@ -1,4 +1,4 @@
-import { NotificationsApi } from '@/api'
+﻿import { NotificationsApi } from '@/api'
 import { LoadScreen } from '@/components/general/LoadScreen'
 import { useAuth } from '@/contexts/AuthContext'
 import { useMobileNavigation } from '@/contexts/MobileNavigationContext'
@@ -95,8 +95,8 @@ function RouteComponent() {
   })
 
   useEffect(() => {
-    if (mobileNavigation.title !== 'Kennisgewings') {
-      mobileNavigation.setTitle('Kennisgewings')
+    if (mobileNavigation.title !== 'Notifications') {
+      mobileNavigation.setTitle('Notifications')
     }
   }, [mobileNavigation])
 

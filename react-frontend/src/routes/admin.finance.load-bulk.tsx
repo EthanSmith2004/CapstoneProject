@@ -27,7 +27,7 @@ export const Route = createFileRoute('/admin/finance/load-bulk')({
 })
 
 const formSchema = z.object({
-  csvFile: z.instanceof(File, { message: "Kies asseblief 'n CSV lêer" }),
+  csvFile: z.instanceof(File, { message: "Please select a CSV file" }),
 });
 
 function RouteComponent() {
@@ -65,22 +65,22 @@ function RouteComponent() {
   return (
     <div className="container mx-auto py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">Grootmaat Krediet Laai</h1>
+        <h1 className="text-3xl font-bold">Bulk Credit Load</h1>
         <p className="text-muted-foreground">
-          Laai krediet vir meerdere gebruikers deur 'n CSV lêer te gebruik
+          Load credit for multiple users using a CSV file
         </p>
       </div>
 
       {loadSuccess && (
         <Alert className="mb-6 bg-green-50 border-green-500">
           <Check className="h-4 w-4 text-green-500" />
-          <AlertTitle className="text-green-800">Sukses</AlertTitle>
+          <AlertTitle className="text-green-800">Success</AlertTitle>
           <div className="text-green-700">
-            <p>Krediet is suksesvol gelaai:</p>
+            <p>Credit loaded successfully:</p>
             <ul className="list-disc list-inside mt-2">
-              <li>Suksesvolle transaksies: {result?.successfulLoads || 0}</li>
-              <li>Mislukte transaksies: {result?.failedLoads || 0}</li>
-              {result?.totalAmountLoaded && <li>Totale bedrag gelaai: R{result?.totalAmountLoaded.toFixed(2)}</li>}
+              <li>Successful transactions: {result?.successfulLoads || 0}</li>
+              <li>Failed transactions: {result?.failedLoads || 0}</li>
+              {result?.totalAmountLoaded && <li>Total amount loaded: R{result?.totalAmountLoaded.toFixed(2)}</li>}
             </ul>
           </div>
         </Alert>
@@ -89,11 +89,11 @@ function RouteComponent() {
       {bulkLoadMutation.isError && (
         <Alert className="mb-6 bg-red-50 border-red-500">
           <AlertTriangle className="h-4 w-4 text-red-500" />
-          <AlertTitle className="text-red-800">Fout</AlertTitle>
+          <AlertTitle className="text-red-800">Error</AlertTitle>
           <div className="text-red-700">
-            Daar was 'n probleem met die laai van krediet. Maak seker dat jou CSV lêer korrek geformateer is.
+            There was a problem loading credit. Make sure your CSV file is formatted correctly.
           </div>
-          Mislukte transaksies: {result?.failedLoads || 0}
+          Failed transactions: {result?.failedLoads || 0}
           <ul className='list-disc list-inside'>
             {result?.results?.filter((v) => !v.success).map((r) => (
                 <li key={r.identifier}>{r.identifier} - {r.errorMessage}</li>
@@ -106,9 +106,9 @@ function RouteComponent() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card className='bg-background'>
           <CardHeader>
-            <CardTitle>Laai CSV Lêer</CardTitle>
+            <CardTitle>Load CSV File</CardTitle>
             <CardDescription>
-              Laai 'n CSV lêer met gebruiker inligting en bedrae
+              Upload a CSV file with user information and amounts
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -119,7 +119,7 @@ function RouteComponent() {
                   name="csvFile"
                   render={({ field: { onChange, value, ...rest } }) => (
                     <FormItem>
-                      <FormLabel>CSV Lêer</FormLabel>
+                      <FormLabel>CSV File</FormLabel>
                       <FormControl>
                         <div className="flex items-center gap-2">
                           <Input
@@ -150,11 +150,11 @@ function RouteComponent() {
                   disabled={form.formState.isSubmitting || bulkLoadMutation.isPending}
                 >
                   {bulkLoadMutation.isPending ? (
-                    'Besig om te laai...'
+                    'Loading...'
                   ) : (
                     <div className="flex items-center gap-2">
                       <Upload className="h-4 w-4" />
-                      Laai CSV
+                      Upload CSV
                     </div>
                   )}
                 </Button>
@@ -165,31 +165,31 @@ function RouteComponent() {
 
         <Card className='bg-background'>
           <CardHeader>
-            <CardTitle>CSV Formaat</CardTitle>
+            <CardTitle>CSV Format</CardTitle>
             <CardDescription>
-              Hoe om jou CSV lêer voor te berei
+              How to prepare your CSV file
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <p>
-              Die CSV lêer moet in die volgende formaat wees:
+              The CSV file must be in the following format:
             </p>
             
             <div className="bg-muted p-3 rounded-md font-mono text-sm overflow-x-auto">
               email,credential,amount,description<br />
-              gebruiker1@example.com,,100.00,"Maandelikse Krediet"<br />
-              ,202413312,50.00,"Ekstra Krediet"<br />
+              user1@example.com,,100.00,"Monthly Credit"<br />
+              ,202413312,50.00,"Extra Credit"<br />
               ...
             </div>
             
             <div className="space-y-2">
-              <p className="font-medium">Belangrike notas:</p>
+              <p className="font-medium">Important notes:</p>
               <ul className="list-disc list-inside text-sm space-y-1">
-                <li>Die lêer moet 'n opskrif ry bevat soos bo getoon</li>
-                <li>Elke ry moet 'n geldige e-posadres of student/personeelnommer, bedrag, en beskrywing bevat</li>
-                <li>Bedrae moet numeries wees (gebruik punte vir desimale, nie kommas nie)</li>
-                <li>Beskrywings met kommas moet in aanhalingstekens wees</li>
-                <li>Die maksimum lêergrootte is 5MB</li>
+                <li>The file must contain a header row as shown above</li>
+                <li>Each row must contain a valid email address or student/staff number, amount, and description</li>
+                <li>Amounts must be numeric (use dots for decimals, not commas)</li>
+                <li>Descriptions containing commas must be wrapped in quotation marks</li>
+                <li>The maximum file size is 5MB</li>
               </ul>
             </div>
           </CardContent>

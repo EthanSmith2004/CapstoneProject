@@ -25,22 +25,22 @@ function RouteComponent() {
     {
       start: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
       end: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 7),
-      name: 'Volgende 7 dae',
+      name: 'Next 7 days',
     },
     {
       start: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
       end: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 30),
-      name: 'Volgende 30 dae',
+      name: 'Next 30 days',
     },
     {
       start: new Date(new Date().getFullYear(), 0, 1),
       end: new Date(),
-      name: 'Jaar tot op datum',
+      name: 'Year to date',
     },
     {
       start: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
       end: new Date(),
-      name: 'Maand tot op datum',
+      name: 'Month to date',
     },
   ];
 
@@ -89,13 +89,13 @@ function RouteComponent() {
       setStatisticPeriod({
         start: dateRange.from,
         end: dateRange.to,
-        name: "Eie"
+        name: "Custom"
       });
     }
   }, [dateRange]);
 
   useEffect(() => {
-    if (statisticPeriod.name !== "Eie") {
+    if (statisticPeriod.name !== "Custom") {
       setDateRange({
         from: statisticPeriod.start,
         to: statisticPeriod.end
@@ -105,11 +105,11 @@ function RouteComponent() {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold">Bestelling Oorsig</h2>
+      <h2 className="text-2xl font-bold">Order Overview</h2>
       <div className="p-4 flex flex-col lg:flex-row gap-6">
         <div className="space-y-4">
           <div>
-            <Label htmlFor="period">Periode</Label>
+            <Label htmlFor="period">Period</Label>
             <Select onValueChange={(value) => {
               const period = predefinedPeriods.find(p => p.name === value);
               if (period) {
@@ -117,10 +117,10 @@ function RouteComponent() {
               }
             }} value={statisticPeriod.name}>
               <SelectTrigger id="period" className="w-[220px]">
-                <SelectValue placeholder="Kies 'n periode" />
+                <SelectValue placeholder="Select a period" />
               </SelectTrigger>
               <SelectContent className='bg-white z-40'>
-                <SelectItem value="Eie" disabled hidden>Eie</SelectItem>
+                <SelectItem value="Custom" disabled hidden>Custom</SelectItem>
                 {predefinedPeriods.map((period) => (
                   <SelectItem key={period.name} value={period.name}>
                     {period.name}
@@ -131,7 +131,7 @@ function RouteComponent() {
           </div>
 
           <div>
-            <Label htmlFor="campus">Kampus (opsioneel)</Label>
+            <Label htmlFor="campus">Campus (optional)</Label>
             <Select 
               value={selectedCampus?.toString() || "all"} 
               onValueChange={(value) => {
@@ -143,10 +143,10 @@ function RouteComponent() {
               }}
             >
               <SelectTrigger id="campus" className="w-[220px]">
-                <SelectValue placeholder="Alle Kampusse" />
+                <SelectValue placeholder="All Campuses" />
               </SelectTrigger>
               <SelectContent className='bg-white z-40'>
-                <SelectItem value="all">Alle Kampusse</SelectItem>
+                <SelectItem value="all">All Campuses</SelectItem>
                 {campuses.map((campus: SelectDTO) => (
                   <SelectItem key={campus.id} value={campus.id?.toString() || ""}>
                     {campus.name}
@@ -157,7 +157,7 @@ function RouteComponent() {
           </div>
 
           <div>
-            <Label htmlFor="residence">Koshuis (opsioneel)</Label>
+            <Label htmlFor="residence">Residence (optional)</Label>
             <Select 
               value={selectedResidence?.toString() || "all"} 
               onValueChange={(value) => {
@@ -165,10 +165,10 @@ function RouteComponent() {
               }}
             >
               <SelectTrigger id="residence" className="w-[220px]">
-                <SelectValue placeholder="Alle Koshuise" />
+                <SelectValue placeholder="All Residences" />
               </SelectTrigger>
               <SelectContent className='bg-white z-40'>
-                <SelectItem value="all">Alle Koshuise</SelectItem>
+                <SelectItem value="all">All Residences</SelectItem>
                 {residences.map((residence: SelectDTO) => (
                   <SelectItem key={residence.id} value={residence.id?.toString() || ""}>
                     {residence.name}

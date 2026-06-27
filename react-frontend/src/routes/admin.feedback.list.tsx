@@ -80,7 +80,7 @@ function RouteComponent() {
 
   // Helper function to render star rating
   const renderStarRating = (rating?: number) => {
-    if (!rating) return <span className="text-muted-foreground">Geen gradering</span>;
+    if (!rating) return <span className="text-muted-foreground">No rating</span>;
     
     return (
       <div className="flex items-center gap-1">
@@ -100,7 +100,7 @@ function RouteComponent() {
   const columns: ColumnDef<any>[] = [
     {
       id: 'user',
-      header: 'Gebruiker',
+      header: 'User',
       accessorFn: (row) => `${row?.user?.firstName} ${row?.user?.lastName} ${row.user?.email}`,
       cell: ({ row }) => {
         const user = row.original.user
@@ -116,7 +116,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'menuItemName',
-      header: 'Spyskaartitem',
+      header: 'Menu Item',
       cell: ({ row }) => {
         const menuItemName = row.getValue('menuItemName') as string | undefined;
         return <div className="font-medium">{menuItemName || 'N/A'}</div>;
@@ -124,7 +124,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'rating',
-      header: 'Gradering',
+      header: 'Rating',
       meta: {
         filterVariant: 'numeric-range'
       },
@@ -135,7 +135,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'comment',
-      header: 'Kommentaar',
+      header: 'Comment',
       cell: ({ row }) => {
         const comment = row.getValue('comment') as string | undefined;
         return (
@@ -143,7 +143,7 @@ function RouteComponent() {
             {comment ? (
               <p className="text-sm line-clamp-2">{comment}</p>
             ) : (
-              <span className="text-muted-foreground text-sm">Geen kommentaar</span>
+              <span className="text-muted-foreground text-sm">No comment</span>
             )}
           </div>
         );
@@ -151,7 +151,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'createdAt',
-      header: 'Datum',
+      header: 'Date',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: "date-range",
@@ -171,11 +171,11 @@ function RouteComponent() {
         pageSize={10}
         loading={isLoading}
         enableReporting
-        reportTitle='Terugvoer Verslag'
-        reportFilename='terugvoer'
-        emptyMessage="Geen terugvoer gevind nie."
+        reportTitle='Feedback Report'
+        reportFilename='feedback'
+        emptyMessage="No feedback found."
         className="space-y-4"
-        searchPlaceholder="Soek terugvoer..."
+        searchPlaceholder="Search feedback..."
         columnFilters={columnFilters}
         setColumnFilters={setColumnFilters}
       />

@@ -61,7 +61,7 @@ function RouteComponent() {
     {
       id: 'user',
       accessorFn: (r) => `${r.user?.firstName} ${r.user?.lastName} ${r.user?.email} ${r.user?.credentialNumber}`,
-      header: 'Gebruiker',
+      header: 'User',
       cell: ({ row }) => {
         const user = row.original.user
         return (
@@ -77,7 +77,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'debit',
-      header: 'Debiet',
+      header: 'Debit',
       filterFn: 'inNumberRange',
       meta: {
         filterVariant: 'numeric-range'
@@ -89,7 +89,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'credit',
-      header: 'Krediet',
+      header: 'Credit',
       filterFn: 'inNumberRange',
       meta: {
         filterVariant: 'numeric-range'
@@ -101,7 +101,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'runningBalance',
-      header: 'Hardlopende Balans',
+      header: 'Running Balance',
       filterFn: 'inNumberRange',
       meta: {
         filterVariant: 'numeric-range'
@@ -118,12 +118,12 @@ function RouteComponent() {
     },
     {
       accessorKey: 'description',
-      header: 'Beskrywing',
+      header: 'Description',
       cell: ({ row }) => <div className='whitespace-pre-wrap'>{row.getValue('description') || 'N/A'}</div>,
     },
     {
       accessorKey: 'transactionDate',
-      header: 'Datum',
+      header: 'Date',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: 'date-range',
@@ -136,9 +136,9 @@ function RouteComponent() {
   return (
     <div className="container mx-auto py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">Transaksies</h1>
+        <h1 className="text-3xl font-bold">Transactions</h1>
         <p className="text-muted-foreground">
-          Bekyk alle finansiële transaksies
+          View all financial transactions
         </p>
       </div>
 
@@ -146,7 +146,7 @@ function RouteComponent() {
         data={filteredOutput} 
         dateKey={'transactionDate'} 
         enabledAggregations={['daily', 'hourly']}
-        valueKeys={[{ key: 'debit', label: 'Debiet (Koop) Transaksies' }, { key: 'credit', label: 'Krediet Transaksies' }]}
+        valueKeys={[{ key: 'debit', label: 'Debit (Purchase) Transactions' }, { key: 'credit', label: 'Credit Transactions' }]}
         chartType='histogram'
         filterState={filterState}
         setColumnFilters={setFilterState}
@@ -158,14 +158,14 @@ function RouteComponent() {
         enableSorting
         enableFiltering
         enableReporting
-        reportTitle='Transaksie Verslag'
-        reportFilename='transaksies'
+        reportTitle='Transaction Report'
+        reportFilename='transactions'
         pageSize={10}
         loading={isTransactionsLoading}
         onFilteredOutputChange={setFilteredOutput}
         emptyMessage="No transactions found."
         className="space-y-4"
-        searchPlaceholder="Soek transaksies..."
+        searchPlaceholder="Search transactions..."
         columnFilters={filterState}
         setColumnFilters={setFilterState}
       />

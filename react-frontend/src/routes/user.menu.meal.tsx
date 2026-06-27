@@ -1,4 +1,4 @@
-// src/routes/meal.tsx
+﻿// src/routes/meal.tsx
 import { createFileRoute, useSearch } from '@tanstack/react-router'
 import { MealScreen } from '@/components/menu/MealScreen'
 import { UserMenuApi } from '@/api'
@@ -23,8 +23,8 @@ function RouteComponent() {
   const menuAPI = auth.getApiClient(UserMenuApi)
 
   useEffect(() => {
-    if (mobileNavigation.title !== 'Spyskaart') {
-      mobileNavigation.setTitle('Spyskaart')
+    if (mobileNavigation.title !== 'Menu') {
+      mobileNavigation.setTitle('Menu')
     }
   }, [mobileNavigation])
   const { data: meal, isLoading } = useQuery({
@@ -39,3 +39,4 @@ function RouteComponent() {
 
   return <MealScreen meal={meal} isLoading={isLoading} />
 }
+

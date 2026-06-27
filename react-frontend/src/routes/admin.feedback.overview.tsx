@@ -30,26 +30,26 @@ function RouteComponent() {
       end: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), 23, 59, 59),
       previousStart: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 14),
       previousEnd: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 8, 23, 59, 59),
-      name: 'Laaste 7 dae',
-      contrastName: 'Vorige 7 dae',
+      name: 'Last 7 days',
+      contrastName: 'Previous 7 days',
     },
     {
       start: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 30),
       end: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), 23, 59, 59),
       previousStart: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 60),
       previousEnd: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 31, 23, 59, 59),
-      name: 'Laaste 30 dae',
-      contrastName: 'Vorige 30 dae',
+      name: 'Last 30 days',
+      contrastName: 'Previous 30 days',
     },
     {
       start: new Date(new Date().getFullYear(), 0, 1),
       end: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), 23, 59, 59),
-      name: 'Jaar tot datum',
+      name: 'Year to date',
     },
     {
       start: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
       end: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), 23, 59, 59),
-      name: 'Maand tot op datum',
+      name: 'Month to date',
     },
   ];
 
@@ -104,14 +104,14 @@ function RouteComponent() {
         end: dateRange.to,
         previousStart: undefined,
         previousEnd: undefined,
-        name: "Eie"
+        name: "Custom"
       });
     }
   }, [dateRange]);
 
   // Update date range when period changes
   useEffect(() => {
-    if (statisticPeriod.name !== "Eie") {
+    if (statisticPeriod.name !== "Custom") {
       setDateRange({
         from: statisticPeriod.start,
         to: statisticPeriod.end
@@ -127,7 +127,7 @@ function RouteComponent() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="md:col-span-1 space-y-4">
           <div>
-            <Label htmlFor="period">Periode</Label>
+            <Label htmlFor="period">Period</Label>
             <Select
               value={statisticPeriod.name}
               onValueChange={(value) => {
@@ -138,7 +138,7 @@ function RouteComponent() {
               }}
             >
               <SelectTrigger id="period">
-                <SelectValue placeholder="Kies 'n periode" />
+                <SelectValue placeholder="Select a period" />
               </SelectTrigger>
               <SelectContent>
                 {predefinedPeriods.map((period) => (
@@ -146,14 +146,14 @@ function RouteComponent() {
                     {period.name}
                   </SelectItem>
                 ))}
-                <SelectItem value="Eie">Eie</SelectItem>
+                <SelectItem value="Custom">Custom</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           {/* Calendar for custom date range */}
           <div>
-            <Label>Datum Reeks</Label>
+            <Label>Date Range</Label>
             <Calendar
               mode="range"
               selected={dateRange}
@@ -178,7 +178,7 @@ function RouteComponent() {
             />
           ) : (
             <div className="text-center py-12 text-muted-foreground">
-              Geen data beskikbaar vir die geselekteerde periode nie.
+              No data available for the selected period.
             </div>
           )}
         </div>

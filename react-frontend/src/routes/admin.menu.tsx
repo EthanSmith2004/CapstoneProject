@@ -8,8 +8,8 @@ export const Route = createFileRoute('/admin/menu')({
 function RouteComponent() {
   const navigation: TabItem[] = [
     { name: 'Items', href: '/admin/menu/items' },
-    { name: 'Spyskaart', href: '/admin/menu/menu' },
-    { name: 'Statistiek', href: '/admin/menu/stats' },
+    { name: 'Menu', href: '/admin/menu/menu' },
+    { name: 'Statistics', href: '/admin/menu/stats' },
   ]
   
   return (

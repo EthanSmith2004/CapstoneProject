@@ -32,7 +32,7 @@ function RouteComponent() {
   const columns: ColumnDef<OrderItemDTO>[] = [
     {
       accessorKey: 'id',
-      header: 'Verwysing',
+      header: 'Reference',
       meta: {
         filterVariant: 'numeric-range'
       },
@@ -47,14 +47,14 @@ function RouteComponent() {
     },
     {
       accessorKey: 'quantity',
-      header: 'Hoeveelheid',
+      header: 'Quantity',
       meta: {
         filterVariant: 'numeric-range'
       },
     },
     {
       accessorKey: 'deliveryDate',
-      header: 'Aflewering Datum',
+      header: 'Delivery Date',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: 'date-range'
@@ -94,7 +94,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'totalPrice',
-      header: 'Prys',
+      header: 'Price',
       filterFn: 'numericRange' as any,
       meta: {
         filterVariant: 'numeric-range'
@@ -106,9 +106,9 @@ function RouteComponent() {
   return (
     <div className="container mx-auto py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">Bestelling Geskiedenis</h1>
+        <h1 className="text-3xl font-bold">Order History</h1>
         <p className="text-muted-foreground">
-          Bekyk alle bestellings en hul status
+          View all orders and their status
         </p>
       </div>
 
@@ -118,10 +118,10 @@ function RouteComponent() {
         enableSorting
         enableFiltering
         enableSearching
-        searchPlaceholder="Soek bestellings..."
+        searchPlaceholder="Search orders..."
         pageSize={10}
         loading={orderHistoryLoading}
-        emptyMessage="Geen bestelling geskiedenis gevind nie."
+        emptyMessage="No order history found."
         className="space-y-4"
       />
     </div>

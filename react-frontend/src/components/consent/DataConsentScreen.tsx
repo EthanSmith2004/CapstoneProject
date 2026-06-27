@@ -14,19 +14,18 @@ export function DataConsentScreen() {
       return
     }
 
-  
     localStorage.setItem('dataConsentGiven', 'true')
     setShowSuccess(true)
   }
 
   return (
     <div className="min-h-screen bg-white pb-32 relative">
-      <AppBar title="Datagebruik" balance={1000} />
+      <AppBar title="Data Usage" balance={1000} />
 
       <div className="p-6 pt-24">
         <div className="border border-gray-300 rounded-xl p-4 bg-gray-50 shadow-sm">
           <p className="text-lg text-gray-800">
-            🔒 Ons versamel sekere persoonlike inligting om jou ervaring te verbeter. Deur voort te gaan, stem jy in tot die verwerking van jou data volgens ons privaatheidsbeleid.
+            We collect certain personal information to improve your experience. By continuing, you agree to the processing of your data according to our privacy policy.
           </p>
         </div>
 
@@ -39,14 +38,14 @@ export function DataConsentScreen() {
             className="accent-orange-600 w-5 h-5 border border-gray-400"
           />
           <label htmlFor="consent" className="text-gray-700 text-sm">
-            Ek stem in tot die verwerking van my persoonlike inligting <br />
-            <a href="/policy" className="text-blue-600 underline text-xs">Lees ons privaatheidsbeleid</a>
+            I agree to the processing of my personal information <br />
+            <a href="/policy" className="text-blue-600 underline text-xs">Read our privacy policy</a>
           </label>
         </div>
 
         {showError && (
           <div className="mt-4 text-red-600 bg-red-100 border border-red-400 rounded p-3">
-            🛑 Jy moet toestemming gee om voort te gaan.
+            You must give consent to continue.
           </div>
         )}
 
@@ -54,14 +53,13 @@ export function DataConsentScreen() {
           onClick={handleConsent}
           className="mt-8 w-full bg-orange-600 text-white py-3 rounded-full text-lg font-semibold shadow"
         >
-          Ek stem saam
+          I Agree
         </button>
       </div>
 
-      {/* ✅ Success Overlay */}
       {showSuccess && (
         <SuccessOverlay
-          message="Toestemming gestuur!"
+          message="Consent submitted!"
           redirectTo="/user/menu"
           delay={2500}
         />

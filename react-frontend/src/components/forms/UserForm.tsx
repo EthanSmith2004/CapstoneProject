@@ -18,12 +18,12 @@ export function UserForm({ onSubmit, defaultValues }: UserFormProps) {
 
   // Dynamic schema: password required for new users, optional for editing
   const formSchema = z.object({
-    firstName: z.string().min(1, 'Naam is vereist'),
-    lastName: z.string().min(1, 'Van is vereist'),
-    email: z.string().email('Ongeldige e-posadres'),
+    firstName: z.string().min(1, 'First name is required'),
+    lastName: z.string().min(1, 'Last name is required'),
+    email: z.string().email('Invalid email address'),
     password: isEditMode 
       ? z.string().optional().or(z.literal(''))
-      : z.string().min(6, 'Wagwoord moet ten minste 6 karakters wees'),
+      : z.string().min(6, 'Password must be at least 6 characters'),
     roles: z.array(z.nativeEnum(RolesEnum)).optional(),
     enabled: z.boolean().optional(),
     accountNonExpired: z.boolean().optional(),
@@ -52,7 +52,7 @@ export function UserForm({ onSubmit, defaultValues }: UserFormProps) {
           name="firstName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Naam</FormLabel>
+              <FormLabel>First Name</FormLabel>
               <FormControl>
                 <Input placeholder="John" {...field} />
               </FormControl>
@@ -65,7 +65,7 @@ export function UserForm({ onSubmit, defaultValues }: UserFormProps) {
           name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Van</FormLabel>
+              <FormLabel>Last Name</FormLabel>
               <FormControl>
                 <Input placeholder="Doe" {...field} />
               </FormControl>
@@ -78,7 +78,7 @@ export function UserForm({ onSubmit, defaultValues }: UserFormProps) {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>E-pos</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input placeholder="john.doe@example.com" {...field} />
               </FormControl>
@@ -91,11 +91,11 @@ export function UserForm({ onSubmit, defaultValues }: UserFormProps) {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Wagwoord {isEditMode && '(opsioneel)'}</FormLabel>
+              <FormLabel>Password {isEditMode && '(optional)'}</FormLabel>
               <FormControl>
                 <Input 
                   type="password" 
-                  placeholder={isEditMode ? 'Laat leeg om nie te verander nie...' : 'Voer wagwoord in...'} 
+                  placeholder={isEditMode ? 'Leave blank to keep the current password...' : 'Enter a password...'} 
                   {...field} 
                 />
               </FormControl>
@@ -108,7 +108,7 @@ export function UserForm({ onSubmit, defaultValues }: UserFormProps) {
           name="roles"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Rolle</FormLabel>
+              <FormLabel>Roles</FormLabel>
               <FormControl>
                 <div className="flex flex-col gap-2">
                   {Object.values(RolesEnum).map((role) => (
@@ -143,13 +143,13 @@ export function UserForm({ onSubmit, defaultValues }: UserFormProps) {
                 <Checkbox checked={field.value} onCheckedChange={field.onChange} />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <FormLabel>Aktief</FormLabel>
+                <FormLabel>Active</FormLabel>
               </div>
             </FormItem>
           )}
         />
         </div>
-        <Button type="submit">Dien in</Button>
+        <Button type="submit">Save</Button>
       </form>
     </Form>
   );

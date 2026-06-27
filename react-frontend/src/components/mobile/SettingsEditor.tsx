@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -178,9 +178,9 @@ export function SettingsEditor({
   if (!item) {
     return (
         <div>
-          <p className="text-red-600">Instelling nie gevind nie.</p>
+          <p className="text-red-600">Setting not found.</p>
           <Button onClick={handleCancel} className="mt-4">
-            Terug
+            Back
           </Button>
         </div>
     );
@@ -198,7 +198,7 @@ export function SettingsEditor({
                   type="password"
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
-                  placeholder="Voer nuwe wagwoord in"
+                  placeholder="Enter a new password"
                 />
               </div>
             </div>
@@ -211,7 +211,7 @@ export function SettingsEditor({
               type="text"
               value={value}
               onChange={(e) => setValue(e.target.value)}
-              placeholder={`Voer ${item.label.toLowerCase()} in`}
+              placeholder={`Enter ${item.label.toLowerCase()}`}
             />
           </div>
         );
@@ -231,7 +231,7 @@ export function SettingsEditor({
               setValue(selectedOption);
             }}>
               <SelectTrigger>
-                <SelectValue placeholder={`Kies ${item.label.toLowerCase()}`} />
+                <SelectValue placeholder={`Select ${item.label.toLowerCase()}`} />
               </SelectTrigger>
               <SelectContent>
                 {selectOptions.map((option: any) => (
@@ -284,7 +284,7 @@ export function SettingsEditor({
                 checked={preferences.hideAllergyDishes}
                 onCheckedChange={checked => handlePreferencesChange('hideAllergyDishes', !!checked)}
               />
-              <Label htmlFor="hideAllergyDishes">Versteek geregte met my allergieë</Label>
+              <Label htmlFor="hideAllergyDishes">Hide dishes with my allergies</Label>
             </div>
             <div className="mb-4 flex items-center space-x-2">
               <Checkbox
@@ -292,7 +292,7 @@ export function SettingsEditor({
                 checked={preferences.hideDislikedDishes}
                 onCheckedChange={checked => handlePreferencesChange('hideDislikedDishes', !!checked)}
               />
-              <Label htmlFor="hideDislikedDishes">Versteek onaangename geregte</Label>
+              <Label htmlFor="hideDislikedDishes">Hide disliked dishes</Label>
             </div>
             <div className="mb-4 flex items-center space-x-2">
               <Checkbox
@@ -300,7 +300,7 @@ export function SettingsEditor({
                 checked={preferences.sortByLikedDishes}
                 onCheckedChange={checked => handlePreferencesChange('sortByLikedDishes', !!checked)}
               />
-              <Label htmlFor="sortByLikedDishes">Sorteer volgens gunsteling geregte</Label>
+              <Label htmlFor="sortByLikedDishes">Sort by liked dishes</Label>
             </div>
             <div className="mb-4 flex items-center space-x-2">
               <Checkbox
@@ -308,7 +308,7 @@ export function SettingsEditor({
                 checked={preferences.favTabDefault}
                 onCheckedChange={checked => handlePreferencesChange('favTabDefault', !!checked)}
               />
-              <Label htmlFor="favTabDefault">Stel gunsteling-oortjie as verstek</Label>
+              <Label htmlFor="favTabDefault">Set favourites tab as default</Label>
             </div>
             <div className="flex gap-2 pt-4">
               <Button 
@@ -316,14 +316,14 @@ export function SettingsEditor({
                 disabled={isLoading}
                 className="flex-1 bg-orange-600 hover:bg-orange-700"
               >
-                {isLoading ? 'Stoor...' : 'Stoor'}
+                {isLoading ? 'Saving...' : 'Save'}
               </Button>
               <Button 
                 variant="outline" 
                 onClick={handleCancel}
                 className="flex-1"
               >
-                Kanselleer
+                Cancel
               </Button>
             </div>
           </div>
@@ -332,14 +332,14 @@ export function SettingsEditor({
       default:
         return (
           <div>
-            <p className="text-red-600">Instelling tipe nie ondersteun nie: {item.type}</p>
+            <p className="text-red-600">Unsupported setting type: {item.type}</p>
           </div>
         );
     }
   };
 
   if (isUserLoading || !userProfile) {
-    return <LoadScreen message="Laai Gebruikers Profiel..."/>;
+    return <LoadScreen message="Loading User Profile..."/>;
   }
 
   return (
@@ -354,27 +354,27 @@ export function SettingsEditor({
             disabled={isLoading}
             className="flex-1 bg-orange-600 hover:bg-orange-700"
           >
-            {isLoading ? 'Stoor...' : 'Stoor'}
+            {isLoading ? 'Saving...' : 'Save'}
           </Button>
           <Button 
             variant="outline" 
             onClick={handleCancel}
             className="flex-1"
           >
-            Kanselleer
+            Cancel
           </Button>
         </div>
       )}
       {showSuccess && (
         <SuccessOverlay 
-          message="Instelling suksesvol opgepdateer!"
+          message="Setting updated successfully!"
           redirectTo="/user/profile"
         />
       )}
 
       {showFailure && (
         <FailureOverlay 
-          message="Fout tydens opdatering. Probeer asseblief weer."
+          message="Error while updating. Please try again."
           onClose={() => setShowFailure(false)}
         />
       )}

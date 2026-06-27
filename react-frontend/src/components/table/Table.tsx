@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import {
   type ColumnDef,
   flexRender,
@@ -319,10 +319,10 @@ export function DataTable<TData, TValue>({
       const { columns: exportColumns, rows: exportRows } = exportTableData(table)
       const cleanedRows = prepareDataForExport(exportRows)
       generateCSVReport(exportColumns, cleanedRows, reportFilename)
-      toast.success('CSV verslag suksesvol afgelaai')
+      toast.success('CSV report downloaded successfully')
     } catch (error) {
       console.error('CSV export error:', error)
-      toast.error('Kon nie CSV verslag genereer nie')
+      toast.error('Could not generate CSV report')
     }
   }
 
@@ -331,10 +331,10 @@ export function DataTable<TData, TValue>({
       const { columns: exportColumns, rows: exportRows } = exportTableData(table)
       const cleanedRows = prepareDataForExport(exportRows)
       generatePDFReport(exportColumns, cleanedRows, reportFilename, reportTitle)
-      toast.success('PDF verslag suksesvol afgelaai')
+      toast.success('PDF report downloaded successfully')
     } catch (error) {
       console.error('PDF export error:', error)
-      toast.error('Kon nie PDF verslag genereer nie')
+      toast.error('Could not generate PDF report')
     }
   }
 
@@ -379,7 +379,7 @@ export function DataTable<TData, TValue>({
             className="gap-2"
           >
             <FileText className="h-4 w-4" />
-            PDF Verslag
+            PDF Report
           </Button>
           <Button 
             variant='outline' 
@@ -387,7 +387,7 @@ export function DataTable<TData, TValue>({
             className="gap-2"
           >
             <FileDown className="h-4 w-4" />
-            CSV Verslag
+            CSV Report
           </Button>
         </div>
       )}
@@ -520,12 +520,12 @@ export function DataTable<TData, TValue>({
       {enablePagination && (
         <div className="flex items-center justify-between space-x-2 py-4">
           <div className="text-sm text-muted-foreground">
-            Vertoon {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1} na{' '}
+            Showing {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1} to{' '}
             {Math.min(
               (table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize,
               table.getFilteredRowModel().rows.length
             )}{' '}
-            van {table.getFilteredRowModel().rows.length} rekords
+            of {table.getFilteredRowModel().rows.length} records
           </div>
           <div className="flex items-center space-x-2">
             <Button
@@ -534,12 +534,12 @@ export function DataTable<TData, TValue>({
               onClick={() => table.previousPage()}
               disabled={!table.getCanPreviousPage()}
             >
-              Vorige
+              Previous
             </Button>
             <div className="flex items-center space-x-1">
-              <span className="text-sm">Bladsy</span>
+              <span className="text-sm">Page</span>
               <span className="text-sm font-medium">
-                {table.getState().pagination.pageIndex + 1} van {table.getPageCount()}
+                {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
               </span>
             </div>
             <Button
@@ -548,7 +548,7 @@ export function DataTable<TData, TValue>({
               onClick={() => table.nextPage()}
               disabled={!table.getCanNextPage()}
             >
-              Volgende
+              Next
             </Button>
           </div>
         </div>
@@ -558,4 +558,5 @@ export function DataTable<TData, TValue>({
     </div>
   )
 }
+
 

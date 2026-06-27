@@ -25,13 +25,13 @@ import { useAuth } from '@/contexts/AuthContext';
 
 const dashboardLinks = [
 {
-  label: 'Gebruikersbestuur',
+  label: 'User Management',
   icon: Users,
   link: '/admin/user',
   rolePredicate: (roles: String[]) => roles.includes('ROLE_USER_ADMIN'),
 },
 {
-  label: 'Spyskaartbestuur',
+  label: 'Menu Management',
   icon: Menu,
   link: '/admin/menu',
   rolePredicate: (roles: String[]) => roles.includes('ROLE_MENU_ADMIN'),
@@ -43,31 +43,31 @@ const dashboardLinks = [
   rolePredicate: (roles: String[]) => roles.includes('ROLE_FINANCIAL_ADMIN'),
 },
 {
-  label: 'Instellings',
+  label: 'Settings',
   icon: Settings,
   link: '/admin/settings',
   rolePredicate: (roles: String[]) => roles.includes('ROLE_SYSTEM_ADMIN'),
 },
 {
-  label: 'Terugvoer Paneelbord',
+  label: 'Feedback Dashboard',
   icon: MessageSquareMore,
   link: '/admin/feedback',
   rolePredicate: (roles: String[]) => roles.includes('ROLE_FEEDBACK_ADMIN'),
 },
 {
-  label: 'Oudit Log',
+  label: 'Audit Log',
   icon: NotebookText,
   link: '/admin/audit',
   rolePredicate: (roles: String[]) => roles.includes('ROLE_AUDIT_ADMIN'),
 },
 {
-  label: 'Bestellings',
+  label: 'Orders',
   icon: ArrowUpDown,
   link: '/admin/order',
   rolePredicate: (roles: String[]) => roles.includes('ROLE_ORDER_ADMIN'),
 },
 {
-  label: 'Aflewerings',
+  label: 'Deliveries',
   icon: TruckIcon,
   link: '/admin/delivery',
   rolePredicate: (roles: String[]) => roles.includes('ROLE_DELIVERY_ADMIN'),
@@ -140,7 +140,7 @@ export function AdminDashboard() {
                         w-4 
                         text-red-600 mr-3" 
                         />
-                        Administrasie Portaal
+                        Administration Portal
                       </div>
                     </h2>
                 </div>
@@ -224,7 +224,7 @@ export function AdminDashboard() {
                         }}
                     >
                         <LogOut className="h-5 w-5 mr-2" />
-                        Teken Uit
+                        Sign Out
                     </Button>
                 </div>
                 }

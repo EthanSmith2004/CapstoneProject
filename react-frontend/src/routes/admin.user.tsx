@@ -67,10 +67,10 @@ function RouteComponent() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-users'] })
       setIsDialogOpen(false)
-      toast.success('Gebruiker suksesvol geskep')
+      toast.success('User created successfully')
     },
     onError: (error: any) => {
-      toast.error(error.response?.data?.message || 'Kon nie gebruiker skep nie')
+      toast.error(error.response?.data?.message || 'Could not create user')
     },
   })
 
@@ -79,10 +79,10 @@ function RouteComponent() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-users'] })
       setIsDialogOpen(false)
-      toast.success('Gebruiker suksesvol opgedateer')
+      toast.success('User updated successfully')
     },
     onError: (error: any) => {
-      toast.error(error.response?.data?.message || 'Kon nie gebruiker opdateer nie')
+      toast.error(error.response?.data?.message || 'Could not update user')
     },
   })
 
@@ -104,7 +104,7 @@ function RouteComponent() {
     },
     {
       id: 'user',
-      header: 'Gebruiker',
+      header: 'User',
       accessorFn: (row) => `${row.firstName} ${row.lastName} ${row.email}`,
       cell: ({ row }) => {
         const user = row.original;
@@ -120,7 +120,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'roles',
-      header: 'Rolle',
+      header: 'Roles',
       enableSorting: false,
       filterFn: 'arrMultiSelect' as any,
       meta: {
@@ -147,18 +147,18 @@ function RouteComponent() {
     },
     {
       id: 'enabled',
-      accessorFn: (row) => row.enabled ? 'Aktief' : 'Onaktief',
+      accessorFn: (row) => row.enabled ? 'Active' : 'Inactive',
       header: 'Status',
       meta: {
         filterVariant: 'multi-select',
         filterOptions: [
           {
-            label: "Aktief",
-            value: "Aktief"
+            label: "Active",
+            value: "Active"
           },
           {
-            label: "Onaktief",
-            value: "Onaktief"
+            label: "Inactive",
+            value: "Inactive"
           }
         ]
       },
@@ -166,14 +166,14 @@ function RouteComponent() {
         const enabled = row.getValue('enabled') as boolean | undefined
         return (
           <Badge variant={enabled ? 'default' : 'destructive'}>
-            {enabled ? 'Aktief' : 'Onaktief'}
+            {enabled ? 'Active' : 'Inactive'}
           </Badge>
         )
       },
     },
     {
       accessorKey: 'createdAt',
-      header: 'Geskep',
+      header: 'Created',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: "date-range"
@@ -182,7 +182,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'updatedAt',
-      header: 'Opgedateer',
+      header: 'Updated',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: "date-range"
@@ -191,7 +191,7 @@ function RouteComponent() {
     },
     {
       id: 'actions',
-      header: 'Aksies',
+      header: 'Actions',
       cell: ({ row }) => {
         const rowUser = row.original
         const isCurrentUser = rowUser.email === user?.email
@@ -251,20 +251,20 @@ function RouteComponent() {
     <div className="container mx-auto py-6">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Gebruiker Bestuur</h1>
+          <h1 className="text-3xl font-bold">User Management</h1>
           <p className="text-muted-foreground">
-            Bestuur gebruiker rekeninge, rolle en toestemmings
+            Manage user accounts, roles, and permissions
           </p>
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button onClick={() => setSelectedUser(undefined)}>Nuwe Gebruiker</Button>
+            <Button onClick={() => setSelectedUser(undefined)}>New User</Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>{selectedUser ? 'Wysig Gebruiker' : 'Nuwe Gebruiker'}</DialogTitle>
+              <DialogTitle>{selectedUser ? 'Edit User' : 'New User'}</DialogTitle>
               <DialogDescription>
-                {selectedUser ? 'Wysig die besonderhede van die gebruiker.' : 'Voeg \'n nuwe gebruiker by.'}
+                {selectedUser ? 'Edit the user details.' : 'Add a new user.'}
               </DialogDescription>
             </DialogHeader>
             <UserForm onSubmit={handleFormSubmit} defaultValues={selectedUser} />

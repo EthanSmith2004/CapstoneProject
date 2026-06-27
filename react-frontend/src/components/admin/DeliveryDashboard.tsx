@@ -37,11 +37,11 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
     },
     onSuccess: (data) => {
       setCurrentUser(data)
-      toast.success(`Gebruiker gevind: ${data.firstName} ${data.lastName}`)
+      toast.success(`User found: ${data.firstName} ${data.lastName}`)
       playSuccessSound()
     },
     onError: (error: any) => {
-      toast.error(error.response?.data?.message || 'Gebruiker nie gevind nie')
+      toast.error(error.response?.data?.message || 'User not found')
       playErrorSound()
       setUserBarcode('')
       inputRef.current?.focus()
@@ -59,7 +59,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
       refetchStats()
 
       if (data.remainingItems === 0) {
-        toast.success('Alle items afgelewer! ✓', {
+        toast.success('All items delivered! ✓', {
           duration: 3000,
         })
         setCurrentUser(null)
@@ -73,7 +73,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
       }
     },
     onError: (error: any) => {
-      toast.error(error.response?.data?.message || 'Kon nie item aflewer nie')
+      toast.error(error.response?.data?.message || 'Could not deliver item')
       playErrorSound()
     },
   })
@@ -165,27 +165,27 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6 flex items-center gap-2">
         <TruckIcon className="h-8 w-8" />
-          Aflewering
+          Delivery
       </h1>
 
       {/* Statistics */}
       {stats && (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <StatCard label="Totaal Vandag" value={stats.totalItemsToday ?? 0} color="blue" icon={Package} />
+          <StatCard label="Total Today" value={stats.totalItemsToday ?? 0} color="blue" icon={Package} />
           <StatCard
-            label="In Aflewering"
+            label="In Delivery"
             value={stats.itemsInDelivery ?? 0}
             color="orange"
             icon={TruckIcon}
           />
           <StatCard
-            label="Afgelewer"
+            label="Delivered"
             value={stats.itemsDelivered ?? 0}
             color="green"
             icon={CheckCircle}
           />
           <StatCard
-            label="Voltooi"
+            label="Completed"
             value={`${stats.completionPercentage?.toFixed(0) ?? 0}%`}
             color="purple"
           />
@@ -196,7 +196,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
       <div className="bg-white rounded-lg shadow-lg p-6 mb-6 border-2 border-blue-200">
         <div className="flex items-center justify-between mb-3">
           <Label htmlFor="barcode-input" className="block text-base font-medium">
-            Skandeer Gebruiker Kode
+            Scan User Code
           </Label>
           <Button
             type="button"
@@ -208,12 +208,12 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
             {scanMode === 'manual' ? (
               <>
                 <Camera className="h-4 w-4" />
-                Gebruik Kamera
+                Use Camera
               </>
             ) : (
               <>
                 <Keyboard className="h-4 w-4" />
-                Gebruik Sleutelbord
+                Use Keyboard
               </>
             )}
           </Button>
@@ -228,7 +228,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
                 type="text"
                 value={userBarcode}
                 onChange={(e) => setUserBarcode(e.target.value)}
-                placeholder="Skandeer of tik barcode..."
+                placeholder="Scan or type barcode..."
                 className="flex-1 text-lg h-12"
                 disabled={scanUserMutation.isPending}
                 autoFocus
@@ -243,15 +243,15 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
                 {scanUserMutation.isPending ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Skandeer...
+                    Scanning...
                   </>
                 ) : (
-                  'Soek'
+                  'Search'
                 )}
               </Button>
             </div>
             <p className="text-sm text-gray-500 mt-2">
-              Skandeer die gebruiker se barcode om hul hangende items te sien
+              Scan the user's barcode to see their pending items
             </p>
           </form>
         ) : (
@@ -267,7 +267,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
                   }}
                   onError={(error: any) => {
                     console.error('QR Scanner Error:', error)
-                    toast.error('Kamera fout: ' + (error?.message || 'Onbekende fout'))
+                    toast.error('Camera error: ' + (error?.message || 'Unknown error'))
                   }}
                   constraints={{
                     facingMode: 'environment', // Use back camera on mobile
@@ -282,7 +282,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
               )}
             </div>
             <p className="text-sm text-gray-500 text-center">
-              Posisioneer die QR kode binne die kamera se blikveld
+              Position the QR code within the camera's field of view
             </p>
           </div>
         )}
@@ -314,12 +314,12 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
             </div>
           </div>
 
-          <h3 className="font-semibold mb-3 text-lg">Items om af te lewer:</h3>
+          <h3 className="font-semibold mb-3 text-lg">Items to deliver:</h3>
 
           {currentUser.pendingItems?.length === 0 ? (
             <div className="text-center py-8 text-gray-500">
               <CheckCircle className="h-16 w-16 mx-auto mb-3 text-green-500" />
-              <p>Geen hangende items nie</p>
+              <p>No pending items</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -331,7 +331,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
                   <div className="flex-1">
                     <p className="font-medium text-lg">{item.name}</p>
                     <p className="text-sm text-gray-600">
-                      Hoeveelheid: {item.quantity} × R{item.price?.toFixed(2)} = R
+                      Quantity: {item.quantity} × R{item.price?.toFixed(2)} = R
                       {item.totalPrice?.toFixed(2)}
                     </p>
                     {item.description && (
@@ -349,7 +349,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
                     ) : (
                       <>
                         <CheckCircle className="mr-2 h-5 w-5" />
-                        Afgelewer
+                        Delivered
                       </>
                     )}
                   </Button>
@@ -368,7 +368,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
             className="mt-6 w-full"
             size="lg"
           >
-            Kanselleer / Nuwe Skandering
+            Cancel / New Scan
           </Button>
         </div>
       )}
@@ -377,7 +377,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({ deliveryAp
       {!currentUser && !scanUserMutation.isPending && (
         <div className="text-center py-12 text-gray-400">
           <Package className="h-24 w-24 mx-auto mb-4 opacity-50" />
-          <p className="text-lg">Skandeer 'n gebruiker se barcode om te begin</p>
+          <p className="text-lg">Scan a user's barcode to begin</p>
         </div>
       )}
     </div>

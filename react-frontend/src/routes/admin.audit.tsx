@@ -7,9 +7,9 @@ export const Route = createFileRoute('/admin/audit')({
 
 function RouteComponent() {  
   const navigation: TabItem[] = [
-    { name: 'Aanteken Log', href: '/admin/audit/login' },
-    { name: 'Gebruiker Log', href: '/admin/audit/user' },
-    { name: 'Krediet Laai Transaksie Log', href: '/admin/audit/transaction' },
+    { name: 'Login Log', href: '/admin/audit/login' },
+    { name: 'User Log', href: '/admin/audit/user' },
+    { name: 'Credit Load Transaction Log', href: '/admin/audit/transaction' },
   ]
 
   return (

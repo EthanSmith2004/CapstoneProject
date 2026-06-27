@@ -27,7 +27,7 @@ function RouteComponent() {
   const columns: ColumnDef<UserEventAuditDTO>[] = [
     {
       accessorKey: 'timestamp',
-      header: 'Tyd',
+      header: 'Time',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: "date-range"
@@ -37,7 +37,7 @@ function RouteComponent() {
     {
       id: 'user',
       accessorFn: (row) => `${row?.user?.firstName} ${row?.user?.lastName} (${row?.user?.email})`,
-      header: 'Gebruiker',
+      header: 'User',
       cell: ({ row }) => {
         const user = row.original.user
         if (!user) return <div>N/A</div>
@@ -54,7 +54,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'type',
-      header: 'Gebeurtenis Tipe',
+      header: 'Event Type',
       cell: ({ row }) => {
         const type = row.getValue('type') as string
         const isLogin = type?.includes('LOGIN')
@@ -70,9 +70,9 @@ function RouteComponent() {
   return (
     <div className="container mx-auto py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">Aanteken Oudit Logboek</h1>
+        <h1 className="text-3xl font-bold">Login Audit Log</h1>
         <p className="text-muted-foreground">
-          Bekyk alle aanteken pogings en aktiwiteite
+          View all login attempts and activity
         </p>
       </div>
 
@@ -84,9 +84,9 @@ function RouteComponent() {
         pageSize={10}
         loading={loginLogLoading}
         enableReporting
-        reportTitle='Aanteken Oudit Verslag'
-        reportFilename='aanteken-oudit'
-        emptyMessage="Geen aanteken logboeke gevind nie."
+        reportTitle='Login Audit Report'
+        reportFilename='login-audit'
+        emptyMessage="No login audit logs found."
         className="space-y-4"
       />
     </div>

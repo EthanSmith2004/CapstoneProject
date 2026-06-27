@@ -7,16 +7,16 @@ export const Route = createFileRoute('/admin/feedback')({
 
 function RouteComponent() {
   const navigation: TabItem[] = [
-    { name: 'Oorsig', href: '/admin/feedback/overview' },
-    { name: 'Lys', href: '/admin/feedback/list' },
+    { name: 'Overview', href: '/admin/feedback/overview' },
+    { name: 'List', href: '/admin/feedback/list' },
   ]
 
   return (
     <div className="container mx-auto py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">Terugvoer</h1>
+        <h1 className="text-3xl font-bold">Feedback</h1>
         <p className="text-muted-foreground">
-          Bekyk statistieke en gebruikersterugvoer op spyskaartitems
+          View statistics and user feedback on menu items
         </p>
       </div>
       

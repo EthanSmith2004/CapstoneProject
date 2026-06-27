@@ -13,22 +13,22 @@ import { useAuth } from '../../contexts/AuthContext'
 const registerSchema = z.object({
   firstName: z
     .string()
-    .min(1, 'Naam word versoek'),
+    .min(1, 'First name is required'),
   lastName: z
     .string()
-    .min(1, 'Van word versoek'),
+    .min(1, 'Last name is required'),
   email: z
     .string()
-    .min(1, 'E-pos word versoek')
-    .email('E-pos moet geldig wees'),
+    .min(1, 'Email is required')
+    .email('Email must be valid'),
   password: z
     .string()
-    .min(6, 'Wagwoord moet ten minste 6 karakters bevat'),
+    .min(6, 'Password must be at least 6 characters'),
   confirmPassword: z
     .string()
-    .min(1, 'Bevestig asseblief jou wagwoord')
+    .min(1, 'Please confirm your password')
 }).refine((data) => data.password === data.confirmPassword, {
-  message: "Wagwoorde stem nie ooreen nie",
+  message: "Passwords do not match",
   path: ["confirmPassword"]
 })
 
@@ -49,7 +49,7 @@ export function RegisterForm() {
     onSubmit: async ({ value }) => {
       const validation = registerSchema.safeParse(value)
       if (!validation.success) {
-        throw new Error('Validasie het misluk')
+        throw new Error('Validation failed')
       }
       
       try {
@@ -79,10 +79,10 @@ export function RegisterForm() {
                                 font-bold 
                                 text-center"
           >
-            Registrasie
+            Register
           </CardTitle>
           <CardDescription className="text-center">
-            Voer jou inligting in om 'n profiel te skep
+            Enter your details to create an account
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -101,7 +101,7 @@ export function RegisterForm() {
                   onChange: ({ value }) => {
                     const result = z
                       .string()
-                      .min(1, 'Naam word versoek')
+                      .min(1, 'First name is required')
                       .safeParse(value)
                     return result.success ? undefined : result.error.issues[0]?.message
                   }
@@ -109,14 +109,14 @@ export function RegisterForm() {
               >
                 {(field) => (
                   <div className="space-y-2">
-                    <Label htmlFor="firstName">Naam</Label>
+                    <Label htmlFor="firstName">First Name</Label>
                     <Input
                       id="firstName"
                       name={field.name}
                       value={field.state.value}
                       onBlur={field.handleBlur}
                       onChange={(e) => field.handleChange(e.target.value)}
-                      placeholder="Voer jou naam in"
+                      placeholder="Enter your first name"
                       autoComplete="name"
                     />
                     {field.state.meta.errors.length > 0 && (
@@ -136,7 +136,7 @@ export function RegisterForm() {
                   onChange: ({ value }) => {
                     const result = z
                       .string()
-                      .min(1, 'Van word versoek')
+                      .min(1, 'Last name is required')
                       .safeParse(value)
                     return result.success ? undefined : result.error.issues[0]?.message
                   }
@@ -144,14 +144,14 @@ export function RegisterForm() {
               >
                 {(field) => (
                   <div className="space-y-2">
-                    <Label htmlFor="lastName">Van</Label>
+                    <Label htmlFor="lastName">Last Name</Label>
                     <Input
                       id="lastName"
                       name={field.name}
                       value={field.state.value}
                       onBlur={field.handleBlur}
                       onChange={(e) => field.handleChange(e.target.value)}
-                      placeholder="Voer jou van in"
+                      placeholder="Enter your last name"
                       autoComplete="surname"
                     />
                     {field.state.meta.errors.length > 0 && (
@@ -171,8 +171,8 @@ export function RegisterForm() {
                   onChange: ({ value }) => {
                     const result = z
                       .string()
-                      .min(1, 'E-pos word versoek')
-                      .email('E-pos moet geldig wees')
+                      .min(1, 'Email is required')
+                      .email('Email must be valid')
                       .safeParse(value)
                     return result.success ? undefined : result.error.issues[0]?.message
                   }
@@ -180,7 +180,7 @@ export function RegisterForm() {
               >
                 {(field) => (
                   <div className="space-y-2">
-                    <Label htmlFor="email">E-pos</Label>
+                    <Label htmlFor="email">Email</Label>
                     <Input
                       id="email"
                       name={field.name}
@@ -188,7 +188,7 @@ export function RegisterForm() {
                       value={field.state.value}
                       onBlur={field.handleBlur}
                       onChange={(e) => field.handleChange(e.target.value)}
-                      placeholder="Voer jou e-pos in"
+                      placeholder="Enter your email"
                       autoComplete="email"
                     />
                     {field.state.meta.errors.length > 0 && (
@@ -208,7 +208,7 @@ export function RegisterForm() {
                   onChange: ({ value }) => {
                     const result = z
                       .string()
-                      .min(6, 'Wagwoord moet ten minste 6 karakters bevat')
+                      .min(6, 'Password must be at least 6 characters')
                       .safeParse(value)
                     return result.success ? undefined : result.error.issues[0]?.message
                   }
@@ -216,7 +216,7 @@ export function RegisterForm() {
               >
                 {(field) => (
                   <div className="space-y-2">
-                    <Label htmlFor="password">Wagwoord</Label>
+                    <Label htmlFor="password">Password</Label>
                     <div className="relative">
                       <Input
                         id="password"
@@ -225,7 +225,7 @@ export function RegisterForm() {
                         value={field.state.value}
                         onBlur={field.handleBlur}
                         onChange={(e) => field.handleChange(e.target.value)}
-                        placeholder="Skep jou wagwoord"
+                        placeholder="Create your password"
                         autoComplete="new-password"
                         className="pr-10"
                       />
@@ -258,7 +258,7 @@ export function RegisterForm() {
                   onChange: ({ value }) => {
                     const password = form.getFieldValue('password')
                     if (value !== password) {
-                      return "Wagwoorde stem nie ooreen nie"
+                      return "Passwords do not match"
                     }
                     return undefined
                   }
@@ -266,7 +266,7 @@ export function RegisterForm() {
               >
                 {(field) => (
                   <div className="space-y-2">
-                    <Label htmlFor="confirmPassword">Bevestig Wagwoord</Label>
+                    <Label htmlFor="confirmPassword">Confirm Password</Label>
                     <div className="relative">
                       <Input
                         id="confirmPassword"
@@ -275,7 +275,7 @@ export function RegisterForm() {
                         value={field.state.value}
                         onBlur={field.handleBlur}
                         onChange={(e) => field.handleChange(e.target.value)}
-                        placeholder="Bevestig jou wagwoord"
+                        placeholder="Confirm your password"
                         autoComplete="new-password"
                         className="pr-10"
                       />
@@ -318,19 +318,19 @@ export function RegisterForm() {
                   {(isSubmitting || isLoading) ? (
                     <>
                       <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-white" />
-                      Profiel word geskep...
+                      Creating account...
                     </>
                   ) : (
                     <>
                       <UserPlus className="mr-2 h-4 w-4" />
-                      Skep Profiel
+                      Create Account
                     </>
                   )}
                 </Button>
               )}
             </form.Subscribe>            
             <div className="text-center text-sm">
-              <span className="text-gray-600">Het klaar 'n profiel? </span>
+              <span className="text-gray-600">Already have an account? </span>
               <button
                 type="button"
                 onClick={() => window.location.href = '/login'}
@@ -338,7 +338,7 @@ export function RegisterForm() {
                           text-blue-600
                           hover:text-blue-500"
               >
-                Teken in
+                Sign in
               </button>
             </div>
           </form>

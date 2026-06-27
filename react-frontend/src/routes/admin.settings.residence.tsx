@@ -63,7 +63,7 @@ function ResidenceForm({
           name="residence"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Koshuis Naam</FormLabel>
+              <FormLabel>Residence Name</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -72,7 +72,7 @@ function ResidenceForm({
           )}
         />
         <Button type="submit" className="w-full">
-          {defaultValues ? 'Opdateer' : 'Skep'}
+          {defaultValues ? 'Update' : 'Create'}
         </Button>
       </form>
     </Form>
@@ -99,7 +99,7 @@ function RouteComponent() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-residences'] })
       setIsDialogOpen(false)
-      toast.success('Die koshuis is suksesvol geskep.');
+      toast.success('The residence was created successfully.');
     },
   })
 
@@ -112,7 +112,7 @@ function RouteComponent() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-residences'] })
       setIsDialogOpen(false)
-      toast.success('Die koshuis is suksesvol opgedateer.');
+      toast.success('The residence was updated successfully.');
     },
   })
 
@@ -120,7 +120,7 @@ function RouteComponent() {
     mutationFn: (id: number) => apiClient._delete(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin-residences'] })
-      toast.success('Die koshuis is suksesvol verwyder.');
+      toast.success('The residence was deleted successfully.');
     },
   })
 
@@ -129,7 +129,7 @@ function RouteComponent() {
   const columns: ColumnDef<ResidenceEntity>[] = [
     {
       accessorKey: 'residence',
-      header: 'Koshuis',
+      header: 'Residence',
       meta: {
         filterVariant: 'string'
       },
@@ -137,7 +137,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'createdAt',
-      header: 'Geskep',
+      header: 'Created',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: 'date-range'
@@ -146,7 +146,7 @@ function RouteComponent() {
     },
     {
       accessorKey: 'updatedAt',
-      header: 'Opgedateer',
+      header: 'Updated',
       filterFn: 'dateRange' as any,
       meta: {
         filterVariant: 'date-range'
@@ -155,7 +155,7 @@ function RouteComponent() {
     },
     {
       id: 'actions',
-      header: 'Aksies',
+      header: 'Actions',
       cell: ({ row }) => {
         const residence = row.original
         return (
@@ -188,7 +188,7 @@ function RouteComponent() {
   }
 
   const handleDeleteResidence = (residence: ResidenceEntity) => {
-    if (confirm(`Is jy seker jy wil die koshuis "${residence.residence}" verwyder?`)) {
+    if (confirm(`Are you sure you want to delete the residence "${residence.residence}"?`)) {
       deleteResidenceMutation.mutate(residence.id!)
     }
   }
@@ -205,18 +205,18 @@ function RouteComponent() {
     <div className="container mx-auto py-6">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Koshuis Bestuur</h1>
-          <p className="text-muted-foreground">Bestuur koshuise</p>
+          <h1 className="text-3xl font-bold">Residence Management</h1>
+          <p className="text-muted-foreground">Manage residences</p>
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button onClick={() => setSelectedResidence(undefined)}>Nuwe Koshuis</Button>
+            <Button onClick={() => setSelectedResidence(undefined)}>New Residence</Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>{selectedResidence ? 'Wysig Koshuis' : 'Nuwe Koshuis'}</DialogTitle>
+              <DialogTitle>{selectedResidence ? 'Edit Residence' : 'New Residence'}</DialogTitle>
               <DialogDescription>
-                {selectedResidence ? 'Wysig die besonderhede van die koshuis.' : 'Voeg \'n nuwe koshuis by.'}
+                {selectedResidence ? 'Edit the residence details.' : 'Add a new residence.'}
               </DialogDescription>
             </DialogHeader>
             <ResidenceForm onSubmit={handleFormSubmit} defaultValues={selectedResidence} />
@@ -230,10 +230,10 @@ function RouteComponent() {
         enableSorting
         enableFiltering
         enableSearching
-        searchPlaceholder="Soek koshuise..."
+        searchPlaceholder="Search residences..."
         pageSize={10}
         loading={isResidencesLoading}
-        emptyMessage="Geen koshuise gevind nie."
+        emptyMessage="No residences found."
         className="space-y-4"
       />
     </div>
