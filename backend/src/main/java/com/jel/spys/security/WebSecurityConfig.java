@@ -66,6 +66,7 @@ public class WebSecurityConfig {
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/health").permitAll()
                         .requestMatchers("/api/docs/**").permitAll()
                         .requestMatchers("/api/admin/users/**").hasAnyRole("ADMIN", "USER_ADMIN")
                         .requestMatchers("/api/admin/menu/**").hasAnyRole("ADMIN", "MENU_ADMIN")
